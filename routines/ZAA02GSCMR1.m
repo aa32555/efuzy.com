@@ -1,0 +1,42 @@
+ZAA02GSCMR1 ;PG&A,ZAA02G-MTS,1.20,MTS ENTRY;05JAN94  01:03;;;07DEC2006  14:04
+ ;Copyright (C) 1995, Patterson, Gray and Associates Inc.
+ ;
+EXAMPLE S EDIT=0
+EX1 S INP("PATIENT")="TEST,SUSAN",DOC=1,INP("MR")="0000",(INP("DS"),INP("DT"))="10/22/94",yy="",INP("DOB")="07/12/44",EXAM="TEXAM",TYPS=TYPM S:EDIT=2 DOC="" D M1^ZAA02GSCMR
+ S %R=2,%C=1,B="",$P(B,ZAA02G("HL"),81)="" W @ZAA02GP,ZAA02G("LO"),ZAA02G("G1"),B,ZAA02G("G0")
+ I EDIT=1 S TYPS=TYPM D TEST^ZAA02GSCML
+ K B,EDIT S J=1 Q
+ ;
+E ; EDIT CODES
+ S EDIT=2 G EX1
+L ; TEST LETTER
+ S EDIT=1 G EX1
+BIO D MAMMO^ZAA02GSCRTR I DOC="" K OFP Q
+ K INP D DATE^ZAA02GSCRER,FETCH^ZAA02GSCRER S TYPS=3 D M1^ZAA02GSCMR K INP G BIO
+ ;
+DELETE S TS="" F J="TEMPLATE","TEMPLATE2" I $G(INP(J))]"" S TS=$P($G(@ZAA02GSCR@(106,INP(J),.03)),"\",20) I $TR(TS,"N")'="" Q
+ S DELETE=1 D M1^ZAA02GSCMR K DELETE K @ZAA02GSCM@("EXAM",DOC) Q
+ ;
+ABORT S X="",EDIT=$TR(EDIT,"A") D AB1 S TYPS=TYPSS K TYPSS I X=5 G M3^ZAA02GSCMR
+ I X=7 K EDIT S @ZAA02GSCR@(DIR,DOC,.011,"NOMAMMO")="",DELETE=1,NREC="" G M4^ZAA02GSCMR
+ G M5^ZAA02GSCMR
+AB1 N (ZAA02G,ZAA02GP,X)
+ S Y="20,14\RHL\1\\\         Mammo Date Entry*,*,Select one of the following and press RETURN*,*,Continue with mammo date input,Quit - but allow data to be entered later"
+ ; ,Remove this report from the Mammo database"
+ D ^ZAA02GPOP S:X[";EX" X=5 Q
+ ;
+ ;  U1 moves STATS when any header info changes
+U1 Q:$P(NREC,";",1,5)=$P(OREC,";",1,5)  K J F T=1:1:$L(OMAMMO,";") S I=$E($P(OMAMMO,";",T),1,3) S:I]"" J(I)=""
+ S:OREC]"" J("EXAMS")="" S M=$P(OREC,";",5)'=$P(NREC,";",5) S:$P(OREC,";",8)]"" J($P(OREC,";",8))="" K J("AGE") F J=1:1:5 I $P(OREC,";",J)'=$P(NREC,";",J)!M S W=$P("MR,DST,REF,PROV,SITEC",",",J) D U2
+ S T1=$P($P(OMAMMO,"OBT,",2),";"),T2=$P($P(MAMMO,"OBT,",2),";"),J=6 S:T1="" T1="NA" S:T2="" T2="NA" S:$D(REBUILD) T1="" I T1'=T2 S W="TECH" D U22
+ Q
+ ;
+U2 S T1=$P(OREC,";",J),T2=$P(NREC,";",J) K:T1]"" @ZAA02GSCM@("DIR",W,T1,DST,DOC) S:T2]"" @ZAA02GSCM@("DIR",W,T2,DST,DOC)="" I J<3 D:T1]"" CHGLTR Q
+U22 I T1]"" S T=T1,TY=$P(OREC,";",5),INC=-1,STATT=OSTAT D U3
+ I T2]"" S T=T2,TY=$P(NREC,";",5),INC=1,STATT=NSTAT D U3
+ Q
+ ;
+U3 S:TY="" TY="NA" S I="" F  S I=$O(J(I)) Q:I=""  S $P(^(AG),"+",DM)=$P($G(@ZAA02GSCM@(STATT,YR,$S(J=5:"NA",CST:"NA",1:TY),W,T,I,AG)),"+",DM)+INC I J=5 D:$D(REBUILD) S5
+ I $D(REBUILD)!$D(DELETE),J=5 F  S I=$O(J(I)) Q:I=""  S $P(^(AG),"+",DM)=$P($G(@ZAA02GSCM@(STATT,YR,"NA","SITEC","TOTAL",I,AG)),"+",DM)+INC
+ Q
+ ;

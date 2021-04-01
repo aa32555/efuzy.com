@@ -1,0 +1,61 @@
+ZAA02GFAXFXS ;PG&A,ZAA02G-FAX,1.36,UTILITIES;10APR96 7:44A;;;30JUN2004  09:54
+ ;
+ Q
+ ;
+RKERMIT ;  Receive file from remote PC using Kermit
+ W !!,"Send FXS File Using Binary Transfer with Kermit",!!
+ S B="^ZAA02GFAXGK("_$H_")",MODEM=0 D OSS^ZAA02GSEND2,SETSCR^ZAA02GSENDA S (GLOB,FGLOB)=B,KP="" D INIT^ZAA02GSENDA,REXE^ZAA02GSENDE
+ I $G(@GLOB@(0,"ERROR")) W "ERROR IN TRANSMISSION - TRY AGAIN",! Q
+X1 S GR=@FGLOB@(0,1,"FILE"),D=$P(FGLOB,")")_",1)"
+X2 ; S A=$O(@D@("")) Q:A=""  S B=^(A),C=80 I $L(B)<80 K ^(A) S A=$O(^(A)),C=80-$L(B) Q:A=""
+ ; S B=B_$E(^(A),1,C),^(A)=$E(^(A),C+1,255)
+ ; S A=$O(@D@("")) Q:A=""  S B=^(A),^(A)=$C(0,0,0,40,155,21)_$P(B,$C(0,0,0,40,155,21),2,99)
+ S GRI=$P($P(B,"[",2),"]") W !!,"Wait while the fax image is converted..."
+ D LE S $P(^ZAA02GFAXS(GR),",",2)=GRI_",HIRES"
+ ; F K=1:1:200 S A=$O(^ZAA02GFAXS(GR,A)) Q:A=""  Q:$L(^(A))>7  S J=J-1 K ^(A)
+ ; S $P(^ZAA02GFAXS(GR),",")=J
+ W !!,"Graphic stored in ^ZAA02GFAXS(""",GR,""")",!!,"Total scan lines in graphic - ",J,!,"PRESS RETURN" R A#1 K @FGLOB
+ Q
+ ;
+AGAIN S A=$ZO(^ZAA02GFAXGK("")),B=$ZO(^ZAA02GFAXGK(A,"")) S FGLOB="^ZAA02GFAXGK("_A_","_B_")" G X1
+ ;
+PC ; READ DOS FILE IN DIRECTLY
+ S B="^ZAA02GFAXGK("_$H_")",(GLOB,FGLOB)=B,D=$P(FGLOB,")")_",1)"
+ R "FILE (d:file.ext) -",A,!,"GRAPHIC NAME-",GR,!
+ I ^ZAA02G("OS")="MSM" O 51:(A:::::"") F J=1:1 U 51 R B#150 S @D@(J)=B Q:$ZC  U 0 W "."
+ C 51 U 0 W "COMPLETED" G X2
+ ; THIS SECTION READS DOS FILE FROM WIN-FAX SOFTWARE
+ ; ASSUMES THAT THE FILE IS IN FAX FORMAT - FXS
+ ;
+ ;
+LE ; USE THIS FOR SIGNATURES
+ ; THIS CODES SCANS THE DOCUMENT FOR $C(16) AND DOUBLES THEM UP 
+ ; ALSO SCANS FOR SEPARATE LINES AND BREAKS THEM INTO INDIVIDUAL SCAN LINES
+LE1 S ST="" ; F J=1:1 S ST=$O(@D@(ST)) Q:ST=""  I $TR(^(ST),$C(0))'=""&(J>3) S ST=ST-1 Q
+ S A=ST,B=$C(0,0,0),C=1,G="" K ^ZAA02GFAXGR("TEMP",$I)
+ F J=1:1 S A=$O(@D@(A)) Q:A=""  S M=^(A) D:M[$C(16) LE2 D LE4
+ S:$TR(G,$C(0))'="" ^ZAA02GFAXGR("TEMP",$I,C)=G K ^ZAA02GFAXS(GR) S A="" F J=1:1 S A=$O(^ZAA02GFAXGR("TEMP",$I,A)) Q:A=""  S M=^(A) D:$E(M,1,4)=$C(0,0,0,0) LE3 S ^ZAA02GFAXS(GR,J)=M
+ S M=$E(^ZAA02GFAXS(GR,J-1),1,7) F J=J-2:-1:1 Q:$E(^(J),1,7)'=M  K ^(J+4)
+ S J=J+3 I J>2090 S A="" F J=J:-1:2090 S A=$O(^(A)) Q:A=""  Q:$E(^(A),1,7)'=M  K ^(A)
+ S ^ZAA02GFAXS(GR)=J Q
+LE2 F K=1:2:$L(M,$C(16))-1*2 S $P(M,$C(16),K)=$P(M,$C(16),K)_$C(16)
+ Q
+LE3 F L=1:1:$L(M) I $A(M,L)'=0  S M=$E(M,L-3,999) Q
+ Q
+LE4 I $L(G)+$L(M)>255 S ^ZAA02GFAXGR("TEMP",$I,C+.1)=G,C=C+1,G=""
+ S M=G_M,E=$L(M,B),G=B_$P(M,B,E) F E=1:1:$L(M,B)-1 S F=$P(M,B,E) I F'="" S ^ZAA02GFAXGR("TEMP",$I,C)=B_$E(F,1,251),C=C+1 S:$L(F)>251 ^(C)=$E(F,252,507),C=C+1
+ Q
+ ;
+TEST D:'$D(ZAA02GP) FUNC^ZAA02GDEV S Y="10,3\SRHLG\3\AVAILABLE GRAPHICS",Y(0)="\EX\^ZAA02GFAXS\TO;15`+$G(^ZAA02GFAXS(TO));4R`$P($G(^(TO)),"","",2);30" D ^ZAA02GPOP Q:X=""  Q:X[";EX"  S GR=X
+ K ^ZAA02GFAXGR(10) S ^(10,10)="~FAX GRAPHIC=^ZAA02GFAXS("""_GR_""")"
+ S ZAA02GWPD="^ZAA02GFAXGR(10)" D DIRECT^ZAA02GFAXQ Q
+ ;
+M3 S DV="FILE",FILE="C:\2.TFX",NM="TEST3" O DV:(FILE:"RI") U DV
+ S D=1,B="",E=""
+ F  R A S C=$ZC D  Q:C
+ . I D=1,B="" S A=$E(A,130,9999)
+ . S E=E_A F L=2:1:$L(E,$C(128))-1 S M=$P(E,$C(128),L) D
+ .. F  Q:$A(M,$L(M))<16  S L=L+1,M=M_$C(128)_$P(E,$C(128),L)
+ .. D:M[$C(16) LE2 S ^ZAA02GFAXS(NM,D)=$C(0,128)_M,D=D+1
+ . S E=$P(E,$C(128),L+1)
+ C DV Q

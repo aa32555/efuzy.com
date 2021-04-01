@@ -1,0 +1,50 @@
+ZAA02GQUEUE ; LOADS AND RUNS PRINT QUEUE IN ^ZAA02GWP(.9);10/10/97;Ver 2.11;MG;09OCT97  16:50
+ ;
+ ;
+ ; CALL QUEUE TO ADD TASK TO PRINT QUEUE
+ ;
+ ;  NEEDS DV  -DEVICE
+ ;        DOC -DESCRIPTION
+ ;        CP  -# COPIES
+ ;        BIN -# OF BIN (OPTIONAL)
+ ;        VAR -LIST OF VARIABLES (COMMA DELIMITED)
+ ;        RTN -NAME OF ROUTINE TO CALL TO PRINT
+ ;
+QUEUE I '$D(^ZAA02G("GETPRINTER")) S ^("GETPRINTER")="S VDV=$S($D(^LPT(VDV)):$P(^(VDV),"";""),1:VDV)"
+ D ADD
+ S ^ZAA02GWP(.9,DV,NQ,"XECUTE")="D QUEUE1^ZAA02GQUEUE",^("RTN")=RTN
+ F j=1:1 S t=$P(VAR,",",j) Q:t=""  S:$D(@t)#2 ^ZAA02GWP(.9,DV,NQ,t)=@t I $D(@t)>2 S b="" F  S b=$O(@t@(b)) Q:b=""  S:$D(@t@(b))#2 ^ZAA02GWP(.9,DV,NQ,t,b)=@t@(b)
+ Q
+ ;
+ADD N (DV,CP,DOC,NQ)
+ L +ZAA02GWP("CONTROL") F NQ=0:1 I $O(^ZAA02GWP(.9,DV,NQ))'?1.N S NQ=NQ+1 L -ZAA02GWP("CONTROL") Q
+ D TIME S ^(NQ)="\"_DOC_"\"_CP_"\\ALL\"_$S($D(BIN):BIN,1:"")_"\\"_TM_"\0\\\"_$H
+ L +ZAA02GWP(DV):0 I  D SET J ^ZAA02GWPPC L -ZAA02GWP(DV) Q
+ Q
+TIME S B=$P($H,",",2),H=B\3600-1#12+1,M=B#3600\60 S TM=H_":"_$E("0"_M,$L(M),3)_" "_$S(B>43199:"PM",1:"AM") Q
+ ;
+SET S B=","_DV_",",^ZAA02GWP(.9)=$S($D(^ZAA02GWP(.9))#2=0:B,^(.9)[B:B_$P(^(.9),B)_","_$P(^(.9),B,2,9),1:B_$E(^(.9),2,100)) Q
+ ;
+ ;
+QUEUE1 S a="" F  S a=$O(@VDOC@(a)) Q:a=""  S:$D(^(a))#2 @a=@VDOC@(a) i $D(^(a))>2 S c="" F  S c=$O(@VDOC@(a,c)) Q:c=""  S:$D(^(c))#2 @a@(c)=@VDOC@(a,c)
+ ;S B(1)=6,B(2)=10,B(3)=1,B(4)=1 D INIT^ZAA02GWPPC1 D @RTN
+ W *27,"E" D @RTN
+ S DONE=1 Q
+ ;
+CONTROL ; ENTRY POINT FOR PRINT QUEUE STATUS
+ D SETUP^ZAA02GWP
+TITLE D HEAD^ZAA02GWPPM
+T1 S Y="Monitor Print Queue\Remove Document from Print Queue\Hold Printing\Start Printing\Quit\;MRHSQ;P R I N T    C O N T R O L"
+SELECT S HP=5,NE=5,(TC,%C)=25,TR=8 D SEL^ZAA02GWPPM G END:J=NE,TITLE:J>NE
+ I J=1 D MQUEUE^ZAA02GWPPM G TITLE
+ I J=2 S $P(Y,"\",2)="\"_$P(Y,"\",2) D REMOVE^ZAA02GWPPR G TITLE
+ I J=3!(J=4) S J=J+3 D ^ZAA02GWPPS G TITLE
+ G TITLE
+END K  Q:'$D(^TRMG)  I ^TRMG="DTM",^TRMG($I)="3151"  W *27,*32,*116
+ I ^TRMG="DTM","IBM3151"'[^TRMG($I) W *27,">"
+ D ^SET
+ G MNUSP^MNU
+ ;
+TEST S DV=5,CP=1,DOC="REPORT",VAR="A,B,X,REP",A=1,B="NAME",X(100)=123,REP=1,REP(2)="101 NORTH MAIN STREET",RTN="TEST1^ZAA02GQUEUE" D ^ZAA02GQUEUE
+ Q
+TEST1 W A,!,B,!,X(100),!,REP,!,REP(2),! H 30 Q

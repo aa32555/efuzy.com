@@ -1,0 +1,107 @@
+ZAA02GSCRTIF ;PG&A,ZAA02G-SCRIPT,2.10,TIFF DECODING;3JAN96 5:26P;;;15OCT2003  14:43
+ ;
+DECODE ; DECODE TIFF
+ W !!!,"Ready to RECEIVE graphic file via KERMIT",!!
+ S MODEM=0,ERR=0,KP="",G=$H D GLOB D INIT^ZAA02GSENDA,REXE^ZAA02GSENDE
+ Q:$G(ERR)  W !!,"TRANSFER COMPLETED",!! X ^ZAA02G("ECHO-ON")
+ R A:0,A:2 G X0
+GLOB S GLOB="^ZAA02GKERMIT("""_G_""")",TGLOB="^ZAA02GKERMIT("""_G_""",1)",FGLOB=GLOB Q
+ ;
+DOS ; Enter here to read DOS file
+ R "FILE (d:file.ext) -",A,! S G=$H D GLOB S G=TGLOB K @G
+ I ^ZAA02G("OS")="MSM" O 51:(A:::::"") F J=1:1 U 51 R B#100 S @G@(J)=B,C=$ZC U 0 W "." I C C 51 G X0
+ I ^ZAA02G("OS")="M3" O "FILE":(A:"I") F J=1:1 U "FILE" R B#100 S @G@(J)=B,C=$ZC U 0 W "." I C C "FILE" G X0
+ I ^ZAA02G("OS")="M11" O A:("UR"):2 G:'$T NOOPEN S $ZT="EOF" F J=1:1 U A R B#100 S @G@(J)=B,C=$ZC U 0 W "." I C C A G X0
+ Q
+EOF C A G X0
+NOOPEN W !,"can't open file" Q
+NXT S (NG,G)=$O(^ZAA02GKERMIT($G(NG))) D GLOB G X0
+ ;
+X0 K IFD S ROWS=1,M=0,N=0,TR1=1,TR=$C(1,2),TR3=$C(2,1),$P(TR1," ",255)="" F J=3:3:252 S TR=TR_$C(J,J+1,J+2),TR3=$C(J+2,J+1,J)_TR3
+XX0 S G=TGLOB R !,"Store under what name? - ",NM,! I $D(^ZAA02GSCR("SIGN",NM)) W "Name already used - Do you want overwrite (N)? " R A#1,! I A'="Y" G XX0
+ K ^ZAA02GSCR("SIGN",NM),eS S:NM="eS" eS=1 W "wait..."
+X K ADR,IDF F I=1:1:10  S J=$O(@G@("")),A=@G@(J),BO=J,J=$O(@G@(J)) I A'["II*" S @FGLOB@(.9,BO)=A K @G@(BO)
+ I A["II*",$E(A,1,3)'="II*" S @FGLOB@(.9,I)=$P(A,"II*"),(A,@G@(BO))="II*"_$P(A,"II*",2,99)
+ ; 0 - 2  BYTE ORDER (MM-MAC OR II-INTEL)
+ ; 2 - 2  VERSION # (ALWAYS 42)
+ ; 4 - 4  POINTER TO FIRST IFD
+ S BO=$E(A),IFDL=$$LWRD(A,5) I $E(A,3)'="*" W !,"NOT TIFF" Q
+ ;
+ D LOCATE(IFDL) S IFD=0,IFDC=$$WRD(A,1),A=$E(A,3,255),AD=AD+2 F L=1:1:IFDC D IFD
+ D INITIFD
+ I BITS'=1 W "NOT 1 BIT TIFF IMAGE" Q
+ S NSTRIPS=LENGTH+ROWS-1\ROWS
+ S L=STRIPS,STRIPS=IFD(L,"POINTER") I IFD(L,"TYPE")=4,IFD(L,"COUNT")=1 S STRIPS(1)=STRIPS
+ E  D LOCATE($E(STRIPS,2,9)) F I=1:1:NSTRIPS S STRIPS(I)=$$LWRD(A,1),A=$E(A,5,255) I $L(A)<4 S A=A_@G@(J),J=$O(@G@(J))
+ S WD=WIDTH/8,M=0,AD=-1 S:WD["." WD=WD\1+1 F STRIP=1:1:NSTRIPS S L=STRIPS(STRIP) D:AD'=L LOCATE(L) F M=M+1:1:M+ROWS Q:M>LENGTH  S S=$E(A,1,WD),A=$E(A,WD+1,255) D:$L(S)<WD DE1 S AD=AD+WD S:M#2 ^ZAA02GSCR("SIGN",NM,M)=$E(S,1,WD-1)
+ G Z
+DE1 I J S:$L(S)<WD A=@G@(J),J=$O(@G@(J)),K=$L(S),S=S_$E(A,1,WD-K),A=$E(A,WD-K+1,255) G:$L(S)<WD DE1
+ Q
+ ;
+XX S G=$O(^ZAA02GKERMIT(999999)),TGLOB="^ZAA02GKERMIT("""_G_""",1)" G X0
+ ;
+Z S A=$D(^ZAA02GSCR("SIGN",NM,0))*0,L=256,R=0,T=0,B=0,PH=$G(IFD(262,"COUNT")) S:PH="" PH=255 S:PH PH=255
+ S PH=0 ; forced PH - when photometrics not working as expected
+ F  S A=$O(^(A)) Q:A=""  S C=^(A) D TRIM ; W T," ",B," ",L," ",R,! R CCC
+ S L=L-1,R=R-1 I T S A="" F  S A=$O(^(A)) Q:A=T  K ^(A)
+ S A=B F  S A=$O(^(A)) Q:A=""  K ^(A)
+ S LM=R-L+1,HT=B-R,E=$G(^ZAA02GSCR("SIGN","eS")),H=LM*8-$P(E,",",2)\16,C=HT-E\4,E=0,H=$C(255-H,0)
+ F  S A=$O(^ZAA02GSCR("SIGN",NM,A)) Q:A=""  S S=$E(^(A),L,R),X="" D DE0
+ S ^ZAA02GSCR("SIGN",NM)=HT_","_(LM*8)
+ R !!,"Signature Stored",!! Q  ; ,"Do you want to transfer another (Y or N) ",A,! G:A="Y" ZAA02GSCRTIF Q
+ ;
+DE0 I PH S S=$TR(S,TR,TR3),S=$TR(S,$C(0,255),$C(255,0))
+DE2 S D=$TR(S,$C(255)_TR,TR1)_" ",D=$TR(D,$C(0)," "),I=$F(D," ") I I>3 S:I>129 X=X_$C(130,255),S=$E(S,128,255),I=I-127 S X=X_$C(259-I,255),S=$E(S,I-1,255) G DE3:S="",DE2
+ S T=$F(D,111)
+ S D=$TR(S,$C(0)_TR,TR1)_" ",D=$TR(D,$C(255)," "),I=$F(D," ") I I>3 S:I>129 X=X_$C(130,0),S=$E(S,128,255),I=I-127 S X=X_$C(259-I,0),S=$E(S,I-1,255) G DE3:S="",DE2
+ S T1=$F(D,111) G:T+T1=0 DE4 S:T1&(T1<T)!(T=0) T=T1 S T1=$E(S,1,T-4),S=$E(S,T-3,255) S:$L(T1)>127 X=X_$C(127)_$E(T1,1,127),T1=$E(T1,128,255) S:$L(T1) X=X_$C($L(T1)-1)_T1 G DE2:S'="",DE3
+DE4 S:$L(S)>127 X=X_$C(127)_$E(S,1,127),S=$E(S,128,255) S:$L(S) X=X_$C($L(S)-1)_S
+DE3 S ^ZAA02GSCR("SIGN",NM,A)="*b2m"_$L(X)_"W"_X,C=C-1 Q:$D(eS)  S:$L(E) E=$O(^ZAA02GSCR("SIGN","eS",E)) S:C>0 E=0 S ^ZAA02GSCR("SIGN",NM,A+1)=$S(E:$P(^(E),"b2m")_"b2m"_($P(^(E),"b2m",2)+2)_"W"_H_$P(^(E),"W",2,255),1:"*b1Y"),A=A+1 Q
+ ;
+TRIM I 'T Q:$TR(C,$C(PH))=""  S T=A
+ S C=$TR($TR(C,$C(PH)_TR,TR1),$C($S(PH:0,1:255))," "),D=$F(C," ") I 'D S:'B B=A Q
+ S B=0 S:D<L L=D F  Q:'$F(C," ",D)  S D=$F(C," ",D)
+ S:D>R R=D Q
+ Q
+ ;
+IFD ;  IFD DECODING
+ ; 0 - 2 - COUNT
+ ; 2 - 12 - ENTRY 0
+ ; 14 - 12 - ENTRY 1
+ ;   "
+ ; n*12+4 - 4 POINTER TO SUBSEQUENT IFD IF ANY OR 0000
+ ;
+IFD1 S D=$E(A,1,12) I $L(D)<12 S A=A_@G@(J),J=$O(@G@(J)) G IFD1
+ K XIFD S AD=AD+12,A=$E(A,13,255),IFD=IFD+1,(XIFD(IFD,"TAG"),IFD(IFD,"TAG"))=$$WRD(D,1),(XIFD(IFD,"TYPE"),IFD(IFD,"TYPE"))=$$WRD(D,3),(XIFD(IFD,"COUNT"),IFD(IFD,"COUNT"))=$$LWRD(D,5),(XIFD(IFD,"POINTER"),IFD(IFD,"POINTER"))=$$LWRD(D,9)
+ ; X "N (XIFD,J,AD) W  R CCC"
+ S W=$P("1,1,2,4,8,1,1,2,4,8,4,8",",",IFD(IFD,"TYPE")) I W*IFD(IFD,"COUNT")>4 S ADR(IFD(IFD,"POINTER"))=IFD,IFD(IFD,"POINTER")="&"_IFD(IFD,"POINTER")
+ Q
+INITIFD S BITS=1,COMPR=1,RPS=65536*65536-1,PIXELS=1
+ F L=1:1:IFDC S T="T"_IFD(L,"TAG") D:$T(@T)'="" @T W:'$T(@T)="" T," "
+ Q
+LOCATE(X) S J=$O(@G@("")),A=@G@(J),J=$O(@G@(J)),L=0 F  Q:X<(L+$L(A))  S L=L+$L(A),A=@G@(J),J=$O(@G@(J))
+ S AD=X,A=$E(A,X-L+1,255) W !,"LOCATE-",AD,! q
+ ;
+T254 S SUBFILE=IFD(L,"POINTER") Q
+T256 S WIDTH=IFD(L,"POINTER") Q
+T257 S LENGTH=IFD(L,"POINTER") Q
+T258 S BITS=IFD(L,"POINTER") Q
+T259 S COMPR=IFD(L,"POINTER") Q
+T262 S MONO=IFD(L,"POINTER") Q
+T273 S STRIPS=L Q
+T277 S PIXELS=IFD(L,"POINTER") Q
+T278 S ROWS=IFD(L,"POINTER") Q
+T279 S STRIPB=IFD(L,"POINTER") Q
+T282 S XRES=IFD(L,"POINTER") Q
+T283 S YRES=IFD(L,"POINTER") Q
+T284 S PLANAR=IFD(L,"POINTER") Q
+T296 S RESU=IFD(L,"POINTER") Q
+T317 S XXXX=IFD(L,"POINTER") Q
+ ;
+LWRD(S,x) I BO="I" Q $A(S,x+3)*256+$A(S,x+2)*256+$A(S,x+1)*256+$A(S,x)
+ Q $A(S,x)*256+$A(S,x+1)*256+$A(S,x+2)*256+$A(S,x+3)
+WRD(S,x) I BO="I" Q $A(S,x+1)*256+$A(S,x)
+ Q $A(S,x)*256+$A(S,x+1)
+ Q
+ ;
+TR(NM) D TR^ZAA02GSCRTI1(NM) Q

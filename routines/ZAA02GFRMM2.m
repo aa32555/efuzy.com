@@ -1,0 +1,44 @@
+ZAA02GFRMM2 ;PG&A,ZAA02G-FORM,2.62,MAINTENANCE - BASIC PARAMETER;21MAY92 8:21A
+ ;Copyright (C) 1986, Patterson, Gray & Associates, Inc.
+ ;
+BEG S ZAA02Gs=1
+SCN I '$D(^ZAA02GDISPL(0,ZAA02Gs,0,ZAA02G,1)) S ZAA02GGLOB="^ZAA02GDISPL(0)",ZAA02GROUT="^ZAA02GFRMMS1" D ^ZAA02GINTSCR
+ F I=3:1:24 W ^(I),^(I+.1)
+ S SD="1,2,3,4,5,6,7",LNG="9,9,9,9,9,9,9",DD="6,8,10,12,14,16,18",LL="12,12,12,12,12,12,12",EC=61,ST=$S($D(^ZAA02GDISP(0,"ECTL")):^("ECTL"),1:"")
+ S M=+$P(ST,"`",9),%R=21,%C=43 W:'$D(qt) @ZAA02GP F J=0,1 W:M=J ZAA02G("RON") W $P(" Normal , ZAA02GPOP Selector ",",",J+1),"  " W:J=M ZAA02G("ROF")
+ D EDIT
+ S Y="41,21\DH\*\\\ Normal , ZAA02GPOP Selector ",X=$P(ST,"`",9)+1 D:RX'=7 UTIL^ZAA02GFORM4
+ I $L($P(ST,"`",1,7))<7,X=1 K ^ZAA02GDISP(0,"ECTL") G EXIT
+ S $P(ST,"`",9)=X-1,X="" F J=1:1:7 S L=$E($P(ST,"`",J)),X=X_$S(L="":"%",1:L)
+ S $P(ST,"`",8)=X,^ZAA02GDISP(0,"ECTL")=ST
+EXIT K ST,DD,LNG,HELP,X,L,LL,SD,EC,NE Q
+ ;
+EDIT S %R=24,%C=15,NE=$L(SD,",") W:'$D(qt) @ZAA02GP,ZAA02G("LO")," [ Edit if desired - Tab to bottom when finished ]",ZAA02G("HI")
+E1 S II=1
+E5 S %C=EC F I=1:1:NE S %R=$P(DD,",",I) W:'$D(qt) @ZAA02GP,$P(ST,"`",$P(SD,",",I))," "
+ S %C=EC,RX=6 F II=II:1:NE S %R=$P(DD,",",II) D READ S II=II+$S(14[RX:-2,RX=7:22,RX=8:100,1:0) S:II<0 II=0,RX=6
+ I II>100 S II=II-100 D @HELP G E5
+ Q
+ ;
+READ W:'$D(qt) @ZAA02GP R B#1 X ZAA02G("T") S ZC=$A(ZF) I ZC S RX=$S(ZC=13:6,ZC=9:7,ZF=ZAA02G("UK"):1,ZF=ZAA02G("DK"):3,ZF=ZAA02G("LK"):4,1:0) Q:RX  D RSET G RB
+ G:B="?" HELP D RSET S X=B_$E(X,2,99),L=L+1 G CR:LNG=1
+RD R B#LNG-L X ZAA02G("T") S ZC=$A(ZF) I B'="" S X=$E(X,1,L)_B_$E(X,L+$L(B)+1,99),L=L+$L(B)
+RB G RT:ZF=ZAA02G("RK"),LT:ZF=ZAA02G("LK"),CR:ZC=13,UP:ZF=ZAA02G("UK"),DN:ZF=ZAA02G("DK"),TB:ZC=9,CR:ZC=0,RE:ZF=ZAA02G("CL"),IN:ZF=ZAA02G("INK"),DL:ZF=ZAA02G("DLK"),127:ZC=127!(ZC=8) I ^ZAA02GDISP(95,ZAA02G,4)[ZF S ZF=$F(^(4),ZF) I $E(^(4),ZF,ZF+1)="E4" G TB
+ER W *7,@ZAA02GP S L=0 G RD
+LT I L S L=L-1 W:'$D(qt) ZAA02G("L") G RD
+ S RX=4 G DONE
+RT S L=L+1 I L<LNG W:'$D(qt) ZAA02G("RT") G RD
+CR S RX=6 G DONE
+TB S RX=7 G DONE
+127 G:L=0 RD S X=$E(X,1,L-1)_" "_$E(X,L+1,99),L=L-1 W *8," ",*8 G RD
+RE S X=$E(X,1,L)_$J("",LNG-L+1) W $J("",LNG-L+1),@ZAA02GP,$E(X,1,L) G RD
+DN S RX=3 G DONE
+UP S RX=1 G DONE
+DONE F L=0:0 S L=$F(X," ",L) Q:L'>0  I $E(X,L,99)?." " S X=$E(X,1,L-2) Q
+ S $P(ST,"`",D)=X Q
+DL W $E(X,L+2,99)," " S X=$E(X,1,L)_$E(X,L+2,99)_" " W:'$D(qt) @ZAA02GP,$E(X,1,L) G RD
+IN G:$E(X,LNG)'=" " ER W " ",$E(X,L+1,LNG-1) S X=$E(X,1,L)_" "_$E(X,L+1,LNG-1) W:'$D(qt) @ZAA02GP,$E(X,1,L) G RD
+HELP I $D(HELP)=0 W " HELP NOT AVAILABLE" H 2 W:'$D(qt) @ZAA02GP,X,ZAA02G("CL") G READ
+ S RX=8 Q
+RSET S L=0,D=$P(SD,",",II),X=$P(ST,"`",D),LNG=$P(LL,",",II),X=X_$J("",LNG-$L(X)) Q
+ ;

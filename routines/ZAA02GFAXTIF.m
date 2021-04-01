@@ -1,0 +1,138 @@
+ZAA02GFAXTIF ;PG&A,ZAA02G-SCRIPT,1.96,VA TIFF DECODING;3JAN96 5:26P;;;08JUL2005  10:35
+ ;
+DECODE ; DECODE TIFF from KERMIT transfer
+ W !!!,"Ready to RECEIVE graphic file via KERMIT",!!
+ S MODEM=0,ERR=0,KP="",G=$H,GLOB="^ZAA02GKERMIT("""_G_""")",TGLOB="^ZAA02GKERMIT("""_G_""",1)",FGLOB=GLOB D INIT^ZAA02GSENDA,REXE^ZAA02GSENDE
+ Q:$G(ERR)  W !!,"TRANSFER COMPLETED",!! X ^ZAA02G("ECHO-ON")
+ R A:0,A:2 G X0
+ ;
+FILE ; DECODE TIFF from file
+ R "FILE (d:file.ext) -",A,! Q:A=""
+ S G=$H,(FGLOB,TGLOB,GLOB)="^ZAA02GTIF("""_G_""")" W !,"reading file into ^ZAA02GTIF "
+ I ^ZAA02G("OS")="MSM" O 51:(A:::::"") F J=0:1 U 51 R B#100 S @GLOB@(J)=B Q:$ZC  U 0 W "."
+ I  C 51 U 0
+ I ^ZAA02G("OS")="M3" O "FILE":(A:"IR") F J=0:1 U "FILE" R B#100 S @GLOB@(J)=B Q:$ZC  U 0 W "."
+ I  C "FILE" U 0
+X0 K IFD S M=0,N=0,TR1=1,TR=$C(1,2),TR3=$C(2,1),$P(TR1," ",255)="" F J=3:3:252 S TR=TR_$C(J,J+1,J+2),TR3=$C(J+2,J+1,J)_TR3
+ I '$D(^ZAA02GFAXC(0,5)) S A="" F  S A=$O(^ZAA02GFAXC(0,4,A)) Q:A=""  S B=^(A),X="" X "F L=1:1:8 S X=$E(B,L)_X" S ^ZAA02GFAXC(0,5,A)=X
+ S G=TGLOB R !,"Store under what name in ZAA02GFAXS? - ",NM,! K ^ZAA02GFAXS(NM) W !,"converting from TIFF to ZAA02GFAXS format..."
+X K ADR,IDF  S J=$O(@G@("")),A=@G@(J),J=$O(@G@(J))
+ ; 0 - 2  BYTE ORDER (MM-MAC OR II-INTEL)
+ ; 2 - 2  VERSION # (ALWAYS 42)
+ ; 4 - 4  POINTER TO FIRST IFD
+ S BO=$E(A),IFDL=$$LWRD(A,5) I $E(A,3)'="*" W !,"NOT TIFF" Q
+ ;
+ D LOCATE(IFDL) S IFD=0,IFDC=$$WRD(A,1),A=$E(A,3,255),AD=AD+2 F L=1:1:IFDC D IFD
+ D INITIFD
+ I BITS'=1 W "NOT 1 BIT TIFF IMAGE" Q
+ S RES="N" I 1234'[COMPR W "CONTAINS UNKNOWN COMPRESSION" Q
+ I COMPR=1 R "HI RESOLUTION (Y/N) - ",RES#1,!
+ I RES'="Y" R "CONVERTING TO LOW RES - DO YOU WANT SMOOTHING? - ",A#1,! I A="Y" S RES=RES_"S"
+ S NSTRIPS=LENGTH+ROWS-1\ROWS,REV=0  S REV=0 ; change REV to reverse color
+ ; decode each strip
+ I COMPR>1 D  Q
+ . S M=1,AD=0 F STRIP=1:1:NSTRIPS S L=STRIPLOC(STRIP),LENGTH=STRIPBYT(STRIP) D
+ .. D:AD'=L LOCATE(L) F  Q:$L(A)'<LENGTH  S A=A_@G@(J),J=$O(@G@(J))
+ .. S A=$E(A,1,LENGTH) I 1 S A=$TR(A,TR,TR3),A=$TR(A,$C(0,255),$C(255,0))
+ .. F  Q:A=""  S ^ZAA02GFAXS(NM,M)=$C(0,0)_$P(A,$C(0,0)),A=$P(A,$C(0,0),2,9999),M=M+1
+ . S COMPR=$P("G2,G3,G4",",",COMPR) W !,"Image stored with original compression ",COMPR S ^ZAA02GFAXS(NM)="*"_COMPR
+ . K ^ZAA02GTIF(TGLOB) Q
+ ;  S L=STRIPS,STRIPS=IFD(L,"POINTER") I IFD(L,"TYPE")=4,IFD(L,"COUNT")=1 S STRIPS(1)=STRIPS
+ ;  E  F I=1:1:NSTRIPS S STRIPS(I)=STRIPLOC(I)
+ S WD=WIDTH/8,(R,M)=0,AD=-1 S:WD["." WD=WD\1+1
+ F STRIP=1:1:NSTRIPS S L=STRIPLOC(STRIP) D:AD'=L LOCATE(L) F M=M+1:1:M+ROWS Q:M>LENGTH  S S=$E(A,1,WD),A=$E(A,WD+1,9999) D:$L(S)<WD DE1 S AD=AD+WD S R=R+1,^ZAA02GFAXS(NM,R)=$E(S,1,WD-1) I RES'="Y" D:M#2=0 OR
+ G Z
+DE1 I J="" S A="" Q
+ S:$L(S)<WD A=@G@(J),J=$O(@G@(J)),K=$L(S),S=S_$E(A,1,WD-K),A=$E(A,WD-K+1,510) G:$L(S)<WD DE1
+ Q
+OR I RES'["S" K ^(R) Q
+ S B=^(R-1),K=^(R),R=R-1,T=$L(B),X="" K ^(R+1) S:$L(K)>T T=$L(K)
+ F L=1:1:T S N=$A(B,L),P=$A(K,L) S X=X_$S(N+P=0:$C(0),N+P=512:$C(255),1:$C($$ORX(P,N)))
+ S ^(R)=X Q
+ORX(P,N) S W=0,F=1 F E=1:1:8 S Z=P#2+(N#2),W=$S(Z=2:1,Z=1:E#2,1:0)*F+W,P=P\2,N=N\2,F=F+F
+ Q W
+ ;
+Z I REV S A="" F  S A=$O(^ZAA02GFAXS(NM,A)) Q:A=""  S S=$TR(^(A),TR,TR3),S=$TR(S,$C(0,255),$C(255,0)) S ^(A)=S
+ S A=$D(^ZAA02GFAXS(NM,0))*0,L=256,R=0,T=0,B=0
+ F LN=1:1 S A=$O(^(A)) Q:A=""  S C=^(A) D TRIM
+ S L=L-1,R=R-1 W:1 T," ",B," ",L," ",R,! I T S A="" F  S A=$O(^(A)) Q:A=T  K ^(A)
+ R !,"Do you want to trim image? (Y/N)-",TRIM,!
+ I TRIM="Y" D
+ . I B>0 S A=B F  S A=$O(^(A)) Q:A=""  K ^(A)
+ . I R>L S A="" F  S A=$O(^ZAA02GFAXS(NM,A)) Q:A=""  S ^(A)=$E(^(A),L,R)
+ I TRIM'="Y" S R=1728\8,L=1,B=LN,T=1
+ S LM=R-L+1,HT=B-T,MG=0
+ S ^ZAA02GFAXS(NM)=HT_","_(LM*8)
+ I LM*8<1728 W !!,"Image is ",LM*8," pixels wide - What is the left margin (inches)? " R MG,! S MG=MG*202\1
+ S EOL=^ZAA02GFAXC(0,2,0)
+ F I=0:1:63 S wht(I)=^ZAA02GFAXC(0,0,I),blk(I)=^ZAA02GFAXC(0,1,I)
+ S X="" F I=1:1:16 S X=$O(^ZAA02GFAXC(0,3,X)),D=$A(^(X))\16 S B($E(X,5,8))=D,C($E(X,5,8))=D*16
+ S A="" F  S A=$O(^ZAA02GFAXS(NM,A)) Q:A=""  S (LX,W,X)="",AA=^(A)_$C(0,0),LS=MG,L=EOL D CONV S ^ZAA02GFAXS(NM,A)=LX
+ R !!,"Graphic Stored - conversion complete",!! K ^ZAA02GTIF(TGLOB) Q
+CONV I X'[1 F J=1:1:$L(AA) S X=X_^ZAA02GFAXC(0,5,$A(AA,J)) I X[1 S AA=$E(AA,J+1,999) Q
+ ; W !,X," ",$F(X,1)," ",$l(AA) R CCC
+ G:X'[1 CONV1 S Y=$F(X,1),X=$E(X,Y-1,2000),Y=Y-2+LS,LS=0 D LWH
+ I X'[0 F J=1:1:$L(AA) S X=X_^ZAA02GFAXC(0,5,$A(AA,J)) I X[0 S AA=$E(AA,J+1,999) Q
+ ; W !,X," ",$F(X,0)," ",$L(AA)  R CCC
+ D:$L(L)>32 LF S Y=$F(X,0),X=$E(X,Y-1,2000),Y=Y-2 D LBL G:$L(X)+$L(AA) CONV
+CONV1 S Y=1728-W D LWH S L=L_$E("00000000",1,-$L(L)#8)
+ D LS,LE:LX[$C(16) Q
+LWH S L=L_$S(Y<64:wht(Y),1:^ZAA02GFAXC(0,0,Y\64*64)_^(Y#64)),W=W+Y Q
+LBL S L=L_$S(Y<64:blk(Y),1:^ZAA02GFAXC(0,1,Y\64*64)_^(Y#64)),W=W+Y Q
+LS F i=1:8:$L(L)\8*8 S LX=LX_$C(B($E(L,i,i+3))+C($E(L,i+4,i+7)))
+ S L=$E(L,$L(L)>7*(i+8),255) Q
+LF S LX=LX_$C(B($E(L,1,4))+C($E(L,5,8)))_$C(B($E(L,9,12))+C($E(L,13,16))),L=$E(L,17,510) Q
+LE F E=1:2:$L(LX,$C(16))-1*2 S $P(LX,$C(16),E)=$P(LX,$C(16),E)_$C(16)
+ Q
+ ;
+ ;
+TRIM I 'T Q:$TR(C,$C(0))=""  S T=A
+ S C=$TR($TR(C,$C(0)_TR,TR1),$C(255)," "),D=$F(C," ") I 'D S:'B B=A Q
+ S B=0 S:D<L L=D F  Q:'$F(C," ",D)  S D=$F(C," ",D)
+ S:D>R R=D Q
+ Q
+ ;
+IFD ;  IFD DECODING
+ ; 0 - 2 - COUNT
+ ; 2 - 12 - ENTRY 0
+ ; 14 - 12 - ENTRY 1
+ ;   "
+ ; n*12+4 - 4 POINTER TO SUBSEQUENT IFD IF ANY OR 0000
+ ;
+IFD1 S D=$E(A,1,12) I $L(D)<12 S A=A_@G@(J),J=$O(@G@(J)) G IFD1
+ K XIFD S AD=AD+12,A=$E(A,13,99999),IFD=IFD+1,(XIFD(IFD,"TAG"),IFD(IFD,"TAG"))=$$WRD(D,1),(XIFD(IFD,"TYPE"),IFD(IFD,"TYPE"))=$$WRD(D,3),(XIFD(IFD,"COUNT"),IFD(IFD,"COUNT"))=$$LWRD(D,5),(XIFD(IFD,"POINTER"),IFD(IFD,"POINTER"))=$$LWRD(D,9)
+ ; X "N (XIFD,J,AD) W  R CCC"
+ S W=$P("1,1,2,4,8,1,1,2,4,8,4,8",",",IFD(IFD,"TYPE")) I W*IFD(IFD,"COUNT")>4 S ADR(IFD(IFD,"POINTER"))=IFD,IFD(IFD,"POINTER")="&"_IFD(IFD,"POINTER")
+ Q
+INITIFD S BITS=1,COMPR=1,RPS=65536*65536-1,PIXELS=1
+ F L=1:1:IFDC S T="T"_IFD(L,"TAG") D:$T(@T)'="" @T W:'$T(@T)="" T," "
+ Q
+NLOCATE(X) N L G LOC
+LOCATE(X) ;
+LOC S J=$O(@G@("")),A=@G@(J),J=$O(@G@(J)),L=0 F  Q:X<(L+$L(A))  S L=L+$L(A),A=@G@(J),J=$O(@G@(J))
+ S AD=X,A=$E(A,X-L+1,255) S:$L(A)<4 A=A_$G(@G@(J)) Q
+ ;
+T254 S SUBFILE=IFD(L,"POINTER") Q
+T256 S WIDTH=IFD(L,"POINTER") Q
+T257 S LENGTH=IFD(L,"POINTER") Q
+T258 S BITS=IFD(L,"POINTER") Q
+T259 S COMPR=IFD(L,"POINTER") Q
+T262 S MONO=IFD(L,"POINTER") Q
+T273 S STRIPS=L I IFD(L,"POINTER")'["&" S STRIPLOC(IFD(L,"COUNT"))=IFD(L,"POINTER") Q
+ S XX=$TR(IFD(L,"POINTER"),"&") F II=1:1:IFD(L,"COUNT") D NLOCATE(XX) S XX=XX+4,STRIPLOC(II)=$$LWRD(A,1)
+ Q
+T277 S PIXELS=IFD(L,"POINTER") Q
+T278 S ROWS=IFD(L,"POINTER") Q
+T279 I IFD(L,"POINTER")'["&" S STRIPBYT(IFD(L,"COUNT"))=IFD(L,"POINTER") Q
+ S XX=$TR(IFD(L,"POINTER"),"&") F II=1:1:IFD(L,"COUNT") D NLOCATE(XX) S XX=XX+4,STRIPBYT(II)=$$LWRD(A,1)
+ Q
+T282 S XRES=IFD(L,"POINTER") Q
+T283 S YRES=IFD(L,"POINTER") Q
+T284 S PLANAR=IFD(L,"POINTER") Q
+T296 S RESU=IFD(L,"POINTER") Q
+T317 S XXXX=IFD(L,"POINTER") Q
+ ;
+LWRD(S,x) I BO="I" Q $A(S,x+3)*256+$A(S,x+2)*256+$A(S,x+1)*256+$A(S,x)
+ Q $A(S,x)*256+$A(S,x+1)*256+$A(S,x+2)*256+$A(S,x+3)
+WRD(S,x) I BO="I" Q $A(S,x+1)*256+$A(S,x)
+ Q $A(S,x)*256+$A(S,x+1)

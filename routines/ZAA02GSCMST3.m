@@ -1,0 +1,43 @@
+ZAA02GSCMST3 ;PG&A,ZAA02G-MTS,1.20,REPORTS-STATS DUMP;2DEC94 4:57P;;;26JUN2006  09:28
+ ;Copyright (C) 1995, Patterson, Gray & Associates, Inc.
+C ;
+DUMP S (CT,CD,AG)="" K ^ZAA02GTSCM($J),TT
+ I T1=5 K SC  S SC("TOTAL")=""
+ S HD="Statistic Dump by "_$P("Provider,Referral,Site,Technologist,Age",",",T1)
+ I DEVICE=1 S %R=1,%C=20 W @ZAA02GP,$J("",49) S %C=82-$L(HD)\2 W @ZAA02GP,ZAA02G("HI"),HD
+ S T1=$P("PROV,REF,$E(SITEC,1,25),TECH,SITEC",",",T1) D RP0
+ D REP1 S TR=LN'=999 D KILL G END^ZAA02GSCMST
+KILL K TT,CT,SI,SC,BM,EM,BD,ED,AG,C,D,CD,T1 Q
+ ;
+RP0 I T1="SITEC" S SC="NA" F Y=BM:1:EM S:$E(Y,5,6)=13 Y=Y+88 S B1=$S(Y=BM:BD,1:1),B2=$S(Y=EM:ED,1:31) F J=1:1 S CT=$O(@ZAA02GSCM@("STATS",Y,"NA",T1,CT)) Q:CT=""  I $D(SC(CT)) S D2=CT D RP1
+ I T1'="SITEC" F SI=1:1:$L(SITEC,",") S SC=$P(SITEC,",",SI) F Y=BM:1:EM S:$E(Y,5,6)=13 Y=Y+88 S B1=$S(Y=BM:BD,1:1),B2=$S(Y=EM:ED,1:31) F J=1:1 S CT=$O(@ZAA02GSCM@("STATS",Y,SC,T1,CT)) Q:CT=""  S D2=CT D RP1
+ ; F SI=1:1:$L(SITEC,",") S SC=$S(T1'="SITEC":$P(SITEC,",",SI),1:"NA") F Y=BM:1:EM S:$E(Y,5,6)=13 Y=Y+88 S B1=$S(Y=BM:BD,1:1),B2=$S(Y=EM:ED,1:31) F J=1:1 S CT=$O(@ZAA02GSCM@("STATS",Y,SC,T1,CT)) Q:CT=""  D RP1
+ Q
+RP1 F J=1:1 S CD=$O(@ZAA02GSCM@("STATS",Y,SC,T1,CT,CD)) Q:CD=""  S D=$G(^ZAA02GTSCM($J,T1,CT,CD)) D RP2 I D]"" S ^ZAA02GTSCM($J,T1,CT,CD)=D
+ Q
+RP2 F J=1:1 S AG=$O(@ZAA02GSCM@("STATS",Y,SC,T1,CT,CD,AG)) Q:AG=""  S J=$S(AG<4:3,AG>7:8,1:AG) S C=^(AG),C="C="_$P(C,"+",B1,B2)_"+0" Q:$L(C)=2  S @C I C S $P(D,"+",J)=$P(D,"+",J)+C
+ Q
+REP1 D REP2
+ Q
+REP2 D:LN>2 NEXT Q:J>900  ; W "Statistics by ",$S(T1="PROV":"Provider",T1="REF":"Referral",T1="TECH","Technologist",1:"Site"),!! S LN=LN+2
+ F J=1:1:900 S CT=$O(^ZAA02GTSCM($J,T1,CT)) Q:CT=""  D REP3
+ Q
+REP3 D:LN+2>LNM NEXT I T1="REF" W $$REFNAME^ZAA02GSCMIF(CT)
+ I T1="PROV" W $$PROVNAM^ZAA02GSCMIF(CT)
+ I T1="SITEC" W $$SITENAM^ZAA02GSCMIF(CT)
+ W ! S LN=LN+2 K TT F J=1:1:900 S CD=$O(^ZAA02GTSCM($J,T1,CT,CD)) Q:CD=""  S C=^(CD) D REP4
+ Q
+REP4 D:LN>LNM NEXT Q:J>900  W ?OFF+3,$E(CD,1,6),?OFF+9 S TT=$G(@ZAA02GSCMD@("DICT",3,$P(CD,","))) I TT["," W " ",$E($G(@ZAA02GSCMD@("DICT",1,+TT)),1,10),"-",$E($P($G(^(+TT,$P(TT,",",2))),"^",2),1,16)
+ S TT=0 W ?OFF+37 F I=3:1:8 W $J(+$P(C,"+",I),6) S TT=TT+$P(C,"+",I)
+ W $J(TT,6),! S LN=LN+1 Q
+ ;
+ ;;
+HEAD S PG=PG+1 I DEVICE=1 S LN=2,%R=3,%C=1 W @ZAA02GP,ZAA02G("CS") S %C=5 W @ZAA02GP,ZAA02G("LO"),"DATES: ",ZAA02G("HI"),BEG," - ",END S %C=40 W @ZAA02GP,ZAA02G("LO"),"SITE: ",ZAA02G("HI"),SITEC S %C=55 W @ZAA02GP,ZAA02G("LO"),"STUDY: ",ZAA02G("HI"),TSU,!!
+ I DEVICE>1 D TOP
+ W ?13+OFF,"Code",?39+OFF,"<40  40-49 50-59 60-69 70-79  80+  Total",!?3+OFF,"---------------------------------- ----- ----- ----- ----- ----- ----- -----",! S LN=LN+2 I CONT'="" W ?OFF,CONT," (cont)",! S LN=LN+1
+ Q
+TOP S LN=5 X:$D(HDRX) HDRX X:$D(B(4))+$D(LC)>1 "F AA=2:1:LC+B(4)*6 W !" W $G(bf),!?OFF,DT S AA=$P($G(@ZAA02GSCR@("PARAM","BASIC")),"|"),C=80-$L(AA) W ?C\2+OFF,AA,?73+OFF,"Page ",PG,! S C=80-$L(HD) W ?C\2+OFF,HD,!
+ S AA="DATES: "_BEG_" - "_END_"  SITE: "_$E(SITEC,1,25)_"  STUDY: "_TS,C=80-$L(AA) W ?C\2+OFF,AA,$G(BDO),!! Q
+ ;
+NEXT I DEVICE=1,PG>0 S %R=24,%C=20 W @ZAA02GP,"Press RETURN to continue - EXIT to quit " R C#1 X ZAA02G("T") S:$E(XX,$F(XX,ZF))="E" J=999 G HEAD:J'=999 Q
+ W:LN'=999 # G HEAD

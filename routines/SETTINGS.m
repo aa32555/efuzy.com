@@ -25,17 +25,17 @@ ROUTES
 	;
 GETSTAFFFROMUSER(EMAIL)
 	I $G(EMAIL)="" Q ""
-	S EMAIL = $ZCVT(EMAIL,"L")
+	S EMAIL=$$ZCVT^SALON(EMAIL,"L")
 	N ACCOUNT
-	S ACCOUNT = $G(^FUZEMAILACC(EMAIL)) 
-	I ACCOUNT = "" Q ""
+	S ACCOUNT=$G(^FUZEMAILACC(EMAIL)) 
+	I ACCOUNT="" Q ""
 	Q $G(^FUZACCOUNTID(ACCOUNT,EMAIL,"DATA","staff","name"))
 	;
 GETSTAFFOPTIONS(EMAIL,O)
 	N A,B,C S A="" F  S A=$O(@%GLOBAL@("STAFF","DATA",A)) Q:A=""  D
 	. S C=$G(C)+1
 	. I $G(@%GLOBAL@("STAFF","DATA",A,"Active"))'="true" Q 
-	. S STAFF = @%GLOBAL@("STAFF","DATA",A,"ID")
+	. S STAFF=@%GLOBAL@("STAFF","DATA",A,"ID")
 	. S @O@("staffOptions",STAFF)="true"
 	Q
 	;	
@@ -45,7 +45,7 @@ getSettings(dd,rr,s)
 	s rr("data","data")=""
 	q
 	N ACCOUNT
-	S ACCOUNT = %ACCOUNT 
+	S ACCOUNT=%ACCOUNT 
 	s @r@("smsPhone")=$G(@%GLOBAL@("SETTINGS","SMS_PHONE"))
 	s @r@("salonTitle")=$G(@%GLOBAL@("SETTINGS","SALON_DETAILS","Name"))
 	s @r@("feedBackText")=$G(@%GLOBAL@("SETTINGS","SALON_DETAILS","FeedbackText"))
@@ -68,7 +68,7 @@ GetStaffDetails(dd,rr,s)
 	n r s r="r"
 	n d m d=dd("data")      
 	S S="",C=0 F  S S=$O(@%GLOBAL@("STAFF","DATA",S)) Q:S=""  D
-	. S STAFF = @%GLOBAL@("STAFF","DATA",S,"ID")
+	. S STAFF=@%GLOBAL@("STAFF","DATA",S,"ID")
 	. S C=C+1
 	. S @r@("staffDetails",C,"id")=@%GLOBAL@("STAFF","DATA",STAFF,"ID")
 	. S @r@("staffDetails",C,"active")=$G(@%GLOBAL@("STAFF","DATA",STAFF,"Active"),"false")
@@ -80,9 +80,9 @@ GETSERVICEOPTIONS(EMAIL,O)
 	N A,B,C,DONE S DONE=0 S A="" F  S A=$O(@%GLOBAL@("INVOICE","DATA",A),-1) Q:A=""  Q:DONE  D
 	. S B="" F  S B=$O(@%GLOBAL@("INVOICE","DATA",A,B),-1) Q:B=""  Q:DONE  D
 	.. ;S C=$G(C)+1 Q:C>1000
-	.. S ID = $ZDTH(@%GLOBAL@("INVOICE","DATA",A,B,"Invoice Date"),3,1)
+	.. S ID=$ZDTH(@%GLOBAL@("INVOICE","DATA",A,B,"Invoice Date"),3,1)
 	.. I (+$H-ID)>360 S DONE=1 Q
-	.. S ITEM = @%GLOBAL@("INVOICE","DATA",A,B,"Item")
+	.. S ITEM=@%GLOBAL@("INVOICE","DATA",A,B,"Item")
 	.. S @O@("crServices",ITEM)="true"
 	Q
 	;

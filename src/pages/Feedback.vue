@@ -114,7 +114,7 @@
                 :key="'reply-'+indx"
               >
                 <q-avatar size="sm">
-                  <img src="..\assets\message.png" />
+                  <img src="message.png" />
                 </q-avatar>&nbsp;
                 <span class="text-caption">{{reply.TIME}}-{{reply.USER}}</span>&nbsp;
                 <span :class="{'text-primary':(reply.TYPE==='R'?true:false),'text-bold':true}">{{reply.MESSAGE}}</span>

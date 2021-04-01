@@ -12,7 +12,8 @@ if (pages && pages.pages) {
     StaffHours: () => import('pages/StaffHours'),
     Calendar: () => import('pages/Calendar/Calendar'),
     ClientRetention: () => import('pages/Client_Retention'),
-    Settings: () => import('pages/Settings.vue')
+    Settings: () => import('pages/Settings.vue'),
+    Feedback: () => import('pages/Feedback.vue')
   }
 
   routes = [
@@ -49,7 +50,7 @@ routes.push({
 })
 routes.push({ path: '/logged_out', component: () => import('pages/Logged_Out.vue'), name: 'logged_out' })
 
-routes.push({ path: '*', component: () => import('pages/LoginPage'), name: 'login' })
+routes.push({ path: '*', component: () => import('pages/LoginPage/LoginPageGo'), name: 'login' })
 // routes.push({
 //   path: '*',
 //  component: () => import('pages/Notallowed.vue')

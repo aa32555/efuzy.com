@@ -1,3 +1,0 @@
-ZAA02GSCMH ;PG&A,ZAA02G-MTS,1.20,HELP MESSAGES;30DEC94 4:14P;;;07DEC95  23:08
-C ;Copyright (C) 1995, Patterson, Gray & Associates, Inc.
- ;

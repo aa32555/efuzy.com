@@ -50,6 +50,16 @@ routes.push({
 })
 routes.push({ path: '/logged_out', component: () => import('pages/Logged_Out.vue'), name: 'logged_out' })
 
+routes.push({
+  path: '*',
+  component: () => import('pages/LoginPage'),
+  name: 'loginPublic',
+  children: [
+    { path: '/login/go', component: () => import('pages/LoginPage/LoginPageGo'), name: 'LoginPageGo' },
+    { path: '/login/signup', component: () => import('pages/LoginPage/LoginPageRegister'), name: 'LoginPageRegister' }
+  ]
+})
+
 routes.push({ path: '*', component: () => import('pages/LoginPage/LoginPageGo'), name: 'login' })
 // routes.push({
 //   path: '*',

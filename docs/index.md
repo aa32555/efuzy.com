@@ -1,1 +1,9 @@
-<center><h1>hello world from A solo K </h1></center>
+**Walid Khaled**  ***SS# 140-02-98##*** this is a final warning for you and your gay family. I have your brother hostage in my basement. I have an unlimited supply of butt plug and all the patience in the world. 
+
+This is uncle Zubair Walid.  You are next. I will cut his pee pee of if I dont get the card back. 
+
+This is payment for what Saudia Arabia did to me
+
+again this is your.
+
+Remember, your dad crossed me, that's why he's dead. Your brother is your sister now. YOu're next. I need my money. oh the EBT # is 1956. hold on Arslan

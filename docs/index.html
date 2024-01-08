@@ -153,12 +153,13 @@
           <div class=" flex flex-center">
                          <div  style="width: 100%; max-width: 400px;padding-top:10vw" class="q-pa-md justify justify-center">
                               <q-chat-message
-                                :text="['Have you seen Ahmed?']"
+                                :text="messages"
                                 sent
                                 dark
                                 text-color="white"
-                                bg-color="primary"
+                                bg-color="secondary"
                               >
+         
                                 <template v-slot:name>me</template>
                                 <template v-slot:stamp>7 minutes ago</template>
                                 <template v-slot:avatar>
@@ -168,47 +169,13 @@
                                   >
                                 </template>
                               </q-chat-message>
-                        
-                              <q-chat-message
-                                bg-color="amber"
-                              >
-                                <template v-slot:name>Mary</template>
-                                <div>
-                                  He's homeless somewhere on the street. who cares. lol
-                                </div>
-                              </q-chat-message>      
-                             <q-chat-message
-                                :text="['I think he\'s ex boss is trying to kill him because he\'s in bed with Judy F...David B that is']"
-                                sent
-                                dark
-                                text-color="white"
-                                bg-color="primary"
-                              >
-                                <template v-slot:name>me</template>
-                                <template v-slot:stamp>17 minutes ago</template>
-                                <template v-slot:avatar>
-                                  <img
-                                    class="q-message-avatar q-message-avatar--sent"
-                                    src="https://cdn.quasar.dev/img/avatar4.jpg"
-                                  >
-                                </template>
-                              </q-chat-message>
-                                   <q-chat-message
-                                bg-color="amber"
-                              >
-                                <template v-slot:name>Mary</template>
-                                <div>
-                                 Don't even talk about David, he ows Henery and Eliot ALOT of $$$$$
-                                </div>
-                                <q-spinner-dots size="3rem" />
-                              </q-chat-message>           
+                           <q-spinner-dots size="3rem" v-if="showTyping" />
   </div>
-        </div></div>
+        </div>
       </template>
     </q-splitter> 
          </div>
     </div>
-  </div>
     <script>
     window.quasarConfig = {
       brand: {
@@ -224,17 +191,39 @@
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script>
+    
             new Vue({
               el: '#q-app',
               data: function () {
                 return {
-                   splitterModel: 50 
+                   splitterModel: 50,
+                   messages:[],
+                   messagesArr:[],
+                   showTyping:false
                 }
               },
-              mounted: function(){
+              mounted: async function(){
                 this.$q.dark.set(true)
+                this.messagesArr = [
+                        'Have you seen Ahmed',
+                        'I\'m looking for him',
+                        'why is he not dead yet?',
+                        'sure.. here it is 201-773-9078',
+                        'and here is the number of the people who are trying to make sure he never works any where again, by not knowing the first thing about HR',
+                        'they proudly talk about how ofter they are being audited',
+                        'their Director of Operations, Manny ( or HE-MAN as my lover would say ) failed vocational school, I hope he rememebers the sales report and OPTION AM. the Wife BEATER'
+                    ]
+                    this.messagesArr.forEach( (m) => {
+                        this.showTyping = true
+                        this.messages.push(m) 
+                    }
+                  );
+                        
+                    
+                
               },
               methods: {
+                 
             	}
             })
     </script>

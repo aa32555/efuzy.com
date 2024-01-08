@@ -13,19 +13,13 @@
          <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
    <q-splitter
       v-model="splitterModel"
-      style="height: calc(100vh-600px)"
+      style="height: calc(100vh-200px);width:caLC(100vw-50PX);"
+      class="q-pa-sm"
     >
       <template v-slot:before>
-        <div class="q-pa-md">
-      
+        <div class="q-pa-sm flex flex-center">
           <!--- befor -->
-            <div class="q-pa-md col-auto">
-                <lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="1" style="width: 100%; height: 400px" loop autoplay></lottie-player>
-             </div>
-
-          <!-- (1) -->
-
-               <q-card syle="width:auto;height:auto">
+                        <q-card style="background-color:white;width:400px;height:350px">
            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                  width="300.000000pt" height="272.000000pt" viewBox="0 0 300.000000 272.000000"
                  preserveAspectRatio="xMidYMid meet">
@@ -146,14 +140,18 @@
                 110 -8 7 -41 67 -41 74 0 8 14 8 34 0z"/>
                 </g>
                 </svg>  </q-card>
-
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/BdRVduf7Ylk?si=urLmJBqqj2gHgqgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        
+            <div class="q-pa-sm">
+                <lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="1" loop autoplay></lottie-player>
+             </div>
+          <!-- (1) -->
+     
+               <iframe src="https://www.youtube.com/embed/BdRVduf7Ylk?si=urLmJBqqj2gHgqgs" width="560" height="315"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;   web-share" allowfullscreen></iframe>        
         </div>
       </template>
       <template v-slot:after>
-        <div class="q-pa-md">    
           <!-- after -->
-                         <div class="q-pa-md row" style="width: 100%; max-width: 400px">
+          <div class=" flex flex-center">
+                         <div  style="width: 100%; max-width: 400px;padding-top:10vw" class="q-pa-md justify justify-center">
                               <q-chat-message
                                 :text="['Have you seen Ahmed?']"
                                 sent
@@ -205,7 +203,7 @@
                                 <q-spinner-dots size="3rem" />
                               </q-chat-message>           
   </div>
-        </div>
+        </div></div>
       </template>
     </q-splitter> 
          </div>
@@ -230,7 +228,7 @@
               el: '#q-app',
               data: function () {
                 return {
-                   splitterModel: 75 
+                   splitterModel: 50 
                 }
               },
               mounted: function(){

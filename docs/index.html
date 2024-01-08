@@ -16,9 +16,17 @@
        <!-- <q-btn color="primary" icon="warning" label="Notify" @click="notify" class="q-ma-md"></q-btn> -->
   <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
 
-   <div class="q-pa-md row "> <!-- justify-center -->
+   <div class="q-pa-md row ">
+     <div class="q-pa-md col">
+   <dotlottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="1" style="width: 800px; height: 100px" direction="1" mode="normal" loop autoplay></dotlottie-player>
+     </div>
+     
+   </div>
 
 
+    
+    <div claa="q-pa-md row> 
+       <div class="q-pa-md col">
      <div id="logo">
      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="300.000000pt" height="272.000000pt" viewBox="0 0 300.000000 272.000000"
@@ -141,12 +149,13 @@ l150 0 0 -24z"/>
 </g>
 </svg>
      </div>
-
+     </div>
+ <div class="q-pa-md col">
      
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BdRVduf7Ylk?si=urLmJBqqj2gHgqgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
+ </div> </div>
 
-  <div class="q-pa-md row justify-center">
+  <div class="q-pa-md col">
 
     <div style="width: 100%; max-width: 800px">
       <q-chat-message
@@ -194,6 +203,7 @@ l150 0 0 -24z"/>
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.ie.polyfills.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     <script>
             new Vue({
               el: '#q-app',

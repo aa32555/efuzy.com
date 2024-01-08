@@ -23,7 +23,7 @@
 
            <div class="q-pa-md row ">
              <div class="q-pa-md col-9">
-                <lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="0.75" style="width: 100%; height: 800px" loop autoplay></lottie-player>
+                <lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="0.75" style="width: 100%; height: 200px" loop autoplay></lottie-player>
              </div>
            </div>
            
@@ -31,6 +31,14 @@
    
     <div class="q-pa-md row"> 
        <div class="q-pa-md col-9">
+         <q-card dark>
+      <q-card-section>
+        <div class="text-h6">www.efuzy.com</div>
+        <div class="text-subtitle2">coming soon....</div>
+      </q-card-section>
+
+      <q-separator dark inset />
+
                      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                  width="300.000000pt" height="272.000000pt" viewBox="0 0 300.000000 272.000000"
                  preserveAspectRatio="xMidYMid meet">
@@ -151,6 +159,7 @@
                 110 -8 7 -41 67 -41 74 0 8 14 8 34 0z"/>
                 </g>
                 </svg>
+                           </q-card>
          </div>
          </div>
           <div class="q-pa-md row">
@@ -161,8 +170,6 @@
                          
          </div>
 
-
-   
    <div class="q-pa-md row">
               <div class="q-pa-md col-12">
       <q-chat-message
@@ -196,7 +203,7 @@
 
 
      <q-chat-message
-        :text="['I think he's ex boss is trying to kill him because he's attracted to Judy F A$$HOLE...David B that is']"
+        :text="['I think he\'s ex boss is trying to kill him because he\'s in bed with Judy F...David B that is']"
         sent
         dark
         text-color="white"
@@ -243,7 +250,7 @@
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.ie.polyfills.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
-     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script>
             new Vue({
               el: '#q-app',
@@ -256,9 +263,6 @@
                 this.$q.dark.set(true)
               },
               methods: {
-              	notify: function () {
-                  this.$q.notify('Running on Quasar v' + this.$q.version)
-                }
             	}
             })
     </script>

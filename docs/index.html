@@ -1,91 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <!--
-    WARNING! Make sure that you match all Quasar related
-    tags to the same version! (Below it's "@1.22.10")
-  -->
   <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.min.css" rel="stylesheet" type="text/css">
-   
-
   </head>
   <body>
  <div id="q-app">
        <!-- <q-btn color="primary" icon="warning" label="Notify" @click="notify" class="q-ma-md"></q-btn> -->
          <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
-
-
-
-
-
-
    <q-splitter
       v-model="splitterModel"
       style="height: calc(100vh-400px)"
     >
-
       <template v-slot:before>
         <div class="q-pa-md">
           <div class="text-h4 q-mb-md">Before</div>
           <div v-for="n in 20" :key="n" class="q-my-md">{{ n }}. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</div>
         </div>
       </template>
-
       <template v-slot:after>
         <div class="q-pa-md">
           <div class="text-h4 q-mb-md">After</div>
           <div v-for="n in 20" :key="n" class="q-my-md">{{ n }}. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</div>
         </div>
       </template>
-
-    </q-splitter>
-
-
-
-           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-           
-
+    </q-splitter> 
            <div class="q-pa-md row ">
              <div class="q-pa-md col-9">
                 <lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="0.75" style="width: 100%; height: 200px" loop autoplay></lottie-player>
              </div>
            </div>
-           
-   
-   
     <div class="q-pa-md row"> 
-       <div class="q-pa-md col-9">
-         <q-card dark>
-      <q-card-section>
-        <div class="text-h6">www.efuzy.com</div>
-        <div class="text-subtitle2">coming soon....</div>
-      </q-card-section>
-
-      <q-separator dark inset />
-
-                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+         <q-card dark syle="width:600px;height:600px">
+          <div class="q-pa-md col-9"> <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                  width="300.000000pt" height="272.000000pt" viewBox="0 0 300.000000 272.000000"
                  preserveAspectRatio="xMidYMid meet">
                 <g transform="translate(0.000000,272.000000) scale(0.100000,-0.100000)"
@@ -204,18 +154,14 @@
                 -98 -1 -105 -20 -105 -19 0 -20 7 -20 103 l0 102 -62 105 c-34 58 -64 107 -67
                 110 -8 7 -41 67 -41 74 0 8 14 8 34 0z"/>
                 </g>
-                </svg>
-                           </q-card>
-         </div>
-         </div>
+                </svg>  </div>  </q-card> </div>
+
           <div class="q-pa-md row">
                          <div class="q-pa-md col-9">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/BdRVduf7Ylk?si=urLmJBqqj2gHgqgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                          </div> 
              </div>
-                         
          </div>
-
    <div class="q-pa-md row">
               <div class="q-pa-md col-12">
       <q-chat-message

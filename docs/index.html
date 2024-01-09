@@ -154,20 +154,14 @@
                          <div  style="width: 100%; max-width: 400px;padding-top:10vw" class="q-pa-md justify justify-center">
                               <q-chat-message
                                 :text="messages"
-                                sent
+         :avatar="messageDirection===true?'https://cdn.quasar.dev/img/avatar2.jpg':'https://cdn.quasar.dev/img/avatar3.jpg'"
                                 dark
                                 text-color="white"
-                                bg-color="secondary"
+                                :stamp="Date().toLocaleString()"
+                                :text-color="messageDirection===true?'white':'black'"
+                                :bg-color="messageDirection===true?'primary':'amber-7'"
+                                :sent="messageDirection===true?true:false"
                               >
-         
-                                <template v-slot:name>me</template>
-                                <template v-slot:stamp>7 minutes ago</template>
-                                <template v-slot:avatar>
-                                  <img
-                                    class="q-message-avatar q-message-avatar--sent"
-                                    src="https://cdn.quasar.dev/img/avatar4.jpg"
-                                  >
-                                </template>
                               </q-chat-message>
                            <q-spinner-dots size="3rem" v-if="showTyping" />
   </div>
@@ -198,13 +192,10 @@
                 return {
                    splitterModel: 50,
                    messages:[],
-                   messagesArr:[],
-                   showTyping:false
-                }
-              },
-              mounted: async function(){
-                this.$q.dark.set(true)
-                this.messagesArr = [
+                   showTyping:false,
+                   messageNumber: -1,
+                   messageDirection:false,
+                   messagesArr : [
                         'Have you seen Ahmed',
                         'I\'m looking for him',
                         'why is he not dead yet?',
@@ -213,17 +204,47 @@
                         'they proudly talk about how ofter they are being audited',
                         'their Director of Operations, Manny ( or HE-MAN as my lover would say ) failed vocational school, I hope he rememebers the sales report and OPTION AM. the Wife BEATER'
                     ]
-                    this.messagesArr.forEach( (m) => {
-                        this.showTyping = true
-                        this.messages.push(m) 
+                }
+              },
+              mounted: function(){
+                this.$q.dark.set(true)
+                let _vm = this;
+                _vm.showTyping = true
+                setTimeout(function(){
+                    _vm.showMessage()
+                     _vm.showTyping = false
+                }, 2500);
+    
+                
+                
+                /**
+                
+                                    function move() {
+                      const element = document.getElementById("myBar");
+                      let width = 0;
+                      const id = setInterval(frame, 100);
+                      function frame() {
+                        if (width == 100) {
+                          clearInterval(id);
+                        } else {
+                          width++;
+                          element.style.width = width + '%';
+                        }
+                      }
                     }
-                  );
-                        
-                    
+                
+                */
+                
+                
+                
+                
                 
               },
               methods: {
-                 
+                 showMessage: function(){
+                    this.messageNumber = this.messageNumber + 1
+                    this.messages.push(this.messagesArr[this.messageNumber])
+                 }
             	}
             })
     </script>

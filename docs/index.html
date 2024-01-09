@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.min.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
- <div id="q-app">
-       <!-- <q-btn color="primary" icon="warning" label="Notify" @click="notify" class="q-ma-md"></q-btn> -->
-         <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
-   <q-splitter
-      v-model="splitterModel"
-      style="height: calc(100vh-200px);width:caLC(100vw-50PX);"
-      class="q-pa-sm"
-    >
-      <template v-slot:before>
+</head>
+
+<body>
+    <div id="q-app">
+        <!-- <q-btn color="primary" icon="warning" label="Notify" @click="notify" class="q-ma-md"></q-btn> -->
+        <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
+            <q-splitter v-model="splitterModel" style="height: calc(100vh-200px);width:caLC(100vw-50PX);" class="q-pa-sm">
+                <template v-slot:before>
         <div class="q-pa-sm flex flex-center">
           <!--- befor -->
                         <q-card style="background-color:white;width:400px;height:350px">
@@ -148,7 +146,7 @@
                <iframe src="https://www.youtube.com/embed/BdRVduf7Ylk?si=urLmJBqqj2gHgqgs" width="560" height="315"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;   web-share" allowfullscreen></iframe>        
         </div>
       </template>
-      <template v-slot:after>
+                <template v-slot:after>
           <!-- after -->
           <div class=" flex flex-center">
                          <div  style="width: 100%; max-width: 400px;padding-top:10vw" class="q-pa-md justify justify-center">
@@ -164,89 +162,156 @@
                               >
                               </q-chat-message>
                            <q-spinner-dots size="3rem" v-if="showTyping" />
-  </div>
+                           
+                                 <q-chat-message
+                                 v-if="showReply"
+        bg-color="amber"
+      >
+        <template v-slot:name>Mary</template>
+                <template v-slot:avatar>
+          <img
+            class="q-message-avatar q-message-avatar--received"
+            src="https://cdn.quasar.dev/img/avatar2.jpg"
+          >
+        </template>
+
+                <div>
+                    Already building an app with it...
+                    <img src="https://cdn.quasar.dev/img/discord-qeart.png" class="my-emoji">
+                </div>
+
+                <q-spinner-dots size="2rem" />
+                </q-chat-message>
         </div>
-      </template>
-    </q-splitter> 
-         </div>
+    </div>
+    </template>
+    </q-splitter>
+    </div>
     </div>
     <script>
-    window.quasarConfig = {
-      brand: {
-        primary: '#e46262',
-      },
-      notify: {}, 
-      loading: {},
-      loadingBar: {},
-    }
+        window.quasarConfig = {
+            brand: {
+                primary: '#e46262',
+            },
+            notify: {},
+            loading: {},
+            loadingBar: {},
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.ie.polyfills.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script>
-    
-            new Vue({
-              el: '#q-app',
-              data: function () {
+        new Vue({
+            el: '#q-app',
+            data: function() {
                 return {
-                   splitterModel: 50,
-                   messages:[],
-                   showTyping:false,
-                   messageNumber: -1,
-                   messageDirection:false,
-                   messagesArr : [
-                        'Have you seen Ahmed',
+                    splitterModel: 50,
+                    messages: [],
+                    showTyping: false,
+                    messageNumber: -1,
+                    messageDirection: false,
+                    showReply: false,
+                    messagesArr: [
+                        'Have you seen Ahmed??',
                         'I\'m looking for him',
                         'why is he not dead yet?',
-                        'sure.. here it is 201-773-9078',
+                        'here is phone number: 201-737-9078...HELLO IS ANYONE HERE???',
                         'and here is the number of the people who are trying to make sure he never works any where again, by not knowing the first thing about HR',
                         'they proudly talk about how ofter they are being audited',
-                        'their Director of Operations, Manny ( or HE-MAN as my lover would say ) failed vocational school, I hope he rememebers the sales report and OPTION AM. the Wife BEATER'
+                        'their Director of Operations, Manny ( or HE-MAN as my lover would say ) failed vocational school, I hope he rememebers the sales report and OPTION AM. the Wife BEATER',
+                        'Hello?...Is anyonethere'
                     ]
                 }
-              },
-              mounted: function(){
+            },
+            mounted: function() {
                 this.$q.dark.set(true)
                 let _vm = this;
                 _vm.showTyping = true
-                setTimeout(function(){
+                setTimeout(function() {
                     _vm.showMessage()
-                     _vm.showTyping = false
-                }, 2500);
-    
-                
-                
-                /**
-                
-                                    function move() {
-                      const element = document.getElementById("myBar");
-                      let width = 0;
-                      const id = setInterval(frame, 100);
-                      function frame() {
-                        if (width == 100) {
-                          clearInterval(id);
-                        } else {
-                          width++;
-                          element.style.width = width + '%';
-                        }
-                      }
-                    }
-                
-                */
-                
-                
-                
-                
-                
-              },
-              methods: {
-                 showMessage: function(){
+                    _vm.showTyping = false
+                }, 1000);
+
+                setTimeout(function() {
+                    _vm.showTyping = true
+                }, 3000);
+
+
+
+
+                setTimeout(function() {
+
+                    _vm.showMessage()
+                    _vm.showTyping = false
+                }, 4000);
+
+                setTimeout(function() {
+                    _vm.showTyping = true
+                }, 6000);
+
+
+
+                setTimeout(function() {
+                    _vm.showMessage()
+                    _vm.showTyping = false
+                }, 7000);
+
+                setTimeout(function() {
+                    _vm.showTyping = true
+                }, 8000);
+
+
+
+                setTimeout(function() {
+                    _vm.showMessage()
+                    _vm.showTyping = false
+                }, 9000);
+
+
+                setTimeout(function() {
+                    _vm.showTyping = true
+                }, 10000);
+
+                setTimeout(function() {
+                    _vm.showMessage()
+                    _vm.showTyping = false
+                }, 11000);
+
+                setTimeout(function() {
+                    _vm.showTyping = true
+                }, 12000);
+
+                setTimeout(function() {
+                    _vm.showMessage()
+                    _vm.showTyping = false
+                }, 13000);
+
+                setTimeout(function() {
+                    _vm.showTyping = true
+                }, 14000);
+
+                setTimeout(function() {
+                    _vm.showMessage()
+                    _vm.showTyping = false
+                }, 15000);
+
+
+                _vm.showTyping = true
+                _vm.showReply = true;
+
+
+
+            },
+            methods: {
+                showMessage: function() {
                     this.messageNumber = this.messageNumber + 1
                     this.messages.push(this.messagesArr[this.messageNumber])
-                 }
-            	}
-            })
+                }
+            }
+        })
     </script>
-  </body>
+</body>
+
 </html>

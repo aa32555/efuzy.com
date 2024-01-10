@@ -16,7 +16,7 @@
             <div class="q-pa-sm">
                 <lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="1" loop autoplay></lottie-player>
             </div>
-            <div class="q-pa-sm flex flex-center">
+            <div class="q-pa-sm flex">
                 <!--- befor -->
 
                 <div class="q-pa-sm" v-if="false">
@@ -36,72 +36,9 @@
             </div>
             <div class="q-pa-md row justify-center">
                 <div :style="'width: 100%; max-width: 400px'">
-                    <q-chat-message :text="messages" :avatar="messageDirection===true?'https://cdn.quasar.dev/img/avatar2.jpg':'https://cdn.quasar.dev/img/avatar3.jpg'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="messageDirection===true?true:false" :bg-color="messageDirection===true?'black':'primary'" :text-color="messageDirection===true?'white':'white'" :size="6">
+                    <q-chat-message :text="messages" :avatar="messageDirection===true?'https://cdn.quasar.dev/img/avatar2.jpg':'https://cdn.quasar.dev/img/avatar3.jpg'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="messageDirection===true?true:false" :bg-color="messageDirection===true?'black':'primary'" :text-color="messageDirection===true?'white':'white'">
                     </q-chat-message>
                     <q-spinner-dots size="3rem" v-show="showTyping" />
-                    <q-chat-message :text="messagesBack" :avatar="messageDirection===false?'https://cdn.quasar.dev/img/avatar2.jpg':'https://cdn.quasar.dev/img/avatar3.jpg'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="messageDirection===false?true:false" :bg-color="messageDirection===false?'black':'primary'" :text-color="messageDirection===false?'white':'white'" :size="6">
-                    </q-chat-message>
-                    <q-spinner-dots size="3rem" v-show="showTyping" />
-
-
-                    <q-input class="vertical-bottom" v-model="chatText" filled type="textarea">
-                        <template v-slot:hint>Type something...</template>
-
-                        <template v-slot:after class="vertical-bottom">
-                    <q-btn
-                      round
-                      dense
-                      flat
-                      icon="send"
-                      @click="sendFeedbackTextMessage"
-                    />
-                  </template>
-                    </q-input>
-
-
-
-
-                    <!--              
-           <div class="q-pa-md row justify-center">
-              <div :style="'width: 100%; max-width: 400px;'+(this.$q.platform.is.mobile?'overflow-y:scroll;':'')">
-                <q-chat-message
-                  v-for="(message,index) in currentInvoiceDetails.invoiceMessages"
-                  :key="'M'+index"
-                  :text="[message.MESSAGE]"
-                  :sent="message.TYPE==='R'?true:false"
-                  :name="message.USER"
-                  :stamp="message.TIME"
-                  :bg-color="message.TYPE==='S'?'black':'primary'"
-                  :text-color="message.TYPE==='S'?'white':'white'"
-                />
-                <br />
-                <br />
-                <q-input
-                  class="vertical-bottom"
-                  v-model="chatText"
-                  filled
-                  type="textarea"
-                >
-                  <template v-slot:hint>Type something...</template>
-
-                <template v-slot:after class="vertical-bottom">
-                    <q-btn
-                      round
-                      dense
-                      flat
-                      icon="send"
-                      @click="sendFeedbackTextMessage"
-                    />
-                  </template>
-                </q-input>
-        </div>
-    </div>
-    -->
-
-
-
-
-
                 </div>
             </div>
             </template>
@@ -260,7 +197,6 @@
                     messageNumber: -1,
                     messageDirection: true,
                     showReply: false,
-                    messagesBack: [],
                     messagesArr: [
                         'Have you seen Ahmed??',
                         'I\'m looking for him',
@@ -269,7 +205,10 @@
                         'and here is the number of the people who are trying to make sure he never works any where again, by not knowing the first thing about HR',
                         'they proudly talk about how ofter they are being audited',
                         'their Director of Operations, Manny ( or HE-MAN as my lover would say ) failed vocational school, I hope he rememebers the sales report and OPTION AM. the Wife BEATER',
-                        'Hello?...Is anyonethere'
+                        'يا اطبطب يا ادلع',
+                        'يا يقولي انا اتغيرت عليه',
+                        'و انا ازعل اولع'
+
                     ]
                 }
             },
@@ -349,14 +288,24 @@
                 }, 35000);
 
                 setTimeout(function() {
+                    _vm.showMessage()
+                    _vm.showTyping = false
+                }, 36000);
+
+
+                setTimeout(function() {
+                    _vm.showMessage()
+                    _vm.showTyping = false
+                }, 38000);
+
+                setTimeout(function() {
+                    _vm.showMessage()
+                    _vm.showTyping = false
+                }, 39000);
+
+                setTimeout(function() {
                     _vm.showTyping = true
-                    _vm.showReply = true;
-                    _vm.messageDirection = true;
-                }, 37000);
-
-
-
-
+                }, 40000);
 
             },
             methods: {

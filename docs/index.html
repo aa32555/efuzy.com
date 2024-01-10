@@ -11,16 +11,105 @@
 
 <body>
     <div id="q-app">
-        <!-- <q-btn color="primary" icon="warning" label="Notify" @click="notify" class="q-ma-md"></q-btn> -->
         <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
-            <q-splitter v-model="splitterModel" style="height: calc(100vh-200px);width:caLC(100vw-50PX);" class="q-pa-sm">
-                <template v-slot:before>
-        <div class="q-pa-sm flex flex-center">
-          <!--- befor -->
-                        <q-card style="background-color:white;width:400px;height:350px">
-           <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                 width="300.000000pt" height="272.000000pt" viewBox="0 0 300.000000 272.000000"
-                 preserveAspectRatio="xMidYMid meet">
+
+            <div class="q-pa-sm">
+                <lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            </div>
+            <div class="q-pa-sm flex flex-center">
+                <!--- befor -->
+
+                <div class="q-pa-sm" v-if="false">
+                    <lottie-player src="   https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/loading-scissors.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                </div>
+
+                <div class="q-pa-sm" v-if="false">
+                    <lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                </div>
+
+
+                <!-- (1) 
+       
+          -->
+
+                <iframe src="https://www.youtube.com/embed/BdRVduf7Ylk?si=urLmJBqqj2gHgqgs" width="280" height="155" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;   web-share" allowfullscreen></iframe>
+            </div>
+            <div class="q-pa-md row justify-center">
+                <div :style="'width: 100%; max-width: 400px'">
+                    <q-chat-message :text="messages" :avatar="messageDirection===true?'https://cdn.quasar.dev/img/avatar2.jpg':'https://cdn.quasar.dev/img/avatar3.jpg'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="messageDirection===true?true:false" :bg-color="messageDirection===true?'black':'primary'" :text-color="messageDirection===true?'white':'white'" :size="6">
+                    </q-chat-message>
+                    <q-spinner-dots size="3rem" v-show="showTyping" />
+                    <q-chat-message :text="messagesBack" :avatar="messageDirection===false?'https://cdn.quasar.dev/img/avatar2.jpg':'https://cdn.quasar.dev/img/avatar3.jpg'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="messageDirection===false?true:false" :bg-color="messageDirection===false?'black':'primary'" :text-color="messageDirection===false?'white':'white'" :size="6">
+                    </q-chat-message>
+                    <q-spinner-dots size="3rem" v-show="showTyping" />
+
+
+                    <q-input class="vertical-bottom" v-model="chatText" filled type="textarea">
+                        <template v-slot:hint>Type something...</template>
+
+                        <template v-slot:after class="vertical-bottom">
+                    <q-btn
+                      round
+                      dense
+                      flat
+                      icon="send"
+                      @click="sendFeedbackTextMessage"
+                    />
+                  </template>
+                    </q-input>
+
+
+
+
+                    <!--              
+           <div class="q-pa-md row justify-center">
+              <div :style="'width: 100%; max-width: 400px;'+(this.$q.platform.is.mobile?'overflow-y:scroll;':'')">
+                <q-chat-message
+                  v-for="(message,index) in currentInvoiceDetails.invoiceMessages"
+                  :key="'M'+index"
+                  :text="[message.MESSAGE]"
+                  :sent="message.TYPE==='R'?true:false"
+                  :name="message.USER"
+                  :stamp="message.TIME"
+                  :bg-color="message.TYPE==='S'?'black':'primary'"
+                  :text-color="message.TYPE==='S'?'white':'white'"
+                />
+                <br />
+                <br />
+                <q-input
+                  class="vertical-bottom"
+                  v-model="chatText"
+                  filled
+                  type="textarea"
+                >
+                  <template v-slot:hint>Type something...</template>
+
+                <template v-slot:after class="vertical-bottom">
+                    <q-btn
+                      round
+                      dense
+                      flat
+                      icon="send"
+                      @click="sendFeedbackTextMessage"
+                    />
+                  </template>
+                </q-input>
+        </div>
+    </div>
+    -->
+
+
+
+
+
+                </div>
+            </div>
+            </template>
+            </q-splitter>
+
+
+            <q-card style="background-color:inherit;width:397px;height:350px">
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="300.000000pt" height="272.000000pt" viewBox="0 0 300.000000 272.000000" preserveAspectRatio="xMidYMid meet">
                 <g transform="translate(0.000000,272.000000) scale(0.100000,-0.100000)"
                 fill="#000000" stroke="none">
                 <path d="M921 2693 c-18 -9 -42 -31 -52 -47 -18 -29 -19 -61 -19 -556 0 -503
@@ -137,65 +226,22 @@
                 -98 -1 -105 -20 -105 -19 0 -20 7 -20 103 l0 102 -62 105 c-34 58 -64 107 -67
                 110 -8 7 -41 67 -41 74 0 8 14 8 34 0z"/>
                 </g>
-                </svg>  </q-card>
-            <div class="q-pa-sm">
-                <lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="1" loop autoplay></lottie-player>
-             </div>
-          <!-- (1) -->
-     
-               <iframe src="https://www.youtube.com/embed/BdRVduf7Ylk?si=urLmJBqqj2gHgqgs" width="560" height="315"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;   web-share" allowfullscreen></iframe>        
-        </div>
-      </template>
-                <template v-slot:after>
-          <!-- after -->
-          <div class=" flex flex-center">
-                         <div  style="width: 100%; max-width: 400px;padding-top:10vw" class="q-pa-md justify justify-center">
-                              <q-chat-message
-                                :text="messages"
-         :avatar="messageDirection===true?'https://cdn.quasar.dev/img/avatar2.jpg':'https://cdn.quasar.dev/img/avatar3.jpg'"
-                                dark
-                                text-color="white"
-                                :stamp="Date().toLocaleString()"
-                                :text-color="messageDirection===true?'white':'black'"
-                                :bg-color="messageDirection===true?'primary':'amber-7'"
-                                :sent="messageDirection===true?true:false"
-                              >
-                              </q-chat-message>
-                           <q-spinner-dots size="3rem" v-if="showTyping" />
-                           
-                                 <q-chat-message
-                                 v-if="showReply"
-        bg-color="amber"
-      >
-        <template v-slot:name>Mary</template>
-                <template v-slot:avatar>
-          <img
-            class="q-message-avatar q-message-avatar--received"
-            src="https://cdn.quasar.dev/img/avatar2.jpg"
-          >
-        </template>
+                </svg> </q-card>
 
-                <div>
-                    Already building an app with it...
-                    <img src="https://cdn.quasar.dev/img/discord-qeart.png" class="my-emoji">
-                </div>
 
-                <q-spinner-dots size="2rem" />
-                </q-chat-message>
+
+
         </div>
-    </div>
-    </template>
-    </q-splitter>
-    </div>
     </div>
     <script>
+        // optional
         window.quasarConfig = {
-            brand: {
-                primary: '#e46262',
-            },
-            notify: {},
-            loading: {},
-            loadingBar: {},
+            notify: {}, // default set of options for Notify Quasar plugin
+            loading: {}, // default set of options for Loading Quasar plugin
+            loadingBar: {}, // settings for LoadingBar Quasar plugin
+            Fullscreen: {
+
+            }
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.ie.polyfills.umd.min.js"></script>
@@ -207,12 +253,14 @@
             el: '#q-app',
             data: function() {
                 return {
+                    chatText: '',
                     splitterModel: 50,
                     messages: [],
                     showTyping: false,
                     messageNumber: -1,
-                    messageDirection: false,
+                    messageDirection: true,
                     showReply: false,
+                    messagesBack: [],
                     messagesArr: [
                         'Have you seen Ahmed??',
                         'I\'m looking for him',
@@ -227,79 +275,86 @@
             },
             mounted: function() {
                 this.$q.dark.set(true)
+                //    Quasar.Notify.create('Hi and welcome!')
+                //  Quasar.plugins.bottomSheet.create({...})
+                //
                 let _vm = this;
                 _vm.showTyping = true
                 setTimeout(function() {
                     _vm.showMessage()
                     _vm.showTyping = false
-                }, 1000);
-
-                setTimeout(function() {
-                    _vm.showTyping = true
                 }, 3000);
 
-
-
-
-                setTimeout(function() {
-
-                    _vm.showMessage()
-                    _vm.showTyping = false
-                }, 4000);
-
                 setTimeout(function() {
                     _vm.showTyping = true
-                }, 6000);
+                }, 5000);
 
-
-
-                setTimeout(function() {
-                    _vm.showMessage()
-                    _vm.showTyping = false
-                }, 7000);
-
-                setTimeout(function() {
-                    _vm.showTyping = true
-                }, 8000);
 
 
 
                 setTimeout(function() {
+
                     _vm.showMessage()
                     _vm.showTyping = false
                 }, 9000);
 
-
                 setTimeout(function() {
                     _vm.showTyping = true
-                }, 10000);
-
-                setTimeout(function() {
-                    _vm.showMessage()
-                    _vm.showTyping = false
-                }, 11000);
-
-                setTimeout(function() {
-                    _vm.showTyping = true
-                }, 12000);
-
-                setTimeout(function() {
-                    _vm.showMessage()
-                    _vm.showTyping = false
                 }, 13000);
 
-                setTimeout(function() {
-                    _vm.showTyping = true
-                }, 14000);
+
 
                 setTimeout(function() {
                     _vm.showMessage()
                     _vm.showTyping = false
-                }, 15000);
+                }, 17000);
+
+                setTimeout(function() {
+                    _vm.showTyping = true
+                }, 18000);
 
 
-                _vm.showTyping = true
-                _vm.showReply = true;
+
+                setTimeout(function() {
+                    _vm.showMessage()
+                    _vm.showTyping = false
+                }, 24600);
+
+
+                setTimeout(function() {
+                    _vm.showTyping = true
+                }, 30000);
+
+                setTimeout(function() {
+                    _vm.showMessage()
+                    _vm.showTyping = false
+                }, 31000);
+
+                setTimeout(function() {
+                    _vm.showTyping = true
+                }, 32000);
+
+                setTimeout(function() {
+                    _vm.showMessage()
+                    _vm.showTyping = false
+                }, 33000);
+
+                setTimeout(function() {
+                    _vm.showTyping = true
+                }, 34000);
+
+                setTimeout(function() {
+                    _vm.showMessage()
+                    _vm.showTyping = false
+                }, 35000);
+
+                setTimeout(function() {
+                    _vm.showTyping = true
+                    _vm.showReply = true;
+                    _vm.messageDirection = true;
+                }, 37000);
+
+
 
 
 
@@ -308,6 +363,9 @@
                 showMessage: function() {
                     this.messageNumber = this.messageNumber + 1
                     this.messages.push(this.messagesArr[this.messageNumber])
+                },
+                sendFeedbackTextMessage: function() {
+
                 }
             }
         })

@@ -14,25 +14,10 @@
         <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
 
             <div class="q-pa-sm">
-                <lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                <lottie-player :key="lottiekey" src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" :speed="staticlottie?1.5:speed" loop autoplay></lottie-player>
             </div>
-            <div class="q-pa-sm flex">
-                <!--- befor -->
-
-                <div class="q-pa-sm" v-if="false">
-                    <lottie-player src="   https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/loading-scissors.json" background="transparent" speed="1" loop autoplay></lottie-player>
-                </div>
-
-                <div class="q-pa-sm" v-if="false">
-                    <lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="1" loop autoplay></lottie-player>
-                </div>
-
-
-                <!-- (1) 
-       
-          -->
-
-                <iframe src="https://www.youtube.com/embed/BdRVduf7Ylk?si=urLmJBqqj2gHgqgs" width="280" height="155" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;   web-share" allowfullscreen></iframe>
+            <div class="q-pa-sm flex"><q-card class="q-pa-lg flex" dark>
+             <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=490" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
             </div>
             <div class="q-pa-md row justify-center">
                 <div :style="'width: 100%; max-width: 400px'">
@@ -41,11 +26,7 @@
                     <q-spinner-dots size="3rem" v-show="showTyping" />
                 </div>
             </div>
-            </template>
-            </q-splitter>
-
-
-            <q-card style="background-color:inherit;width:397px;height:350px">
+            <div style="background-color:inherit;width:397px;height:350px">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="300.000000pt" height="272.000000pt" viewBox="0 0 300.000000 272.000000" preserveAspectRatio="xMidYMid meet">
                 <g transform="translate(0.000000,272.000000) scale(0.100000,-0.100000)"
                 fill="#000000" stroke="none">
@@ -163,7 +144,7 @@
                 -98 -1 -105 -20 -105 -19 0 -20 7 -20 103 l0 102 -62 105 c-34 58 -64 107 -67
                 110 -8 7 -41 67 -41 74 0 8 14 8 34 0z"/>
                 </g>
-                </svg> </q-card>
+                </svg> </div>
 
 
 
@@ -190,6 +171,9 @@
             el: '#q-app',
             data: function() {
                 return {
+                    staticlottie:true,
+                    lottiekey:'1',
+                    speed:1.5,
                     chatText: '',
                     splitterModel: 50,
                     messages: [],
@@ -212,6 +196,11 @@
                     ]
                 }
             },
+            watched:{
+                speed(o,n){
+                    this.lottiekey = Number(this.lottiekey) + 1 ;
+                }
+            },
             mounted: function() {
                 this.$q.dark.set(true)
                 //    Quasar.Notify.create('Hi and welcome!')
@@ -220,25 +209,30 @@
                 let _vm = this;
                 _vm.showTyping = true
                 setTimeout(function() {
+                     _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
+                    _vm.speed = 1
                 }, 3000);
 
                 setTimeout(function() {
                     _vm.showTyping = true
+                    _vm.speed = 1.5
                 }, 5000);
 
 
 
 
                 setTimeout(function() {
-
+                     _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
+                   
                 }, 9000);
 
                 setTimeout(function() {
                     _vm.showTyping = true
+                    _vm.speed = 1.2
                 }, 13000);
 
 
@@ -246,10 +240,12 @@
                 setTimeout(function() {
                     _vm.showMessage()
                     _vm.showTyping = false
+                    _vm.speed = 2
                 }, 17000);
 
                 setTimeout(function() {
                     _vm.showTyping = true
+                    _vm.speed = 1
                 }, 18000);
 
 
@@ -257,23 +253,29 @@
                 setTimeout(function() {
                     _vm.showMessage()
                     _vm.showTyping = false
+                    _vm.speed = 2
                 }, 24600);
 
 
                 setTimeout(function() {
                     _vm.showTyping = true
+                    _vm.speed = 1
                 }, 30000);
 
                 setTimeout(function() {
+                    _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
+                    
                 }, 31000);
 
                 setTimeout(function() {
                     _vm.showTyping = true
+                     _vm.speed = 1
                 }, 32000);
 
                 setTimeout(function() {
+                     _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
                 }, 33000);
@@ -283,17 +285,20 @@
                 }, 34000);
 
                 setTimeout(function() {
+                     _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
                 }, 35000);
 
                 setTimeout(function() {
+                     _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
                 }, 36000);
 
 
                 setTimeout(function() {
+                     _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
                 }, 38000);

@@ -18,11 +18,12 @@
 
 
 
- <div style="position:absolute;top:0">
-    <q-bar dark class="bg-black" style="width:100vw;height:35px;">
+ <div>
+    <q-bar dark class="bg-black" style="width:100vw;height:35px;" style="position:absolute;top:0">
          <q-btn @click="launchCode" style="background: #FF0080; color: white" label="Code" ></q-btn>
           <q-btn @click="sayHi" style="background: goldenrod; color: white" label="Say Hi"></q-btn>
            <q-btn @click="launchLI" style="background: grey; color: white" label="LinkedIn"></q-btn>
+           <q-btn @click="launchYT" style="background: red; color: white" label="YouTube"></q-btn>
     </q-bar>
   </div>
 
@@ -342,14 +343,23 @@
             },
             methods: {
                 sayHi: function(){
-                     Quasar.Notify.create('Hi :)');
+                    Quasar.Notify.create('Hi :)');
                 },
                 launchLI: function(){
-                    this.$q.utils.openURL('https://www.github.com/aa32555');
+                    window.open('https://www.linkedin.com/in/ahmed-abdelrazek-16b44b187/');
                 },
                 
                 launchCode: function(){
-                    this.$q.utils.openURL('https://www.github.com/aa32555');
+                     window.open('https://www.github.com/aa32555');
+                },
+              launchI: function(){
+                     window.open('https://www.instagram.com/aa3255/');
+                },
+             launchYT: function(){
+                     window.open('https://www.youtube.com/asolok');
+                },
+          launchWGL: function(){
+                     window.open('https://gitlab.com/ahmedydb');
                 },
                 showMessage: function() {
                     this.messageNumber = this.messageNumber + 1

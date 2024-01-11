@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+  <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
-    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.min.css" rel="stylesheet" type="text/css">
-</head>
+  </head>
 
 <body>
     <div id="q-app">
         <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
 
+
+
+
+
+
+
+
+ <div class="q-pa-md q-gutter-sm">
+    <q-bar dark class="bg-primary text-white" style="width:100vw;height:15px;beackground-color:yellow">
+      <q-btn dense flat round icon="book" size="4" color="red" />
+      <q-btn dense flat round icon="lens" size="8.5px" color="yellow" />
+      <q-btn dense flat round icon="lens" size="8.5px" color="green" />
+      <div class="col text-center text-weight-bold">
+        My-App
+      </div>
+    </q-bar>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="q-pa-sm">
                 <lottie-player :key="lottiekey" src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" :speed="staticlottie?1.5:speed" loop autoplay></lottie-player>
             </div>
-            <div class="q-pa-sm flex"><q-card class="q-pa-lg flex" dark>
-             <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=490" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
+            <div class="q-pa-sm flex">
+                <q-card class="q-pa-lg flex" dark>
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=490" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
             </div>
             <div class="q-pa-md row justify-center">
                 <div :style="'width: 100%; max-width: 400px'">
@@ -165,15 +193,17 @@
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.ie.polyfills.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/icon-set/svg-material-icons.umd.min.js"></script>
+
     <script>
+        Quasar.iconSet.set(Quasar.iconSet.svgMaterialIcons)
         new Vue({
             el: '#q-app',
             data: function() {
                 return {
-                    staticlottie:true,
-                    lottiekey:'1',
-                    speed:1.5,
+                    staticlottie: true,
+                    lottiekey: '1',
+                    speed: 1.5,
                     chatText: '',
                     splitterModel: 50,
                     messages: [],
@@ -196,9 +226,9 @@
                     ]
                 }
             },
-            watched:{
-                speed(o,n){
-                    this.lottiekey = Number(this.lottiekey) + 1 ;
+            watched: {
+                speed(o, n) {
+                    this.lottiekey = Number(this.lottiekey) + 1;
                 }
             },
             mounted: function() {
@@ -209,7 +239,7 @@
                 let _vm = this;
                 _vm.showTyping = true
                 setTimeout(function() {
-                     _vm.speed = 2
+                    _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
                     _vm.speed = 1
@@ -224,10 +254,10 @@
 
 
                 setTimeout(function() {
-                     _vm.speed = 2
+                    _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
-                   
+
                 }, 9000);
 
                 setTimeout(function() {
@@ -266,16 +296,16 @@
                     _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
-                    
+
                 }, 31000);
 
                 setTimeout(function() {
                     _vm.showTyping = true
-                     _vm.speed = 1
+                    _vm.speed = 1
                 }, 32000);
 
                 setTimeout(function() {
-                     _vm.speed = 2
+                    _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
                 }, 33000);
@@ -285,20 +315,20 @@
                 }, 34000);
 
                 setTimeout(function() {
-                     _vm.speed = 2
+                    _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
                 }, 35000);
 
                 setTimeout(function() {
-                     _vm.speed = 2
+                    _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
                 }, 36000);
 
 
                 setTimeout(function() {
-                     _vm.speed = 2
+                    _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
                 }, 38000);

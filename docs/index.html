@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.min.css" rel="stylesheet" type="text/css">
-  </head>
+    <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css">
+</head>
 
 <body>
     <div id="q-app">
@@ -18,32 +19,27 @@
 
 
 
- <div>
-    <q-bar dark class="bg-black" style="width:100vw;height:35px;" style="position:absolute;top:0">
-         <q-btn @click="launchCode" style="background: #FF0080; color: white" label="Code" ></q-btn>
-          <q-btn @click="sayHi" style="background: goldenrod; color: white" label="Say Hi"></q-btn>
-           <q-btn @click="launchLI" style="background: grey; color: white" label="LinkedIn"></q-btn>
-           <q-btn @click="launchYT" style="background: red; color: white" label="YouTube"></q-btn>
-    </q-bar>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
+            <div>
+                <q-bar dark class="bg-black" style="width:100vw;height:35px;" style="position:absolute;top:0">
+                    <q-btn @click="launchCode" style="background: #FF0080; color: white" label="Code"></q-btn>
+                    <q-btn @click="sayHi" style="background: goldenrod; color: white" label="Say Hi"></q-btn>
+                    <q-btn @click="launchLI" style="background: grey; color: white" label="LinkedIn"></q-btn>
+                    <q-btn @click="launchYT" style="background: red; color: white" label="YouTube"></q-btn>
+                    <q-btn @click="launchYT" style="background: green; color: white" :label="label"></q-btn>
+                </q-bar>
+            </div>
             <div class="q-pa-sm">
                 <lottie-player :key="lottiekey" src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" :speed="staticlottie?1.5:speed" loop autoplay></lottie-player>
             </div>
             <div class="q-pa-sm flex">
                 <q-card class="q-pa-lg flex" dark>
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=490" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
+            </div>
+            
+            <div class="q-pa-sm flex">
+                 <q-card class="q-pa-lg flex" dark>
+                      <div id="terminal"></div>  
+                 </q-card>
             </div>
             <div class="q-pa-md row justify-center">
                 <div :style="'width: 100%; max-width: 400px'">
@@ -171,10 +167,6 @@
                 110 -8 7 -41 67 -41 74 0 8 14 8 34 0z"/>
                 </g>
                 </svg> </div>
-
-
-
-
         </div>
     </div>
     <script>
@@ -191,7 +183,7 @@
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.ie.polyfills.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/icon-set/svg-material-icons.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
 
     <script>
         Quasar.iconSet.set(Quasar.iconSet.svgMaterialIcons)
@@ -199,6 +191,7 @@
             el: '#q-app',
             data: function() {
                 return {
+                    label:'test',
                     staticlottie: true,
                     lottiekey: '1',
                     speed: 1.5,
@@ -342,24 +335,29 @@
 
             },
             methods: {
-                sayHi: function(){
+                writeHelloFromTheTerm: function(){
+                      let term = new Terminal();
+                     term.open(document.getElementById('terminal'));
+                      term.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ')
+                },
+                sayHi: function() {
                     Quasar.Notify.create('Hi :)');
                 },
-                launchLI: function(){
+                launchLI: function() {
                     window.open('https://www.linkedin.com/in/ahmed-abdelrazek-16b44b187/');
                 },
-                
-                launchCode: function(){
-                     window.open('https://www.github.com/aa32555');
+
+                launchCode: function() {
+                    window.open('https://www.github.com/aa32555');
                 },
-              launchI: function(){
-                     window.open('https://www.instagram.com/aa3255/');
+                launchI: function() {
+                    window.open('https://www.instagram.com/aa3255/');
                 },
-             launchYT: function(){
-                     window.open('https://www.youtube.com/asolok');
+                launchYT: function() {
+                    window.open('https://www.youtube.com/asolok');
                 },
-          launchWGL: function(){
-                     window.open('https://gitlab.com/ahmedydb');
+                launchWGL: function() {
+                    window.open('https://gitlab.com/ahmedydb');
                 },
                 showMessage: function() {
                     this.messageNumber = this.messageNumber + 1

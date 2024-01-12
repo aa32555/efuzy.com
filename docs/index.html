@@ -11,21 +11,13 @@
 <body>
     <div id="q-app">
         <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
-
-
-
-
-
-
-
-
             <div>
-                <q-bar dark class="bg-black" style="width:100vw;height:35px;" style="position:absolute;top:0">
+                <q-bar dark class="bg-black" style="width:100vw;height:35px;">
                     <q-btn @click="launchCode" style="background: #FF0080; color: white" label="Code"></q-btn>
                     <q-btn @click="sayHi" style="background: goldenrod; color: white" label="Say Hi"></q-btn>
                     <q-btn @click="launchLI" style="background: grey; color: white" label="LinkedIn"></q-btn>
                     <q-btn @click="launchYT" style="background: red; color: white" label="YouTube"></q-btn>
-                    <q-btn @click="w('hi')" style="background: green; color: white" :label="label"></q-btn>
+                    <q-btn @click="w('hi')" style="background: black; color: white" :label="'chat'"></q-btn>
                 </q-bar>
             </div>
             <div class="q-pa-sm">
@@ -36,10 +28,8 @@
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=490" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
             </div>
 
-            <div class="q-pa-sm flex" v-if="termExists">
-                <q-card class="q-pa-lg flex" dark v-show="showTerm">
+            <div class="q-pa-sm flex" >
                     <div id="terminal"></div>
-                </q-card>
             </div>
             <div class="q-pa-md row justify-center">
                 <div :style="'width: 100%; max-width: 400px'">
@@ -226,18 +216,18 @@
                 }
             },
             mounted: function() {
+              let _vm = this;
               setTimeout(function(){
-                this.xtermLoad();
+                _vm.xtermLoad();
               },0)
-               this.xtermLoad();
-                this.$q.dark.set(true);
-                this.xtermBoot();
+               _vm.xtermLoad();
+                _vm.$q.dark.set(true);
+                _vm.xtermBoot();
                 //    Quasar.Notify.create('Hi and welcome!')
                 //  Quasar.plugins.bottomSheet.create({...})
                 //
-                let _vm = this;
                 _vm.writeHelloFromTheTerm();
-                _vm.showTyping = true
+                //_vm.showTyping = true
                 setTimeout(function() {
                     _vm.speed = 2
                     _vm.showMessage()
@@ -352,7 +342,7 @@
                 },
                 w: function(a) {
                      let term = window.term || new Terminal() ;
-                    term.write(a);
+                    term.write('efuzy.com\x1B[1;3;31m:> ' + a + '\x1B[0m $ '));
                 },
                 xtermLoad: function() {
                     this.xtermBoot();

@@ -17,7 +17,7 @@
                     <q-btn @click="sayHi" style="background: goldenrod; color: white" label="Say Hi"></q-btn>
                     <q-btn @click="launchLI" style="background: grey; color: white" label="LinkedIn"></q-btn>
                     <q-btn @click="launchYT" style="background: red; color: white" label="YouTube"></q-btn>
-                    <q-btn @click="w('hi')" style="background: black; color: white" :label="'chat'"></q-btn>
+                    <q-btn @click="chat" style="background: black; color: white" :label="'chat'"></q-btn>
                 </q-bar>
             </div>
             <div class="q-pa-sm">
@@ -334,12 +334,12 @@
                 xtermBoot: function() {
                     this.termExists = true;
                      let term = window.term || new Terminal() ;
-                     term.open(document.getElementById('terminal'));
+                     this.term = term
+                     this.term.open(document.getElementById('terminal'));
                     this.showTerm = true;
                 },
                 w: function(a) {
-                     let term = window.term || new Terminal() ;
-                    term.write('efuzy.com\x1B[1;3;31m:> ' + a + '\x1B[0m $ ');
+                    this.term.write('efuzy.com\x1B[1;3;31m:> ' + a + '\x1B[0m $ ');
                 },
                 xtermLoad: function() {
                     this.xtermBoot();

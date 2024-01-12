@@ -21,7 +21,7 @@
                 </q-bar>
             </div>
             <div class="q-pa-sm">
-                <lottie-player :key="lottiekey" src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" :speed="staticlottie?1.5:speed" loop autoplay></lottie-player>
+                <lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" :speed="1" loop autoplay></lottie-player>
             </div>
             <div class="q-pa-sm flex">
                 <q-card class="q-pa-lg flex" dark>
@@ -29,7 +29,9 @@
             </div>
 
             <div class="q-pa-sm flex" >
-                    <div id="terminal"></div>
+              <q-card dark class="qa-pa-md">
+                    <div id="terminal" style="overflow:hidden;"></div>
+                </q-card>
             </div>
             <div class="q-pa-md row justify-center">
                 <div :style="'width: 100%; max-width: 400px'">
@@ -337,10 +339,11 @@
                      this.term = term
                      term.open(document.getElementById('terminal'));
                      term.write('efuzy.com\x1B[1;3;31m:> ' + ' Hello, would you like to learn about M the programming language. Google it ....' + '\x1B[0m $ ');
-                    this.showTerm = true;
+                      term.write('\n');
+                      this.showTerm = true;
                 },
                 w: function(a) {
-                    this.term.write('efuzy.com\x1B[1;3;31m:> ' + a + '\x1B[0m $ ');
+                    this.term.write('\nefuzy.com\x1B[1;3;31m:> ' + a + '\x1B[0m $ ');
                 },
                 xtermLoad: function() {
                     this.xtermBoot();

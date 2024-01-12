@@ -335,7 +335,8 @@
                     this.termExists = true;
                      let term = window.term || new Terminal() ;
                      this.term = term
-                     this.term.open(document.getElementById('terminal'));
+                     term.open(document.getElementById('terminal'));
+                     term.write('efuzy.com\x1B[1;3;31m:> ' + ' Hello, would you like to learn about M the programming language. Google it ....' + '\x1B[0m $ ');
                     this.showTerm = true;
                 },
                 w: function(a) {
@@ -368,7 +369,7 @@
                     this.messages.push(this.messagesArr[this.messageNumber])
                 },
               chat: function(){
-                this.a('hi');
+                this.w('hi');
               },
                 sendFeedbackTextMessage: function() {
 

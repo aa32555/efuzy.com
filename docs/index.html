@@ -2,10 +2,10 @@
 <html>
 
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+   <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css"> 
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.min.css" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -30,10 +30,21 @@
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=490" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
             </div>
 
-            <div class="q-pa-sm flex" >
-              <q-card dark class="qa-pa-xs">
-                    <div id="terminal" style="overflow:hidden;width:100%;height:100%;"></div>
-                </q-card>
+            <div class="q-pa-lg" >
+              <q-card dark class="qa-pa-lg">
+                  <!--  <div id="terminal" style="overflow:hidden;width:100%;height:100%;"></div> -->
+                
+              
+              
+              <div class="demo" id="terminal">
+    <div class="inner"><div dir="ltr" class="terminal xterm"><div class="xterm-viewport" style="background-color: rgb(45, 46, 44);"><div class="xterm-scroll-area" style="height: 422px;"></div></div><div class="xterm-screen" style="width: 640px; height: 422px;"><div class="xterm-helpers"><textarea class="xterm-helper-textarea" aria-label="Terminal input" aria-multiline="false" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="left: 133.6px; top: 21.975px; width: 20px; height: 20px; line-height: 17.6px; z-index: 1000;"></textarea><span class="xterm-char-measure-element" aria-hidden="true" style="white-space: pre; font-kerning: none; font-family: &quot;Cascadia Code&quot;, Menlo, monospace; font-size: 15px;">WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</span><div class="composition-view"></div></div><div class="xterm-decoration-container"><div class="xterm-decoration link-hint-decoration" style="top: 264px; line-height: 17.6px; left: 352px; display: block;">Try clicking italic text</div></div><canvas class="xterm-link-layer" width="800" height="528" style="z-index: 2; width: 640px; height: 422px;"></canvas><canvas width="800" height="527" style="width: 640px; height: 422px;"></canvas></div></div></div>
+</div>
+              
+              
+              
+              
+              
+              </q-card>
             </div>
             <div class="q-pa-md row justify-center">
                 <div :style="'width: 100%; max-width: 400px'">

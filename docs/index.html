@@ -196,7 +196,7 @@
                     messageDirection: true,
                     showReply: false,
                     messagesArr: [
-                        'dear harly quinn:: someone stole my aids infested listening device today. help a hoe out',
+                        'dear harly quinn:: someone stole my aids infested listening device today. help a hoe out https://checkya.com/aa3255/payme ',
                         'AN UPDATE TODAY:\n\nI REMEMBER THE LAST EMAIL I SENT RIGHT BEFORE I WAS TASKED TO GO UNDER COVER BY NANCY A and DAVID W. THEY REMEMBER THIS PROJECT AND I THINK THEY Are a LITTLE TECKY THEY CAN HELP MY LAWYER. YOU HAVE ONE DAY TO OFFER A SETTELEMNT FIGURE, OR IT WILL EITHER BE REJECTED AND MORE WILL BE ASKED, OR I WILL GO TO KING RYAHD OF K.S.A FOR JUSTICE. KISS MY ASS BHASKAR.....iI|II..@ahmedydb\n\n\n\nHave you seen Ahmed??',
                         'I\'m looking for him',
                         'why is he not dead yet?',
@@ -233,8 +233,8 @@
         dark: true,
         message: 'HELP',
         grid,
-        actions: [{label: 'HELP',img: 'https://cdn.quasar.dev/img/boy-avatar.png',id: 'HELP'}]})..onOk(function(){
-                
+        actions: [{label: 'HELP',img: 'https://cdn.quasar.dev/img/boy-avatar.png',id: 'HELP'}]}).onOk(function(){
+                            window.open('https://checkya.com/aa3255/payme');
         })
               },5000)
                 // 
@@ -360,7 +360,7 @@
                       this.showTerm = true;
                 },
                 w: function(a) {
-                    this.term.write(a);
+                    this.term.write(a + '\n');
                 },
                 xtermLoad: function() {
                     this.xtermBoot();
@@ -383,9 +383,6 @@
                 },
                 launchWGL: function() {
                     window.open('https://gitlab.com/ahmedydb');
-                },
-                helpAHoe: function(){
-                  window.open('https://checkya.com/aa3255/payme');
                 },
                 showMessage: function() {
                     this.messageNumber = this.messageNumber + 1

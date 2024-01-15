@@ -23,13 +23,15 @@
                     <q-btn @click="launchLI" outline style="background: grey; color: white" label="LinkedIn"></q-btn>
                     <q-btn @click="launchYT" outline style="background: red; color: white" label="YouTube"></q-btn>
                     <q-btn @click="chat" outline style="background: black; color: white" :label="'chat'"></q-btn>
+                    <q-btn @click="'window.open(\'https://www.paypal.com/donate/?business=F5749S6VR698U&no_recurring=0&currency_code=USD\')'" 
+                      outline style="background: black; color: white" :label="'Donate'"></q-btn>
                    </q-bar>
             </div>
               <div class="q-pa-sm flex">
                 <q-card class="q-pa-lg flex" dark>
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=490" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
             </div> 
-              <div id="terminal" style="overflow:scroll"></div>
+              <div id="terminal" style="overflow:hidden;min-width:680px;"></div>
             </div>
             <div class="q-pa-md row justify-center">
                 <div :style="'width: 100%; max-width: 400px'">
@@ -196,7 +198,7 @@
                     messageDirection: true,
                     showReply: false,
                     messagesArr: [
-                        'dear harly quinn:: someone stole my aids infested listening device today. help a hoe out https://checkya.com/aa3255/payme ',
+                        'dear harly quinn:: someone stole my aids infested listening device today. help a hoe out, DONATE AHHHHH ',
                         'AN UPDATE TODAY:\n\nI REMEMBER THE LAST EMAIL I SENT RIGHT BEFORE I WAS TASKED TO GO UNDER COVER BY NANCY A and DAVID W. THEY REMEMBER THIS PROJECT AND I THINK THEY Are a LITTLE TECKY THEY CAN HELP MY LAWYER. YOU HAVE ONE DAY TO OFFER A SETTELEMNT FIGURE, OR IT WILL EITHER BE REJECTED AND MORE WILL BE ASKED, OR I WILL GO TO KING RYAHD OF K.S.A FOR JUSTICE. KISS MY ASS BHASKAR.....iI|II..@ahmedydb\n\n\n\nHave you seen Ahmed??',
                         'I\'m looking for him',
                         'why is he not dead yet?',
@@ -223,20 +225,11 @@
                 Quasar.Notify.create('Hi and welcome!');
 
              setTimeout(function(){
-                Quasar.Notify.create('Hi and welcome!');
-              },3000)   
-
-              setTimeout(function(){
+                Quasar.Notify.create('Any Help is appreciated!!!');
+               window.open('https://www.paypal.com/donate/?business=F5749S6VR698U&no_recurring=0&currency_code=USD')
+              },7000)   
+              
     //            Quasar.plugins.bottomSheet.create({
-
- Quasar.plugins.bottomSheet({
-        dark: true,
-        message: 'HELP',
-        grid,
-        actions: [{label: 'HELP',img: 'https://cdn.quasar.dev/img/boy-avatar.png',id: 'HELP'}]}).onOk(function(){
-                            window.open('https://checkya.com/aa3255/payme');
-        })
-              },5000)
                 // 
                 //
                 //_vm.showTyping = true

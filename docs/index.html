@@ -23,24 +23,13 @@
                     <q-btn @click="launchLI" outline style="background: grey; color: white" label="LinkedIn"></q-btn>
                     <q-btn @click="launchYT" outline style="background: red; color: white" label="YouTube"></q-btn>
                     <q-btn @click="chat" outline style="background: black; color: white" :label="'chat'"></q-btn>
-                    <a id="checkya-pay-me-button" rel="noopener" target="_blank" href="https://checkya.com/aa3255/payme" style="display: inline-block; font-family: Poppins, "Avenir Next", "Avenir Next LT Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Verdana, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: 16px; font-weight: 500; line-height: 24px; color: rgb(252, 252, 252) !important; text-align: center; text-decoration: none !important; letter-spacing: 0.25px; vertical-align: middle; background-color: rgb(254, 95, 67); background-image: url("https://checkya.com/logomark-white.svg"); background-repeat: no-repeat; border: 1px solid rgb(254, 95, 67); appearance: none; padding: 19px 31px 19px 75px; background-position: 32px center; background-size: 24px 24px; border-radius: 12px;">Help get a hoe off the streets ( ME )...</a>
-          
-                  
-                  <!--
-                  <a id="checkya-pay-me-button" rel="noopener" target="_blank" href="https://checkya.com/aa3255/payme" style="display: inline-block; font-family: Poppins, "Avenir Next", "Avenir Next LT Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Verdana, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: 16px; font-weight: 500; line-height: 24px; color: rgb(252, 252, 252) !important; text-align: center; text-decoration: none !important; letter-spacing: 0.25px; vertical-align: middle; background-color: rgb(254, 95, 67); background-image: url("https://checkya.com/logomark-white.svg"); background-repeat: no-repeat; border: 1px solid rgb(254, 95, 67); appearance: none; padding: 19px 31px 19px 75px; background-position: 32px center; background-size: 24px 24px; border-radius: 12px;">Help get a hoe off the streets ( ME )...</a>
-                  -->
-                </q-bar>
+                   </q-bar>
             </div>
-          <!--
-            <div class="q-pa-sm">
-                <lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" :speed="1" loop autoplay></lottie-player>
-            </div>
-          -->
-            <div class="q-pa-sm flex">
+              <div class="q-pa-sm flex">
                 <q-card class="q-pa-lg flex" dark>
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=490" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
             </div> 
-              <div id="terminal"></div>
+              <div id="terminal" style="overflow:scroll"></div>
             </div>
             <div class="q-pa-md row justify-center">
                 <div :style="'width: 100%; max-width: 400px'">
@@ -207,6 +196,7 @@
                     messageDirection: true,
                     showReply: false,
                     messagesArr: [
+                        'dear harly quinn:: someone stole my aids infested listening device today. help a hoe out',
                         'AN UPDATE TODAY:\n\nI REMEMBER THE LAST EMAIL I SENT RIGHT BEFORE I WAS TASKED TO GO UNDER COVER BY NANCY A and DAVID W. THEY REMEMBER THIS PROJECT AND I THINK THEY Are a LITTLE TECKY THEY CAN HELP MY LAWYER. YOU HAVE ONE DAY TO OFFER A SETTELEMNT FIGURE, OR IT WILL EITHER BE REJECTED AND MORE WILL BE ASKED, OR I WILL GO TO KING RYAHD OF K.S.A FOR JUSTICE. KISS MY ASS BHASKAR.....iI|II..@ahmedydb\n\n\n\nHave you seen Ahmed??',
                         'I\'m looking for him',
                         'why is he not dead yet?',
@@ -215,9 +205,7 @@
                         'they proudly talk about how ofter they are being audited',
                         'their Director of Operations, Manny ( or HE-MAN as my lover would say ) failed vocational school, I hope he rememebers the sales report and OPTION AM. the Wife BEATER',
                         'يا اطبطب يا ادلع',
-                        'يا يقولي انا اتغيرت عليه',
-                        'و انا ازعل اولع'
-
+                        'يا يقولي انا اتغيرت عليه'
                     ]
                 }
             },
@@ -232,8 +220,24 @@
                 _vm.xtermLoad();
               },0)            
                 _vm.$q.dark.set(true);
-                //    Quasar.Notify.create('Hi and welcome!')
-                //  Quasar.plugins.bottomSheet.create({...})
+                Quasar.Notify.create('Hi and welcome!');
+
+             setTimeout(function(){
+                Quasar.Notify.create('Hi and welcome!');
+              },3000)   
+
+              setTimeout(function(){
+    //            Quasar.plugins.bottomSheet.create({
+
+ Quasar.plugins.bottomSheet({
+        dark: true,
+        message: 'HELP',
+        grid,
+        actions: [{label: 'HELP',img: 'https://cdn.quasar.dev/img/boy-avatar.png',id: 'HELP'}]})..onOk(function(){
+                
+        })
+              },5000)
+                // 
                 //
                 //_vm.showTyping = true
                 setTimeout(function() {
@@ -388,7 +392,7 @@
                     this.messages.push(this.messagesArr[this.messageNumber])
                 },
               chat: function(){
-                this.w('F U K S BHASKAR...GO TO https://checkya.com/aa3255/payme for details. happy Quanza and White Power my dear Bent Cross AZ Tea Supporters. Donde Esta Angel...with the tatoooo bae....i\'ll see myself out');
+                this.w('F U K S BHASKAR, ZUBAIR FROM 11433 AND DAVID B FROM ADSC.COM');
               },
                 sendFeedbackTextMessage: function() {
 

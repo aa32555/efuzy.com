@@ -14,18 +14,18 @@
     <div id="q-app">
         <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;width:100vw;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
             <div>
-                <q-bar dark class="bg-black" style="width:100%;height:35px;">
-                    <q-btn @click="launchCode" outline style="background: #FF0080; color: white" label="Code"></q-btn>
-                    <q-btn @click="sayHi" outline style="background: goldenrod; color: white" label="Say Hi"></q-btn>
-                    <q-btn @click="launchLI" outline style="background: grey; color: white" label="LinkedIn"></q-btn>
-                    <q-btn @click="launchYT" outline style="background: red; color: white" label="YouTube"></q-btn>
-                    <q-btn @click="chat" outline style="background: black; color: white" :label="'chat'"></q-btn>
-                    <q-btn @click="window.open('https://www.paypal.com/donate/?business=F5749S6VR698U&no_recurring=0&currency_code=USD','_self')"
+                <q-bar dark class="bg-black" style="width:50vw;height:35px;display: block;margin-left: auto;margin-right: auto;">
+                    <q-btn @click="launchCode" size="lg" outline style="background: #FF0080; color: white" label="Code"></q-btn>
+                    <q-btn @click="sayHi" size="lg" outline style="background: goldenrod; color: white" label="Say Hi"></q-btn>
+                    <q-btn @click="launchLI" size="lg" outline style="background: grey; color: white" label="LinkedIn"></q-btn>
+                    <q-btn @click="launchYT" size="lg" outline style="background: red; color: white" label="YouTube"></q-btn>
+                    <q-btn @click="chat" size="lg" outline style="background: black; color: white" :label="'chat'"></q-btn>
+                    <q-btn size="lg" @click="window.open('https://www.paypal.com/donate/?business=F5749S6VR698U&no_recurring=0&currency_code=USD','_self')"
                       outline style="background: black; color: white" :label="'Donate'"></q-btn>
                    </q-bar>
             </div>
               <div class="q-pa-sm flex">
-                <q-card class="q-pa-lg flex" dark>
+                <q-card class="q-pa-sm flex" dark>
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
             </div> 
               <q-card dark style="width:660px;height:auto;overflow:hidden;">

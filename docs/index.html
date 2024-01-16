@@ -7,7 +7,7 @@
     <link href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.min.css" rel="stylesheet" type="text/css">
  <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css"> 
-   <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/main.css" rel="stylesheet" type="text/css"> 
+<!--   <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/main.css" rel="stylesheet" type="text/css"> -->
  <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/fontawesome.css" rel="stylesheet" type="text/css"> 
 
   
@@ -15,7 +15,7 @@
 
 <body>
     <div id="q-app">
-        <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
+        <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;width:100vw;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
             <div>
                 <q-bar dark class="bg-black" style="width:100vw;height:35px;">
                     <q-btn @click="launchCode" outline style="background: #FF0080; color: white" label="Code"></q-btn>
@@ -29,17 +29,25 @@
             </div>
               <div class="q-pa-sm flex">
                 <q-card class="q-pa-lg flex" dark>
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=490" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
             </div> 
-              <q-card dark id="terminal" style="width:800px;height:auto"></q-card>
+              <q-card dark id="terminal" style="width:100%;height:auto;overflow:hidden"></q-card>
             </div>
             <div class="q-pa-md row justify-center">
                 <div :style="'width: 100%; max-width: 400px'">
-                    <q-chat-message :text="messages" :avatar="messageDirection===true?'https://cdn.quasar.dev/img/avatar2.jpg':'https://cdn.quasar.dev/img/avatar3.jpg'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="messageDirection===true?true:false" :bg-color="messageDirection===true?'black':'primary'" :text-color="messageDirection===true?'white':'white'">
+                    <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :bg-color="'black'" :text-color="'red'">
                     </q-chat-message>
-                    <q-spinner-dots size="3rem" v-show="showTyping" />
+                    <q-spinner-dots  key="b1" id="b1" size="3rem" v-show="showTyping" />
                 </div>
             </div>
+             <div class="q-pa-md row justify-center">
+                <div :style="'width: 100%; max-width: 400px'">
+                    <q-chat-message v-show="showRA" key="a2" id="a2" :text="['Sun Bathing....whaddap?????']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :bg-color="'black'" :text-color="'red'" >
+                    </q-chat-message>
+                    <q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT" />
+                </div>
+            </div>
+   
             <div style="background-color:inherit;width:397px;height:350px">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="300.000000pt" height="272.000000pt" viewBox="0 0 300.000000 272.000000" preserveAspectRatio="xMidYMid meet">
                 <g transform="translate(0.000000,272.000000) scale(0.100000,-0.100000)"
@@ -178,11 +186,13 @@
     <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
 
     <script>
-        Quasar.iconSet.set(Quasar.iconSet.svgMaterialIcons)
+      //  Quasar.iconSet.set(Quasar.iconSet.svgMaterialIcons)
         new Vue({
             el: '#q-app',
             data: function() {
                 return {
+                    showRA:false,
+                    showRAT:false,
                     term: '',
                     termExists: false,
                     showTerm: false,
@@ -198,16 +208,26 @@
                     messageDirection: true,
                     showReply: false,
                     messagesArr: [
-                        'dear harly quinn:: someone stole my aids infested listening device today. help a hoe out, DONATE AHHHHH ',
-                        'AN UPDATE TODAY:\n\nI REMEMBER THE LAST EMAIL I SENT RIGHT BEFORE I WAS TASKED TO GO UNDER COVER BY NANCY A and DAVID W. THEY REMEMBER THIS PROJECT AND I THINK THEY Are a LITTLE TECKY THEY CAN HELP MY LAWYER. YOU HAVE ONE DAY TO OFFER A SETTELEMNT FIGURE, OR IT WILL EITHER BE REJECTED AND MORE WILL BE ASKED, OR I WILL GO TO KING RYAHD OF K.S.A FOR JUSTICE. KISS MY ASS BHASKAR.....iI|II..@ahmedydb\n\n\n\nHave you seen Ahmed??',
-                        'I\'m looking for him',
-                        'why is he not dead yet?',
-                        'here is phone number: 201-737-9078...HELLO IS ANYONE HERE???',
-                        'and here is the number of the people who are trying to make sure he never works any where again, by not knowing the first thing about HR',
-                        'they proudly talk about how ofter they are being audited',
-                        'their Director of Operations, Manny ( or HE-MAN as my lover would say ) failed vocational school, I hope he rememebers the sales report and OPTION AM. the Wife BEATER',
-                        'يا اطبطب يا ادلع',
-                        'يا يقولي انا اتغيرت عليه'
+                        'Hello...is this Eeeath???',
+                        'where all the dirt is!!!',
+                        'its tough living in space',
+                        'also why was that dude staring at you hard, while rubbing one out, very weierd creatures these bipedal sex dolls',
+                        'oh my spider, i meant thinking machines',
+                        'oh btw, what\'s up with IGG IGG',
+                        'I heard she Olga\'d G Man',
+                        'and where is A man when you need him, blessed be to the holly cow, i mean web',
+                        '...',
+                        '...RA...anything to add???????',
+                        //'dear harly quinn:: someone stole my aids infested listening device today. help a hoe out, DONATE AHHHHH ',
+                        //'AN UPDATE TODAY:\n\nI REMEMBER THE LAST EMAIL I SENT RIGHT BEFORE I WAS TASKED TO GO UNDER COVER BY NANCY A and DAVID W. THEY REMEMBER THIS PROJECT AND I THINK THEY Are a LITTLE TECKY THEY CAN HELP MY LAWYER. YOU HAVE ONE DAY TO OFFER A SETTELEMNT FIGURE, OR IT WILL EITHER BE REJECTED AND MORE WILL BE ASKED, OR I WILL GO TO KING RYAHD OF K.S.A FOR JUSTICE. KISS MY ASS BHASKAR.....iI|II..@ahmedydb\n\n\n\nHave you seen Ahmed??',
+                        //'I\'m looking for him',
+                        //'why is he not dead yet?',
+                        //'here is phone number: 201-737-9078...HELLO IS ANYONE HERE???',
+                        //'and here is the number of the people who are trying to make sure he never works any where again, by not knowing the first thing about HR',
+                        //'they proudly talk about how ofter they are being audited',
+                        //'their Director of Operations, Manny ( or HE-MAN as my lover would say ) failed vocational school, I hope he rememebers the sales report and OPTION AM. the Wife BEATER',
+                        //'يا اطبطب يا ادلع',
+                        //'يا يقولي انا اتغيرت عليه'
                     ]
                 }
             },
@@ -327,9 +347,13 @@
                     _vm.showTyping = false
                 }, 39000);
 
+                 setTimeout(function() {
+                    _vm.showRA = true
+                }, 45000);
+
                 setTimeout(function() {
-                    _vm.showTyping = true
-                }, 40000);
+                    _vm.showRAT = true
+                }, 50000);
 
             },
             methods: {
@@ -338,16 +362,17 @@
                      let term = window.term || new Terminal() ;
                      this.term = term
                      term.open(document.getElementById('terminal'));
-                      term.write(' Hello, I would like to tell you how I became');
-                      term.write(' Thanks to my ex-boss BHASKAR, ');
-                      term.write(' Supposedly the biggest name in the industry of M');
-                      term.write(' the programming language., ');
-                      term.write(' Read the chat for the email I sent him, ');
-                      term.write(', and click the chat button for support :) ');
+                      term.write('\n Hello, I would like to tell you how I became');
+                      term.write('\n Thanks to my ex-boss BHASKAR,');
+                      term.write('\n Supposedly the biggest name in the industry of M');
+                      term.write('\n the programming language., ');
+                      term.write('\n Read the chat for the email I sent him, ');
+                      term.write('\n, and click the chat button for support :) ');
                       this.showTerm = true;
                 },
                 w: function(a) {
-                    this.term.write(a);
+                    this.term.write('\n'+a);
+                    this.w('Hello :)');
                 },
                 xtermLoad: function() {
                     this.xtermBoot();
@@ -376,7 +401,9 @@
                     this.messages.push(this.messagesArr[this.messageNumber])
                 },
               chat: function(){
-                this.w('F U K S BHASKAR, ZUBAIR FROM 11433 AND DAVID B FROM ADSC.COM');
+                this.w('Help a homeless victim ');
+                this.w('spread some Mumps (the programming language');
+                this.w('...donate!');
               },
                 sendFeedbackTextMessage: function() {
 

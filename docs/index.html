@@ -9,10 +9,7 @@
  <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css"> 
 <!--   <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/main.css" rel="stylesheet" type="text/css"> -->
  <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/fontawesome.css" rel="stylesheet" type="text/css"> 
-
-  
 </head>
-
 <body>
     <div id="q-app">
         <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;width:100vw;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
@@ -46,8 +43,7 @@
                     </q-chat-message>
                     <q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT" />
                 </div>
-            </div>
-   
+            </div>   
             <div style="background-color:inherit;width:397px;height:350px">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="300.000000pt" height="272.000000pt" viewBox="0 0 300.000000 272.000000" preserveAspectRatio="xMidYMid meet">
                 <g transform="translate(0.000000,272.000000) scale(0.100000,-0.100000)"
@@ -176,7 +172,6 @@
             loading: {}, // default set of options for Loading Quasar plugin
             loadingBar: {}, // settings for LoadingBar Quasar plugin
             Fullscreen: {
-
             }
         }
     </script>
@@ -184,7 +179,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
-
     <script>
       //  Quasar.iconSet.set(Quasar.iconSet.svgMaterialIcons)
         new Vue({
@@ -243,10 +237,9 @@
               },0)            
                 _vm.$q.dark.set(true);
                // Quasar.Notify.create('Hi and welcome!');
-              
                // 
-                //
-                //_vm.showTyping = true
+              //
+              //_vm.showTyping = true
                 setTimeout(function() {
                     _vm.speed = 2
                     _vm.showMessage()
@@ -258,9 +251,6 @@
                     _vm.showTyping = true
                     _vm.speed = 1.5
                 }, 5000);
-
-
-
 
                 setTimeout(function() {
                     _vm.speed = 2
@@ -274,8 +264,6 @@
                     _vm.speed = 1.2
                 }, 13000);
 
-
-
                 setTimeout(function() {
                     _vm.showMessage()
                     _vm.showTyping = false
@@ -287,14 +275,11 @@
                     _vm.speed = 1
                 }, 18000);
 
-
-
                 setTimeout(function() {
                     _vm.showMessage()
                     _vm.showTyping = false
                     _vm.speed = 2
                 }, 24600);
-
 
                 setTimeout(function() {
                     _vm.showTyping = true
@@ -354,7 +339,6 @@
                 setTimeout(function() {
                     _vm.showRAT = true
                 }, 50000);
-
             },
             methods: {
                 xtermBoot: function() {
@@ -406,7 +390,6 @@
                 this.w('...donate!');
               },
                 sendFeedbackTextMessage: function() {
-
                 }
             }
         })

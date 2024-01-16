@@ -23,7 +23,7 @@
                     <q-btn @click="launchLI" outline style="background: grey; color: white" label="LinkedIn"></q-btn>
                     <q-btn @click="launchYT" outline style="background: red; color: white" label="YouTube"></q-btn>
                     <q-btn @click="chat" outline style="background: black; color: white" :label="'chat'"></q-btn>
-                    <q-btn @click="'window.open(\'https://www.paypal.com/donate/?business=F5749S6VR698U&no_recurring=0&currency_code=USD\')'" 
+                    <q-btn @click="window.open('https://www.paypal.com/donate/?business=F5749S6VR698U&no_recurring=0&currency_code=USD','_self')"
                       outline style="background: black; color: white" :label="'Donate'"></q-btn>
                    </q-bar>
             </div>
@@ -31,7 +31,7 @@
                 <q-card class="q-pa-lg flex" dark>
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=490" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
             </div> 
-              <div id="terminal" style="overflow:hidden;min-width:680px;"></div>
+              <q-card dark id="terminal" style="width:800px;height:auto"></q-card>
             </div>
             <div class="q-pa-md row justify-center">
                 <div :style="'width: 100%; max-width: 400px'">
@@ -222,15 +222,9 @@
                 _vm.xtermLoad();
               },0)            
                 _vm.$q.dark.set(true);
-                Quasar.Notify.create('Hi and welcome!');
-
-             setTimeout(function(){
-                Quasar.Notify.create('Any Help is appreciated!!!');
-               window.open('https://www.paypal.com/donate/?business=F5749S6VR698U&no_recurring=0&currency_code=USD')
-              },7000)   
+               // Quasar.Notify.create('Hi and welcome!');
               
-    //            Quasar.plugins.bottomSheet.create({
-                // 
+               // 
                 //
                 //_vm.showTyping = true
                 setTimeout(function() {
@@ -353,13 +347,13 @@
                       this.showTerm = true;
                 },
                 w: function(a) {
-                    this.term.write(a + '\n');
+                    this.term.write(a);
                 },
                 xtermLoad: function() {
                     this.xtermBoot();
                 },
                 sayHi: function() {
-                    Quasar.Notify.create('Hi ...   HELP A HOE :)....');
+                    Quasar.Notify.create('Hi <3');
                 },
                 launchLI: function() {
                     window.open('https://www.linkedin.com/in/ahmed-abdelrazek-16b44b187/');

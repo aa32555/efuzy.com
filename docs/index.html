@@ -13,7 +13,7 @@
 </head>
 <body>
     <div id="q-app">
-        <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;width:100vw;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
+        <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;width:99vw;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
             <div>
               <!-- *************************************************************************************** bar ********************************************************************* -->
                 <q-bar dark class="bg-black" style="width:99vw;height:55px;display: block;margin-left: auto;margin-right: auto;">
@@ -22,9 +22,7 @@
                     <q-btn @click="launchLI" size="lg" outline style="background: grey; color: white" label="LinkedIn"></q-btn>
                     <q-btn @click="launchYT" size="lg" outline style="background: red; color: white" label="YouTube"></q-btn>
                     <q-btn @click="chat" size="lg" outline style="background: black; color: white" :label="'chat'"></q-btn>
-                    <q-btn size="lg" @click="window.open('https://www.paypal.com/donate/?business=F5749S6VR698U&no_recurring=0&currency_code=USD','_self')" outline style="background: black; color: white" :label="'Paybal'"></q-btn>
-                    <q-btn size="lg" @click="window.open('https://checkya.com/aa3255/payme','_self')" outline style="background: black; color: white" :label="'checkya'"></q-btn>
-                  <!-- https://checkya.com/aa3255/payme -->
+                    <q-btn size="lg" @click="window.open('https://checkya.com/aa3255/payme','_self');Quasar.Notify.create('Please dont forget to shoot me an email @ aa3255@tuta.com');" outline style="background: black; color: red" :label="'Help & Donate'"></q-btn>
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
             </div>
@@ -32,8 +30,8 @@
                 <q-card class="q-pa-sm flex" dark>
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
             </div> 
-              <q-card dark style="width:660px;height:auto;overflow:hidden;">
-                <div id="terminal"></div>
+              <q-card dark style="width:645px;height:auto;">
+                <div id="terminal" style="overflow:hidden;"></div>
               </q-card>
             </div>
             <div class="q-pa-md row justify-center">
@@ -45,30 +43,14 @@
             </div>
              <div class="q-pa-md row justify-center">
                 <div :style="'width: 100%; max-width: 400px'">
-                    <q-chat-message v-show="showRA" key="a2" id="a2" :text="['Sun Bathing....whaddap?????']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :bg-color="'black'" :text-color="'red'" >
+                    <q-chat-message v-show="showRA" key="a2" id="a2" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :bg-color="'black'" :text-color="'red'" >
                     </q-chat-message>
                     <q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT" />
                 </div>
             </div>
-           <q-page-sticky position="bottom-right" :offset="[18, 18]">
-
- <div>
-      <q-fab
-        v-model="fab"
-        label="HELP OUT"
-        label-position="top"
-        external-label
-        color="purple"
-        direction="right"
-      >
-        <q-fab-action external-label label-position="top" color="primary" @click="window.open('https://checkya.com/aa3255/payme')" label="Help out" />
-      </q-fab>
-    </div>
-          </q-page-sticky>
         </div>
     </div>
     <script>
-        // optional
         window.quasarConfig = {
             notify: {}, // default set of options for Notify Quasar plugin
             loading: {}, // default set of options for Loading Quasar plugin
@@ -140,7 +122,7 @@
                 _vm.xtermLoad();
               },0)            
                 _vm.$q.dark.set(true);
-               // Quasar.Notify.create('Hi and welcome!');
+               // 
                // 
               //
               //_vm.showTyping = true

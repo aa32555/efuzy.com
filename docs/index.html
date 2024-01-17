@@ -22,14 +22,16 @@
                     <q-btn @click="launchLI" size="lg" outline style="background: grey; color: white" label="LinkedIn"></q-btn>
                     <q-btn @click="launchYT" size="lg" outline style="background: red; color: white" label="YouTube"></q-btn>
                     <q-btn @click="chat" size="lg" outline style="background: black; color: white" :label="'chat'"></q-btn>
-                    <q-btn size="lg" @click="window.open('https://checkya.com/aa3255/payme','_self');Quasar.Notify.create('Please dont forget to shoot me an email @ aa3255@tuta.com');" outline style="background: black; color: red" :label="'Help & Donate'"></q-btn>
+                    <q-btn size="lg" @click="window.open('https://checkya.com/aa3255/payme','_self');" outline style="background: black; color: red" :label="'Help & Donate'"></q-btn>
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
             </div>
+          <!--
               <div class="q-pa-sm flex">
                 <q-card class="q-pa-sm flex" dark>
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
             </div> 
+        -->
               <q-card dark style="width:645px;height:auto;">
                 <div id="terminal" style="overflow:hidden;"></div>
               </q-card>
@@ -52,6 +54,7 @@
     </div>
     <script>
         window.quasarConfig = {
+            dialog:{},
             notify: {}, // default set of options for Notify Quasar plugin
             loading: {}, // default set of options for Loading Quasar plugin
             loadingBar: {}, // settings for LoadingBar Quasar plugin
@@ -247,7 +250,18 @@
                     this.xtermBoot();
                 },
                 sayHi: function() {
-                    Quasar.Notify.create('Hi <3');
+                  
+                   this.$q.dialog({
+                    title: '',
+                    message: '<em>I can</em> <span class="text-red">use</span> <strong>Hello</strong>',
+                    html: true
+                  }).onOk(() => {
+                     Quasar.Notify.create('is it you im looking for...');
+                  }).onCancel(() => {
+                   Quasar.Notify.create('Nevermind...');
+                  }).onDismiss(() => {
+                    // console.log('I am triggered on both OK and Cancel')
+                  })
                 },
                 launchLI: function() {
                     window.open('https://www.linkedin.com/in/ahmed-abdelrazek-16b44b187/');
@@ -260,7 +274,7 @@
                     window.open('https://www.instagram.com/aa3255/');
                 },
                 launchYT: function() {
-                    window.open('https://www.youtube.com/asolok');
+                 window.open('https://www.youtube.com/watch?v=BdRVduf7Ylk');
                 },
                 launchWGL: function() {
                     window.open('https://gitlab.com/ahmedydb');

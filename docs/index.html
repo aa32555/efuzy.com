@@ -13,34 +13,24 @@
 </head>
 <body>
     <div id="q-app">
-        <div id="q-page-container" class="flex flex-center" style="height:100%;min-height:100vh;width:99vw;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
+        <div id="q-page-container" class="flex" style="height:100%;min-height:100vh;width:99vw;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
             <div>
               <!-- *************************************************************************************** bar ********************************************************************* -->
                   <q-bar>
-                    <q-btn @click="launchCode" size="lg" outline style="background: #FF0080; color: white" label="Code"></q-btn>
-                    <q-btn @click="sayHi" size="lg" outline style="background: goldenrod; color: white" label="Instagram"></q-btn>
-                    <q-btn @click="launchLI" size="lg" outline style="background: grey; color: white" label="Resume"></q-btn>
-                    <q-btn @click="launchYT" size="lg" outline style="background: red; color: white" label="Video"></q-btn>
-                    <q-btn @click="chat" size="lg" outline style="background: black; color: yellow" :label="'dig up dirt'"></q-btn>
-                    <q-btn @click="cleart" size="lg" outline style="background: black; color: yellow" :label="'clear the console'"></q-btn>
-                    <q-btn size="lg" @click="window.open('https://checkya.com/aa3255/payme','_self');" outline style="background: black; color: red" :label="'Help & Donate'"></q-btn>
+                    <q-btn @click="launchCode" size="md" outline style="background: #FF0080; color: white" label="Code"></q-btn>
+                    <q-btn @click="sayHi" size="md" outline style="background: goldenrod; color: white" label="Instagram"></q-btn>
+                  <!--  <q-btn @click="launchLI" size="md" outline style="background: grey; color: white" label="Resume"></q-btn> -->
+                    <q-btn @click="launchYT" size="md" outline style="background: red; color: white" label="Video"></q-btn>
+                    <q-btn @click="chat" size="md" outline style="background: black; color: yellow" :label="'dig up dirt'"></q-btn>
+                    <q-btn @click="cleart" size="md" outline style="background: black; color: yellow" :label="'clear the console'"></q-btn>
+                    <q-btn size="md" @click="window.open('https://checkya.com/aa3255/payme','_self');" outline style="background: black; color: red" :label="'Help & Donate'"></q-btn>
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
             </div>
-          <!--
-              <div class="q-pa-sm flex">
-                <q-card class="q-pa-sm flex" dark>
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=esxkzpUycIG20fbC&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></q-card>
-            </div> 
-        -->
-
             </div>
             <div class="q-pa-sm">
-
-              
     <div class="row">
-      <div class="col">
-              
+      <div class="col">         
                <q-card dark style="width:645px;height:auto;">
                 <div id="terminal" style="overflow:hidden;"></div>
               </q-card>
@@ -60,8 +50,6 @@
                   </q-card>
       </div>
       </div>
-
-              
             </div>
         </div>
     </div>
@@ -295,10 +283,12 @@
                     this.messages.push(this.messagesArr[this.messageNumber])
                 },
               cleart: function(){
-                       let term = window.term;
+                      let term = window.term || new Terminal() ;
+                     term.open(document.getElementById('terminal'));
                       term.clear();
               },
               chat: function(){
+                       this.w('\r\n\r\n');
                       this.w('*********I HAVE SO MUCH DIRT TO SAY*******************************');
                       this.w('*******************************************************************');
                       this.w(' *********AND SO MUCH TIME TO SAY IT********************************');

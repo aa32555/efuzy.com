@@ -35,10 +35,17 @@
         -->
 
             </div>
-            <div class="q-pa-lg flex">
+            <div class="q-pa-sm">
+
+              
+    <div class="row">
+      <div class="col">
+              
                <q-card dark style="width:645px;height:auto;">
                 <div id="terminal" style="overflow:hidden;"></div>
               </q-card>
+      </div>
+      <div class="col">
                 <q-card dark style="width:645px;height:auto;">
                 <div :style="'width: 100%; max-width: 400px'">
                     <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :bg-color="'black'" :text-color="'red'">
@@ -51,6 +58,10 @@
                     <q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT" />
                 </div>
                   </q-card>
+      </div>
+      </div>
+
+              
             </div>
         </div>
     </div>

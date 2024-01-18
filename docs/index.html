@@ -30,17 +30,17 @@
 }
   </style>
 </head>
-<body style="height:100vh;width:100vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
+<body style="height:100vh;width:100vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;" class="flex">
   <div id="q-app" class="flex q-pa-md">
     <div class="full-width row inline no-wrap justify-center items-center content-center">    
               <!-- *************************************************************************************** bar ********************************************************************* -->
-                  <q-bar dark size="md" dense class="q-pa-md">
-                    <q-btn @clicked="launchCode"  @click="sayHi" class="bg-black text-teal" label="coming soon"></q-btn>
-                    <q-btn @clicked="sayHi" @click="window.open('https://www.instagram.com/aa3255',null,)" class="bg-black text-white"  label="Instagram"></q-btn>
-                    <q-btn @click="launchYT"   class="bg-black text-white"  label="Video"></q-btn>
-                    <q-btn @click="chat"  class="bg-black text-white"  :label="'dig up dirt'"></q-btn>
-                    <q-btn @click="cleart" class="bg-black text-white" :label="'clear the console'"></q-btn>
-                    <q-btn  @click="window.open('https://checkya.com/aa3255/payme','_blank')" class="bg-black text-red" :label="'Help & Donate'"></q-btn>
+                  <q-bar dark size="lg" dense class="q-pa-md">
+                    <q-btn size="lg" @clicked="launchCode"  @click="sayHi" class="bg-black text-teal" label="coming soon"></q-btn>
+                    <q-btn size="lg" @clicked="sayHi" @click="window.open('https://www.instagram.com/aa3255',null,)" class="bg-black text-white"  label="Instagram"></q-btn>
+                    <q-btn size="lg" @click="launchYT"   class="bg-black text-white"  label="Video"></q-btn>
+                    <q-btn size="lg" @click="chat"  class="bg-black text-white"  :label="'dig up dirt'"></q-btn>
+                    <q-btn size="lg" @click="cleart" class="bg-black text-white" :label="'clear the console'"></q-btn>
+                    <q-btn size="lg"  @click="window.open('https://checkya.com/aa3255/payme','_blank')" class="bg-black text-red" :label="'Help & Donate'"></q-btn>
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
     </div>
@@ -124,91 +124,71 @@
                 _vm.xtermLoad();
               },0)            
                 _vm.$q.dark.set(true);
-               // 
-               // 
-              //
-              //_vm.showTyping = true
                 setTimeout(function() {
                     _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
                     _vm.speed = 1
                 }, 1000);
-
                 setTimeout(function() {
                     _vm.showTyping = true
                     _vm.speed = 1.5
                 }, 5000);
-
                 setTimeout(function() {
                     _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
 
                 }, 9000);
-
                 setTimeout(function() {
                     _vm.showTyping = true
                     _vm.speed = 1.2
                 }, 13000);
-
                 setTimeout(function() {
                     _vm.showMessage()
                     _vm.showTyping = false
                     _vm.speed = 2
                 }, 17000);
-
                 setTimeout(function() {
                     _vm.showTyping = true
                     _vm.speed = 1
                 }, 18000);
-
                 setTimeout(function() {
                     _vm.showMessage()
                     _vm.showTyping = false
                     _vm.speed = 2
                 }, 24600);
-
                 setTimeout(function() {
                     _vm.showTyping = true
                     _vm.speed = 1
                 }, 30000);
-
                 setTimeout(function() {
                     _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
-
                 }, 31000);
-
                 setTimeout(function() {
                     _vm.showTyping = true
                     _vm.speed = 1
                 }, 32000);
-
                 setTimeout(function() {
                     _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
                 }, 33000);
-
                 setTimeout(function() {
                     _vm.showTyping = true
                 }, 34000);
-
                 setTimeout(function() {
                     _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
                 }, 35000);
-
                 setTimeout(function() {
                     _vm.speed = 2
                     _vm.showMessage()
                     _vm.showTyping = false
                 }, 36000);
-
-
                 setTimeout(function() {
                     _vm.speed = 2
                     _vm.showMessage()
@@ -262,7 +242,6 @@
                     this.xtermBoot();
                 },
                 sayHi: function() {
-                  
                    this.$q.dialog({
                     title: '',
                     message: '<span class="text-red">final warning</span> <strong><h1>I SAID COMING SOON, @#$@#</h1></strong>',
@@ -302,13 +281,13 @@
                 
               },
               chat: function(){
-                       this.w('\r\n\r\n');
+                       this.w('\r\n');
                       this.w('*********I HAVE SO MUCH DIRT TO SAY*******************************');
                       this.w(' *********AND SO MUCH TIME TO SAY IT********************************');
                       this.w('****************YOU ARE NEXT****************************************');
                       this.w('****************BARBRA YOUNG FROM CLARA MASS************************');
                      this.w('************************انا فاكر **************************************');
-                 this.w('\r\n\r\n\r\n');
+                 this.w('\r\n');
               },
                 sendFeedbackTextMessage: function() {
                 }

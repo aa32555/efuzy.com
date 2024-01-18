@@ -266,19 +266,14 @@
                   
                    this.$q.dialog({
                     title: '',
-                    message: '<em>I can</em> <span class="text-red">use</span> <strong><h1>I SAID COMING SOON, @#$@#</h1></strong>',
+                    message: '<span class="text-red">final warning</span> <strong><h1>I SAID COMING SOON, @#$@#</h1></strong>',
                     html: true
                   }).onOk(() => {
-                     
                      setTimeout(function(){
                         Quasar.Notify.create('**************THATS WHAT I THOUGHT...*****************');
-                     },3000)
-                    
-                     
+                     },500)
                   }).onCancel(() => {
-                   Quasar.Notify.create('Nevermind...');
                   }).onDismiss(() => {
-                    // console.log('I am triggered on both OK and Cancel')
                   })
                 },
                 launchLI: function() {
@@ -289,10 +284,10 @@
                     window.open('https://www.github.com/aa32555');
                 },
                 launchI: function() {
-                    window.open('https://www.instagram.com/aa3255/');
+                    window.open('https://www.instagram.com/aa3255/','_blank');
                 },
                 launchYT: function() {
-                 window.open('https://www.youtube.com/watch?v=BdRVduf7Ylk');
+                 window.open('https://www.youtube.com/watch?v=BdRVduf7Ylk&t=490','_blank');
                 },
                 launchWGL: function() {
                     window.open('https://gitlab.com/ahmedydb');

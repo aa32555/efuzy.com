@@ -39,40 +39,7 @@
   </style>
 </head>
 <body>
-<div id="q-app">
-<q-page-container>
-<q-page id="q-page-container">
-<q-layout :class="$q.dark.isActive ? 'bg-banner-dark' : 'bg-banner-light'">
-    <q-header
-      elevated
-      class="bg-black text-red"
-      height-hint="61.59"
-    >
-      <q-toolbar class="q-py-sm q-px-md">
-        <q-btn
-          round
-          dense
-          flat
-          :ripple="false"
-          style="margin-right:10px"
-          :to="'/'"
-        >
-          <q-avatar size="42px">
-            <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png" style="background-color:white;" />
-          </q-avatar>
-        </q-btn>
-          <q-btn
-            dense
-            flat
-            round
-            size="md"
-            :icon="theme === 'light' ? 'wb_sunny' : 'nightlight_round'"
-            @click="changeTheme"
-          ></q-btn>
-      </q-toolbar>
-      </q-header>
- 
- <div class="flex">
+  <div id="q-app" class="flex" :class="$q.dark.isActive ? 'bg-banner-dark' : 'bg-banner-light'">
     <div class="row">
               <!-- *************************************************************************************** bar ********************************************************************* -->
                   <q-bar>
@@ -112,11 +79,7 @@
                   </q-card>
         </div>
      </div>
-     
-    </q-layout>
-    </q-page>
-   </q-page-container>
-  </div>
+ </div>
 <script>
         window.quasarConfig = {
             dialog:{},

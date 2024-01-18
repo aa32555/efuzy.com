@@ -44,13 +44,10 @@
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
     </div>
-        <div class="q-pa-lg full-width row inline no-wrap justify-center items-center content-center">      
-               <q-card style="width:660px;height:auto;background:inherit;">
-                <div id="terminal" style="overflow:hidden;"></div>
-              </q-card>
-    </div>
+
+
     <div class=" q-pa-lg full-width row inline no-wrap justify-center items-center content-center">
-                <q-card style="max-width:400px;height:400px;">
+                <q-card style="max-width:400px;">
                 <div :style="'width: 100%; min-width: 400px'">
                     <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :bg-color="'black'" :text-color="'red'">
                     </q-chat-message>
@@ -63,6 +60,19 @@
                 </div>
                   </q-card>
         </div>
+
+
+    
+        <div class="q-pa-lg full-width row inline no-wrap justify-center items-center content-center">      
+               <q-card style="width:655px;height:auto;background:inherit;">
+                <div id="terminal" style="overflow:hidden;"></div>
+              </q-card>
+        </div>
+
+
+
+
+    
  </div>
 <script>
         window.quasarConfig = {

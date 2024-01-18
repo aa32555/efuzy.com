@@ -241,7 +241,8 @@
                 xtermBoot: function() {
                     this.termExists = true;
                      let term = window.term || new Terminal() ;
-                     this.term = term
+                     this.term = term;
+                     term.cursorBlink = true;
                      term.open(document.getElementById('terminal'));
                       term.write('\r\n, *******************************************************************');
                       term.write('\r\n, *******************************************************************');

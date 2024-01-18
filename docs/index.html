@@ -57,7 +57,7 @@
                     <q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT" />
                 </div>
                  <div :style="'width: 100%; min-width: 400px'">
-                    <q-chat-message v-show="showISIS" key="a3" id="a3" :text="messagesISIS" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :bg-color="'black'" :text-color="'green'" >
+                    <q-chat-message v-show="showISIS" key="a3" id="a3" :text="['\n[Intro: God]\n\nThere once was a little girl\nWho had a crush on a bad, bad boy\nBut when thatbad boy got out of prison\nThat little girls ass was in big, big trouble']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :bg-color="'black'" :text-color="'green'" >
                     </q-chat-message>
                     <q-spinner-dots  key="b3" id="b3"  size="3rem" v-show="showISIST" />
                 </div>
@@ -228,11 +228,11 @@
                 }, 50000);
                 
                 setTimeout(function() {
-                    _vm.showRA = true
+                    _vm.showISIS = true
                 }, 55000);
 
                 setTimeout(function() {
-                    _vm.showRAT = true
+                    _vm.showISIST = true
                 }, 60000);
             },
             methods: {

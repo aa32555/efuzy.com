@@ -34,7 +34,7 @@
   <div id="q-app">
     <div class="full-width row inline no-wrap justify-center items-center content-center">    
               <!-- *************************************************************************************** bar ********************************************************************* -->
-                  <q-bar size="lg" dense>
+                  <q-bar size="lg" dense style="padding-bottom:50px;" class="q-pa-lg">
                     <q-btn @click="launchCode" size="lg" style="background: #000000; color: white" label="Code"></q-btn>
                     <q-btn @click="sayHi" size="lg" style="background: #000000; color: white" label="Instagram"></q-btn>
                   <!--  <q-btn @click="launchLI" size="md" outline style="background: grey; color: white" label="Resume"></q-btn> -->
@@ -45,19 +45,19 @@
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
     </div>
-        <div class="full-width row inline no-wrap justify-center items-center content-center">      
-               <q-card dark style="width:645px;height:auto;background:inherit;">
+        <div class="q-pa-lg full-width row inline no-wrap justify-center items-center content-center">      
+               <q-card style="width:680px;height:auto;background:inherit;">
                 <div id="terminal" style="overflow:hidden;"></div>
               </q-card>
     </div>
-    <div class="full-width row inline no-wrap justify-center items-center content-center">
-                <q-card dark style="width:645px;height:auto;">
-                <div :style="'width: 100%; max-width: 400px'">
+    <div class=" q-pa-lg full-width row inline no-wrap justify-center items-center content-center">
+                <q-card style="width:680px;height:800px;">
+                <div :style="'width: 100%; min-width: 400px'">
                     <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :bg-color="'black'" :text-color="'red'">
                     </q-chat-message>
                     <q-spinner-dots  key="b1" id="b1" size="3rem" v-show="showTyping" />
                 </div>
-                <div :style="'width: 100%; max-width: 400px'">
+                <div :style="'width: 100%; min-width: 400px'">
                     <q-chat-message v-show="showRA" key="a2" id="a2" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :bg-color="'black'" :text-color="'red'" >
                     </q-chat-message>
                     <q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT" />
@@ -304,22 +304,16 @@
                 },
               cleart: function(){
                       let term = window.term || new Terminal() ;
-                     term.open(document.getElementById('terminal'));
                       term.clear();
               },
               chat: function(){
                        this.w('\r\n\r\n');
                       this.w('*********I HAVE SO MUCH DIRT TO SAY*******************************');
-                      this.w('*******************************************************************');
                       this.w(' *********AND SO MUCH TIME TO SAY IT********************************');
-                      this.w('*******************************************************************');
                       this.w('****************YOU ARE NEXT****************************************');
                       this.w('****************BARBRA YOUNG FROM CLARA MASS************************');
-                      this.w('*******************************************************************');
                      this.w('************************انا فاكر **************************************');
-                     this.w('***********************انا فاكر ****************************************');
-                     this.w('*********************انا فاكر *****************************************');
-                     this.w('*********************انا فاكر *********************************');
+                 this.w('\r\n\r\n\r\n');
               },
                 sendFeedbackTextMessage: function() {
                 }

@@ -30,20 +30,22 @@
 }
   </style>
 </head>
-<body>
-  <div id="q-app" :class="'full-width row inline no-wrap justify-center items-center content-center'" style="background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
+<body :class="'flex'" style="height:100vh;width:100vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
+  <div id="q-app">
+    <div class="full-width row inline no-wrap justify-center items-center content-center">    
               <!-- *************************************************************************************** bar ********************************************************************* -->
-                  <q-bar size="lg" class="bg-black text-red">
+                  <q-bar size="lg" dense>
                     <q-btn @click="launchCode" size="lg" style="background: #000000; color: white" label="Code"></q-btn>
                     <q-btn @click="sayHi" size="lg" style="background: #000000; color: white" label="Instagram"></q-btn>
                   <!--  <q-btn @click="launchLI" size="md" outline style="background: grey; color: white" label="Resume"></q-btn> -->
-                    <q-btn @click="launchYT" size="lg" style="background: red; color: white" label="Video"></q-btn>
-                    <q-btn @click="chat" size="lg" style="background: black; color: yellow" :label="'dig up dirt'"></q-btn>
-                    <q-btn @click="cleart" size="lg" style="background: black; color: yellow" :label="'clear the console'"></q-btn>
+                    <q-btn @click="launchYT" size="lg" style="background: #000000; color: white" label="Video"></q-btn>
+                    <q-btn @click="chat" size="lg" style="background: #000000; color: yellow" :label="'dig up dirt'"></q-btn>
+                    <q-btn @click="cleart" size="lg" style="background: #000000; color: yellow" :label="'clear the console'"></q-btn>
                     <q-btn size="lg" :to="'https://checkya.com/aa3255/payme'" outline style="background: black; color: red" :label="'Help & Donate'"></q-btn>
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
-     <div class="full-width row inline no-wrap justify-center items-center content-center">      
+    </div>
+        <div class="full-width row inline no-wrap justify-center items-center content-center">      
                <q-card dark style="width:645px;height:auto;background:inherit;">
                 <div id="terminal" style="overflow:hidden;"></div>
               </q-card>

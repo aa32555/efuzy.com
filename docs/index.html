@@ -35,13 +35,12 @@
     <div class="full-width row inline no-wrap justify-center items-center content-center">    
               <!-- *************************************************************************************** bar ********************************************************************* -->
                   <q-bar size="lg" dense style="padding-bottom:50px;" class="q-pa-lg">
-                    <q-btn @click="launchCode" size="lg" style="background: #000000; color: white" label="Code"></q-btn>
-                    <q-btn @click="sayHi" size="lg" style="background: #000000; color: white" label="Instagram"></q-btn>
-                  <!--  <q-btn @click="launchLI" size="md" outline style="background: grey; color: white" label="Resume"></q-btn> -->
-                    <q-btn @click="launchYT" size="lg" style="background: #000000; color: white" label="Video"></q-btn>
-                    <q-btn @click="chat" size="lg" style="background: #000000; color: yellow" :label="'dig up dirt'"></q-btn>
-                    <q-btn @click="cleart" size="lg" style="background: #000000; color: yellow" :label="'clear the console'"></q-btn>
-                    <q-btn size="lg" :to="'https://checkya.com/aa3255/payme'" outline style="background: black; color: red" :label="'Help & Donate'"></q-btn>
+                    <q-btn @clicked="launchCode"  @click="launchLI" size="lg" style="background: black; color: green" label="coming soon"></q-btn>
+                    <q-btn @clicked="sayHi" @click="window.open('https://www.instagram.com/aa3255')" size="lg" style="background: #000000; color: white" label="Instagram"></q-btn>
+                    <q-btn @click="launchYT" size="lg" style="background: #000000; color: teal" label="Video"></q-btn>
+                    <q-btn @click="chat" size="lg" style="background: #000000; color: amber" :label="'dig up dirt'"></q-btn>
+                    <q-btn @click="cleart" size="lg" style="background: #000000; color: orange" :label="'clear the console'"></q-btn>
+                    <q-btn size="lg" @click="window.open('https://checkya.com/aa3255/payme')" outline style="background: black; color: red" :label="'Help & Donate'"></q-btn>
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
     </div>

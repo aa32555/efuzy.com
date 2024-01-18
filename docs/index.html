@@ -36,10 +36,14 @@
   background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/banner-image-dark.jpg);
   background-size: cover;
 }
+    .fullpage {
+      width:100vw !important;
+      height:10vh !important;
+    }
   </style>
 </head>
 <body>
-  <div id="q-app" class="flex" :class="$q.dark.isActive ? 'bg-banner-dark' : 'bg-banner-light'">
+  <div id="q-app" :class="$q.dark.isActive ? 'fullpage flex bg-banner-dark' : 'fullpage flex bg-banner-light'">
     <div class="row">
               <!-- *************************************************************************************** bar ********************************************************************* -->
                   <q-bar>

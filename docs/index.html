@@ -28,23 +28,10 @@
 .rotating:hover {
   transform: rotateZ(360deg);
 }
-.bg-banner-light {
-  background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);
-  background-size: cover;
-}
-.bg-banner-dark {
-  background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);
-  background-size: cover;
-}
-    .fullpage {
-      width:100vw !important;
-      height:10vh !important;
-    }
   </style>
 </head>
 <body>
-  <div id="q-app" :class="$q.dark.isActive ? 'fullpage flex bg-banner-dark flex-center' : 'fullpage flex bg-banner-light flex-center'">
-    <div class="row">
+  <div id="q-app" :class="'full-width row inline no-wrap justify-center items-center content-center'" style="background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
               <!-- *************************************************************************************** bar ********************************************************************* -->
                   <q-bar size="lg" class="bg-black text-red">
                     <q-btn @click="launchCode" size="lg" style="background: #000000; color: white" label="Code"></q-btn>
@@ -56,19 +43,12 @@
                     <q-btn size="lg" :to="'https://checkya.com/aa3255/payme'" outline style="background: black; color: red" :label="'Help & Donate'"></q-btn>
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
-    </div>
-   
-     <div class="row">      
-        <div class="col">         
-               <q-card dark style="width:645px;height:auto;">
+     <div class="full-width row inline no-wrap justify-center items-center content-center">      
+               <q-card dark style="width:645px;height:auto;background:inherit;">
                 <div id="terminal" style="overflow:hidden;"></div>
               </q-card>
-      </div>
     </div>
-
-
-    <div class="row">
-        <div class="col">
+    <div class="full-width row inline no-wrap justify-center items-center content-center">
                 <q-card dark style="width:645px;height:auto;">
                 <div :style="'width: 100%; max-width: 400px'">
                     <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :bg-color="'black'" :text-color="'red'">
@@ -82,7 +62,6 @@
                 </div>
                   </q-card>
         </div>
-     </div>
  </div>
 <script>
         window.quasarConfig = {

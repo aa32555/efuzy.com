@@ -35,22 +35,22 @@
     <div class="full-width row inline no-wrap justify-center items-center content-center">    
               <!-- *************************************************************************************** bar ********************************************************************* -->
                   <q-bar size="lg" dense style="padding-bottom:50px;" class="q-pa-lg">
-                    <q-btn @clicked="launchCode"  @click="launchLI" size="lg" style="background: black; color: green" label="coming soon"></q-btn>
-                    <q-btn @clicked="sayHi" @click="window.open('https://www.instagram.com/aa3255')" size="lg" style="background: #000000; color: white" label="Instagram"></q-btn>
-                    <q-btn @click="launchYT" size="lg" style="background: #000000; color: teal" label="Video"></q-btn>
-                    <q-btn @click="chat" size="lg" style="background: #000000; color: amber" :label="'dig up dirt'"></q-btn>
-                    <q-btn @click="cleart" size="lg" style="background: #000000; color: orange" :label="'clear the console'"></q-btn>
-                    <q-btn size="lg" @click="window.open('https://checkya.com/aa3255/payme')" outline style="background: black; color: red" :label="'Help & Donate'"></q-btn>
+                    <q-btn @clicked="launchCode"  @click="sayHi" size="lg" style="background: black; color: green" label="coming soon"></q-btn>
+                    <q-btn @clicked="sayHi" @click="window.open('https://www.instagram.com/aa3255',null,)" size="lg" style="background: #000000; color: white" label="Instagram"></q-btn>
+                    <q-btn @click="launchYT" size="lg"  class="bg-black text-white"  label="Video"></q-btn>
+                    <q-btn @click="chat" size="lg"  class="bg-grey text-white"  :label="'dig up dirt'"></q-btn>
+                    <q-btn @click="cleart" size="lg" class="bg-black text-white" :label="'clear the console'"></q-btn>
+                    <q-btn size="lg" @click="window.open('https://checkya.com/aa3255/payme','_blank')" outline class="bg-black text-red" :label="'Help & Donate'"></q-btn>
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
     </div>
         <div class="q-pa-lg full-width row inline no-wrap justify-center items-center content-center">      
-               <q-card style="width:680px;height:auto;background:inherit;">
+               <q-card style="width:660px;height:auto;background:inherit;">
                 <div id="terminal" style="overflow:hidden;"></div>
               </q-card>
     </div>
     <div class=" q-pa-lg full-width row inline no-wrap justify-center items-center content-center">
-                <q-card style="width:680px;height:800px;">
+                <q-card style="width:660px;height:800px;">
                 <div :style="'width: 100%; min-width: 400px'">
                     <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :bg-color="'black'" :text-color="'red'">
                     </q-chat-message>
@@ -102,27 +102,18 @@
                     messageDirection: true,
                     showReply: false,
                     messagesArr: [
-                        'Hello...is this Eeeath???',
-                        'where all the dirt is!!!',
-                        'its tough living in space also why was that dude staring at you hard',
-                        ' in the SUBWAY on the A line last night, looks like the guy from beechum, while rubbing one out, very weierd creatures these bipedal sex dolls',
-                        'oh my spider, i meant thinking machines',
-                        'oh btw, what\'s up with IGG IGG',
-                        'I heard she Olga\'d G Man',
-                        'and where is A man when you need him, blessed be to the holly cow, i mean web',
+                        'Hello...is this Eeeath??? where all the dirt is!!! I HAVE A SOOOOONG TO SIIIIIING',
+                        '.....',
+                        '.....',
+                        '..... ',
+                        'Right about now NWA court is in full effect Judge Dre presiding in the case of NWA versus the police department. Prosecuting attourneys are MC Ren, Ice Cube and Eazy motherfuckin E',
+                        .....',
+                        '....',
+                        '....',
                         '...',
-                        '...RA....???????...any SUN diety out there ??????????????',
-                        //'dear harly quinn:: someone stole my aids infested listening device today. help a hoe out, DONATE AHHHHH ',
-                        //'AN UPDATE TODAY:\n\nI REMEMBER THE LAST EMAIL I SENT RIGHT BEFORE I WAS TASKED TO GO UNDER COVER BY NANCY A and DAVID W. THEY REMEMBER THIS PROJECT AND I THINK THEY Are a LITTLE TECKY THEY CAN HELP MY LAWYER. YOU HAVE ONE DAY TO OFFER A SETTELEMNT FIGURE, OR IT WILL EITHER BE REJECTED AND MORE WILL BE ASKED, OR I WILL GO TO KING RYAHD OF K.S.A FOR JUSTICE. KISS MY ASS BHASKAR.....iI|II..@ahmedydb\n\n\n\nHave you seen Ahmed??',
-                        //'I\'m looking for him',
-                        //'why is he not dead yet?',
-                        //'here is phone number: 201-737-9078...HELLO IS ANYONE HERE???',
-                        //'and here is the number of the people who are trying to make sure he never works any where again, by not knowing the first thing about HR',
-                        //'they proudly talk about how ofter they are being audited',
-                        //'their Director of Operations, Manny ( or HE-MAN as my lover would say ) failed vocational school, I hope he rememebers the sales report and OPTION AM. the Wife BEATER',
-                        //'يا اطبطب يا ادلع',
-                        //'يا يقولي انا اتغيرت عليه'
-                    ]
+                        '...RA....???????...FEEL LIKE SINGING.....',
+                    ],
+                  messages:[' I was in the orthophogas, whaddap ????, Yeah, why not...let me warm up ....']
                 }
             },
             watched: {
@@ -255,9 +246,14 @@
                      let term = window.term || new Terminal() ;
                      this.term = term
                      term.open(document.getElementById('terminal'));
-                      term.write('\r\n           Hello, I would like to tell you how I became HOMELESS ');
-                      term.write('\r\n            Thanks to BHASKAR from yottadb.com and  ');
-                      term.write('\r\n            and David Barzali from ADSC.com the scam of the healthcare industry,. ');
+                      term.write('\r\n, *******************************************************************');
+                      term.write('\r\n, *******************************************************************');
+                      term.write('\r\n, *******************************************************************');
+                      term.write('\r\n  Hello, I would like to tell you how I became HOMELESS ');
+                      term.write('\r\n  Thanks to BHASKAR from yottadb.com and  ');
+                      term.write('\r\n   and David Barzali from ADSC.com the scam of the healthcare industry');
+                      term.write('\r\n, *******************************************************************');
+                      term.write('\r\n, *******************************************************************');
                       term.write('\r\n, *******************************************************************');
                       this.showTerm = true;
                 },
@@ -271,10 +267,15 @@
                   
                    this.$q.dialog({
                     title: '',
-                    message: '<em>I can</em> <span class="text-red">use</span> <strong><h1>Hello</h1></strong>',
+                    message: '<em>I can</em> <span class="text-red">use</span> <strong><h1>I SAID COMING SOON, @#$@#</h1></strong>',
                     html: true
                   }).onOk(() => {
-                     Quasar.Notify.create('is it you im looking for...');
+                     
+                     setTimeout(function(){
+                        Quasar.Notify.create('**************THATS WHAT I THOUGHT...*****************');
+                     },3000)
+                    
+                     
                   }).onCancel(() => {
                    Quasar.Notify.create('Nevermind...');
                   }).onDismiss(() => {
@@ -302,8 +303,10 @@
                     this.messages.push(this.messagesArr[this.messageNumber])
                 },
               cleart: function(){
-                      let term = window.term || new Terminal() ;
-                      term.clear();
+                  //    let term = window.term || new Terminal() ;
+                  //    term.clear();
+                 this.w('\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n');
+                
               },
               chat: function(){
                        this.w('\r\n\r\n');

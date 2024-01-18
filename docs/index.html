@@ -31,21 +31,21 @@
   </style>
 </head>
 <body style="height:100vh;width:100vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
-  <div id="q-app":class="'flex q-pa-md'">
+  <div id="q-app" class="flex q-pa-md">
     <div class="full-width row inline no-wrap justify-center items-center content-center">    
               <!-- *************************************************************************************** bar ********************************************************************* -->
-                  <q-bar dark size="lg" dense style="padding-bottom:50px;" class="q-pa-lg">
-                    <q-btn @clicked="launchCode"  @click="sayHi" size="lg" style="background: black; color: green" label="coming soon"></q-btn>
-                    <q-btn @clicked="sayHi" @click="window.open('https://www.instagram.com/aa3255',null,)" size="lg" style="background: #000000; color: white" label="Instagram"></q-btn>
-                    <q-btn @click="launchYT" size="lg"  class="bg-black text-white"  label="Video"></q-btn>
-                    <q-btn @click="chat" size="lg"  class="bg-grey text-white"  :label="'dig up dirt'"></q-btn>
-                    <q-btn @click="cleart" size="lg" class="bg-black text-white" :label="'clear the console'"></q-btn>
-                    <q-btn size="lg" @click="window.open('https://checkya.com/aa3255/payme','_blank')" outline class="bg-black text-red" :label="'Help & Donate'"></q-btn>
+                  <q-bar dark size="md" dense class="q-pa-md">
+                    <q-btn @clicked="launchCode"  @click="sayHi" class="bg-black text-teal" label="coming soon"></q-btn>
+                    <q-btn @clicked="sayHi" @click="window.open('https://www.instagram.com/aa3255',null,)" class="bg-black text-white"  label="Instagram"></q-btn>
+                    <q-btn @click="launchYT"   class="bg-black text-white"  label="Video"></q-btn>
+                    <q-btn @click="chat"  class="bg-black text-white"  :label="'dig up dirt'"></q-btn>
+                    <q-btn @click="cleart" class="bg-black text-white" :label="'clear the console'"></q-btn>
+                    <q-btn  @click="window.open('https://checkya.com/aa3255/payme','_blank')" class="bg-black text-red" :label="'Help & Donate'"></q-btn>
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
     </div>
     <div class=" q-pa-lg full-width row inline no-wrap justify-center items-center content-center">
-                <q-card dark style="max-width:400px;" class="q-pa-md">
+                <q-card dark style="width:100%;height:100%" class="q-pa-md">
                 <div :style="'width: 100%; min-width: 400px'">
                     <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :bg-color="'black'" :text-color="'red'">
                     </q-chat-message>
@@ -57,7 +57,7 @@
                     <q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT" />
                 </div>
                   </q-card>
-               <q-card dark style="width:655px;height:auto;background:inherit;" class="q-pa-md">
+               <q-card dark style="min-width:655px;max-width:655px;" class="q-pa-md">
                 <div id="terminal" style="overflow:hidden;"></div>
               </q-card>
         </div>  

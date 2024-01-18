@@ -44,8 +44,6 @@
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
     </div>
-
-
     <div class=" q-pa-lg full-width row inline no-wrap justify-center items-center content-center">
                 <q-card style="max-width:400px;">
                 <div :style="'width: 100%; min-width: 400px'">
@@ -59,20 +57,10 @@
                     <q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT" />
                 </div>
                   </q-card>
-        </div>
-
-
-    
-        <div class="q-pa-lg full-width row inline no-wrap justify-center items-center content-center">      
                <q-card style="width:655px;height:auto;background:inherit;">
                 <div id="terminal" style="overflow:hidden;"></div>
               </q-card>
-        </div>
-
-
-
-
-    
+        </div>  
  </div>
 <script>
         window.quasarConfig = {
@@ -309,7 +297,7 @@
               cleart: function(){
                   //    let term = window.term || new Terminal() ;
                   //    term.clear();
-                 this.w('\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n');
+                 this.w('cleared! \r\n\r\n');
                 
               },
               chat: function(){

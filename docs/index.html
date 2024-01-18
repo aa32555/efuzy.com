@@ -1,8 +1,19 @@
+<!--
+#################################################################
+#                                                               #
+# Copyright (c) 2024 efuzy.com and/or its subsidiaries.         #
+# All rights reserved.                                          #
+#                                                               #
+#   This source code contains the intellectual property         #
+#   of its copyright holder(s), and is made available           #
+#   under a license.  If you do not know the terms of           #
+#   the license, please stop and do not read further.           #
+#                                                               #
+#################################################################
+-->
 <!DOCTYPE html>
 <html>
-
 <head>
-  
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
@@ -10,16 +21,58 @@
   <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css"> 
    <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/main.css" rel="stylesheet" type="text/css"> 
  <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/fontawesome.css" rel="stylesheet" type="text/css">
+  <style>
+    .rotating {
+  transition: transform 1s ease-in-out;
+}
+.rotating:hover {
+  transform: rotateZ(360deg);
+}
+.bg-banner-light {
+  background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/banner-image-light.jpg);
+  background-size: cover;
+}
+.bg-banner-dark {
+  background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/banner-image-dark.jpg);
+  background-size: cover;
+}
+  </style>
 </head>
 <body>
-    <div id="q-app">
-
-
-<q-page id="q-page-container" class="flex" style="height:100%;min-height:100vh;width:99vw;background-image:url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/public/imgs/bg1.jpg);background-size: cover;">
-   <q-card dark>
-    <div class="flex flex-center">
-    <div class="q-gutter-sm" :style="'width:80vw;min-width:380px;padding:10px'">
-        <div class="row">
+<div id="q-app">
+<q-page id="q-page-container">
+<q-layout :class="$q.dark.isActive ? 'bg-banner-dark' : 'bg-banner-light'">
+    <q-header
+      elevated
+      class="bg-black text-red"
+      height-hint="61.59"
+    >
+      <q-toolbar class="q-py-sm q-px-md">
+        <q-btn
+          round
+          dense
+          flat
+          :ripple="false"
+          style="margin-right:10px"
+          :to="'/'"
+        >
+          <q-avatar size="42px">
+            <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png" style="background-color:white;" />
+          </q-avatar>
+        </q-btn>
+          <q-btn
+            dense
+            flat
+            round
+            size="md"
+            :icon="theme === 'light' ? 'wb_sunny' : 'nightlight_round'"
+            @click="changeTheme"
+          ></q-btn>
+      </q-toolbar>
+      </q-header>
+    <q-page-container>
+ <div class="flex">
+    <div class="row">
               <!-- *************************************************************************************** bar ********************************************************************* -->
                   <q-bar>
                     <q-btn @click="launchCode" size="md" outline style="background: #FF0080; color: white" label="Code"></q-btn>
@@ -31,14 +84,19 @@
                     <q-btn size="md" @click="window.open('https://checkya.com/aa3255/payme','_self');" outline style="background: black; color: red" :label="'Help & Donate'"></q-btn>
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
-        </div>
-    <div class="row">
-      <div class="col">         
+    </div>
+   
+     <div class="row">      
+        <div class="col">         
                <q-card dark style="width:645px;height:auto;">
                 <div id="terminal" style="overflow:hidden;"></div>
               </q-card>
       </div>
-      <div class="col">
+    </div>
+
+
+    <div class="row">
+        <div class="col">
                 <q-card dark style="width:645px;height:auto;">
                 <div :style="'width: 100%; max-width: 400px'">
                     <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :bg-color="'black'" :text-color="'red'">
@@ -51,19 +109,19 @@
                     <q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT" />
                 </div>
                   </q-card>
-      </div>
-      </div>
-            </div>
         </div>
-    </div>
-    <script>
+     </div>
+      </q-page-container>
+    </q-layout>
+    </q-page>
+  </div>
+<script>
         window.quasarConfig = {
             dialog:{},
-            notify: {}, // default set of options for Notify Quasar plugin
-            loading: {}, // default set of options for Loading Quasar plugin
-            loadingBar: {}, // settings for LoadingBar Quasar plugin
-            Fullscreen: {
-            }
+            notify: {},
+            loading: {},
+            loadingBar: {},
+            fullscreen: {}
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.ie.polyfills.umd.min.js"></script>
@@ -71,12 +129,12 @@
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
     <script>
-      //  Quasar.iconSet.set(Quasar.iconSet.svgMaterialIcons)
         Quasar.iconSet.set(Quasar.iconSet.fontawesomeV5)
         new Vue({
             el: '#q-app',
             data: function() {
                 return {
+                   theme:'light',
                     fab:'',
                     showRA:false,
                     showRAT:false,
@@ -234,6 +292,15 @@
                 }, 50000);
             },
             methods: {
+                changeTheme: function(){
+                     if (this.theme === "light") {
+                            this.$q.dark.set(true);
+                            this.theme = "dark";
+                          } else {
+                            this.$q.dark.set(false);
+                            this.theme = "light";
+                          }   
+                },    
                 xtermBoot: function() {
                     this.termExists = true;
                      let term = window.term || new Terminal() ;
@@ -310,5 +377,4 @@
         })
     </script>
 </body>
-
 </html>

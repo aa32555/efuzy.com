@@ -44,7 +44,7 @@
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
     </div>
-    <div class=" q-pa-lg full-width row inline no-wrap justify-center items-center content-center">
+    <div class=" q-pa-md full-width row inline no-wrap justify-center items-center content-center">
                 <q-card dark style="width:100%;height:100%" class="q-pa-md">
                 <div :style="'width: 100%; min-width: 400px'">
                     <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :bg-color="'black'" :text-color="'red'">
@@ -61,16 +61,24 @@
                     </q-chat-message>
                     <q-spinner-dots  key="b3" id="b3"  size="3rem" v-show="showISIST" />
                 </div>
+                  <div :style="'width: 100%; min-width: 400px'">
+                    <q-chat-message v-show="showBASTET" key="a4" id="a4" :text="['\nMo7sins biggest fear is colors & numbers.\nmeo']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :bg-color="'black'" :text-color="'yellow'" >
+                    </q-chat-message>
+                </div>
+                  <div :style="'width: 100%; min-width: 400px'">
+                   <q-chat-message v-show="showME" key="a5" id="a5" :text="['\nwrong convo btatis, meow\nhelp AND DONATE. \nalso check whats coming soon']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :bg-color="'black'" :text-color="'teal'" >
+                    </q-chat-message>
+                </div>
                   </q-card>
                <q-card dark style="min-width:655px;max-width:655px;" class="q-pa-md">
                 <div id="terminal" style="overflow:hidden;"></div>
               </q-card>
         </div>  
 
-  <div class=" q-pa-lg full-width row inline no-wrap justify-center items-center content-center">
-                <q-card dark style="width:1310px;height:auto;margin:auto," class="q-pa-md">
+  <div class=" q-pa-md full-width row inline no-wrap justify-center items-center content-center">
+                <q-card dark style="width:85vwpx;height:auto;margin:auto," class="q-pa-md">
 <center>
-<lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="1" style="width: 1000px;" direction="1" mode="normal" loop autoplay></lottie-player>           </q-card>
+<lottie-player src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" background="transparent" speed="1" style="width: 77vw;" direction="1" mode="normal" loop autoplay></lottie-player>           </q-card>
      </center>   </div>  
     
  </div>
@@ -98,6 +106,8 @@
                    theme:'light',
                     fab:'',
                     showRA:false,
+                    showBASTET:false,
+                    showME:false,
                     showISIST:false,
                     showISIS:false,
                     showRAT:false,
@@ -234,6 +244,14 @@
                 setTimeout(function() {
                     _vm.showISIST = true
                 }, 60000);
+
+              setTimeout(function() {
+                    _vm.showBASTET = true
+                }, 65000)
+
+              setTimeout(function() {
+                    _vm.showME = true
+                }, 70000);
             },
             methods: {
                 changeTheme: function(){

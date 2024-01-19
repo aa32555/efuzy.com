@@ -461,7 +461,7 @@
                 },
                 xtermBoot: function() {
                     this.termExists = true;
-                     let term = window.term || new Terminal() ;
+                     let term = window.term || new Terminal({cursorBlink: true}));
                      this.term = term;
                      term.open(document.getElementById('terminal'));
                       let a = function(t){return term.write('\r\n,t');};
@@ -532,7 +532,7 @@
                    a('                                                                    ');
                    a('                                                                    ');
                    a('******************************************************************* ');
-                  b();
+                 // b();
                  this.showTerm = true;
                 },
                 w: function(a) {

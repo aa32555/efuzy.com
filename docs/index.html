@@ -343,13 +343,13 @@
   <div id="q-app" class="flex q-pa-md">
     <div class="full-width row inline no-wrap justify-center items-center content-center">    
               <!-- *************************************************************************************** bar ********************************************************************* -->
-                  <q-bar dark size="lg" dense class="q-pa-md">
-                    <q-btn size="lg" @clicked="launchCode"  @click="sayHi" class="bg-black text-teal" label="coming soon"></q-btn>
-                    <q-btn size="lg" @clicked="sayHi" @click="window.open('https://www.instagram.com/aa3255',null,)" class="bg-black text-white"  label="Instagram"></q-btn>
-                    <q-btn size="lg" @click="launchYT"   class="bg-black text-white"  label="Video"></q-btn>
-                    <q-btn size="lg" @click="chat"  class="bg-black text-white"  :label="'dig up dirt'"></q-btn>
-                    <q-btn size="lg" @click="cleart" class="bg-black text-white" :label="'clear the console'"></q-btn>
-                    <q-btn size="lg"  @click="window.open('https://checkya.com/aa3255/payme','_blank')" class="bg-black text-red" :label="'Help & Donate'"></q-btn>
+                  <q-bar dense class="q-pa-xs">
+                    <q-btn size="md" @click="sayHi" class="bg-black text-teal" label="coming soon"></q-btn>
+                    <q-btn size="md" @click="launchRepo" class="bg-black text-amber-5" label="Repo"></q-btn>
+                    <q-btn size="md" @click="launchInstagram" class="bg-black text-lime-13"  label="Instagram"></q-btn>
+                    <q-btn size="md" @click="chat"  class="bg-black text-deep-purple-10"  :label="'dig up dirt'"></q-btn>
+                    <q-btn size="md" @click="cleart" class="bg-black text-deep-purple-10" :label="'clear the console'"></q-btn>
+                    <q-btn size="md"  @click="donate" class="bg-black text-red-14" :label="'Help & Donate'"></q-btn>
                    </q-bar>
               <!-- *************************************************************************************** bar ********************************************************************* -->
     </div>

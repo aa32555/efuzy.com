@@ -199,7 +199,7 @@ aa3255@gmail.com (nocurrent access)......aa
         inline-label
         class="bg-black text-red"
       >
-        <q-tab name="repo" @click="li" label="LinkedIn"></q-tab>
+        <q-tab name="li" @click="li" label="LinkedIn"></q-tab>
          <q-tab name="repo" @click="repo" label="Repo"></q-tab>
         <q-tab name="youtube" label="youtube" @click="youtube"></q-tab>
         <q-tab name="Instagram" label="Instagram" @click="insta"></q-tab>
@@ -207,9 +207,11 @@ aa3255@gmail.com (nocurrent access)......aa
          <q-tab name="adisodasoon" label="coming_soon" @click="adisodasoon"></q-tab>
          <q-tab name="donate" label="DON 8" @click="donate"></q-tab>
       </q-tabs>
-        <q-card dark style="flex" style="width:95vw;">    
+        <q-card dark class="flex flex-center" style="width:95vw;">    
                     <q-btn  dense @click="chat"  color="red"  :label="'dig up dirt'"></q-btn>
                     <q-btn dense @click="cleart" color="red" :label="'clear the console'"></q-btn>
+                    <q-btn dense @click="chat" color="red" :label="'chat with an alien'"></q-btn>
+          
     </q-card>
   </div>
 

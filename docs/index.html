@@ -207,7 +207,7 @@ aa3255@gmail.com (nocurrent access)......aa
          <q-tab name="adisodasoon" label="coming_soon" @click="adisodasoon"></q-tab>
          <q-tab name="donate" label="DON 8" @click="donate"></q-tab>
       </q-tabs>
-        <q-card dark class="flex flex-center" style="width:95vw;">    
+        <q-card dark class="flex flex-cente q-pa-lg q-gutter-md" style="width:77vw;">    
                     <q-btn  dense @click="chat"  color="red"  :label="'dig up dirt'"></q-btn>
                     <q-btn dense @click="cleart" color="red" :label="'clear the console'"></q-btn>
                     <q-btn dense @click="chat" color="red" :label="'chat with an alien'"></q-btn>
@@ -215,8 +215,8 @@ aa3255@gmail.com (nocurrent access)......aa
     </q-card>
   </div>
 
-    <div class=" q-pa-lg full-width row no-wrap q-gutter-lg">
-                <q-card class="col-3 q-pa-lg q-gutter-lg" style="min-height:80vh;height:calc(100vh-300px)">
+    <div class=" q-pa-lg full-width row no-wrap q-gutter-lg flex flex-center justify-center">
+                <q-card class="col-5 q-pa-lg q-gutter-lg" style="min-height:80vh;height:calc(100vh-300px)">
                     <q-chat-message key="a1" id="a1" 
                       :text="messages" 
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" 
@@ -265,7 +265,7 @@ aa3255@gmail.com (nocurrent access)......aa
                      :text-color="'primary'">
                     </q-chat-message>
                   </q-card>
-             <q-card class="col-8 q-pa-lg q-gutter-lg flex justify-center" style="min-height:80vh;height:calc(100vh-300px)">
+             <q-card class="col-6 q-pa-lg q-gutter-lg flex justify-center" style="min-height:80vh;height:calc(100vh-300px)">
                 <div id="terminal" style="overflow:hidden;width:100%;"></div>
               </q-card>
         </div>  
@@ -295,7 +295,7 @@ aa3255@gmail.com (nocurrent access)......aa
             el: '#q-app',
             data: function() {
                 return {
-                   tab:'donate',
+                   tab:'',
                    theme:'light',
                     fab:'',
                     showRA:false,

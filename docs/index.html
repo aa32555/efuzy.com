@@ -194,16 +194,19 @@
 </head>
 <body style="height:100vh;width:99vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
   <div id="q-app" >
-    <div class="full-width row inline no-wrap justify-center items-center content-center">    
-                  <q-bar dark>
-                    <q-btn dark size="lg" @click="adisodasoon" outline class="text-teal" label="coming soon"></q-btn>
-                    <q-btn dark size="lg" @click="repo" outline class="text-amber-5" label="Repo"></q-btn>
-                    <q-btn dark size="lg" @click="insta" outline class="text-lime-13"  label="Instagram"></q-btn>
-                    <q-btn dark size="lg" @click="chat"  class=" outline text-deep-purple-10"  :label="'dig up dirt'"></q-btn>
-                    <q-btn dark size="lg" @click="cleart" class=" outline text-deep-purple-10" :label="'clear the console'"></q-btn>
-                    <q-btn dark size="lg" @click="donate" class=" outline text-red-14" :label="'Help & Donate'"></q-btn>
+    <q-card dark class="full-width row inline no-wrap justify-center items-center content-center">    
+                  <q-bar>
+                    <q-btn size="lg" @click="adisodasoon" class="text-teal" label="coming soon"></q-btn>
+                    <q-btn size="lg" @click="repo" class="text-amber-5" label="Repo"></q-btn>
+                    <q-btn size="lg" @click="insta" class="text-lime-13"  label="Instagram"></q-btn>
+                    <q-btn size="lg" @click="chat"  class="text-deep-purple-10"  :label="'dig up dirt'"></q-btn>
+                    <q-btn size="lg" @click="cleart" class="text-deep-purple-10" :label="'clear the console'"></q-btn>
+                    <q-btn size="lg" @click="donate" class=" text-red-14" :label="'Help & Donate'"></q-btn>
                    </q-bar>
-    </div>
+          <br/>
+          <br/>
+          <br/>
+    </q-card>
     <div class=" q-pa-md full-width row inline no-wrap justify-center items-center content-center">
                 <q-card class="col-4" dark>
                     <q-chat-message key="a1" id="a1" 

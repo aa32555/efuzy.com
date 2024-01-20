@@ -192,27 +192,54 @@
 }
   </style>
 </head>
-<body style="height:100vh;width:97vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
-  <div id="q-app" class="flex q-pa-xs ">
-    <card class="full-width row inline no-wrap justify-center items-center content-center">    
-                  <q-bar class="bg-black">
-                    <q-btn size="lg" @click="adisodasoon" outline class="text-teal" label="coming soon"></q-btn>
-                    <q-btn size="lg" @click="repo" outline class="text-amber-5" label="Repo"></q-btn>
-                    <q-btn size="lg" @click="insta" outline class="text-lime-13"  label="Instagram"></q-btn>
-                    <q-btn size="lg" @click="chat"  class=" outline text-deep-purple-10"  :label="'dig up dirt'"></q-btn>
-                    <q-btn size="lg" @click="cleart" class=" outline text-deep-purple-10" :label="'clear the console'"></q-btn>
-                    <q-btn size="lg" @click="donate" class=" outline text-red-14" :label="'Help & Donate'"></q-btn>
+<body style="height:100vh;width:99vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
+  <div id="q-app" >
+  <q-toolbar>
+        <q-btn
+          round
+          dense
+          flat
+          :ripple="false"
+          style="margin-right:10px"
+        >
+          <q-avatar size="42px">
+            <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png" style="background-color:white;" />
+          </q-avatar>
+        </q-btn>
+        <div
+          v-if="$q.screen.gt.xs"
+          class="q-ml-xs q-gutter-md text-body2 text-weight-bold row items-center "
+        >
+        </div>
+          <q-btn
+            dense
+            flat
+            round
+            size="md"
+            @click="changeTheme"
+          />
+        </div>
+      </q-toolbar>
+
+    <div class="full-width row inline no-wrap justify-center items-center content-center">    
+                  <q-bar dark>
+                    <q-btn dark size="lg" @click="adisodasoon" outline class="text-teal" label="coming soon"></q-btn>
+                    <q-btn dark size="lg" @click="repo" outline class="text-amber-5" label="Repo"></q-btn>
+                    <q-btn dark size="lg" @click="insta" outline class="text-lime-13"  label="Instagram"></q-btn>
+                    <q-btn dark size="lg" @click="chat"  class=" outline text-deep-purple-10"  :label="'dig up dirt'"></q-btn>
+                    <q-btn dark size="lg" @click="cleart" class=" outline text-deep-purple-10" :label="'clear the console'"></q-btn>
+                    <q-btn dark size="lg" @click="donate" class=" outline text-red-14" :label="'Help & Donate'"></q-btn>
                    </q-bar>
-    </card>
-    <card class=" q-pa-xs full-width row inline no-wrap justify-center items-center content-center">
-                <q-card :style="'width: 100%; min-width: 400px; max-width: 600px'" class="q-pa-lg">
+    </div>
+    <div class=" q-pa-xs full-width row inline no-wrap justify-center items-center content-center">
+                <q-card :style="'width: 100%; min-width: 400px; max-width: 600px'" class="q-pa-lg col-4">
                 <div :style="'width: 100%; min-width: 400px; max-width: 600px'" class="bg-black">
                     <q-chat-message key="a1" id="a1" 
                       :text="messages" 
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" 
                       :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
                       :sent="false"
-bg-color="black"
+                      bg-color="black"
                       :text-color="'red'">
                     </q-chat-message><q-spinner-dots  key="b1" id="b1" size="4rem" v-show="showTyping" />
                 </div>
@@ -224,7 +251,7 @@ bg-color="black"
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" 
                       :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
                       :sent="true" 
-bg-color="black"
+                      bg-color="black"
                       :text-color="'orange'" >
                     </q-chat-message><q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT" />k
                 </div>
@@ -236,7 +263,7 @@ bg-color="black"
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'"
                       :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
                       :sent="false" 
-bg-color="black"
+                      bg-color="black"
                       :text-color="'green'" >
                     </q-chat-message><q-spinner-dots  key="b3" id="b3"  size="4rem" v-show="showISIST" />
                 </div>
@@ -246,7 +273,7 @@ bg-color="black"
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" 
                       :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
                       :sent="true" 
-bg-color="black"
+                      bg-color="black"
                       :text-color="'amber'" >
                     </q-chat-message>
                 </div>
@@ -262,23 +289,68 @@ bg-color="black"
                     </q-chat-message>
                 </div>
                   </q-card>
-               <q-card style="width:100">
-                <div id="terminal" style="overflow:hidden;" style="min-width:655px;max-width:calc(99vw-700px)px;"></div>
+               <q-card dark class="col-5">
+                <div id="terminal" style="overflow:hidden;width:100%;"></div>
               </q-card>
-        </card>  
+             <q-card dark class="col-3">
+                <div class="bg-red"></div>
+              </q-card>
+        </div>  
 
-  <card class=" q-pa-xs full-width row inline no-wrap justify-center items-center content-center">
-       <q-card style="width:85vwpx;height:auto;margin:auto," class="q-pa-xs">
+  <div class="q-pa-xs full-width row">
         <lottie-player 
           src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/src/components/assets/siri-loading.json" 
           background="transparent" 
-          speed="1" 
-          style="width: 77vw;"
+          speed="0.5" 
+          style="width: 90vw;"
           direction="1" 
           mode="normal" 
-          loop autoplay></lottie-player>
-       </q-card> 
-  </card> 
+          loop autoplay
+          >
+        </lottie-player>
+  </div>  
+ <div class="q-pa-md row">
+    <div class="q-video">
+      <iframe
+        src="https://www.youtube.com/watch?v=BdRVduf7Ylk&t=495"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+  <div class="q-pa-md row flex">
+    <div class="q-gutter-md row items-start">
+      <q-img
+        src="https://cdn.quasar.dev/img/image-src.png"
+        srcset="https://cdn.quasar.dev/img/image-1x.png 300w,
+                https://cdn.quasar.dev/img/image-2x.png 2x,
+                https://cdn.quasar.dev/img/image-3x.png 3x,
+                https://cdn.quasar.dev/img/image-4x.png 4x"
+        style="height: 280px; max-width: 300px"
+      >
+        <div class="absolute-bottom text-body1 text-center">
+          With srcset
+        </div>
+      </q-img>
+
+      <q-img
+        src="https://cdn.quasar.dev/img/image-src.png"
+        srcset="https://cdn.quasar.dev/img/image-1x.png 400w,
+                https://cdn.quasar.dev/img/image-2x.png 800w,
+                https://cdn.quasar.dev/img/image-3x.png 1200w,
+                https://cdn.quasar.dev/img/image-4x.png 1600w"
+        sizes="(max-width: 400px) 400w,
+              (min-width: 400px) and (max-width: 800px) 800w,
+              (min-width: 800px) and (max-width: 1200px) 1200w,
+              (min-width: 1200px) 1600w"
+        style="height: 280px; max-width: 300px"
+      >
+        <div class="absolute-bottom text-body1 text-center">
+          With srcset & sizes
+        </div>
+      </q-img>
+    </div>
+  </div>
  </div>
 <script>
         window.quasarConfig = {

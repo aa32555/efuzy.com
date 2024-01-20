@@ -194,33 +194,6 @@
 </head>
 <body style="height:100vh;width:99vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
   <div id="q-app" >
-  <q-toolbar>
-        <q-btn
-          round
-          dense
-          flat
-          :ripple="false"
-          style="margin-right:10px"
-        >
-          <q-avatar size="42px">
-            <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png" style="background-color:white;" />
-          </q-avatar>
-        </q-btn>
-        <div
-          v-if="$q.screen.gt.xs"
-          class="q-ml-xs q-gutter-md text-body2 text-weight-bold row items-center "
-        >
-        </div>
-          <q-btn
-            dense
-            flat
-            round
-            size="md"
-            @click="changeTheme"
-          />
-        </div>
-      </q-toolbar>
-
     <div class="full-width row inline no-wrap justify-center items-center content-center">    
                   <q-bar dark>
                     <q-btn dark size="lg" @click="adisodasoon" outline class="text-teal" label="coming soon"></q-btn>
@@ -231,9 +204,8 @@
                     <q-btn dark size="lg" @click="donate" class=" outline text-red-14" :label="'Help & Donate'"></q-btn>
                    </q-bar>
     </div>
-    <div class=" q-pa-xs full-width row inline no-wrap justify-center items-center content-center">
-                <q-card :style="'width: 100%; min-width: 400px; max-width: 600px'" class="q-pa-lg col-4">
-                <div :style="'width: 100%; min-width: 400px; max-width: 600px'" class="bg-black">
+    <div class=" q-pa-md full-width row inline no-wrap justify-center items-center content-center">
+                <q-card class="col-4" dark>
                     <q-chat-message key="a1" id="a1" 
                       :text="messages" 
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" 
@@ -241,9 +213,7 @@
                       :sent="false"
                       bg-color="black"
                       :text-color="'red'">
-                    </q-chat-message><q-spinner-dots  key="b1" id="b1" size="4rem" v-show="showTyping" />
-                </div>
-                <div :style="'width: 100%; min-width: 400px; max-width: 600px'">
+                    </q-chat-message><q-spinner-dots  key="b1" id="b1" size="4rem" v-show="showTyping"></q-spinner-dots>
                     <q-chat-message 
                       v-show="showRA"
                       key="a2" id="a2" 
@@ -253,9 +223,8 @@
                       :sent="true" 
                       bg-color="black"
                       :text-color="'orange'" >
-                    </q-chat-message><q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT" />k
-                </div>
-                 <div :style="'width: 100%; min-width: 400px; max-width: 600px'">
+                    </q-chat-message>
+                      <q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT"></q-spinner-dots>
                     <q-chat-message 
                       v-show="showISIS" 
                       key="a3" id="a3" 
@@ -264,10 +233,9 @@
                       :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
                       :sent="false" 
                       bg-color="black"
-                      :text-color="'green'" >
-                    </q-chat-message><q-spinner-dots  key="b3" id="b3"  size="4rem" v-show="showISIST" />
-                </div>
-                  <div :style="'width: 100%; min-width: 400px; max-width: 600px'">
+                      :text-color="'green'">
+                    </q-chat-message>
+                  <q-spinner-dots  key="b3" id="b3"  size="4rem" v-show="showISIST" ></q-spinner-dots>
                     <q-chat-message v-show="showBASTET" key="a4" id="a4"
                       :text="['\nMo7sins biggest fear is colors & numbers.\nmeo']" 
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" 
@@ -276,8 +244,6 @@
                       bg-color="black"
                       :text-color="'amber'" >
                     </q-chat-message>
-                </div>
-                  <div :style="'width: 100%; min-width: 400px; max-width: 600px'">
                    <q-chat-message 
                      v-show="showME" 
                      key="a5" id="a5" :text="['\nwrong convo btatis, meow\nhelp AND DONATE. \nalso check whats coming soon']" 
@@ -287,7 +253,6 @@
                      bg-color="black"
                      :text-color="'primary'">
                     </q-chat-message>
-                </div>
                   </q-card>
                <q-card dark class="col-5">
                 <div id="terminal" style="overflow:hidden;width:100%;"></div>

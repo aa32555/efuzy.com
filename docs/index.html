@@ -191,9 +191,9 @@ aa3255@gmail.com (nocurrent access)......f u  z === efuzy
 }
   </style>
 </head>
-<body style="height:100vh;width:99vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
+<body style="height:99vh;width:99vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
   <div id="q-app">
-  <div class="q-pa-lg q-gutter-lg" style="width:75vw;padding:50px;">
+  <div class="q-pa-lg q-gutter-lg" style="width:99vw;">
       <q-tabs
         v-model="tab"
         inline-label
@@ -206,17 +206,14 @@ aa3255@gmail.com (nocurrent access)......f u  z === efuzy
          <q-tab name="checkya" label="checkya" @click="checkya"></q-tab>
          <q-tab name="adisodasoon" label="coming_soon" @click="adisodasoon"></q-tab>
          <q-tab name="donate" label="DON 8" @click="donate"></q-tab>
+         <q-tab name="dig" label="checkya" @click="checkya"></q-tab>
+         <q-tab name="cleart" label="Clear" @click="cleart"></q-tab>
+         <q-tab name="chat" label="chat" @click="chat"></q-tab>
       </q-tabs>
-        <q-card dark class="flex flex-cente q-pa-lg q-gutter-md" style="width:50vw;">    
-                    <q-btn  dense @click="chat" flat style="color: #FF0080"  :label="'dig up dirt'"></q-btn>
-                    <q-btn dense @click="cleart"  flat style="color: #FF0080"  :label="'clear the console'"></q-btn>
-                    <q-btn dense @click="chat"  flat style="color: #FF0080"  :label="'chat with an alien'"></q-btn>
-          
-    </q-card>
   </div>
 
     <div class=" q-pa-lg full-width row no-wrap q-gutter-lg flex flex-center justify-center">
-                <q-card class="col-5 q-pa-lg q-gutter-lg" style="min-height:80vh;height:calc(100vh-300px)">
+                <q-card class="col-5 q-pa-lg q-gutter-lg" style="min-height:80vh;height:calc(100vh-300px);background-color:inherit">
                     <q-chat-message key="a1" id="a1" 
                       :text="messages" 
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" 
@@ -265,10 +262,10 @@ aa3255@gmail.com (nocurrent access)......f u  z === efuzy
                      :text-color="'primary'">
                     </q-chat-message>
                   </q-card>
-             <q-card class="col-6 q-pa-lg q-gutter-lg flex justify-center">
+             <q-card class="col-6 q-pa-lg q-gutter-lg flex justify-center" style="background-color:inherit">
                 <div id="terminal" style="overflow:hidden;width:100%;"></div>
                    <div class="q-video">
-     <iframe src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+     <iframe style="width:25vh;height:25vw;" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
     </div>
               </q-card>
         </div>  

@@ -191,9 +191,9 @@ aa3255@gmail.com (nocurrent access)......f u  z === efuzy
 }
   </style>
 </head>
-<body style="height:99vh;width:99vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
+<body style="height:95vh;width:99vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
   <div id="q-app">
-  <div class="q-pa-md " style="width:99vw;">
+    <div style="width:99vw;">
       <q-tabs
         v-model="tab"
         inline-label
@@ -212,8 +212,8 @@ aa3255@gmail.com (nocurrent access)......f u  z === efuzy
       </q-tabs>
   </div>
 
-    <div class=" q-pa-md full-width row no-wrap flex flex-center justify-center">
-                <q-card class="col-5 q-pa-md" style=";max-height:50vh;overflow:scroll;background-color:inherit">
+    <div class=" q-pa-md full-width row flex">
+                <q-card class="col-6" style=";max-height:calc(100vh-300px);overflow:hidden;background-color:inherit">
                     <q-chat-message key="a1" id="a1" 
                       :text="messages" 
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" 
@@ -262,14 +262,14 @@ aa3255@gmail.com (nocurrent access)......f u  z === efuzy
                       :text-color="'red'">
                     </q-chat-message>
                   </q-card>
-             <q-card class="col-6 q-pa-lg q-gutter-lg flex justify-center" style="background-color:inherit">
-                <div id="terminal" style="overflow:hidden;width:100%;"></div>
-                   <div class="q-video">
-     <iframe style="width:50vh;height:25vw;" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
-    </div>
-              </q-card>
+             <q-card class="col-6 flex" style="background-color:inherit">
+                <div id="terminal" style="overflow:hidden;"></div>
+             </q-card>
+     <div class="q-video full-width col-6">
+           <iframe style="width:100%;" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+     </div>
         </div>  
-
+  </div>
 <script>
         window.quasarConfig = {
             dialog:{},
@@ -455,6 +455,7 @@ aa3255@gmail.com (nocurrent access)......f u  z === efuzy
                     this.termExists = true;
                      let term = window.term || new Terminal();
                      this.term = term;
+                     window['term']=term;
                      term.open(document.getElementById('terminal'));
                    term.write('\r\n'+'#       ===========================================================            #');
                    term.write('\r\n'+'#       help me get my identity back from ZUBAIR @liberty jamica               #');

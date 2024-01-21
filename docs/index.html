@@ -193,7 +193,7 @@ aa3255@gmail.com (nocurrent access)......f u  z === efuzy
 </head>
 <body style="height:100vh;width:99vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
   <div id="q-app">
-  <div class="q-pa-lg q-gutter-lg" style="width:75vw;padding:50px;">
+  <div class="q-pa-lg q-gutter-lg" style="width:95vw;padding:50px;">
       <q-tabs
         v-model="tab"
         inline-label
@@ -206,24 +206,21 @@ aa3255@gmail.com (nocurrent access)......f u  z === efuzy
          <q-tab name="checkya" label="checkya" @click="checkya"></q-tab>
          <q-tab name="adisodasoon" label="coming_soon" @click="adisodasoon"></q-tab>
          <q-tab name="donate" label="DON 8" @click="donate"></q-tab>
+         <q-tab name="a1" label="__________" active="false"></q-tab>
+         <q-tab name="cleart" label="clear the console" @click="cleart"></q-tab>
+         <q-tab name="donate" label="chat with an alien" @click="chat"></q-tab>
       </q-tabs>
-        <q-card dark class="flex flex-cente q-pa-lg q-gutter-md" style="width:50vw;">    
-                    <q-btn  dense @click="chat" flat style="color: #FF0080"  :label="'dig up dirt'"></q-btn>
-                    <q-btn dense @click="cleart"  flat style="color: #FF0080"  :label="'clear the console'"></q-btn>
-                    <q-btn dense @click="chat"  flat style="color: #FF0080"  :label="'chat with an alien'"></q-btn>
-          
-    </q-card>
   </div>
-
     <div class=" q-pa-lg full-width row no-wrap q-gutter-lg flex flex-center justify-center">
-                <q-card class="col-5 q-pa-lg q-gutter-lg" style="min-height:80vh;height:calc(100vh-300px)">
+                <q-card class="col-5 q-pa-lg q-gutter-lg" style="min-height:45vh;max-height:55vh;">
                     <q-chat-message key="a1" id="a1" 
                       :text="messages" 
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" 
                       :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
                       :sent="false"
-                      bg-color="black"
-                      :text-color="'red'">
+                      :bg-color="'black'"
+                      :text-color="'red'"
+                      >
                     </q-chat-message><q-spinner-dots  key="b1" id="b1" size="4rem" v-show="showTyping"></q-spinner-dots>
                     <q-chat-message 
                       v-show="showRA"
@@ -232,8 +229,9 @@ aa3255@gmail.com (nocurrent access)......f u  z === efuzy
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" 
                       :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
                       :sent="true" 
-                      bg-color="black"
-                      :text-color="'orange'" >
+                      :bg-color="'black'"
+                      :text-color="'red'"
+                       >
                     </q-chat-message>
                       <q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT"></q-spinner-dots>
                     <q-chat-message 
@@ -243,8 +241,9 @@ aa3255@gmail.com (nocurrent access)......f u  z === efuzy
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'"
                       :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
                       :sent="false" 
-                      bg-color="black"
-                      :text-color="'green'">
+                      :bg-color="'black'"
+                      :text-color="'red'"
+                      >
                     </q-chat-message>
                   <q-spinner-dots  key="b3" id="b3"  size="4rem" v-show="showISIST" ></q-spinner-dots>
                     <q-chat-message v-show="showBASTET" key="a4" id="a4"
@@ -252,8 +251,9 @@ aa3255@gmail.com (nocurrent access)......f u  z === efuzy
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" 
                       :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
                       :sent="true" 
-                      bg-color="black"
-                      :text-color="'amber'" >
+                      :bg-color="'black'"
+                      :text-color="'red'"
+                       >
                     </q-chat-message>
                    <q-chat-message 
                      v-show="showME" 
@@ -261,14 +261,15 @@ aa3255@gmail.com (nocurrent access)......f u  z === efuzy
                      :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" 
                      :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
                      :sent="false"
-                     bg-color="black"
-                     :text-color="'primary'">
+                     :bg-color="'black'"
+                      :text-color="'red'"
+                      >
                     </q-chat-message>
                   </q-card>
              <q-card class="col-6 q-pa-lg q-gutter-lg flex justify-center">
                 <div id="terminal" style="overflow:hidden;width:100%;"></div>
                    <div class="q-video">
-     <iframe src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+     <iframe style="width:35wv;height:25hv;" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
     </div>
               </q-card>
         </div>  

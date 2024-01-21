@@ -191,9 +191,9 @@ aa3255@gmail.com (nocurrent access).....
 }
   </style>
 </head>
-<body style="height:100vh;width:100vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
+<body style="height:100vh;width:99vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
   <div id="q-app">
-  <div style="width:100vw;padding:150px;">
+  <div style="width:99vw;">
       <q-tabs
         v-model="tab"
         inline-label
@@ -213,7 +213,7 @@ aa3255@gmail.com (nocurrent access).....
       </q-tabs>
   </div>
     <div class=" q-pa-lg full-width row no-wrap q-gutter-lg flex flex-center justify-center">
-                <div class="col-5 q-pa-lg q-gutter-lg" style="min-height:45vh;max-height:55vh;">
+                <q-card class="col-5 q-pa-lg q-gutter-lg" style="min-height:45vh;max-height:55vh;">
                     <q-chat-message key="a1" id="a1" 
                       :text="messages" 
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" 
@@ -266,13 +266,13 @@ aa3255@gmail.com (nocurrent access).....
                       :text-color="'red'"
                       >
                     </q-chat-message>
-                  </div>
-             <div class="col-6 q-pa-lg q-gutter-lg flex justify-center">
+                </q-card>
+             <q-card class="col-6 q-pa-lg q-gutter-lg flex justify-center">
                 <div id="terminal" style="overflow:hidden;width:100%;"></div>
                    <div class="q-video">
      <iframe style="width:35wv;height:25hv;" src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
     </div>
-              </div>
+             </q-card>
         </div>  
 
 <script>

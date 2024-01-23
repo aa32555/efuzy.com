@@ -241,6 +241,7 @@ aa3255@gmail.com (nocurrent access).....
          <q-tab name="cleart" label="Clear" @click="cleart"></q-tab>
         <q-tab name="focus" label="Focus" @click="focus"></q-tab>
          <q-tab name="chat" label="chat" @click="chat"></q-tab>
+        <q-tab name="learnm" label="learn MUMPS" @click="learnm"></q-tab>
       </q-tabs>
   </div>
 
@@ -318,6 +319,33 @@ aa3255@gmail.com (nocurrent access).....
              </q-card>
 
         </div>  
+
+ <div class="q-pa-md q-gutter-sm">
+    <q-btn label="Let's learn MUMPS (M) for a spaceship"  
+       @click="launchldialoge" />
+
+    <q-dialog
+      v-model="learnmdialog"
+      persistent
+    >
+      <q-card class="bg-black text-red">
+        <q-bar>
+         <!-- <q-space /> -->
+  <q-tab name="dollarp" label="Dollar Piece ($piece) [$p]" @click="javascript:void(0);"></q-tab>
+        </q-bar>
+
+        <q-card-section>
+          <div class="bg-black text-red text-h6"> Let's learn MUMPS (M) for a spaceship</div>
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+         <div id="terminalii"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
+  </div>
+
+    
   </div>
 <script>
         window.quasarConfig = {
@@ -340,6 +368,7 @@ aa3255@gmail.com (nocurrent access).....
             el: '#q-app',
             data: function() {
                 return {
+                  learnmdialog:false,
                    ti:'',
                    tab:'',
                    theme:'light',
@@ -489,6 +518,9 @@ aa3255@gmail.com (nocurrent access).....
                 }, 70000);
             },
             methods: {
+              launchldialoge: function(){
+                this.learnmdialog = true
+              },
                 submit: function(){
                   window['term'].writeln(this.ti);
                 },
@@ -510,9 +542,12 @@ aa3255@gmail.com (nocurrent access).....
                 xtermBoot: function() {
                     this.termExists = true;
                      let term = window.term || new Terminal();
+                     let termii = window.termii ||new Terminal();
                      this.term = term;
                      window['term']=term;
+                     window['termii']=termii
                      term.open(document.getElementById('terminal'));
+                     termii.open(document.getElementById('terminalii'));
                    term.write('\r\n'+'#       ===========================================================            #');
                    term.write('\r\n'+'#       help me get my identity back from ZUBAIR @liberty jamica               #');
                    term.write('\r\n'+'#       Copyright (c) 2024 efuzy.com and/or its subsidiaries.                  #');

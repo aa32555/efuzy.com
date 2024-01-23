@@ -182,6 +182,19 @@ aa3255@gmail.com (nocurrent access).....zii
   <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css"> 
    <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/main.css" rel="stylesheet" type="text/css"> 
   <style>
+
+body::-webkit-scrollbar {
+  width: 1em!important;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3!important;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkred!important;
+  outline: 1px solid slateblack!important;
+}
     .bg-img {
   width: 100vh !important;
   height: 100vw !important;
@@ -230,7 +243,7 @@ aa3255@gmail.com (nocurrent access).....zii
   </div>
 
     <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
-                <q-card class="q-pa-md q-gutter-md"  style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);width:550px;">
+                <q-card class="q-pa-md q-gutter-md"  style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);width:550px;height:50vh;">
                     <q-chat-message key="a1" id="a1" 
                       :text="messages" 
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" 

@@ -183,18 +183,27 @@ aa3255@gmail.com (nocurrent access).....zii
    <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/main.css" rel="stylesheet" type="text/css"> 
   <style>
 
-body::-webkit-scrollbar {
-  width: 1em!important;
-}
- 
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3!important;
-}
- 
-body::-webkit-scrollbar-thumb {
-  background-color: darkred!important;
-  outline: 1px solid slateblack!important;
-}
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #050505 #a21515;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #a21515;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #050505;
+    border-radius: 8px;
+    border: 6px solid #260808;
+  }
     .bg-img {
   width: 100vh !important;
   height: 100vw !important;

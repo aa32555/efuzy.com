@@ -427,12 +427,6 @@ this is an important message to the following people that I'm accussing of steal
           <q-btn dense flat icon="close"  @click="learnmdialog = false">
           </q-btn>
       </q-bar>
-        <q-card-section>
-          <div class="text-h3">Let's learn MUMPS (M) for a spaceship</div>
-          <div class="text-h4">No Strings Attached</div>
-          <div class="text-h5">Chapter 1 (how I escaped death on a spaceship from an alien planet, just because of M (and snake named magic, more on that later) </div>
-            <div class="text-h6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...in the programming section of the spaceship, you just found yourself on...more on that later</div>
-        </q-card-section>
         <q-card-section class="q-pt-none">
     <q-tabs
         v-model="mtabs"
@@ -442,15 +436,35 @@ this is an important message to the following people that I'm accussing of steal
       >
        <q-tab class="bg-black text-green" name="learnmstrings" label="Strings(CH1)" ></q-tab>
          <q-space ></q-space>
-       <q-tab name="p"  label="$PIECE ($P)"></q-tab>
-       <q-tab name="l"  label="$LENGTH ($L)"></q-tab>
-       <q-tab name="e"  label="$EXTRACT ($E)"></q-tab>
-       <q-tab name="c"  label="$CHAR ($C)"></q-tab>
-       <q-tab name="a"  label="$ASCII ($A)"></q-tab>
+       <q-tab name="p"  label="$PIECE ($P)" @click="mtabs='zp'"></q-tab>
+       <q-tab name="l"  label="$LENGTH ($L)" @click="mtabs='zl'" ></q-tab>
+       <q-tab name="e"  label="$EXTRACT ($E)" @click="mtabs='ze'"></q-tab>
+       <q-tab name="c"  label="$CHAR ($C)"  @click="mtabs='zc'"></q-tab>
+       <q-tab name="a"  label="$ASCII ($A)"  @click="mtabs='za'"></q-tab>
       </q-tabs>
-             <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
+
+  <q-card-section  v-show="mtabs==='zp'">
+          <div class="text-h3">Let's learn MUMPS (M) for a spaceship</div>
+          <div class="text-h4">No Strings Attached</div>
+          <div class="text-h5">Chapter 1 (how I escaped death on a spaceship from an alien planet, just because of M (and snake named magic, more on that later) </div>
+            <div class="text-h6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...in the programming section of the spaceship, you just found yourself on...more on that later</div>
+     <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
                 <div id="terminalii"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
              </div>
+  </q-card-section>
+          
+
+  <q-card-section  v-show="mtabs==='zl'">
+          <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
+          <div class="text-h4">No Strings Attached</div>
+          <div class="text-h5">Chapter 1 (how I escaped death on a spaceship from an alien planet, just because of M (and snake named magic, more on that later) </div>
+            <div class="text-h6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...in the programming section of the spaceship, you just found yourself on...more on that later</div>
+     <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
+                <div id="terminalii"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
+             </div>
+  </q-card-section>
+          
+          
         </q-card-section>
               <q-card-section class="q-pt-none">
            <br/>

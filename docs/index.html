@@ -267,7 +267,6 @@ this is an important message to the following people that I'm accussing of steal
 <html>
 <head>
      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons|Material+Icons+Outlined|Material+Icons+Round" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined|Material+Symbols+Rounded|Material+Symbols+Sharp" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.min.css" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css"> 
@@ -725,13 +724,16 @@ this is an important message to the following people that I'm accussing of steal
                 if (typeof window['term2'] === 'undefined'){
                   term2 = window['term2'] || new Terminal();
                   window['term2']=term2;
-                  term2.open(document.getElementById('terminalii'));
+                  
                 } else {
                   term2 = window['term2']
                 }
                 setTimeout(function(){
+                      term2.open(document.getElementById('terminalii'));
+                },1000) 
+                       setTimeout(function(){
                       term2.write('\r\n'+'#       ===========================================================            #');
-                },500)              
+                },2000)      
               },
                 adisodasoon: function() {
                    this.$q.dialog({

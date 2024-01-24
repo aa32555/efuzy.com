@@ -246,9 +246,8 @@ aa3255@gmail.com (nocurrent access).....
        
       </q-tabs>
   </div>
-
     <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
-                <q-card class="q-pa-md q-gutter-md"  style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);width:550px;height:85vh;overflow-y:scroll;">
+                <q-card class="q-pa-md q-gutter-md"  style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);width:550px;height:calc(90vh-50px);overflow-y:scroll;">
                     <q-chat-message key="a1" id="a1" 
                       :text="messages" 
                       :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" 
@@ -303,8 +302,7 @@ aa3255@gmail.com (nocurrent access).....
                     </q-chat-message>
                   </q-card>
              <q-card  class="q-pa-lg " style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
-                <div id="terminal"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div><br/>
-
+                <div id="terminal"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
 <div style="width: 500px;margin:0 auto;">
     <q-input
       ref="input"
@@ -312,41 +310,48 @@ aa3255@gmail.com (nocurrent access).....
       type="textarea"
       v-model="ti"
     ></q-input>
-    <q-btn class="q-mt-sm" label="Submit" @click="submit" color="danger"></q-btn>
-  </div>
-               
-                    <div class="q-video q-pa-md q-gutter-md">
+    <q-btn class="q-mt-sm" label="Submit" @click="submit" ></q-btn>
+  </div>  
+     <div class="q-video q-pa-md q-gutter-md">
            <iframe src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
      </div>
              </q-card>
-
         </div>  
-
-    <q-dialog
+ <q-dialog
       v-model="learnmdialog"
       persistent
+      :maximized="maximizedToggle"
+      transition-show="slide-up"
+      transition-hide="slide-down"
     >
-      <q-card class="bg-black text-red">
-              <q-tabs
-        v-model="tab2"
-        inline-label
-        class="bg-black text-red"
-        class="full-width" style="width:100%;"
-      >
+      <q-card class="bg-red text-black">
         <q-bar>
-  <q-tab name="dollarp" label="Dollar Piece ($piece) [$p]" @click="javascript:void(0);"></q-tab>
+          <q-space />
+          <q-btn dense flat icon="minimize" @click="maximizedToggle = false" :disable="!maximizedToggle">
+            <q-tooltip v-if="maximizedToggle" content-class="bg-red text-black">Minimize</q-tooltip>
+          </q-btn>
+          <q-btn dense flat icon="crop_square" @click="maximizedToggle = true" :disable="maximizedToggle">
+            <q-tooltip v-if="!maximizedToggle" content-class="bg-red text-black">Maximize</q-tooltip>
+          </q-btn>
+          <q-btn dense flat icon="close" v-close-popup @click="learnmdialog = false">
+            <q-tooltip content-class="bg-pink-7 text-white">Close</q-tooltip>
+          </q-btn>
         </q-bar>
-      </q-tabs>
         <q-card-section>
-          <div class="bg-black text-red text-h6"> Let's learn MUMPS (M) for a spaceship</div>
+          <div class="text-h3">Let's learn MUMPS (M) for a spaceship</div>
+          <div class="text-h4">Strings</div>
+          <div class="text-h5">Chapter 1 </div>
+            <div class="text-h6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...in the programming section of the spaceship, you just found yourself on...more on that later</div>
         </q-card-section>
-
         <q-card-section class="q-pt-none">
-         <div id="terminalii"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
+             <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
+                <div id="terminalii"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
+        </q-card-section>
+              <q-card-section class="q-pt-none">
+           <br/>
         </q-card-section>
       </q-card>
     </q-dialog>
-
 <script>
         window.quasarConfig = {
             dialog:{},
@@ -363,11 +368,11 @@ aa3255@gmail.com (nocurrent access).....
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
     <script>
-        //Quasar.iconSet.set(Quasar.iconSet.fontawesomeV5)
         new Vue({
             el: '#q-app',
             data: function() {
                 return {
+                  maximizedToggle:false,
                   tab2:'dollarp',
                   learnmdialog:false,
                    ti:'',
@@ -394,6 +399,7 @@ aa3255@gmail.com (nocurrent access).....
                     messageNumber: -1,
                     messageDirection: true,
                     showReply: false,
+                    termiibooted:false,
                     messagesArr: ['Hello...is this Eeeath???\nwhere all the dirt is!!!\nI HAVE A SOOOOONG TO SIIIIIING',
                         'Right about now NWA court is in full effect\nJudge Dre presiding in the case of NWA versus the police department.\nProsecuting attourneys are MC Ren, Ice Cube and Eazy motherfuckin E\nOrder, order, order, Ice Cube take the motherfuckin stand',
                         'Do you swear to tell the truth the whole truth\nAnd nothin but the truth so help your black ass?\nYou goddamn right\nWell, wont you tell everybody what the fuck you gotta say?\nFuck the police comin straight from the underground\nA Young nigga got it bad cause Im brown',
@@ -416,6 +422,7 @@ aa3255@gmail.com (nocurrent access).....
               let _vm = this;
               setTimeout(function(){
                 _vm.xtermLoad();
+                _vm.xtermciLoad();
               },0)            
                 _vm.$q.dark.set(true);
                 setTimeout(function() {
@@ -521,6 +528,7 @@ aa3255@gmail.com (nocurrent access).....
             methods: {
               learnm: function(){
                 this.learnmdialog = true
+                this.xtermciLoad();
               },
                 submit: function(){
                   window['term'].writeln(this.ti);
@@ -538,17 +546,13 @@ aa3255@gmail.com (nocurrent access).....
                 window['term'].focus();
               },
                 xtermInitialize:function(){
-                  
                 },
                 xtermBoot: function() {
                     this.termExists = true;
-                     let term = window.term || new Terminal();
-                     let termii = window.termii ||new Terminal();
+                     let term = window['term'] || new Terminal();
                      this.term = term;
                      window['term']=term;
-                     window['termii']=termii
                      term.open(document.getElementById('terminal'));
-                     termii.open(document.getElementById('terminalii'));
                    term.write('\r\n'+'#       ===========================================================            #');
                    term.write('\r\n'+'#       help me get my identity back from ZUBAIR @liberty jamica               #');
                    term.write('\r\n'+'#       Copyright (c) 2024 efuzy.com and/or its subsidiaries.                  #');
@@ -617,11 +621,6 @@ aa3255@gmail.com (nocurrent access).....
                    term.write('\r\n'+'                                                                                ');
                    term.write('\r\n'+'                                                                                ');
                    term.write('\r\n'+'*******************************************************************************');
-                  /*
-                  
-                  
-                  */
-                 // b();
                  this.showTerm = true;
                 },
                 w: function(a) {
@@ -630,6 +629,13 @@ aa3255@gmail.com (nocurrent access).....
                 xtermLoad: function() {
                     this.xtermBoot();
                 },
+              xtermciLoad:function(){
+                     let t =  window['term']
+                     t.open(document.getElementById('terminalii'));
+                setTimeout(function(){
+                   t.write('hi')
+                },3000)              
+              },
                 adisodasoon: function() {
                    this.$q.dialog({
                     title: '',

@@ -11,7 +11,7 @@
 aa3255@gmail.com (nocurrent access).....
 this is an important message to the following people that I'm accussing of stealing peoples' identity (fully with no remorse) publicly: 
  1) starting with my gmail account who owns a lot of domains, such as efuzy.com, the topic of this repo. Alot of people have access to this account, like the palestenian myth-head and pot gang (who affliate with Bassem Abdelrasek, a known felon) who broke into my 12 elk st while I was in CA, and stole my massive all-in-one pc, i suspect they are paterson cops. 
-
+2) 
 
 
 
@@ -261,7 +261,8 @@ this is an important message to the following people that I'm accussing of steal
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet" type="text/css">
+     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined|Material+Symbols+Rounded|Material+Symbols+Sharp" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.min.css" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css"> 
@@ -409,19 +410,19 @@ this is an important message to the following people that I'm accussing of steal
       transition-show="slide-up"
       transition-hide="slide-down"
     >
-      <q-card class="bg-red text-black">
-        <q-bar>
-          <q-space />
+      <q-card class="bg-red text-black full-width"  style="width:100%;">
+         <q-card-section>
           <q-btn dense flat icon="minimize" @click="maximizedToggle = false" :disable="!maximizedToggle">
-            <q-tooltip v-if="maximizedToggle" content-class="bg-red text-black">Minimize</q-tooltip>
+            <q-tooltip :disabled="maximizedToggle" >Minimize</q-tooltip>
           </q-btn>
           <q-btn dense flat icon="crop_square" @click="maximizedToggle = true" :disable="maximizedToggle">
-            <q-tooltip v-if="!maximizedToggle" content-class="bg-red text-black">Maximize</q-tooltip>
+            <q-tooltip disabled="!maximizedToggle" >Maximize</q-tooltip>
           </q-btn>
-          <q-btn dense flat icon="close" v-close-popup @click="learnmdialog = false">
-            <q-tooltip content-class="bg-pink-7 text-white">Close</q-tooltip>
+          <q-btn dense flat icon="close"  @click="learnmdialog = false">
+            <q-tooltip >Close</q-tooltip>
           </q-btn>
-        </q-bar>
+        </q-card-section>
+
         <q-card-section>
           <div class="text-h3">Let's learn MUMPS (M) for a spaceship</div>
           <div class="text-h4">Strings</div>
@@ -717,11 +718,12 @@ this is an important message to the following people that I'm accussing of steal
                 },
               xtermciLoad:function(){
                      let t =  window['term']
-                    
                 setTimeout(function(){
-                   t.open(document.getElementById('terminalii'));
-                   t.write('hi')
-                },3000)              
+                      let term2 = window['term2'] || new Terminal();
+                      window['term2']=term2;
+                      term2.open(document.getElementById('terminalii'));
+               bbb    term2.write('\r\n'+'#       ===========================================================            #');
+                },1000)              
               },
                 adisodasoon: function() {
                    this.$q.dialog({

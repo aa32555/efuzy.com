@@ -722,7 +722,7 @@ this is an important message to the following people that I'm accussing of steal
                 },
               xtermciLoad:function(){
                  let term2;
-                if !(window['term2']){
+                if (typeof window['term2'] === 'undefined'){
                   term2 = window['term2'] || new Terminal();
                   window['term2']=term2;
                   term2.open(document.getElementById('terminalii'));

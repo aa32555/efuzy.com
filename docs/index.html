@@ -473,6 +473,7 @@ this is an important message to the following people that I'm accussing of steal
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
     <script>
+      window['aa1']=['         ___                              ',       '|_ _|                                     ',' | |                                      ',' | |                                      ','|___|    __  __                           ','   / \  |  \/  |                          ','  / _ \ | |\/| |                          ',' / ___ \| |  | |                          ','/_/_ _\_\_|  |_|                          ','|_ _| \ | |                               ',' | ||  \| |                               ',' | || |\  |                               ','|___|_| \_|                               ','   / \                                    ','  / _ \                                   ',' / ___ \                                  ','/_/__ \_\ _____ _____                     ','|  _ \_ _|  ___|  ___|                    ','| | | | || |_  | |_                       ','| |_| | ||  _| |  _|                      ','|____/___|_|   |_|      _    __  ____   __',' / ___|  / \  | |      / \   \ \/ /\ \ / /','| |  _  / _ \ | |     / _ \   \  /  \ V /' ,'| |_| |/ ___ \| |___ / ___ \  /  \   | |'  ,' \____/_/   \_\_____/_/   \_\/_/\_\  |_|'  ,]
         new Vue({
             el: '#q-app',
             data: function() {
@@ -747,7 +748,10 @@ this is an important message to the following people that I'm accussing of steal
                       term2.open(document.getElementById('terminalii'));
                 },1000) 
                        setTimeout(function(){
-                      term2.write('\r\n'+'#       ===========================================================            #')
+                         let aa = window['aa1']
+                         aa.map(function(x){
+                           term2.writeln(x)
+                         })
                       term2.focus();
                 },2000)      
               },

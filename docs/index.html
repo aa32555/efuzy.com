@@ -231,6 +231,8 @@ aa3255@gmail.com (nocurrent access).....
         class="full-width" style="width:100%;"
       >
         <q-tab name="li" @click="li" label="LinkedIn"></q-tab>
+        <q-tab class="bg-black text-green" name="learnm" label="learn MUMPS (M)" @click="learnm"></q-tab>
+         <q-space ></q-space>
          <q-tab name="repo" @click="repo" label="Repo"></q-tab>
         <q-tab name="youtube" label="youtube" @click="youtube"></q-tab>
         <q-tab name="Instagram" label="Instagram" @click="insta"></q-tab>
@@ -241,8 +243,7 @@ aa3255@gmail.com (nocurrent access).....
          <q-tab name="cleart" label="Clear" @click="cleart"></q-tab>
         <q-tab name="focus" label="Focus" @click="focus"></q-tab>
          <q-tab name="chat" label="chat" @click="chat"></q-tab>
-        <q-space ></q-space>
-        <q-tab name="learnm" label="learn MUMPS" @click="learnm"></q-tab>
+       
       </q-tabs>
   </div>
 
@@ -330,11 +331,16 @@ aa3255@gmail.com (nocurrent access).....
       persistent
     >
       <q-card class="bg-black text-red">
+              <q-tabs
+        v-model="tab2"
+        inline-label
+        class="bg-black text-red"
+        class="full-width" style="width:100%;"
+      >
         <q-bar>
-         <!-- <q-space /> -->
   <q-tab name="dollarp" label="Dollar Piece ($piece) [$p]" @click="javascript:void(0);"></q-tab>
         </q-bar>
-
+      </q-tabs>
         <q-card-section>
           <div class="bg-black text-red text-h6"> Let's learn MUMPS (M) for a spaceship</div>
         </q-card-section>
@@ -369,6 +375,7 @@ aa3255@gmail.com (nocurrent access).....
             el: '#q-app',
             data: function() {
                 return {
+                  tab2:'dollarp',
                   learnmdialog:false,
                    ti:'',
                    tab:'',
@@ -519,7 +526,7 @@ aa3255@gmail.com (nocurrent access).....
                 }, 70000);
             },
             methods: {
-              launchldialoge: function(){
+              learnm: function(){
                 this.learnmdialog = true
               },
                 submit: function(){

@@ -422,10 +422,6 @@
               window['term'] = term;
               term.open(document.getElementById('terminal'));
               let aa3255=`
-
-
-              
-              
                '
               /=\\
              /===\ \
@@ -442,12 +438,10 @@
   /=========================\   ' /
  /===========================\'  /
 /=============================\/
-unknown
-
-              
-              
-              `
-              term.write(aa3255.split('\n').join('\r\n\r\n                                '));
+unknown`
+              aa3255.split('\n').map(function(x){
+                 term.writeln(x)
+              })
               this.showTerm = true;
             },
             w: function(a) {

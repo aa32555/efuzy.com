@@ -582,11 +582,7 @@ window['za']=[
             el: '#q-app',
             data: function() {
                 return {
-                    zp:false,
-                    zl:false,
-                    ze:false,
-                    zc:false,
-                    za:false,
+                  mtabsbooted:false,
                   mtabs:'zp',
                   maximizedToggle:false,
                   tab2:'dollarp',
@@ -856,7 +852,7 @@ window['za']=[
                 } else {
                   term2 = window['term2']
                 }
-                if (!_vm.mscreenboot[_vm.mtabs]){
+                if (_vm.mtabsbooted === false){
                   term2.open(document.getElementById('terminalii'));
                   term2.write(window[_vm.mtabs].join('\r\n'));
                   term2.focus();
@@ -865,8 +861,9 @@ window['za']=[
                   term2.clear()
                   term2.write(window[_vm.mtabs].join('\r\n'));
                   term2.focus();
+                  _vm.mtabsbooted === true;
                 }
-                },500)
+                },1000)
               },
                 adisodasoon: function() {
                    this.$q.dialog({

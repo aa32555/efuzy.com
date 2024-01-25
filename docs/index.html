@@ -204,31 +204,12 @@
       >
        <q-tab class="bg-black text-green" name="zch1" label="Strings(CH1)" ></q-tab>
          <q-space ></q-space>
-       <q-tab name="zp"  label="$PIECE ($P)" @click="mtabs='zp'"></q-tab>
-       <q-tab name="zl"  label="$LENGTH ($L)" @click="mtabs='zl'" ></q-tab>
-       <q-tab name="ze"  label="$EXTRACT ($E)" @click="mtabs='ze'"></q-tab>
-       <q-tab name="zc"  label="$CHAR ($C)"  @click="mtabs='zc'"></q-tab>
-       <q-tab name="za"  label="$ASCII ($A)"  @click="mtabs='za'"></q-tab>
+       <q-tab name="zp"  label="$PIECE ($P)" @click="processmtabs"></q-tab>
+       <q-tab name="zl"  label="$LENGTH ($L)" @click="processmtabs" ></q-tab>
+       <q-tab name="ze"  label="$EXTRACT ($E)" @click="processmtabs"></q-tab>
+       <q-tab name="zc"  label="$CHAR ($C)"  @click="processmtabs"></q-tab>
+       <q-tab name="za"  label="$ASCII ($A)"  @click="processmtabs"></q-tab>
       </q-tabs>
-<!--
-   <div class="text-h5">Chapter 1 (how I escaped death on a spaceship from an alien planet, just because of M (and snake named magic, more on that later) </div>
-   <div class="text-h6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...in the programming section of the spaceship, you just found yourself on...more on that later</div>
-  -->
-        <q-card  class="q-pa-lg q-gutter-lg flex" style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
-                <div id="terminalii"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
-                <div class="flex-center justify-around">
-                    <q-input
-                      ref="input"
-                      filled
-                      type="textarea"
-                      v-model="ti2"
-                    ></q-input>
-                    <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term2'].write(ti2)" ></q-btn>
-                   <q-btn dense flat round class="q-pa-sm" label="writeln" @click="window['term2'].writeln(ti2)" ></q-btn>
-                   <q-btn dense flat round class="q-pa-sm" label="focus" @click="window['term2'].focus()" ></q-btn>
-                   <q-btn dense flat round class="q-pa-sm" label="clear" @click="window['term2'].clear()" ></q-btn>
-                  </div>  
-
           
   <q-card-section  v-show="mtabs==='zp'">
           <div class="text-h3">Let's learn MUMPS (M) for a spaceship</div>
@@ -261,6 +242,22 @@
           <div class="text-h5">Chapter 1 (how I escaped death on a spaceship from an alien planet, just because of M (and snake named magic, more on that later) </div>
             <div class="text-h6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...in the programming section of the spaceship, you just found yourself on...more on that later</div>
   </q-card-section>
+<br/><br/>
+ <q-card-section>
+<div id="terminalii"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
+                <div class="flex-center justify-around">
+                    <q-input
+                      ref="input"
+                      filled
+                      type="textarea"
+                      v-model="ti2"
+                    ></q-input>
+                    <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term2'].write(ti2)" ></q-btn>
+                   <q-btn dense flat round class="q-pa-sm" label="writeln" @click="window['term2'].writeln(ti2)" ></q-btn>
+                   <q-btn dense flat round class="q-pa-sm" label="focus" @click="window['term2'].focus()" ></q-btn>
+                   <q-btn dense flat round class="q-pa-sm" label="clear" @click="window['term2'].clear()" ></q-btn>
+                  </div>  
+</q-card-section>
       </q-card>
     </q-dialog>
 <script>
@@ -570,6 +567,11 @@ window['za']=[
                 xtermLoad: function() {
                     this.xtermBoot();
                 },
+              processmtabs: function(){
+                window['term2'].clear();
+                window['term2'].write(window[this.mtabs].join('\r\n'));
+                window['term2'].focus();
+              },
               xtermciLoad:function(){
                 let _vm = this;
                 setTimeout(function(){

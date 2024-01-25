@@ -7,7 +7,7 @@
 #   of its copyright holder(s), and is made available              #
 #   under a license.  If you do not know the terms of              #
 #   the license, please stop and do not read further.              #
-#            ( I OWN THE MOTHER EFFIN DOMAIN @ 12 ELK ST)          #
+#            ( I OWN the DOMAIN @ 12 ELK ST)                       #
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 ###################################################################
@@ -38,575 +38,407 @@
 -->
 <!DOCTYPE html>
 <html>
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons|Material+Icons+Outlined|Material+Icons+Round" rel="stylesheet" type="text/css">
-  <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
-  <link href="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.min.css" rel="stylesheet" type="text/css">
-  <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css"> 
-   <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/main.css" rel="stylesheet" type="text/css"> 
-  <style>
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #dacb25 #e3caca;
-  }
-  *::-webkit-scrollbar {
-    width: 6px;
-  }
-  *::-webkit-scrollbar-track {
-    background: #e3caca;
-  }
-  *::-webkit-scrollbar-thumb {
-    background-color: #dacb25;
-    border-radius: 8px;
-    border: 6px solid #260808;
-  }
-    .bg-img {
-  width: 100vh !important;
-  height: 100vw !important;
-  background: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg') cover;
-  background-size: cover;
-  &:before {
-    content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-        opacity: .6; 
-  }
-}
-    .rotating {
-  transition: transform 1s ease-in-out;
-}
-.rotating:hover {
-  transform: rotateZ(360deg);
-}
-  </style>
-</head>
-<body style="height:100vh;width:99vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
-  <div id="q-app" class="flex">
-    <div class="full-width" style="width:100%;">
-      <q-tabs
-        v-model="tab"
-        inline-label
-        class="bg-black text-red"
-        class="full-width" style="width:100%;"
-      >
-        <q-tab class="bg-black text-green" name="learnm" label="learn MUMPS (M)" @click="learnm"></q-tab>
-        <q-tab class="bg-black text-green" name="learnmpg" label="GT.M Programmers Guide" @click="learnmpg"></q-tab>
-         <q-space ></q-space>
-         <q-tab name="repo" @click="repo" label="Repo"></q-tab>
-        <q-tab name="li" @click="li" label="LinkedIn"></q-tab>
-        <q-tab name="youtube" label="youtube" @click="youtube"></q-tab>
-        <q-tab name="Instagram" label="Instagram" @click="insta"></q-tab>
-         <q-tab name="donate" label="DON 8" @click="donate"></q-tab>
-      </q-tabs>
-  </div>
-    <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
-                <q-card class="q-pa-md q-gutter-md"  style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);width:550px;height:calc(90vh-50px);overflow-y:scroll;">
-                    <q-chat-message key="a1" id="a1" 
-                      :text="messages" 
-                      :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" 
-                      :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
-                      :sent="false"
-                      bg-color="black"
-                      :name="'Joshua'"
-                      :text-color="'red'">
-                    </q-chat-message><q-spinner-dots  key="b1" id="b1" size="4rem" v-show="showTyping"></q-spinner-dots>
-                    <q-chat-message 
-                      v-show="showRA"
-                      key="a2" id="a2" 
-                      :text="['I was in the orthophogas, whaddap ????, Yeah, why not...let me warm up ....']" 
-                      :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" 
-                      :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
-                      :sent="true" 
-                       bg-color="black"
-                       :name="'RA'"
-                      :text-color="'red'">
-                    </q-chat-message>
-                      <q-spinner-dots  key="b2" id="b2"  size="3rem" v-show="showRAT"></q-spinner-dots>
-                    <q-chat-message 
-                      v-show="showISIS" 
-                      key="a3" id="a3" 
-                      :text="['\n[Intro: God]\n\nThere once was a little girl\nWho had a crush on a bad, bad boy\nBut when thatbad boy got out of prison\nThat little girls ass was in big, big trouble']" 
-                      :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'"
-                      :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
-                      :sent="false" 
-                      :name="'ISIS'"
-                      bg-color="black"
-                      :text-color="'red'">
-                    </q-chat-message>
-                  <q-spinner-dots  key="b3" id="b3"  size="4rem" v-show="showISIST" ></q-spinner-dots>
-                    <q-chat-message v-show="showBASTET" key="a4" id="a4"
-                      :text="['\nMo7sins biggest fear is colors & numbers.\nmeo']" 
-                      :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" 
-                      :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
-                      :sent="true" 
-                      :name="'Bastetn'"
-                      bg-color="black"
-                      :text-color="'red'">
-                    </q-chat-message>
-                   <q-chat-message 
-                     v-show="showME" 
-                     key="a5" id="a5" :text="['\nwrong convo btatis, meow\nhelp AND DONATE. \nalso check whats coming soon']" 
-                     :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" 
-                     :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" 
-                     :sent="false"
-                      bg-color="black"
-                      :name="'me'"
-                      :text-color="'red'">
-                    </q-chat-message>
-                  </q-card>
-             <q-card  class="q-pa-lg " style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
-                <div id="terminal"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
-    <div class="flex-center justify-around">
-                    <q-input
-                      ref="input"
-                      filled
-                      type="textarea"
-                      v-model="ti"
-                    ></q-input>
-                    <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term'].write(ti)" ></q-btn>
-                   <q-btn dense flat round class="q-pa-sm" label="writeln" @click="window['term'].writeln(ti)" ></q-btn>
-                   <q-btn dense flat round class="q-pa-sm" label="focus" @click="window['term'].focus()" ></q-btn>
-                   <q-btn dense flat round class="q-pa-sm" label="clear" @click="window['term'].clear()" ></q-btn>
-                  </div> 
-     <div class="q-video q-pa-md q-gutter-md">
-           <iframe src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
-     </div>
-             </q-card>
-        </div>  
- <q-dialog
-      v-model="learnmdialog"
-      persistent
-      :maximized="maximizedToggle"
-      transition-show="slide-up"
-      transition-hide="slide-down"
-    >
-      <q-card class="bg-red text-black full-width"  style="width:100%;min-width:85vw;height:100vh;">
-     <q-bar>
-          <q-space ></q-space>
-          <q-btn dense flat icon="minimize" @click="maximizedToggle = false" :disable="!maximizedToggle">
-            <q-tooltip :disabled="maximizedToggle" >Minimize</q-tooltip>
-          </q-btn>
-          <q-btn dense flat icon="crop_square" @click="maximizedToggle = true" :disable="maximizedToggle">
-            <q-tooltip disabled="!maximizedToggle" >Maximize</q-tooltip>
-          </q-btn>
-          <q-btn dense flat icon="close"  @click="learnmdialog = false">
-          </q-btn>
-      </q-bar>
-        <q-card-section class="q-pt-none">
-    <q-tabs
-        v-model="mtabs"
-        inline-label
-        class="bg-black text-red"
-        class="full-width" style="width:100%;"
-      >
-       <q-tab class="bg-black text-green" name="zch1" label="Strings(CH1)" ></q-tab>
-         <q-space ></q-space>
-       <q-tab name="zp"  label="$PIECE ($P)" @click="processmtabs"></q-tab>
-       <q-tab name="zl"  label="$LENGTH ($L)" @click="processmtabs" ></q-tab>
-       <q-tab name="ze"  label="$EXTRACT ($E)" @click="processmtabs"></q-tab>
-       <q-tab name="zc"  label="$CHAR ($C)"  @click="processmtabs"></q-tab>
-       <q-tab name="za"  label="$ASCII ($A)"  @click="processmtabs"></q-tab>
-      </q-tabs>
-          
-  <q-card-section  v-show="mtabs==='zp'">
-          <div class="text-h3">Let's learn MUMPS (M) for a spaceship</div>
-          <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;$PIECE ($P)</span>
-  </q-card-section>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons|Material+Icons+Outlined|Material+Icons+Round" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css">
+    <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/main.css" rel="stylesheet" type="text/css">
+    <style>
+      * {
+        scrollbar-width: auto;
+        scrollbar-color: #dacb25 #e3caca;
+      }
+      *::-webkit-scrollbar {
+        width: 6px;
+      }
 
-  <q-card-section  v-show="mtabs==='zl'">
-          <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
-          <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;$LENGTH ($L)</span>
-  </q-card-section>
+      *::-webkit-scrollbar-track {
+        background: #e3caca;
+      }
+      *::-webkit-scrollbar-thumb {
+        background-color: #dacb25;
+        border-radius: 8px;
+        border: 6px solid #260808;
+      }
+      .bg-img {
+        width: 100vh !important;
+        height: 100vw !important;
+        background: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg') cover;
+        background-size: cover;
 
-  <q-card-section  v-show="mtabs==='ze'">
-          <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
-          <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;$EXTRACT ($E)</span>
-  </q-card-section>
-
-   <q-card-section  v-show="mtabs==='zc'">
-          <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
-           <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;$CHAR ($C)</span>
-  </q-card-section>
-
-   <q-card-section  v-show="mtabs==='za'">
-          <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
-         <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;$ASCII ($A)</span>
-  </q-card-section>
-<br/><br/>
- <q-card-section>
-<div id="terminalii"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
-                <div class="flex-center justify-around">
-                    <q-input
-                      ref="input"
-                      filled
-                      type="textarea"
-                      v-model="ti2"
-                    ></q-input>
-                    <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term2'].write(ti2)" ></q-btn>
-                   <q-btn dense flat round class="q-pa-sm" label="writeln" @click="window['term2'].writeln(ti2)" ></q-btn>
-                   <q-btn dense flat round class="q-pa-sm" label="focus" @click="window['term2'].focus()" ></q-btn>
-                   <q-btn dense flat round class="q-pa-sm" label="clear" @click="window['term2'].clear()" ></q-btn>
-                  </div>  
-</q-card-section>
-      </q-card>
-    </q-dialog>
- <q-dialog
-      v-model="learnmpgdialog"
-      persistent
-      :maximized="maximizedTogglepg"
-      transition-show="slide-up"
-      transition-hide="slide-down"
-    >
-      <q-card class="bg-red text-black full-width"  style="width:100%;min-width:85vw;height:100vh;">
-         <q-bar>
-          <q-space ></q-space>
-          <q-btn dense flat icon="minimize" @click="maximizedpgToggle = false" :disable="!maximizedpgToggle">
-            <q-tooltip :disabled="maximizedpgToggle" >Minimize</q-tooltip>
-          </q-btn>
-          <q-btn dense flat icon="crop_square" @click="maximizedpgToggle = true" :disable="maximizedpgToggle">
-            <q-tooltip disabled="!maximizedpgToggle" >Maximize</q-tooltip>
-          </q-btn>
-          <q-btn dense flat icon="close"  @click="learnmpgdialog = false">
-          </q-btn>
-      </q-bar>
-  <q-card-section >
-          <div class="text-h3">FIS GT.M Programmers Guide</div>
-  </q-card-section><q-card-section><center><pdf src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/GT.M%20Programmers%20Guide.pdf"></pdf ></center></q-card-section>
-      </q-card>
-    </q-dialog>
-<script>
-        window.quasarConfig = {
-            dialog:{},
-            notify: {},
-            loading: {},
-            loadingBar: {},
-            fullscreen: {}
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+          opacity: .6;
         }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js" integrity="sha256-oHVzIfl0UnvaPMJZO/Vsx//kV4QhJJztauSf+xxSn5A=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.ie.polyfills.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
-    <script>
- window['zp']=[
-`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`,
-`echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`,
-`echo "/\     _  ____ ___ _____ ____ _____     /\";`,
-`echo "\/    | ||  _ \_ _| ____/ ___| ____|    \/";`,
-`echo "/\   / __) |_) | ||  _|| |   |  _|      /\";`,
-`echo "\/   \__ \  __/| || |__| |___| |___     \/";`,
-`echo "/\   (   /_|  |___|_____\____|_____|    /\";`,
-`echo "\/    |_|       | ||  _ \               \/";`,
-`echo "/\             / __) |_) |              /\";`,
-`echo "\/             \__ \  __/               \/";`,
-`echo "/\             (   /_|                  /\";`,
-`echo "\/              |_|                     \/";`,
-`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`,
-`echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`,
-      ];
-window['ze']=[   
-`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`,
-`echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`,
-`echo "/\  _  _______  _______ ____      _    ____ _____ /\";`,
-`echo "\/ | || ____\ \/ /_   _|  _ \    / \  / ___|_   _|\/";`,
-`echo "/\/ __)  _|  \  /  | | | |_) |  / _ \| |     | |  /\";`,
-`echo "\/\__ \ |___ /  \  | | |  _ <  / ___ \ |___  | |  \/";`,
-`echo "/\(   /_____/_/\_\_|_| |_| \_\/_/   \_\____| |_|  /\";`,
-`echo "\/ |_|       | || ____|                           \/";`,
-`echo "/\          / __)  _|                             /\";`,
-`echo "\/          \__ \ |___                            \/";`,
-`echo "/\          (   /_____|                           /\";`,
-`echo "\/           |_|                                  \/";`,
-`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`,
-`echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`,
-     ];
- window['zl']=[
-`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`,
-`echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`,
-`echo "/\  _  _     _____ _   _  ____ _____ _   _  /\";`,
-`echo "\/ | || |   | ____| \ | |/ ___|_   _| | | | \/";`,
-`echo "/\/ __) |   |  _| |  \| | |  _  | | | |_| | /\";`,
-`echo "\/\__ \ |___| |___| |\  | |_| | | | |  _  | \/";`,
-`echo "/\(   /_____|_____|_| \_|\____| |_| |_| |_| /\";`,
-`echo "\/ |_|       | || |                         \/";`,
-`echo "/\          / __) |                         /\";`,
-`echo "\/          \__ \ |___                      \/";`,
-`echo "/\          (   /_____|                     /\";`,
-`echo "\/           |_|                            \/";`,
-`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`,
-`echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`,
-        ];
-window['zc']=[
-`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`,
-`echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`,
-`echo "/\  _       _        _    ____      _    ____ _____ _____ ____  /\";`,
-`echo "\/ | |  ___| |__    / \  |  _ \    / \  / ___|_   _| ____|  _ \ \/";`,
-`echo "/\/ __)/ __| _ \  / _ \ | |_) |  / _ \| |     | | |  _| | |_) |/\";`,
-`echo "\/\__ \ (__| | | |/ ___ \|  _ <  / ___ \ |___  | | | |___|  _ < \/";`,
-`echo "/\(   /\___|_| |_/_/   \_\_| \_\/_/   \_\____| |_| |_____|_| \_\/\";`,
-`echo "\/ |_|  ____                                                    \/";`,
-`echo "/\ | | / ___|                                                   /\";`,
-`echo "\// __) |                                                       \/";`,
-`echo "/\\__ \ |___                                                    /\";`,
-`echo "\/(   /\____|                                                   \/";`,
-`echo "/\ |_|                                                          /\";`,
-`echo "\/                                                              \/";`,
-`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`,
-`echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`,
-];
-window['za']=[
-`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`,
-`echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`,
-`echo "/\  _     _    ____   ____ ___ ___  /\";`,
-`echo "\/ | |   / \  / ___| / ___|_ _|_ _| \/";`,
-`echo "/\/ __) / _ \ \___ \| |    | | | |  /\";`,
-`echo "\/\__ \/ ___ \ ___) | |___ | | | |  \/";`,
-`echo "/\(   /_/   \_\____/ \____|___|___| /\";`,
-`echo "\/ |_|    _                         \/";`,
-`echo "/\ | |   / \                        /\";`,
-`echo "\// __) / _ \                       \/";`,
-`echo "/\\__ \/ ___ \                      /\";`,
-`echo "\/(   /_/   \_\                     \/";`,
-`echo "/\ |_|                              /\";`,
-`echo "\/                                  \/";`,
-`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`,
-`echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`,
-];
+      }
+      .rotating {
+        transition: transform 1s ease-in-out;
+      }
+
+      .rotating:hover {
+        transform: rotateZ(360deg);
+      }
+    </style>
+  </head>
+  <body style="height:100vh;width:99vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
+    <div id="q-app" class="flex">
+      <div class="full-width" style="width:100%;">
+        <q-tabs v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
+          <q-tab class="bg-black text-green" name="learnm" label="learn MUMPS (M)" @click="learnm"></q-tab>
+          <q-tab class="bg-black text-green" name="learnmpg" label="GT.M Programmers Guide" @click="learnmpg"></q-tab>
+          <q-space></q-space>
+          <q-tab name="repo" @click="repo" label="Repo"></q-tab>
+          <q-tab name="li" @click="li" label="LinkedIn"></q-tab>
+          <q-tab name="youtube" label="youtube" @click="youtube"></q-tab>
+          <q-tab name="Instagram" label="Instagram" @click="insta"></q-tab>
+          <q-tab name="donate" label="DON 8" @click="donate"></q-tab>
+        </q-tabs>
+      </div>
+      <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
+        <q-card class="q-pa-md q-gutter-md" style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);width:550px;height:calc(90vh-50px);overflow-y:scroll;">
+          <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'Joshua'" :text-color="'red'"></q-chat-message>
+          <q-spinner-dots key="b1" id="b1" size="4rem" v-show="showTyping"></q-spinner-dots>
+          <q-chat-message v-show="showRA" key="a2" id="a2" :text="['I was in the orthophogas, whaddap ????, Yeah, why not...let me warm up ....']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" bg-color="black" :name="'RA'" :text-color="'red'"></q-chat-message>
+          <q-spinner-dots key="b2" id="b2" size="3rem" v-show="showRAT"></q-spinner-dots>
+          <q-chat-message v-show="showISIS" key="a3" id="a3" :text="['\n[Intro: God]\n\nThere once was a little girl\nWho had a crush on a bad, bad boy\nBut when thatbad boy got out of prison\nThat little girls ass was in big, big trouble']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
+          <q-spinner-dots key="b3" id="b3" size="4rem" v-show="showISIST"></q-spinner-dots>
+          <q-chat-message v-show="showBASTET" key="a4" id="a4" :text="['\nMo7sins biggest fear is colors & numbers.\nmeo']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :name="'Bastetn'" bg-color="black" :text-color="'red'"></q-chat-message>
+          <q-chat-message v-show="showME" key="a5" id="a5" :text="['\nwrong convo btatis, meow\nhelp AND DONATE. \nalso check whats coming soon']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'me'" :text-color="'red'"></q-chat-message>
+        </q-card>
+        <q-card class="q-pa-lg " style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
+          <div id="terminal" class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
+          <div class="flex-center justify-around">
+            <q-input ref="input" filled type="textarea" v-model="ti"></q-input>
+            <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term'].write(ti)"></q-btn>
+            <q-btn dense flat round class="q-pa-sm" label="writeln" @click="window['term'].writeln(ti)"></q-btn>
+            <q-btn dense flat round class="q-pa-sm" label="focus" @click="window['term'].focus()"></q-btn>
+            <q-btn dense flat round class="q-pa-sm" label="clear" @click="window['term'].clear()"></q-btn>
+          </div>
+          <div class="q-video q-pa-md q-gutter-md">
+            <iframe src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </q-card>
+      </div>
+      <q-dialog v-model="learnmdialog" persistent :maximized="maximizedToggle" transition-show="slide-up" transition-hide="slide-down">
+        <q-card class="bg-red text-black full-width" style="width:100%;min-width:85vw;height:100vh;">
+          <q-bar>
+            <q-space></q-space>
+            <q-btn dense flat icon="minimize" @click="maximizedToggle = false" :disable="!maximizedToggle">
+              <q-tooltip :disabled="maximizedToggle">Minimize</q-tooltip>
+            </q-btn>
+            <q-btn dense flat icon="crop_square" @click="maximizedToggle = true" :disable="maximizedToggle">
+              <q-tooltip disabled="!maximizedToggle">Maximize</q-tooltip>
+            </q-btn>
+            <q-btn dense flat icon="close" @click="learnmdialog = false"></q-btn>
+          </q-bar>
+          <q-card-section class="q-pt-none">
+            <q-tabs v-model="mtabs" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
+              <q-tab class="bg-black text-green" name="zch1" label="Strings(CH1)"></q-tab>
+              <q-space></q-space>
+              <q-tab name="zp" label="$PIECE ($P)" @click="processmtabs"></q-tab>
+              <q-tab name="zl" label="$LENGTH ($L)" @click="processmtabs"></q-tab>
+              <q-tab name="ze" label="$EXTRACT ($E)" @click="processmtabs"></q-tab>
+              <q-tab name="zc" label="$CHAR ($C)" @click="processmtabs"></q-tab>
+              <q-tab name="za" label="$ASCII ($A)" @click="processmtabs"></q-tab>
+            </q-tabs>
+            <q-card-section v-show="mtabs==='zp'">
+              <div class="text-h3">Let's learn MUMPS (M) for a spaceship</div>
+              <div class="text-h4">No Strings Attached </div>
+              <span class="bg-black text-red text-h4">&nbsp;&nbsp;$PIECE ($P)</span>
+            </q-card-section>
+            <q-card-section v-show="mtabs==='zl'">
+              <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
+              <div class="text-h4">No Strings Attached </div>
+              <span class="bg-black text-red text-h4">&nbsp;&nbsp;$LENGTH ($L)</span>
+            </q-card-section>
+            <q-card-section v-show="mtabs==='ze'">
+              <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
+              <div class="text-h4">No Strings Attached </div>
+              <span class="bg-black text-red text-h4">&nbsp;&nbsp;$EXTRACT ($E)</span>
+            </q-card-section>
+            <q-card-section v-show="mtabs==='zc'">
+              <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
+              <div class="text-h4">No Strings Attached </div>
+              <span class="bg-black text-red text-h4">&nbsp;&nbsp;$CHAR ($C)</span>
+            </q-card-section>
+            <q-card-section v-show="mtabs==='za'">
+              <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
+              <div class="text-h4">No Strings Attached </div>
+              <span class="bg-black text-red text-h4">&nbsp;&nbsp;$ASCII ($A)</span>
+            </q-card-section>
+            <br />
+            <br />
+            <q-card-section>
+              <div id="terminalii" class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
+              <div class="flex-center justify-around">
+                <q-input ref="input" filled type="textarea" v-model="ti2"></q-input>
+                <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term2'].write(ti2)"></q-btn>
+                <q-btn dense flat round class="q-pa-sm" label="writeln" @click="window['term2'].writeln(ti2)"></q-btn>
+                <q-btn dense flat round class="q-pa-sm" label="focus" @click="window['term2'].focus()"></q-btn>
+                <q-btn dense flat round class="q-pa-sm" label="clear" @click="window['term2'].clear()"></q-btn>
+              </div>
+            </q-card-section>
+        </q-card>
+      </q-dialog>
+      <q-dialog v-model="learnmpgdialog" persistent :maximized="maximizedTogglepg" transition-show="slide-up" transition-hide="slide-down">
+        <q-card class="bg-red text-black full-width" style="width:100%;min-width:85vw;height:100vh;">
+          <q-bar>
+            <q-space></q-space>
+            <q-btn dense flat icon="minimize" @click="maximizedpgToggle = false" :disable="!maximizedpgToggle">
+              <q-tooltip :disabled="maximizedpgToggle">Minimize</q-tooltip>
+            </q-btn>
+            <q-btn dense flat icon="crop_square" @click="maximizedpgToggle = true" :disable="maximizedpgToggle">
+              <q-tooltip disabled="!maximizedpgToggle">Maximize</q-tooltip>
+            </q-btn>
+            <q-btn dense flat icon="close" @click="learnmpgdialog = false"></q-btn>
+          </q-bar>
+          <q-card-section>
+            <div class="text-h3">FIS GT.M Programmers Guide</div>
+          </q-card-section>
+          <q-card-section>
+            <center>
+              <pdf src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/GT.M%20Programmers%20Guide.pdf"></pdf>
+            </center>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+      <script>
+        window.quasarConfig = {
+          dialog: {},
+          notify: {},
+          loading: {},
+          loadingBar: {},
+          fullscreen: {}
+        }
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js" integrity="sha256-oHVzIfl0UnvaPMJZO/Vsx//kV4QhJJztauSf+xxSn5A=" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.ie.polyfills.umd.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
+      <script>
+        window['zp'] = [`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, `echo "/\     _  ____ ___ _____ ____ _____     /\";`, `echo "\/    | ||  _ \_ _| ____/ ___| ____|    \/";`, `echo "/\   / __) |_) | ||  _|| |   |  _|      /\";`, `echo "\/   \__ \  __/| || |__| |___| |___     \/";`, `echo "/\   (   /_|  |___|_____\____|_____|    /\";`, `echo "\/    |_|       | ||  _ \               \/";`, `echo "/\             / __) |_) |              /\";`, `echo "\/             \__ \  __/               \/";`, `echo "/\             (   /_|                  /\";`, `echo "\/              |_|                     \/";`, `echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, ];
+        window['ze'] = [`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, `echo "/\  _  _______  _______ ____      _    ____ _____ /\";`, `echo "\/ | || ____\ \/ /_   _|  _ \    / \  / ___|_   _|\/";`, `echo "/\/ __)  _|  \  /  | | | |_) |  / _ \| |     | |  /\";`, `echo "\/\__ \ |___ /  \  | | |  _ <  / ___ \ |___  | |  \/";`, `echo "/\(   /_____/_/\_\_|_| |_| \_\/_/   \_\____| |_|  /\";`, `echo "\/ |_|       | || ____|                           \/";`, `echo "/\          / __)  _|                             /\";`, `echo "\/          \__ \ |___                            \/";`, `echo "/\          (   /_____|                           /\";`, `echo "\/           |_|                                  \/";`, `echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, ];
+        window['zl'] = [`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, `echo "/\  _  _     _____ _   _  ____ _____ _   _  /\";`, `echo "\/ | || |   | ____| \ | |/ ___|_   _| | | | \/";`, `echo "/\/ __) |   |  _| |  \| | |  _  | | | |_| | /\";`, `echo "\/\__ \ |___| |___| |\  | |_| | | | |  _  | \/";`, `echo "/\(   /_____|_____|_| \_|\____| |_| |_| |_| /\";`, `echo "\/ |_|       | || |                         \/";`, `echo "/\          / __) |                         /\";`, `echo "\/          \__ \ |___                      \/";`, `echo "/\          (   /_____|                     /\";`, `echo "\/           |_|                            \/";`, `echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, ];
+        window['zc'] = [`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, `echo "/\  _       _        _    ____      _    ____ _____ _____ ____  /\";`, `echo "\/ | |  ___| |__    / \  |  _ \    / \  / ___|_   _| ____|  _ \ \/";`, `echo "/\/ __)/ __| _ \  / _ \ | |_) |  / _ \| |     | | |  _| | |_) |/\";`, `echo "\/\__ \ (__| | | |/ ___ \|  _ <  / ___ \ |___  | | | |___|  _ < \/";`, `echo "/\(   /\___|_| |_/_/   \_\_| \_\/_/   \_\____| |_| |_____|_| \_\/\";`, `echo "\/ |_|  ____                                                    \/";`, `echo "/\ | | / ___|                                                   /\";`, `echo "\// __) |                                                       \/";`, `echo "/\\__ \ |___                                                    /\";`, `echo "\/(   /\____|                                                   \/";`, `echo "/\ |_|                                                          /\";`, `echo "\/                                                              \/";`, `echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, ];
+        window['za'] = [`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, `echo "/\  _     _    ____   ____ ___ ___  /\";`, `echo "\/ | |   / \  / ___| / ___|_ _|_ _| \/";`, `echo "/\/ __) / _ \ \___ \| |    | | | |  /\";`, `echo "\/\__ \/ ___ \ ___) | |___ | | | |  \/";`, `echo "/\(   /_/   \_\____/ \____|___|___| /\";`, `echo "\/ |_|    _                         \/";`, `echo "/\ | |   / \                        /\";`, `echo "\// __) / _ \                       \/";`, `echo "/\\__ \/ ___ \                      /\";`, `echo "\/(   /_/   \_\                     \/";`, `echo "/\ |_|                              /\";`, `echo "\/                                  \/";`, `echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, ];
         new Vue({
-            el: '#q-app',
-            data: function() {
-                return {
-                  ti2:'',
-                  mtabsbooted:false,
-                  mtabs:'zp',
-                  maximizedToggle:false,
-                  maximizedTogglepg:false,
-                  tab2:'dollarp',
-                  learnmdialog:false,
-                  learnmpgdialog:false,
-                   ti:'',
-                   tab:'',
-                   theme:'light',
-                    fab:'',
-                    showRA:false,
-                    showBASTET:false,
-                    showME:false,
-                    showISIST:false,
-                    showISIS:false,
-                    showRAT:false,
-                    t: null,
-                    termExists: false,
-                    showTerm: false,
-                    label: 'test',
-                    staticlottie: true,
-                    lottiekey: '1',
-                    speed: 1.5,
-                    chatText: '',
-                    splitterModel: 50,
-                    messages: [],
-                    showTyping: false,
-                    messageNumber: -1,
-                    messageDirection: true,
-                    showReply: false,
-                    termiibooted:false,
-                    messagesArr: ['Hello...is this Eeeath???\nwhere all the dirt is!!!\nI HAVE A SOOOOONG TO SIIIIIING',
-                        'Right about now NWA court is in full effect\nJudge Dre presiding in the case of NWA versus the police department.\nProsecuting attourneys are MC Ren, Ice Cube and Eazy motherfuckin E\nOrder, order, order, Ice Cube take the motherfuckin stand',
-                        'Do you swear to tell the truth the whole truth\nAnd nothin but the truth so help your black ass?\nYou goddamn right\nWell, wont you tell everybody what the fuck you gotta say?\nFuck the police comin straight from the underground\nA Young nigga got it bad cause Im brown',
-                        'And not the other color so police think\nThey have the authority to kill a minority\nFuck that shit, cause I aint the one\nFor a punk motherfucker with a badge and a gun\nTo be beatin on, and thrown in jail ',
-                        'We can go toe-to-toe in the middle of a cell\nFuckin with me cause Im a teenager\nWith a little bit of gold and a pager\nSearchin my car, lookin for the product\nThinkin every nigga is sellin narcotics',
-                        'Youd rather see me in the pen\nThan me and Lorenzo rollin in the Benzo\nBeat a police outta shape\nAnd when Im finished, bring the yellow tape\nTo tape off the scene of the slaughter\nStill getting swole off bread and water',
-                        'Fuck you, you black motherfuckers',
-                        'Fuck the police',
-                        'Fuck the police',
-                        '...RA....???????...FEEL LIKE SINGING.....',
-                    ],
-                }
+          el: '#q-app',
+          data: function() {
+            return {
+              ti2: '',
+              mtabsbooted: false,
+              mtabs: 'zp',
+              maximizedToggle: false,
+              maximizedTogglepg: false,
+              tab2: 'dollarp',
+              learnmdialog: false,
+              learnmpgdialog: false,
+              ti: '',
+              tab: '',
+              theme: 'light',
+              fab: '',
+              showRA: false,
+              showBASTET: false,
+              showME: false,
+              showISIST: false,
+              showISIS: false,
+              showRAT: false,
+              t: null,
+              termExists: false,
+              showTerm: false,
+              label: 'test',
+              staticlottie: true,
+              lottiekey: '1',
+              speed: 1.5,
+              chatText: '',
+              splitterModel: 50,
+              messages: [],
+              showTyping: false,
+              messageNumber: -1,
+              messageDirection: true,
+              showReply: false,
+              termiibooted: false,
+              messagesArr: ['Hello...is this Eeeath???\nwhere all the dirt is!!!\nI HAVE A SOOOOONG TO SIIIIIING', 'Right about now NWA court is in full effect\nJudge Dre presiding in the case of NWA versus the police department.\nProsecuting attourneys are MC Ren, Ice Cube and Eazy motherfuckin E\nOrder, order, order, Ice Cube take the motherfuckin stand', 'Do you swear to tell the truth the whole truth\nAnd nothin but the truth so help your black ass?\nYou goddamn right\nWell, wont you tell everybody what the fuck you gotta say?\nFuck the police comin straight from the underground\nA Young nigga got it bad cause Im brown', 'And not the other color so police think\nThey have the authority to kill a minority\nFuck that shit, cause I aint the one\nFor a punk motherfucker with a badge and a gun\nTo be beatin on, and thrown in jail ', 'We can go toe-to-toe in the middle of a cell\nFuckin with me cause Im a teenager\nWith a little bit of gold and a pager\nSearchin my car, lookin for the product\nThinkin every nigga is sellin narcotics', 'Youd rather see me in the pen\nThan me and Lorenzo rollin in the Benzo\nBeat a police outta shape\nAnd when Im finished, bring the yellow tape\nTo tape off the scene of the slaughter\nStill getting swole off bread and water', 'Fuck you, you black motherfuckers', 'Fuck the police', 'Fuck the police', '...RA....???????...FEEL LIKE SINGING.....', ],
+            }
+          },
+          watched: {
+            speed(o, n) {
+              this.lottiekey = Number(this.lottiekey) + 1;
+            }
+          },
+          mounted: function() {
+            let _vm = this;
+            setTimeout(function() {
+              _vm.xtermLoad();
+            }, 0)
+            _vm.$q.dark.set(true);
+            setTimeout(function() {
+              _vm.speed = 2
+              _vm.showMessage()
+              _vm.showTyping = false
+              _vm.speed = 1
+            }, 1000);
+            setTimeout(function() {
+              _vm.showTyping = true
+              _vm.speed = 1.5
+            }, 5000);
+            setTimeout(function() {
+              _vm.speed = 2
+              _vm.showMessage()
+              _vm.showTyping = false
+            }, 9000);
+            setTimeout(function() {
+              _vm.showTyping = true
+              _vm.speed = 1.2
+            }, 13000);
+            setTimeout(function() {
+              _vm.showMessage()
+              _vm.showTyping = false
+              _vm.speed = 2
+            }, 17000);
+            setTimeout(function() {
+              _vm.showTyping = true
+              _vm.speed = 1
+            }, 18000);
+            setTimeout(function() {
+              _vm.showMessage()
+              _vm.showTyping = false
+              _vm.speed = 2
+            }, 24600);
+            setTimeout(function() {
+              _vm.showTyping = true
+              _vm.speed = 1
+            }, 30000);
+            setTimeout(function() {
+              _vm.speed = 2
+              _vm.showMessage()
+              _vm.showTyping = false
+            }, 31000);
+            setTimeout(function() {
+              _vm.showTyping = true
+              _vm.speed = 1
+            }, 32000);
+            setTimeout(function() {
+              _vm.speed = 2
+              _vm.showMessage()
+              _vm.showTyping = false
+            }, 33000);
+            setTimeout(function() {
+              _vm.showTyping = true
+            }, 34000);
+            setTimeout(function() {
+              _vm.speed = 2
+              _vm.showMessage()
+              _vm.showTyping = false
+            }, 35000);
+            setTimeout(function() {
+              _vm.speed = 2
+              _vm.showMessage()
+              _vm.showTyping = false
+            }, 36000);
+            setTimeout(function() {
+              _vm.speed = 2
+              _vm.showMessage()
+              _vm.showTyping = false
+            }, 38000);
+            setTimeout(function() {
+              _vm.showMessage()
+              _vm.showTyping = false
+            }, 39000);
+            setTimeout(function() {
+              _vm.showRA = true
+            }, 45000);
+            setTimeout(function() {
+              _vm.showRAT = true
+            }, 50000);
+            setTimeout(function() {
+              _vm.showISIS = true
+            }, 55000);
+            setTimeout(function() {
+              _vm.showISIST = true
+            }, 60000);
+            setTimeout(function() {
+              _vm.showBASTET = true
+            }, 65000)
+            setTimeout(function() {
+              _vm.showME = true
+            }, 70000);
+          },
+          methods: {
+            learnm: function() {
+              this.learnmdialog = true
+              this.xtermciLoad();
             },
-            watched: {
-                speed(o, n) {
-                    this.lottiekey = Number(this.lottiekey) + 1;
-                }
+            learnmpg: function() {
+              this.learnmpgdialog = true
             },
-            mounted: function() {
+            submit: function() {
+              window['term'].write(this.ti);
+            },
+            changeTheme: function() {
+              if (this.theme === "light") {
+                this.$q.dark.set(true);
+                this.theme = "dark";
+              } else {
+                this.$q.dark.set(false);
+                this.theme = "light";
+              }
+            },
+            focus: function() {
+              window['term'].focus();
+            },
+            xtermInitialize: function() {},
+            xtermBoot: function() {
+              this.termExists = true;
+              let term = window['term'] || new Terminal();
+              this.term = term;
+              window['term'] = term;
+              term.open(document.getElementById('terminal'));
+              term.write('\r\n' + '*******************************************************************************');
+              term.write('\r\n' + '                                                                                ');
+              term.write('\r\n' + '                                                                                ');
+              term.write('\r\n' + "                     (\"`-''-/\").___..--''\"`-._ ');                           ");
+              term.write('\r\n' + "                   `6_ 6  )   `-.  (     ).`-.__.`) ');                         ");
+              term.write('\r\n' + "                   (_Y_.)'  ._   )  `._ `. ``-..-' ');                          ");
+              term.write('\r\n' + "                     _..`--'_..-_/  /--'_.'');                                  ");
+              term.write('\r\n' + "                    ((((.-''  ((((.'  (((.-'                                    ");
+              term.write('\r\n' + '                                                                                ');
+              term.write('\r\n' + '                                                                                ');
+              term.write('\r\n' + '                                                                                ');
+              term.write('\r\n' + '*******************************************************************************');
+              this.showTerm = true;
+            },
+            w: function(a) {
+              this.term.write('\r\n' + a);
+            },
+            xtermLoad: function() {
+              this.xtermBoot();
+            },
+            processmtabs: function() {
+              window['term2'].clear();
+              window['term2'].write(window[this.mtabs].join('\r\n'));
+              window['term2'].focus();
+            },
+            xtermciLoad: function() {
               let _vm = this;
-              setTimeout(function(){
-                _vm.xtermLoad();
-              },0)            
-                _vm.$q.dark.set(true);
-                setTimeout(function() {
-                    _vm.speed = 2
-                    _vm.showMessage()
-                    _vm.showTyping = false
-                    _vm.speed = 1
-                }, 1000);
-                setTimeout(function() {
-                    _vm.showTyping = true
-                    _vm.speed = 1.5
-                }, 5000);
-                setTimeout(function() {
-                    _vm.speed = 2
-                    _vm.showMessage()
-                    _vm.showTyping = false
-
-                }, 9000);
-                setTimeout(function() {
-                    _vm.showTyping = true
-                    _vm.speed = 1.2
-                }, 13000);
-                setTimeout(function() {
-                    _vm.showMessage()
-                    _vm.showTyping = false
-                    _vm.speed = 2
-                }, 17000);
-                setTimeout(function() {
-                    _vm.showTyping = true
-                    _vm.speed = 1
-                }, 18000);
-                setTimeout(function() {
-                    _vm.showMessage()
-                    _vm.showTyping = false
-                    _vm.speed = 2
-                }, 24600);
-                setTimeout(function() {
-                    _vm.showTyping = true
-                    _vm.speed = 1
-                }, 30000);
-                setTimeout(function() {
-                    _vm.speed = 2
-                    _vm.showMessage()
-                    _vm.showTyping = false
-                }, 31000);
-                setTimeout(function() {
-                    _vm.showTyping = true
-                    _vm.speed = 1
-                }, 32000);
-                setTimeout(function() {
-                    _vm.speed = 2
-                    _vm.showMessage()
-                    _vm.showTyping = false
-                }, 33000);
-                setTimeout(function() {
-                    _vm.showTyping = true
-                }, 34000);
-                setTimeout(function() {
-                    _vm.speed = 2
-                    _vm.showMessage()
-                    _vm.showTyping = false
-                }, 35000);
-                setTimeout(function() {
-                    _vm.speed = 2
-                    _vm.showMessage()
-                    _vm.showTyping = false
-                }, 36000);
-                setTimeout(function() {
-                    _vm.speed = 2
-                    _vm.showMessage()
-                    _vm.showTyping = false
-                }, 38000);
-
-                setTimeout(function() {
-                    _vm.showMessage()
-                    _vm.showTyping = false
-                }, 39000);
-
-                 setTimeout(function() {
-                    _vm.showRA = true
-                }, 45000);
-
-                setTimeout(function() {
-                    _vm.showRAT = true
-                }, 50000);
-                
-                setTimeout(function() {
-                    _vm.showISIS = true
-                }, 55000);
-
-                setTimeout(function() {
-                    _vm.showISIST = true
-                }, 60000);
-
               setTimeout(function() {
-                    _vm.showBASTET = true
-                }, 65000)
-
-              setTimeout(function() {
-                    _vm.showME = true
-                }, 70000);
-            },
-            methods: {
-              learnm: function(){
-                this.learnmdialog = true
-                this.xtermciLoad();
-              },
-               learnmpg: function(){
-                this.learnmpgdialog = true
-              },
-                submit: function(){
-                  window['term'].write(this.ti);
-                },
-                changeTheme: function(){
-                     if (this.theme === "light") {
-                            this.$q.dark.set(true);
-                            this.theme = "dark";
-                          } else {
-                            this.$q.dark.set(false);
-                            this.theme = "light";
-                          }   
-                },
-              focus: function(){
-                window['term'].focus();
-              },
-                xtermInitialize:function(){
-                },
-                xtermBoot: function() {
-                    this.termExists = true;
-                     let term = window['term'] || new Terminal();
-                     this.term = term;
-                     window['term']=term;
-                     term.open(document.getElementById('terminal'));
-                   term.write('\r\n'+'*******************************************************************************');
-                   term.write('\r\n'+'                                                                                ');
-                    term.write('\r\n'+'                                                                                ');
-                   term.write('\r\n'+"                     (\"`-''-/\").___..--''\"`-._ ');                           ");
-                   term.write('\r\n'+"                   `6_ 6  )   `-.  (     ).`-.__.`) ');                         ");
-                   term.write('\r\n'+"                   (_Y_.)'  ._   )  `._ `. ``-..-' ');                          ");
-                   term.write('\r\n'+"                     _..`--'_..-_/  /--'_.'');                                  ");
-                   term.write('\r\n'+"                    ((((.-''  ((((.'  (((.-'                                    ");
-                   term.write('\r\n'+'                                                                                ');
-                   term.write('\r\n'+'                                                                                ');
-                   term.write('\r\n'+'                                                                                ');
-                   term.write('\r\n'+'*******************************************************************************');
-                 this.showTerm = true;
-                },
-                w: function(a) {
-                    this.term.write('\r\n'+a);
-                },
-                xtermLoad: function() {
-                    this.xtermBoot();
-                },
-              processmtabs: function(){
-                window['term2'].clear();
-                window['term2'].write(window[this.mtabs].join('\r\n'));
-                window['term2'].focus();
-              },
-              xtermciLoad:function(){
-                let _vm = this;
-                setTimeout(function(){
-                  let term2;
-                if (typeof window['term2'] === 'undefined'){
+                let term2;
+                if (typeof window['term2'] === 'undefined') {
                   term2 = window['term2'] || new Terminal();
-                  window['term2']=term2;
-                  
+                  window['term2'] = term2;
                 } else {
                   term2 = window['term2']
                 }
-                if (_vm.mtabsbooted === false){
+                if (_vm.mtabsbooted === false) {
                   term2.open(document.getElementById('terminalii'));
                   term2.write(window[_vm.mtabs].join('\r\n'));
                   term2.focus();
@@ -617,56 +449,65 @@ window['za']=[
                   term2.focus();
                   _vm.mtabsbooted = true;
                 }
-                },1000)
-              },
-                adisodasoon: function() {
-                   this.$q.dialog({
-                    title: '',
-                    message: '<div style="height:60vh;"><span class="text-black bg-red">final warning</span> <strong><h1>I SAID COMING SOON, @#$@#</h1></strong></div>',
-                    html: true
-                  }).onOk(() => {
-                     setTimeout(function(){
-                        Quasar.Notify.create('\rTHATS\rWHAT I THOUGHT...\r');
-                     },500)
-                  }).onCancel(() => {
-                  }).onDismiss(() => {
-                  })
-                },
-                li: function() {
-                    window.open('https://www.linkedin.com/in/ahmed-abdelrazek-16b44b187/','_blank');
-                },
-
-                repo: function() {
-                    window.open('https://www.github.com/aa32555','_blank');
-                },
-                insta: function() {
-                    window.open('https://www.instagram.com/aa3255/','_blank');
-                },
-                youtube: function() {
-                 window.open('https://www.youtube.com/@asolok','_blank');
-                },
-                gl: function() {
-                    window.open('https://www.gitlab.com/ahmedydb','_blank');
-                },
-                checkya: function() {
-                    window.open('https://checkya.com/aa3255/payme','_blank');
-                },
-              donate: function(){
+              }, 1000)
+            },
+            adisodasoon: function() {
               this.$q.dialog({
-                    title: 'help & don8',
-                    message: '<div style="height:400px;width:400px;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png);background-size: cover;"><br/><br /><center><a id="checkya-pay-me-button" rel="noopener" target="_blank" href="https://checkya.com/aa3255/payme" style="display: inline-block; font-family: Poppins, "Avenir Next", "Avenir Next LT Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Verdana, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: 16px; font-weight: 500; line-height: 24px; color: rgb(252, 252, 252) !important; text-align: center; text-decoration: none !important; letter-spacing: 0.25px; vertical-align: middle; background-color: rgb(254, 95, 67); background-image: url("https://checkya.com/logomark-white.svg"); background-repeat: no-repeat; border: 1px solid rgb(254, 95, 67); appearance: none; padding: 15px 24px 15px 62px; background-position: 24px center; background-size: 24px 24px; border-radius: 12px;">Pay with CheckYa</a></center><br/><br/></div>',
-                    html: true
-                  }).onOk(() => {
-                  }).onCancel(() => {
-                  }).onDismiss(() => {
-                  })
-              },
-                showMessage: function() {
-                    this.messageNumber = this.messageNumber + 1
-                    this.messages.push(this.messagesArr[this.messageNumber])
-                },
-            }
+                title: '',
+                message: ' < div style = "height:60vh;" > < span class = "text-black bg-red" > final warning < /span> < strong > < h1 > I SAID COMING SOON,
+                @ #$ @ # < /h1> < /strong> < /div>',
+                html: true
+              }).onOk(() => {
+                setTimeout(function() {
+                  Quasar.Notify.create('\rTHATS\rWHAT I THOUGHT...\r');
+                }, 500)
+              }).onCancel(() => {}).onDismiss(() => {})
+            },
+            li: function() {
+              window.open('https://www.linkedin.com/in/ahmed-abdelrazek-16b44b187/', '_blank');
+            },
+            repo: function() {
+              window.open('https://www.github.com/aa32555', '_blank');
+            },
+            insta: function() {
+              window.open('https://www.instagram.com/aa3255/', '_blank');
+            },
+            youtube: function() {
+              window.open('https://www.youtube.com/@asolok', '_blank');
+            },
+            gl: function() {
+              window.open('https://www.gitlab.com/ahmedydb', '_blank');
+            },
+            checkya: function() {
+              window.open('https://checkya.com/aa3255/payme', '_blank');
+            },
+            donate: function() {
+              this.$q.dialog({
+                title: 'help & don8',
+                message: ' < div style = "height:400px;width:400px;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png);background-size: cover;" > < br / > < br / > < center > < a id = "checkya-pay-me-button"
+                rel = "noopener"
+                target = "_blank"
+                href = "https://checkya.com/aa3255/payme"
+                style = "display: inline-block; font-family: Poppins, "
+                Avenir Next ", "
+                Avenir Next LT Pro ", system-ui, -apple-system, BlinkMacSystemFont, "
+                Segoe UI ", "
+                Noto Sans ", Verdana, Arial, sans-serif, "
+                Apple Color Emoji ", "
+                Segoe UI Emoji ", "
+                Segoe UI Symbol ", "
+                Noto Color Emoji "; font-size: 16px; font-weight: 500; line-height: 24px; color: rgb(252, 252, 252) !important; text-align: center; text-decoration: none !important; letter-spacing: 0.25px; vertical-align: middle; background-color: rgb(254, 95, 67); background-image: url("
+                https: //checkya.com/logomark-white.svg"); background-repeat: no-repeat; border: 1px solid rgb(254, 95, 67); appearance: none; padding: 15px 24px 15px 62px; background-position: 24px center; background-size: 24px 24px; border-radius: 12px;">Pay with CheckYa</a>
+                  < /center> < br / > < br / > < /div>',
+                html: true
+              }).onOk(() => {}).onCancel(() => {}).onDismiss(() => {})
+            },
+            showMessage: function() {
+              this.messageNumber = this.messageNumber + 1
+              this.messages.push(this.messagesArr[this.messageNumber])
+            },
+          }
         })
-    </script>
-</body>
+      </script>
+  </body>
 </html>

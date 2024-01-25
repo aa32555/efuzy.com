@@ -212,13 +212,13 @@
             <q-space></q-space>
             <q-btn dense flat icon="minimize" @click="maximizedpgToggle=false">
             </q-btn>
-            <q-btn dense flat icon="crop_square" @click="maximizedpgToggl =true">
+            <q-btn dense flat icon="crop_square" @click="maximizedpgToggle=true">
             </q-btn>
             <q-btn dense flat icon="close" @click="learnmpgdialog=false"></q-btn>
           </q-bar>
           <q-card-section>
             <div class="text-h3">FIS GT.M Programmers Guide</div>
-            <iframe src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/GT.M%20Programmers%20Guide.pdf"></iframe>
+            <iframe style="maximizedpgToggle===true?'height:90vh;width:90vw;':'height:75vh;width:75vw;'" src="https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M%20Programmers%20Guide.pdf"></iframe>
           </q-card-section>
         </q-card>
       </q-dialog>

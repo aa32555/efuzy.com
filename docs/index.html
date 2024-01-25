@@ -138,7 +138,8 @@
             <q-btn dense flat round class="q-pa-sm" label="writeln" @click="window['term'].writeln(ti)"></q-btn>
             <q-btn dense flat round class="q-pa-sm" label="focus" @click="window['term'].focus()"></q-btn>
             <q-btn dense flat round class="q-pa-sm" label="clear" @click="window['term'].clear()"></q-btn>
-            <q-btn dense flat round class="q-pa-sm" label="clear textarea" @click="ti=''"></q-btn>
+            <q-btn dense flat round class="q-pa-sm" label="type egyptian" @click="window['term'].write(messagesArr.join('  '))"></q-btn>
+            
           </div>
           <div class="q-video q-pa-md q-gutter-md">
             <iframe src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

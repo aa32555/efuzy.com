@@ -936,7 +936,7 @@ window['za']=[
                 }
                 if (!_vm.mscreenboot[_vm.mtabs]){
                   term2.open(document.getElementById('terminalii'));
-                  term2.write(window[_vm.mtabs].join('\r\n')
+                  term2.write(window[_vm.mtabs].join('\r\n'));
                   term2.focus();
                   _vm.mscreenboot[_vm.mtabs] = true;
                 } else {

@@ -436,11 +436,11 @@ this is an important message to the following people that I'm accussing of steal
       >
        <q-tab class="bg-black text-green" name="learnmstrings" label="Strings(CH1)" ></q-tab>
          <q-space ></q-space>
-       <q-tab name="p"  label="$PIECE ($P)" @click="mtabs='zp'"></q-tab>
-       <q-tab name="l"  label="$LENGTH ($L)" @click="mtabs='zl'" ></q-tab>
-       <q-tab name="e"  label="$EXTRACT ($E)" @click="mtabs='ze'"></q-tab>
-       <q-tab name="c"  label="$CHAR ($C)"  @click="mtabs='zc'"></q-tab>
-       <q-tab name="a"  label="$ASCII ($A)"  @click="mtabs='za'"></q-tab>
+       <q-tab name="zp"  label="$PIECE ($P)" @click="mtabs='zp'"></q-tab>
+       <q-tab name="zl"  label="$LENGTH ($L)" @click="mtabs='zl'" ></q-tab>
+       <q-tab name="ze"  label="$EXTRACT ($E)" @click="mtabs='ze'"></q-tab>
+       <q-tab name="zc"  label="$CHAR ($C)"  @click="mtabs='zc'"></q-tab>
+       <q-tab name="za"  label="$ASCII ($A)"  @click="mtabs='za'"></q-tab>
       </q-tabs>
 
   <q-card-section  v-show="mtabs==='zp'">
@@ -859,12 +859,12 @@ window['za']=[
                       term2.open(document.getElementById('terminalii'));
                 },1000) 
                        setTimeout(function(){
-                         let aa = window['aa1']
+                         let aa = window[mtabs]
                          aa.map(function(x){
                            term2.writeln(x)
                          })
                       term2.focus();
-                },2000)      
+                },1000)      
               },
                 adisodasoon: function() {
                    this.$q.dialog({

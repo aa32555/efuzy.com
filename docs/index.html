@@ -111,7 +111,7 @@
       <div class="full-width" style="width:100%;">
         <q-tabs v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
           <q-tab class="bg-black text-green" name="learnm" label="learn MUMPS (M)" @click="learnm"></q-tab>
-          <q-tab class="bg-black text-green" name="learnmpg" label="GT.M Programmers Guide" @click="learnmpg"></q-tab>
+          <q-tab class="bg-black text-yellow" name="learnmpg" label="GT.M Programmers Guide" @click="learnmpg"></q-tab>
           <q-space></q-space>
           <q-tab name="repo" @click="repo" label="Repo"></q-tab>
           <q-tab name="li" @click="li" label="LinkedIn"></q-tab>
@@ -138,6 +138,7 @@
             <q-btn dense flat round class="q-pa-sm" label="writeln" @click="window['term'].writeln(ti)"></q-btn>
             <q-btn dense flat round class="q-pa-sm" label="focus" @click="window['term'].focus()"></q-btn>
             <q-btn dense flat round class="q-pa-sm" label="clear" @click="window['term'].clear()"></q-btn>
+            <q-btn dense flat round class="q-pa-sm" label="clear textarea" @click="ti=''"></q-btn>
           </div>
           <div class="q-video q-pa-md q-gutter-md">
             <iframe src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

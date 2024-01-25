@@ -496,7 +496,9 @@ VBUSER
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
     <script>
- window['typewait']=function(t,fn,ms){setTimeout(function(){fn(t);},(t.split('').length)*(ms?ms:300)};
+ window['typewait']=function(t,fn,ms){setTimeout(function(){
+   fn(t),
+     },(  t.split('').length)*(ms?ms:300)  )};
  window['zp']=[
 `echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`,
 `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`,

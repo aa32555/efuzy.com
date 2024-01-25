@@ -10,6 +10,11 @@
 
 aa3255@gmail.com (nocurrent access)......
 CLIFTON PD ROCKS ( NO CURRENT STATE AFFLIATIION [AHHM nypd]).....ALSO THANK YOU FOR THE SUPPORT AND PURCHASING MY CERTIFIED HIPPA CARDS FOR SALE. BEKIA CHAPTER WILL COME LATER
+xxx
+sys
+_system
+USER
+VBUSER
 
 
 
@@ -305,20 +310,13 @@ CLIFTON PD ROCKS ( NO CURRENT STATE AFFLIATIION [AHHM nypd]).....ALSO THANK YOU 
         class="bg-black text-red"
         class="full-width" style="width:100%;"
       >
-        <q-tab name="li" @click="li" label="LinkedIn"></q-tab>
         <q-tab class="bg-black text-green" name="learnm" label="learn MUMPS (M)" @click="learnm"></q-tab>
          <q-space ></q-space>
          <q-tab name="repo" @click="repo" label="Repo"></q-tab>
+        <q-tab name="li" @click="li" label="LinkedIn"></q-tab>
         <q-tab name="youtube" label="youtube" @click="youtube"></q-tab>
         <q-tab name="Instagram" label="Instagram" @click="insta"></q-tab>
-         <q-tab name="checkya" label="checkya" @click="checkya"></q-tab>
-         <q-tab name="adisodasoon" label="coming_soon" @click="adisodasoon"></q-tab>
          <q-tab name="donate" label="DON 8" @click="donate"></q-tab>
-         <q-tab name="dig" label="checkya" @click="checkya"></q-tab>
-         <q-tab name="cleart" label="Clear" @click="cleart"></q-tab>
-        <q-tab name="focus" label="Focus" @click="focus"></q-tab>
-         <q-tab name="chat" label="chat" @click="chat"></q-tab>
-       
       </q-tabs>
   </div>
     <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
@@ -378,15 +376,18 @@ CLIFTON PD ROCKS ( NO CURRENT STATE AFFLIATIION [AHHM nypd]).....ALSO THANK YOU 
                   </q-card>
              <q-card  class="q-pa-lg " style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
                 <div id="terminal"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
-<div style="width: 500px;margin:0 auto;">
-    <q-input
-      ref="input"
-      filled
-      type="textarea"
-      v-model="ti"
-    ></q-input>
-    <q-btn class="q-mt-sm" label="Submit" @click="submit" ></q-btn>
-  </div>  
+    <div class="flex-center justify-around">
+                    <q-input
+                      ref="input"
+                      filled
+                      type="textarea"
+                      v-model="ti"
+                    ></q-input>
+                    <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term'].write(ti)" ></q-btn>
+                   <q-btn dense flat round class="q-pa-sm" label="writeln" @click="window['term'].writeln(ti)" ></q-btn>
+                   <q-btn dense flat round class="q-pa-sm" label="focus" @click="window['term'].focus()" ></q-btn>
+                   <q-btn dense flat round class="q-pa-sm" label="clear" @click="window['term'].clear()" ></q-btn>
+                  </div> 
      <div class="q-video q-pa-md q-gutter-md">
            <iframe src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
      </div>
@@ -418,7 +419,7 @@ CLIFTON PD ROCKS ( NO CURRENT STATE AFFLIATIION [AHHM nypd]).....ALSO THANK YOU 
         class="bg-black text-red"
         class="full-width" style="width:100%;"
       >
-       <q-tab class="bg-black text-green" name="learnmstrings" label="Strings(CH1)" ></q-tab>
+       <q-tab class="bg-black text-green" name="zch1" label="Strings(CH1)" ></q-tab>
          <q-space ></q-space>
        <q-tab name="zp"  label="$PIECE ($P)" @click="mtabs='zp'"></q-tab>
        <q-tab name="zl"  label="$LENGTH ($L)" @click="mtabs='zl'" ></q-tab>
@@ -430,45 +431,53 @@ CLIFTON PD ROCKS ( NO CURRENT STATE AFFLIATIION [AHHM nypd]).....ALSO THANK YOU 
    <div class="text-h5">Chapter 1 (how I escaped death on a spaceship from an alien planet, just because of M (and snake named magic, more on that later) </div>
    <div class="text-h6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...in the programming section of the spaceship, you just found yourself on...more on that later</div>
   -->
+        <q-card  class="q-pa-lg q-gutter-lg flex" style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
+                <div id="terminalii"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
+                <div class="flex-center justify-around">
+                    <q-input
+                      ref="input"
+                      filled
+                      type="textarea"
+                      v-model="ti2"
+                    ></q-input>
+                    <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term2'].write(ti2)" ></q-btn>
+                   <q-btn dense flat round class="q-pa-sm" label="writeln" @click="window['term2'].writeln(ti2)" ></q-btn>
+                   <q-btn dense flat round class="q-pa-sm" label="focus" @click="window['term2'].focus()" ></q-btn>
+                   <q-btn dense flat round class="q-pa-sm" label="clear" @click="window['term2'].clear()" ></q-btn>
+                  </div>  
+
+          
   <q-card-section  v-show="mtabs==='zp'">
           <div class="text-h3">Let's learn MUMPS (M) for a spaceship</div>
-          <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;>$PIECE ($P)</span>
+          <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;$PIECE ($P)</span>
   </q-card-section>
 
   <q-card-section  v-show="mtabs==='zl'">
           <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
-          <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;">$LENGTH ($L)</span>
+          <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;$LENGTH ($L)</span>
   </q-card-section>
 
   <q-card-section  v-show="mtabs==='ze'">
           <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
-          <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;">$EXTRACT ($E)</span>
+          <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;$EXTRACT ($E)</span>
   </q-card-section>
 
    <q-card-section  v-show="mtabs==='zc'">
           <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
-           <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;">$CHAR ($C)</span>
+           <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;$CHAR ($C)</span>
   </q-card-section>
 
    <q-card-section  v-show="mtabs==='za'">
           <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
-         <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;">$ASCII ($A)</span>
+         <div class="text-h4">No Strings Attached </div><span class="bg-black text-red text-h4">&nbsp;&nbsp;$ASCII ($A)</span>
   </q-card-section>
 
-     <q-card-section  v-show="mtabs==='zl'">
+     <q-card-section  v-show="mtabs==='zch1'">
           <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
           <div class="text-h4">No Strings Attached</div>
           <div class="text-h5">Chapter 1 (how I escaped death on a spaceship from an alien planet, just because of M (and snake named magic, more on that later) </div>
             <div class="text-h6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...in the programming section of the spaceship, you just found yourself on...more on that later</div>
   </q-card-section>
-
-
-              <q-card-section class="q-pt-none">
-           <br/>
-                <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
-                <div id="terminalii"  class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
-             </div>
-        </q-card-section>
       </q-card>
     </q-dialog>
 <script>
@@ -487,13 +496,7 @@ CLIFTON PD ROCKS ( NO CURRENT STATE AFFLIATIION [AHHM nypd]).....ALSO THANK YOU 
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
     <script>
-
- var typewait = function(text,fn){
-    let timer = setTimeout(function(){
-        fn(text)
-    },text.split('').length*100)
- };
- window['typewait']=typewait;
+ window['typewait']=function(t,fn,ms){setTimeout(function(){fn(t);},(t.split('').length)*(ms?ms:300)};
  window['zp']=[
 `echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`,
 `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`,
@@ -582,6 +585,7 @@ window['za']=[
             el: '#q-app',
             data: function() {
                 return {
+                  ti2:'',
                   mtabsbooted:false,
                   mtabs:'zp',
                   maximizedToggle:false,
@@ -841,10 +845,9 @@ window['za']=[
                     this.xtermBoot();
                 },
               xtermciLoad:function(){
+                let _vm = this;
                 setTimeout(function(){
                   let term2;
-                  let _vm = this;
-                
                 if (typeof window['term2'] === 'undefined'){
                   term2 = window['term2'] || new Terminal();
                   window['term2']=term2;
@@ -861,7 +864,7 @@ window['za']=[
                   term2.clear()
                   term2.write(window[_vm.mtabs].join('\r\n'));
                   term2.focus();
-                  _vm.mtabsbooted === true;
+                  _vm.mtabsbooted = true;
                 }
                 },1000)
               },

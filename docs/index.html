@@ -209,10 +209,10 @@
         <q-card class="bg-red text-black full-width" style="width:100%;min-width:85vw;height:100vh;">
           <q-bar>
             <q-space></q-space>
-            <q-btn dense flat icon="minimize" @click="maximizedpgToggle = false" :disable="!maximizedpgToggle">
+            <q-btn dense flat icon="minimize" @click="maximizedpgToggle = false" >
               <q-tooltip :disabled="maximizedpgToggle">Minimize</q-tooltip>
             </q-btn>
-            <q-btn dense flat icon="crop_square" @click="maximizedpgToggle = true" :disable="maximizedpgToggle">
+            <q-btn dense flat icon="crop_square" @click="maximizedpgToggle = true" >
               <q-tooltip disabled="!maximizedpgToggle">Maximize</q-tooltip>
             </q-btn>
             <q-btn dense flat icon="close" @click="learnmpgdialog = false"></q-btn>
@@ -221,9 +221,14 @@
             <div class="text-h3">FIS GT.M Programmers Guide</div>
           </q-card-section>
           <q-card-section>
-            <center>
-              <pdf src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/GT.M%20Programmers%20Guide.pdf"></pdf>
-            </center>
+               <object
+                    data="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/GT.M%20Programmers%20Guide.pdf"
+                    type="application/pdf"
+                    width="100%"
+                    height="800px"
+               >
+                    <p>Something went wrong! <br/>Here's a link to <a href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/GT.M%20Programmers%20Guide.pdf">the Programmers Guide </a>instead.</p>
+               </object>
           </q-card-section>
         </q-card>
       </q-dialog>
@@ -252,7 +257,7 @@
           el: '#q-app',
           data: function() {
             return {
-              maximizedpgToggle:true,
+              maximizedpgToggle:false,
               ti2: '',
               mtabsbooted: false,
               mtabs: 'zp',

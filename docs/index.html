@@ -117,7 +117,6 @@
           <q-tab name="li" @click="li" label="LinkedIn"></q-tab>
           <q-tab name="youtube" label="youtube" @click="youtube"></q-tab>
           <q-tab name="Instagram" label="Instagram" @click="insta"></q-tab>
-          <q-tab name="donate" label="DON 8" @click="donate"></q-tab>
         </q-tabs>
       </div>
       <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
@@ -471,18 +470,6 @@
                 }
               }, 1000)
             },
-            adisodasoon: function() {
-              this.$q.dialog({
-                title: '',
-                message: ' < div style = "height:60vh;" > < span class = "text-black bg-red" > final warning < /span> < strong > < h1 > I SAID COMING SOON,
-                @ #$ @ # < /h1> < /strong> < /div>',
-                html: true
-              }).onOk(() => {
-                setTimeout(function() {
-                  Quasar.Notify.create('\rTHATS\rWHAT I THOUGHT...\r');
-                }, 500)
-              }).onCancel(() => {}).onDismiss(() => {})
-            },
             li: function() {
               window.open('https://www.linkedin.com/in/ahmed-abdelrazek-16b44b187/', '_blank');
             },
@@ -500,27 +487,6 @@
             },
             checkya: function() {
               window.open('https://checkya.com/aa3255/payme', '_blank');
-            },
-            donate: function() {
-              this.$q.dialog({
-                title: 'help & don8',
-                message: ' < div style = "height:400px;width:400px;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png);background-size: cover;" > < br / > < br / > < center > < a id = "checkya-pay-me-button"
-                rel = "noopener"
-                target = "_blank"
-                href = "https://checkya.com/aa3255/payme"
-                style = "display: inline-block; font-family: Poppins, "
-                Avenir Next ", "
-                Avenir Next LT Pro ", system-ui, -apple-system, BlinkMacSystemFont, "
-                Segoe UI ", "
-                Noto Sans ", Verdana, Arial, sans-serif, "
-                Apple Color Emoji ", "
-                Segoe UI Emoji ", "
-                Segoe UI Symbol ", "
-                Noto Color Emoji "; font-size: 16px; font-weight: 500; line-height: 24px; color: rgb(252, 252, 252) !important; text-align: center; text-decoration: none !important; letter-spacing: 0.25px; vertical-align: middle; background-color: rgb(254, 95, 67); background-image: url("
-                https: //checkya.com/logomark-white.svg"); background-repeat: no-repeat; border: 1px solid rgb(254, 95, 67); appearance: none; padding: 15px 24px 15px 62px; background-position: 24px center; background-size: 24px 24px; border-radius: 12px;">Pay with CheckYa</a>
-                  < /center> < br / > < br / > < /div>',
-                html: true
-              }).onOk(() => {}).onCancel(() => {}).onDismiss(() => {})
             },
             showMessage: function() {
               this.messageNumber = this.messageNumber + 1

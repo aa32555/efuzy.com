@@ -443,6 +443,10 @@ Echo %_RESET%
               _vm.showMessage()
               _vm.showTyping = false
               _vm.speed = 1
+              _vm.term.clear();
+              window.term.writeln(this.messagesArr[this.messageNumber]);
+              _vm.term.focus();
+              
             }, 1000);
             setTimeout(function() {
               _vm.showTyping = true
@@ -452,6 +456,8 @@ Echo %_RESET%
               _vm.speed = 2
               _vm.showMessage()
               _vm.showTyping = false
+               window.term.writeln(this.messagesArr[this.messageNumber]);
+              _vm.term.focus();
             }, 9000);
             setTimeout(function() {
               _vm.showTyping = true
@@ -459,6 +465,8 @@ Echo %_RESET%
             }, 13000);
             setTimeout(function() {
               _vm.showMessage()
+               window.term.writeln(this.messagesArr[this.messageNumber]);
+              _vm.term.focus();
               _vm.showTyping = false
               _vm.speed = 2
             }, 17000);
@@ -468,6 +476,8 @@ Echo %_RESET%
             }, 18000);
             setTimeout(function() {
               _vm.showMessage()
+              window.term.writeln(this.messagesArr[this.messageNumber]);
+              _vm.term.focus();
               _vm.showTyping = false
               _vm.speed = 2
             }, 24600);
@@ -478,6 +488,8 @@ Echo %_RESET%
             setTimeout(function() {
               _vm.speed = 2
               _vm.showMessage()
+              window.term.writeln(this.messagesArr[this.messageNumber]);
+              _vm.term.focus();
               _vm.showTyping = false
             }, 31000);
             setTimeout(function() {
@@ -487,6 +499,8 @@ Echo %_RESET%
             setTimeout(function() {
               _vm.speed = 2
               _vm.showMessage()
+              window.term.writeln(this.messagesArr[this.messageNumber]);
+              _vm.term.focus();
               _vm.showTyping = false
             }, 33000);
             setTimeout(function() {

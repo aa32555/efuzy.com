@@ -128,13 +128,16 @@ PUNISHED BY CHINA - SEVERLY:
         <q-card class="q-pa-md q-gutter-md" style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);width:550px;height:calc(90vh-50px);overflow-y:scroll;">
           <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'Joshua'" :text-color="'red'"></q-chat-message>
           <q-spinner-dots key="b1" id="b1" size="4rem" v-show="showTyping"></q-spinner-dots>
-          <q-chat-message v-show="showRA" key="a2" id="a2" :text="['I was in the orthophogas, whaddap ????, Yeah, why not...let me warm up ....']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" bg-color="black" :name="'RA'" :text-color="'red'"></q-chat-message>
+          <q-chat-message v-show="showRA" key="a2" id="a2" :text="['Hey Maricon, what's your number???????']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" bg-color="black" :name="'RA'" :text-color="'red'"></q-chat-message>
           <q-spinner-dots key="b2" id="b2" size="3rem" v-show="showRAT"></q-spinner-dots>
           <q-chat-message v-show="showISISes[0]" key="a3" id="a3" :text="messagesISIS0" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
           <q-spinner-dots key="b3" id="b3" size="4rem" v-show="showISIST[0]"></q-spinner-dots>
-          <q-chat-message v-show="showBASTET" key="a4" id="a4" :text="['\nMo7sins biggest fear is colors & numbers.\nmeo']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :name="'Bastetn'" bg-color="black" :text-color="'red'"></q-chat-message>
           <q-chat-message v-show="showISISes[1]" key="a5" id="a5" :text="messagesISIS1" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
           <q-spinner-dots key="b4" id="b4" size="4rem" v-show="showISIST[1]"></q-spinner-dots>
+          <q-chat-message v-show="showISISes[2]" key="a6" id="a6" :text="messagesISIS2" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
+          <q-spinner-dots key="b5" id="b5" size="4rem" v-show="showISIST[2]"></q-spinner-dots>
+          <q-chat-message v-show="showBASTET" key="a4" id="a4" :text="['meow ?']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" :stamp="'when i say so'" :sent="true" :name="'Bastet aka Batates'" bg-color="pink" :text-color="'white'"></q-chat-message>
+       
         
         </q-card>
         <q-card class="q-pa-lg " style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
@@ -255,14 +258,29 @@ PUNISHED BY CHINA - SEVERLY:
         window['zl'] = [`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, `echo "/\  _  _     _____ _   _  ____ _____ _   _  /\";`, `echo "\/ | || |   | ____| \ | |/ ___|_   _| | | | \/";`, `echo "/\/ __) |   |  _| |  \| | |  _  | | | |_| | /\";`, `echo "\/\__ \ |___| |___| |\  | |_| | | | |  _  | \/";`, `echo "/\(   /_____|_____|_| \_|\____| |_| |_| |_| /\";`, `echo "\/ |_|       | || |                         \/";`, `echo "/\          / __) |                         /\";`, `echo "\/          \__ \ |___                      \/";`, `echo "/\          (   /_____|                     /\";`, `echo "\/           |_|                            \/";`, `echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, ];
         window['zc'] = [`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, `echo "/\  _       _        _    ____      _    ____ _____ _____ ____  /\";`, `echo "\/ | |  ___| |__    / \  |  _ \    / \  / ___|_   _| ____|  _ \ \/";`, `echo "/\/ __)/ __| _ \  / _ \ | |_) |  / _ \| |     | | |  _| | |_) |/\";`, `echo "\/\__ \ (__| | | |/ ___ \|  _ <  / ___ \ |___  | | | |___|  _ < \/";`, `echo "/\(   /\___|_| |_/_/   \_\_| \_\/_/   \_\____| |_| |_____|_| \_\/\";`, `echo "\/ |_|  ____                                                    \/";`, `echo "/\ | | / ___|                                                   /\";`, `echo "\// __) |                                                       \/";`, `echo "/\\__ \ |___                                                    /\";`, `echo "\/(   /\____|                                                   \/";`, `echo "/\ |_|                                                          /\";`, `echo "\/                                                              \/";`, `echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, ];
         window['za'] = [`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, `echo "/\  _     _    ____   ____ ___ ___  /\";`, `echo "\/ | |   / \  / ___| / ___|_ _|_ _| \/";`, `echo "/\/ __) / _ \ \___ \| |    | | | |  /\";`, `echo "\/\__ \/ ___ \ ___) | |___ | | | |  \/";`, `echo "/\(   /_/   \_\____/ \____|___|___| /\";`, `echo "\/ |_|    _                         \/";`, `echo "/\ | |   / \                        /\";`, `echo "\// __) / _ \                       \/";`, `echo "/\\__ \/ ___ \                      /\";`, `echo "\/(   /_/   \_\                     \/";`, `echo "/\ |_|                              /\";`, `echo "\/                                  \/";`, `echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, ];
-
+  
         new Vue({
           el: '#q-app',
           data: function() {
             return {
-              showISISes:[false,false],
+              showISISes:[false,false,false],
               messagesISIS0: ['There once was a little girl','Who had a crush on a bad, bad boy','But when that bad boy got out of prison','That little girl\'s ass was in big, big trouble'],
               messagesISIS1:['Daai bra Anies, hy\'s \'n fokken gam bra','Haai! Daai Anies, hy lam innie mang, ja','"Ken sy my nommer?" Xha! Boy, what\'s your number?','Twee ses? Twee sewe? Of is jy \'n ag bra?'],
+              messagesISIS2:[
+                'Throw them devilish gang signs in the air',
+                'Start giving it up for little evil me',
+                'My fingers are green \'cause I\'m a mean dope fiend',
+                'I\'m wicked like a mad D.O.G.',
+                'Fresh like a little dark G.O.D.',
+                'Yo-Landi Vi$$er got the hypest flow',
+                'Start talking in tongues whenever I get stoned',
+                'Motherfucking minds get blown',
+                'Every time I rap into the microphone',
+                'My zef accent is very foreign',
+                'When I speak overseas they go "I beg your pardon?"',
+                'You can\'t get me, like Eric Cartman',
+                'Naughty little kitty go "meow"',
+              ],
               maximizedpgToggle:false,
               ti2: '',
               mtabsbooted: false,
@@ -279,7 +297,7 @@ PUNISHED BY CHINA - SEVERLY:
               showRA: false,
               showBASTET: false,
               showME: false,
-              showISIST: [false,false],
+              showISIST: [false,false,false],
               showISIS: false,
               showRAT: false,
               t: null,
@@ -297,7 +315,7 @@ PUNISHED BY CHINA - SEVERLY:
               messageDirection: true,
               showReply: false,
               termiibooted: false,
-              messagesArr: ['𓇋𓀀𓀁𓀅𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀅𓇋  𓀀𓀁𓇋𓀅𓀅  𓀅𓀀𓀁𓀅𓇋𓆲  𓄿𓀀𓀁𓀅𓇋𓀅  𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅', '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀅𓇋  𓀀𓀁𓇋𓀅𓀅  𓀅𓀀𓀁𓀅𓇋𓆲  𓄿𓀀𓀁𓀅𓇋𓀅  𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅', '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀅𓇋  𓀀𓀁𓇋𓀅𓀅  𓀅𓀀𓀁𓀅𓇋𓆲  𓄿𓀀𓀁𓀅𓇋𓀅  𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅', '𓀅𓆲𓀀𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀅𓇋  𓀀𓀁𓇋𓀅𓀅  𓀅𓀀𓀁𓀅𓇋𓆲  𓄿𓀀𓀁𓀅𓇋𓀅  𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓇋𓀁𓀅', '𓀅𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀅𓇋  𓀀𓀁𓇋𓀅𓀅  𓀅𓀀𓀁𓀅𓇋𓆲  𓄿𓀀𓀁𓀅𓇋𓀅  𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓆭𓇋', '𓄿𓀀𓀁𓀅𓀅𓇋', '𓀀𓀁𓇋𓀅𓀅', '𓀅𓀀𓀁𓀅𓇋𓆲', '𓄿𓀀𓀁𓀅𓇋𓀅', '𓀅𓀀𓀁𓇋𓀅','𓀅𓀀𓀁𓇋𓀅' ],
+              messagesArr: ['𓇋𓀀', '𓄿𓀅', '𓄿𓀅𓀅', '𓀅𓆲𓀀𓀅', '𓀅𓀅𓆲', '𓄿𓀀', '𓀀', '𓀅', '𓄿', 'UR #','      ?      ' ],
             }
           },
           watched: {
@@ -396,15 +414,21 @@ PUNISHED BY CHINA - SEVERLY:
             setTimeout(function() {
               _vm.showISIST[0] = true
             }, 16000);
+             setTimeout(function() {
+              _vm.showISISes[1] = true;
+            }, 17000);
+            setTimeout(function() {
+              _vm.showISIST[0] = false
+              _vm.showISIST[1] = true
+            }, 17500);
+
             setTimeout(function() {
               _vm.showBASTET = true
-            }, 17000)
-             setTimeout(function() {
-              _vm.showISISes[1] = true
-            }, 18000);
-            setTimeout(function() {
-              _vm.showISIST[1] = true
-            }, 19000);
+            }, 18000)
+            
+           setTimeout(function() {
+               _vm.showISISes[2] = true;
+            }, 18500)
           },
           
           methods: {

@@ -442,128 +442,120 @@ Echo %_RESET%
               _vm.showTyping = false
               _vm.speed = 1
               window.term.clear();
+              window.term.clear();
               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
-              _vm.term.focus();
-              
-            }, 1000);
+              window.term.focus();
+            }, 500);
             setTimeout(function() {
               _vm.showTyping = true
               _vm.speed = 1.5
+            }, 1000);
+            setTimeout(function() {
+              _vm.speed = 2
+              _vm.showMessage()
+              _vm.showTyping = false
+               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              window.term.focus();
+            }, 1200);
+            setTimeout(function() {
+              _vm.showTyping = true
+              _vm.speed = 1.2
+            }, 1500);
+            setTimeout(function() {
+              _vm.showMessage()
+               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              _vm.term.focus();
+              _vm.showTyping = false
+              _vm.speed = 2
+            }, 2000);
+            setTimeout(function() {
+              _vm.showTyping = true
+              _vm.speed = 1
+            }, 2500);
+            setTimeout(function() {
+              _vm.showMessage()
+              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              _vm.term.focus();
+              _vm.showTyping = false
+              _vm.speed = 2
+            }, 3000);
+            setTimeout(function() {
+              _vm.showTyping = true
+              _vm.speed = 1
+            }, 3500);
+            setTimeout(function() {
+              _vm.speed = 2
+              _vm.showMessage()
+              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              _vm.term.focus();
+              _vm.showTyping = false
+            }, 4000);
+            setTimeout(function() {
+              _vm.showTyping = true
+              _vm.speed = 1
+            }, 4500);
+            setTimeout(function() {
+              _vm.speed = 2
+              _vm.showMessage()
+             window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              _vm.term.focus();
+              _vm.showTyping = false
+            }, 5000);
+            setTimeout(function() {
+              _vm.showTyping = true
+            }, 5500);
+            setTimeout(function() {
+              _vm.speed = 2
+              _vm.showMessage()
+               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              window.term.focus();
+              _vm.showTyping = false
             }, 5000);
             setTimeout(function() {
               _vm.speed = 2
               _vm.showMessage()
-              _vm.showTyping = false
-               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
-              window.term.focus();
-            }, 9000);
-            setTimeout(function() {
-              _vm.showTyping = true
-              _vm.speed = 1.2
-            }, 13000);
-            setTimeout(function() {
-              _vm.showMessage()
-               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
-              _vm.term.focus();
-              _vm.showTyping = false
-              _vm.speed = 2
-            }, 17000);
-            setTimeout(function() {
-              _vm.showTyping = true
-              _vm.speed = 1
-            }, 18000);
-            setTimeout(function() {
-              _vm.showMessage()
-              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
-              _vm.term.focus();
-              _vm.showTyping = false
-              _vm.speed = 2
-            }, 24600);
-            setTimeout(function() {
-              _vm.showTyping = true
-              _vm.speed = 1
-            }, 30000);
-            setTimeout(function() {
-              _vm.speed = 2
-              _vm.showMessage()
-              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
-              _vm.term.focus();
-              _vm.showTyping = false
-            }, 31000);
-            setTimeout(function() {
-              _vm.showTyping = true
-              _vm.speed = 1
-            }, 32000);
-            setTimeout(function() {
-              _vm.speed = 2
-              _vm.showMessage()
-             window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
-              _vm.term.focus();
-              _vm.showTyping = false
-            }, 33000);
-            setTimeout(function() {
-              _vm.showTyping = true
-            }, 34000);
-            setTimeout(function() {
-              _vm.speed = 2
-              _vm.showMessage()
-               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
-              window.term.focus();
-              _vm.showTyping = false
-            }, 35000);
-            setTimeout(function() {
-              _vm.speed = 2
-              _vm.showMessage()
               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
               window.term.focus();
               _vm.showTyping = false
-            }, 36000);
+            }, 5500);
             setTimeout(function() {
               _vm.speed = 2
               _vm.showMessage()
              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
               window.term.focus();
               _vm.showTyping = false
-            }, 38000);
+            }, 5000);
             setTimeout(function() {
               _vm.showMessage()
              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
               window.term.focus();
               _vm.showTyping = false
-            }, 39000);
-     
+            }, 5500);
             setTimeout(function() {
               _vm.showRAT = true
-              _vm.showMe = true
-            }, 50000);
+            }, 6000);
             setTimeout(function() {
               _vm.showISISes[0] = true
-            }, 55000);
+            }, 6500);
             setTimeout(function() {
               _vm.showISIST[0] = true
-            }, 60000);
-
+            }, 7000);
           setTimeout(function() {
               _vm.showRA = true
-            }, 62000);
-            
+            }, 7500);
             setTimeout(function() {
              _vm.showME = true
-            }, 63000);
-
+            }, 8000);
             setTimeout(function() {
               _vm.showISISes[1] = true
-            }, 65000);
-            
+            }, 8500);
             setTimeout(function() {
              _vm.showISIST[0] = false
               _vm.showISIST[1] = true
-            }, 70000);
-
+            }, 9000);
             setTimeout(function() {
               _vm.showBASTET = true
-            }, 85000)
-
+            }, 9500)
           },
           methods: {
             learnm: function() {

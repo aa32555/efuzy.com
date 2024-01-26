@@ -346,16 +346,10 @@ Echo %_RESET%
         <q-card class="bg-black text-red full-width" style="width:100%;min-width:85vw;height:100vh;">
            <q-bar>
             <q-space></q-space>
-            <q-btn dense flat icon="minimize" @click="maximizedToggle = false" :disable="!maximizedToggle">
-              <q-tooltip :disabled="maximizedToggle">Minimize</q-tooltip>
-            </q-btn>
-            <q-btn dense flat icon="crop_square" @click="maximizedToggle = true" :disable="maximizedToggle">
-              <q-tooltip disabled="!maximizedToggle">Maximize</q-tooltip>
-            </q-btn>
             <q-btn dense flat icon="close" @click="mystorydialog = false"></q-btn>
           </q-bar>
  <div class="q-px-lg q-pb-md">
-    <q-timeline color="secondary">
+    <q-timeline color="red">
       <q-timeline-entry heading>
         Timeline heading
       </q-timeline-entry>

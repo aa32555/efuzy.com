@@ -560,6 +560,7 @@ Echo %_RESET%
             }, 9500)
             setTimeout(function() {
               _vm.showISIS = true
+              window.term.write(_vm.messagesISIS2.join('\r\n'));
             }, 10000)
           },
           methods: {

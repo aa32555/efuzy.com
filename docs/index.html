@@ -408,7 +408,7 @@ Echo %_RESET%
               messageDirection: true,
               showReply: false,
               termiibooted: false,
-              messagesArr: ['𓇋𓀀𓀁𓀅𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀅𓇋  𓀀𓀁𓇋𓀅𓀅  𓀅𓀀𓀁𓀅𓇋𓆲  𓄿𓀀𓀁𓀅𓇋𓀅  𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅', '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀅𓇋  𓀀𓀁𓇋𓀅𓀅  𓀅𓀀𓀁𓀅𓇋𓆲  𓄿𓀀𓀁𓀅𓇋𓀅  𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅', '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀅𓇋  𓀀𓀁𓇋𓀅𓀅  𓀅𓀀𓀁𓀅𓇋𓆲  𓄿𓀀𓀁𓀅𓇋𓀅  𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅', '𓀅𓆲𓀀𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀅𓇋  𓀀𓀁𓇋𓀅𓀅  𓀅𓀀𓀁𓀅𓇋𓆲  𓄿𓀀𓀁𓀅𓇋𓀅  𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓇋𓀁𓀅', '𓀅𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀅𓇋  𓀀𓀁𓇋𓀅𓀅  𓀅𓀀𓀁𓀅𓇋𓆲  𓄿𓀀𓀁𓀅𓇋𓀅  𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓆭𓇋', '𓄿𓀀𓀁𓀅𓀅𓇋', '𓀀𓀁𓇋𓀅𓀅', '𓀅𓀀𓀁𓀅𓇋𓆲', '𓄿𓀀𓀁𓀅𓇋𓀅', '𓀅𓀀𓀁𓇋𓀅','𓀅𓀀𓀁𓇋𓀅' ],
+              messagesArr: ['𓇋𓀀𓀁𓀅𓀅  𓀅𓀀𓀁𓇋𓀅', '𓄿𓀅𓀅    𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅', '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅  𓀅  𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅', '𓀅𓆲𓀀𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓇋𓀁𓀅', '𓀅𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓆭𓇋', '𓄿𓀀𓀁𓀅𓀅𓇋', '𓀀𓀁𓇋𓀅𓀅', '𓀅𓀀𓀁𓀅𓇋𓆲', '𓄿𓀀𓀁𓀅𓇋𓀅', '𓀅𓀀𓀁𓇋𓀅','𓀅𓀀𓀁𓇋𓀅' ],
             }
           },
           watched: {
@@ -495,18 +495,31 @@ Echo %_RESET%
               _vm.showMessage()
               _vm.showTyping = false
             }, 39000);
-            setTimeout(function() {
-              _vm.showRA = true
-            }, 45000);
+     
             setTimeout(function() {
               _vm.showRAT = true
             }, 50000);
             setTimeout(function() {
-              _vm.showISIS = true
+              _vm.showISISes[0] = true
             }, 55000);
             setTimeout(function() {
-              _vm.showISIST = true
+              _vm.showISIST[0] = true
             }, 60000);
+
+          setTimeout(function() {
+              _vm.showRA = true
+            }, 62000);
+
+
+            setTimeout(function() {
+              _vm.showISISes[1] = true
+            }, 55000);
+            setTimeout(function() {
+             _vm.showISIST[0] = false
+              _vm.showISIST[1] = true
+            }, 60000);
+
+            
             setTimeout(function() {
               _vm.showBASTET = true
             }, 65000)

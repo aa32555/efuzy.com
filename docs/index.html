@@ -214,6 +214,8 @@ Echo %_RESET%
           <q-tab class="bg-black text-green" name="learnm" label="learn MUMPS (M)" @click="learnm"></q-tab>
           <q-tab class="bg-black text-yellow" name="learnmpg" label="(M) Full Guide" @click="window.open('https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M%20Programmers%20Guide.pdf','_blank')"></q-tab>
           <q-space></q-space>
+             <q-tab class="bg-red text-black" name="mystory" label="my story" @click="mystorydialog=true"></q-tab>
+           <q-space></q-space>
           <q-tab name="repo" @click="repo" label="Repo"></q-tab>
           <q-tab name="li" @click="li" label="LinkedIn"></q-tab>
           <q-tab name="youtube" label="youtube" @click="youtube"></q-tab>
@@ -340,6 +342,88 @@ Echo %_RESET%
           </q-card-section>
         </q-card>
       </q-dialog>
+
+ <q-dialog v-model="mystorydialog" :maximized="false" transition-show="slide-up" transition-hide="slide-down">
+        <q-card class="bg-red text-black full-width" style="width:100%;min-width:85vw;height:100vh;">
+ <div class="q-px-lg q-pb-md">
+    <q-timeline color="secondary">
+      <q-timeline-entry heading>
+        Timeline heading
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 21, 1986"
+        icon="delete"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry heading>
+        November, 2017
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+        avatar="https://cdn.quasar.dev/img/avatar2.jpg"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+        color="orange"
+        icon="done_all"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+    </q-timeline>
+  </div>
+</q-card></q-dialog>
       <script>
         window.quasarConfig = {
           dialog: {},
@@ -365,6 +449,7 @@ Echo %_RESET%
           el: '#q-app',
           data: function() {
             return {
+              mystorydialog:false,
               showISISes:[false,false,false],
               showISIST: [false,false,false],
               messagesISIS0: [],

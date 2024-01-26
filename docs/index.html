@@ -228,12 +228,21 @@ Echo %_RESET%
           
           <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'Joshua'" :text-color="'red'"></q-chat-message>
           <q-spinner-dots key="b1" id="b1" size="4rem" v-show="showTyping"></q-spinner-dots>
-         
-        
+
+          
+           <q-chat-message v-show="showRA" key="a2" id="a2" :text="['7amada...I\'m Smart!']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" bg-color="black" :name="'RA'" :text-color="'red'"></q-chat-message>
+          <q-chat-message v-show="showME" key="a5" id="a5" :text="['shhh....']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'me'" :text-color="'red'"></q-chat-message>
+  
           
           
-          <q-chat-message v-show="showISIS" key="a3" id="a3" :text="['\n[Intro: God]\n\nThere once was a little girl\nWho had a crush on a bad, bad boy\nBut when thatbad boy got out of prison\nThat little girls ass was in big, big trouble']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
-          <q-spinner-dots key="b3" id="b3" size="4rem" v-show="showISIST"></q-spinner-dots>
+          
+          <q-chat-message v-show="showISIS[0]" key="a3" id="a3" :text="messagesISIS0" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
+          <q-spinner-dots key="b3" id="b3" size="4rem" v-show="showISIST[0]"></q-spinner-dots>
+           
+          
+          <q-chat-message v-show="showISIS[1]" key="a13" id="a13" :text="messagesISIS1" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
+          <q-spinner-dots key="b13" id="b13" size="4rem" v-show="showISIST[1]"></q-spinner-dots>
+          
           
           
           
@@ -241,11 +250,7 @@ Echo %_RESET%
   
 
    
-          <q-chat-message v-show="showRA" key="a2" id="a2" :text="['7amada...I\'m Smart!']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" bg-color="black" :name="'RA'" :text-color="'red'"></q-chat-message>
-
-          <q-chat-message v-show="showME" key="a5" id="a5" :text="['shhh....']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'me'" :text-color="'red'"></q-chat-message>
-  
-          
+       
           <!--
           <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'Joshua'" :text-color="'red'"></q-chat-message>
           <q-spinner-dots key="b1" id="b1" size="4rem" v-show="showTyping"></q-spinner-dots>

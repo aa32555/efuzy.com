@@ -234,17 +234,17 @@ Echo %_RESET%
           
           
           
-          <q-chat-message v-show="showISIS[0]" key="a3" id="a3" :text="messagesISIS0" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
-          <q-spinner-dots key="b3" id="b3" size="4rem" v-show="showISIST[0]"></q-spinner-dots>
+          <q-chat-message v-show="showISIS[0]" key="Ia3" id="Ia3" :text="messagesISIS0" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
+          <q-spinner-dots key="Ib3" id="Ib3" size="4rem" v-show="showISIST[0]"></q-spinner-dots>
            
           
-          <q-chat-message v-show="showISIS[1]" key="a13" id="a13" :text="messagesISIS1" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
-          <q-spinner-dots key="b13" id="b13" size="4rem" v-show="showISIST[1]"></q-spinner-dots>
+          <q-chat-message v-show="showISIS[1]" key="Ia13" id="Ia13" :text="messagesISIS1" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
+          <q-spinner-dots key="Ib13" id="Ib13" size="4rem" v-show="showISIST[1]"></q-spinner-dots>
           
           
           
           
-          <q-chat-message v-show="showBASTET" key="a4" id="a4" :text="['mewo ?']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :name="'Bastetn'" bg-color="black" :text-color="'red'"></q-chat-message>
+          <q-chat-message v-show="showBASTET" key="a4" id="a4" :text="['mewo ?']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :name="'Batates'" bg-color="black" :text-color="'red'"></q-chat-message>
   
         
         </q-card>
@@ -535,10 +535,10 @@ Echo %_RESET%
               _vm.showRAT = true
             }, 6000);
             setTimeout(function() {
-              _vm.showISISes[0] = true
+              _vm.showISIST[0] = true
             }, 6500);
             setTimeout(function() {
-              _vm.showISIST[0] = true
+              _vm.showISISes[0] = true
             }, 7000);
           setTimeout(function() {
               _vm.showRA = true

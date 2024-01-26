@@ -226,13 +226,16 @@ Echo %_RESET%
         <q-card class="q-pa-md q-gutter-md" style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);width:550px;height:calc(90vh-50px);overflow-y:scroll;">
           <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'Joshua'" :text-color="'red'"></q-chat-message>
           <q-spinner-dots key="b1" id="b1" size="4rem" v-show="showTyping"></q-spinner-dots>
-          <q-chat-message v-show="showRA" key="a2" id="a2" :text="['I was in the orthophogas, whaddap ????, Yeah, why not...let me warm up ....']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" bg-color="black" :name="'RA'" :text-color="'red'"></q-chat-message>
+          <q-chat-message v-show="showRA" key="a2" id="a2" :text="['Hey Maricon, what's your number???????']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" bg-color="black" :name="'RA'" :text-color="'red'"></q-chat-message>
           <q-spinner-dots key="b2" id="b2" size="3rem" v-show="showRAT"></q-spinner-dots>
-          <q-chat-message v-show="showISIS" key="a3" id="a3" :text="['\n[Intro: God]\n\nThere once was a little girl\nWho had a crush on a bad, bad boy\nBut when thatbad boy got out of prison\nThat little girls ass was in big, big trouble']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
-          <q-spinner-dots key="b3" id="b3" size="4rem" v-show="showISIST"></q-spinner-dots>
-          <q-chat-message v-show="showBASTET" key="a4" id="a4" :text="['\nMo7sins biggest fear is colors & numbers.\nmeo']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :name="'Bastetn'" bg-color="black" :text-color="'red'"></q-chat-message>
-          <q-chat-message v-show="showME" key="a5" id="a5" :text="['\nwrong convo btatis, meow\nhelp AND DONATE. \nalso check whats coming soon']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'me'" :text-color="'red'"></q-chat-message>
-       </q-card>
+          <q-chat-message v-show="showISISes[0]" key="a3" id="a3" :text="messagesISIS0" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
+          <q-spinner-dots key="b3" id="b3" size="4rem" v-show="showISIST[0]"></q-spinner-dots>
+          <q-chat-message v-show="showISISes[1]" key="a5" id="a5" :text="messagesISIS1" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
+          <q-spinner-dots key="b4" id="b4" size="4rem" v-show="showISIST[1]"></q-spinner-dots>
+          <q-chat-message v-show="showISISes[2]" key="a6" id="a6" :text="messagesISIS2" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
+          <q-spinner-dots key="b5" id="b5" size="4rem" v-show="showISIST[2]"></q-spinner-dots>
+          <q-chat-message v-show="showBASTET" key="a4" id="a4" :text="['meow ?']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" :stamp="'when i say so'" :sent="true" :name="'Bastet aka Batates'" bg-color="pink" :text-color="'white'"></q-chat-message>
+        </q-card>
         <q-card class="q-pa-lg " style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
           <div id="terminal" class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
           <div class="flex-center justify-around">
@@ -321,10 +324,9 @@ Echo %_RESET%
             <q-btn dense flat icon="close" @click="learnmpgdialog=false"></q-btn>
           </q-bar>
           <q-card-section>
-            <div class="text-h3">FIS GT.M Programmers Guide</div>
+            <div class="text-h3">M Programming Guide</div>
           <div style="maximizedpgToggle===true?'height:90vh;width:90vw;':'height:75vh;width:75vw;'"> 
             <iframe style="'height:75vh;width:75vw;'" src="https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M%20Programmers%20Guide.pdf">
-              
             </iframe>
           </div>
           </q-card-section>

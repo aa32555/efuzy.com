@@ -15,8 +15,6 @@
 ******* the below is a warning to anyone not affliated with GTV.org and it's subsidiaries ******
 **************************************now or in the past****************************************
 PUNISHED BY CHINA - SEVERLY:
-1) - 𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀅𓇋  𓀀𓀁𓇋𓀅𓀅  𓀅𓀀𓀁𓀅𓇋𓆲  𓄿𓀀𓀁𓀅𓇋𓀅  𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅
-
 
 
 @Echo off
@@ -443,8 +441,8 @@ Echo %_RESET%
               _vm.showMessage()
               _vm.showTyping = false
               _vm.speed = 1
-              _vm.term.clear();
-              window.term.writeln(this.messagesArr[this.messageNumber]);
+              window.term.clear();
+              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
               _vm.term.focus();
               
             }, 1000);
@@ -456,8 +454,8 @@ Echo %_RESET%
               _vm.speed = 2
               _vm.showMessage()
               _vm.showTyping = false
-               window.term.writeln(this.messagesArr[this.messageNumber]);
-              _vm.term.focus();
+               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              window.term.focus();
             }, 9000);
             setTimeout(function() {
               _vm.showTyping = true
@@ -465,7 +463,7 @@ Echo %_RESET%
             }, 13000);
             setTimeout(function() {
               _vm.showMessage()
-               window.term.writeln(this.messagesArr[this.messageNumber]);
+               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
               _vm.term.focus();
               _vm.showTyping = false
               _vm.speed = 2
@@ -476,7 +474,7 @@ Echo %_RESET%
             }, 18000);
             setTimeout(function() {
               _vm.showMessage()
-              window.term.writeln(this.messagesArr[this.messageNumber]);
+              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
               _vm.term.focus();
               _vm.showTyping = false
               _vm.speed = 2
@@ -488,7 +486,7 @@ Echo %_RESET%
             setTimeout(function() {
               _vm.speed = 2
               _vm.showMessage()
-              window.term.writeln(this.messagesArr[this.messageNumber]);
+              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
               _vm.term.focus();
               _vm.showTyping = false
             }, 31000);
@@ -499,7 +497,7 @@ Echo %_RESET%
             setTimeout(function() {
               _vm.speed = 2
               _vm.showMessage()
-              window.term.writeln(this.messagesArr[this.messageNumber]);
+             window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
               _vm.term.focus();
               _vm.showTyping = false
             }, 33000);
@@ -509,25 +507,34 @@ Echo %_RESET%
             setTimeout(function() {
               _vm.speed = 2
               _vm.showMessage()
+               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              window.term.focus();
               _vm.showTyping = false
             }, 35000);
             setTimeout(function() {
               _vm.speed = 2
               _vm.showMessage()
+              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              window.term.focus();
               _vm.showTyping = false
             }, 36000);
             setTimeout(function() {
               _vm.speed = 2
               _vm.showMessage()
+             window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              window.term.focus();
               _vm.showTyping = false
             }, 38000);
             setTimeout(function() {
               _vm.showMessage()
+             window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              window.term.focus();
               _vm.showTyping = false
             }, 39000);
      
             setTimeout(function() {
               _vm.showRAT = true
+              _vm.showMe = true
             }, 50000);
             setTimeout(function() {
               _vm.showISISes[0] = true
@@ -539,24 +546,24 @@ Echo %_RESET%
           setTimeout(function() {
               _vm.showRA = true
             }, 62000);
-
-
-            setTimeout(function() {
-              _vm.showISISes[1] = true
-            }, 55000);
-            setTimeout(function() {
-             _vm.showISIST[0] = false
-              _vm.showISIST[1] = true
-            }, 60000);
-
-            
-            setTimeout(function() {
-              _vm.showBASTET = true
-            }, 65000)
             
             setTimeout(function() {
              _vm.showME = true
+            }, 63000);
+
+            setTimeout(function() {
+              _vm.showISISes[1] = true
+            }, 65000);
+            
+            setTimeout(function() {
+             _vm.showISIST[0] = false
+              _vm.showISIST[1] = true
             }, 70000);
+
+            setTimeout(function() {
+              _vm.showBASTET = true
+            }, 85000)
+
           },
           methods: {
             learnm: function() {

@@ -116,7 +116,7 @@ PUNISHED BY CHINA - SEVERLY:
       <div class="full-width" style="width:100%;">
         <q-tabs v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
           <q-tab class="bg-black text-green" name="learnm" label="learn MUMPS (M)" @click="learnm"></q-tab>
-          <q-tab class="bg-black text-yellow" name="learnmpg" label="GT.M 程序员指南" @click="window.open('https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M 程序员指南.pdf','_blank')"></q-tab>
+          <q-tab class="bg-black text-yellow" name="learnmpg" label="M programming language guide" @click="window.open('https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M 程序员指南.pdf','_blank')"></q-tab>
           <q-space></q-space>
           <q-tab name="repo" @click="repo" label="Repo"></q-tab>
           <q-tab name="li" @click="li" label="LinkedIn"></q-tab>
@@ -137,8 +137,6 @@ PUNISHED BY CHINA - SEVERLY:
           <q-chat-message v-show="showISISes[2]" key="a6" id="a6" :text="messagesISIS2" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
           <q-spinner-dots key="b5" id="b5" size="4rem" v-show="showISIST[2]"></q-spinner-dots>
           <q-chat-message v-show="showBASTET" key="a4" id="a4" :text="['meow ?']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" :stamp="'when i say so'" :sent="true" :name="'Bastet aka Batates'" bg-color="pink" :text-color="'white'"></q-chat-message>
-       
-        
         </q-card>
         <q-card class="q-pa-lg " style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
           <div id="terminal" class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
@@ -323,12 +321,12 @@ PUNISHED BY CHINA - SEVERLY:
               this.lottiekey = Number(this.lottiekey) + 1;
             }
           },
+          created: function(){
+            _vm.xtermLoad();
+            _vm.$q.dark.set(true);
+          },
           mounted: function() {
             let _vm = this;
-            setTimeout(function() {
-              _vm.xtermLoad();;
-            }, 500)
-            _vm.$q.dark.set(true);
             setTimeout(function() {
               _vm.speed = 2;
               _vm.showMessage();
@@ -429,12 +427,12 @@ PUNISHED BY CHINA - SEVERLY:
               _vm.showISIST[0] = false;
               _vm.showISIST[1] = false;
               _vm.showISIST[2] = true;
-            }, 16000);
+            }, 19000);
+            
            setTimeout(function() {
                _vm.showISISes[2] = true;
-            }, 18500)
+            }, 19500)
           },
-          
           methods: {
             learnm: function() {
               this.learnmdialog = true

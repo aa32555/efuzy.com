@@ -262,7 +262,7 @@ Echo %_RESET%
         </q-card>
       </div>
       <q-dialog v-model="learnmdialog" persistent :maximized="maximizedToggle" transition-show="slide-up" transition-hide="slide-down">
-        <q-card class="bg-red text-black full-width" style="width:100%;min-width:85vw;height:100vh;">
+        <q-card class="full-width" style="width:100%;min-width:85vw;height:100vh;"  style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
           <q-bar>
             <q-space></q-space>
             <q-btn dense flat icon="minimize" @click="maximizedToggle = false" :disable="!maximizedToggle">

@@ -222,26 +222,21 @@ Echo %_RESET%
         </q-tabs>
       </div>
       <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
+
         <q-card class="q-pa-md q-gutter-md" style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);width:550px;height:calc(90vh-50px);overflow-y:scroll;">
-       
-          
-          <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'Joshua'" :text-color="'red'"></q-chat-message>
-          <q-spinner-dots key="b1" id="b1" size="4rem" v-show="showTyping"></q-spinner-dots>
-
-          
-           <q-chat-message v-show="showRA" key="a2" id="a2" :text="['7amada...I\'m Smart!']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" bg-color="black" :name="'RA'" :text-color="'red'"></q-chat-message>
-          <q-chat-message v-show="showME" key="a5" id="a5" :text="['ra...shhh....']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'me'" :text-color="'red'"></q-chat-message>
-
-          <!--
-          <q-chat-message v-show="showISIS[0]" key="Ia3" id="Ia3" :text="messagesISIS0" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
-          <q-spinner-dots key="Ib3" id="Ib3" size="4rem" v-show="showISIST[0]"></q-spinner-dots>
-           
-          
-          <q-chat-message v-show="showISIS[1]" key="Ia13" id="Ia13" :text="messagesISIS1" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
-          <q-spinner-dots key="Ib13" id="Ib13" size="4rem" v-show="showISIST[1]"></q-spinner-dots>
-          -->
-          <q-chat-message v-show="showISIS" key="a3" id="a3" :text="messagesISIS2" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
-          <q-chat-message v-show="showBASTET" key="a4" id="a4" :text="['mewo ?']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :name="'Batates'" bg-color="black" :text-color="'red'"></q-chat-message>
+          <div class="q-pa-lg q-gutter-lg">
+            <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'Joshua'" :text-color="'red'"></q-chat-message>
+            <q-chat-message v-show="showRA" key="a2" id="a2" :text="['7amada...I\'m Smart!']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" bg-color="black" :name="'RA'" :text-color="'red'"></q-chat-message>
+            <q-chat-message v-show="showME" key="a5" id="a5" :text="['ra...shhh....']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'me'" :text-color="'red'"></q-chat-message>
+            <q-chat-message v-show="showISIS" key="a3" id="a3" :text="messagesISIS2" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
+            <q-chat-message v-show="showBASTET" key="a4" id="a4" :text="['mewo ?']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :name="'Batates'" bg-color="black" :text-color="'red'"></q-chat-message>
+            <q-chat-message v-show="showAA" key="aaa4" id="aaa4" :text="['ahh TM, can you please translate, i wish to converse with our alien predator friend. Seriously RA dont be rude, Can You Be A Transelater Micrope... /\ ? lol']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :name="'Ahmed Abdelrazek'" bg-color="black" :text-color="'red'"></q-chat-message>
+          </div>
+          <div class="q-pa-sm">
+            <q-spinner-dots key="spinnerIb3" id="spinnerIb3" size="4rem" v-show="showspinnerdots"></q-spinner-dots>
+            <span class="text-h6 bg-black text-green" >{{spinnerdotstext}}</q-bar>
+              <span class="bg-grey text-black" >{{istypingtext}}</q-bar>
+          </div> 
         </q-card>
         <q-card class="q-pa-lg " style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
           <div id="terminal" class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
@@ -283,7 +278,12 @@ Echo %_RESET%
             <q-card-section v-show="mtabs==='zp'">
               <div class="text-h5">Let's learn MUMPS (M) for a spaceship</div>
               <div class="text-h6">No Strings Attached </div>
-              <span class="bg-black text-red text-h6">&nbsp;&nbsp;$PIECE ($P)</span><pre><code>The $PIECE() function returns a substring delimited by a specified string delimiter made up of one or more characters. For more information and usage examples, refer to “$Piece()” (page 230).
+              <span class="bg-black text-red text-h6">&nbsp;&nbsp;$PIECE ($P)</span><pre><code>
+      The $PIECE() function returns a substring 
+      delimited by a specified string delimiter
+       made up of one or more characters.
+        For more information and usage examples, 
+        refer to “$Piece()” (page 230).
               </code></pre>
             </q-card-section>
             <q-card-section v-show="mtabs==='zl'">
@@ -440,6 +440,7 @@ Echo %_RESET%
       <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
       <script>
         window['zp'] = [`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, `echo "/\     _  ____ ___ _____ ____ _____     /\";`, `echo "\/    | ||  _ \_ _| ____/ ___| ____|    \/";`, `echo "/\   / __) |_) | ||  _|| |   |  _|      /\";`, `echo "\/   \__ \  __/| || |__| |___| |___     \/";`, `echo "/\   (   /_|  |___|_____\____|_____|    /\";`, `echo "\/    |_|       | ||  _ \               \/";`, `echo "/\             / __) |_) |              /\";`, `echo "\/             \__ \  __/               \/";`, `echo "/\             (   /_|                  /\";`, `echo "\/              |_|                     \/";`, `echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, ];
         window['ze'] = [`echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, `echo "/\  _  _______  _______ ____      _    ____ _____ /\";`, `echo "\/ | || ____\ \/ /_   _|  _ \    / \  / ___|_   _|\/";`, `echo "/\/ __)  _|  \  /  | | | |_) |  / _ \| |     | |  /\";`, `echo "\/\__ \ |___ /  \  | | |  _ <  / ___ \ |___  | |  \/";`, `echo "/\(   /_____/_/\_\_|_| |_| \_\/_/   \_\____| |_|  /\";`, `echo "\/ |_|       | || ____|                           \/";`, `echo "/\          / __)  _|                             /\";`, `echo "\/          \__ \ |___                            \/";`, `echo "/\          (   /_____|                           /\";`, `echo "\/           |_|                                  \/";`, `echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\";`, `echo "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/";`, ];
@@ -450,6 +451,9 @@ Echo %_RESET%
           el: '#q-app',
           data: function() {
             return {
+              showAA:false,
+              spinnerdotstext:'',
+              showspinnerdots:false,
               mystorydialog:false,
               showISISes:[false,false,false],
               showISIST: [false,false,false],
@@ -506,7 +510,34 @@ Echo %_RESET%
               messageDirection: true,
               showReply: false,
               termiibooted: false,
-              messagesArr: ['𓇋𓀀𓀁𓀅𓀅  𓀅𓀀𓀁𓇋𓀅', '𓄿𓀅𓀅    𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅', '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅  𓀅  𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅', '𓀅𓆲𓀀𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓇋𓀁𓀅', '𓀅𓀅𓆲𓀀𓇋𓀁𓀅  𓀅𓆭𓇋  𓄿𓀀𓀁𓀅𓀀𓀁𓇋𓀅  𓀅𓀀𓀁𓇋𓀅𓆭𓇋', '𓄿𓀀𓀁𓀅𓀅𓇋', '𓀀𓀁𓇋𓀅𓀅', '𓀅𓀀𓀁𓀅𓇋𓆲', '𓄿𓀀𓀁𓀅𓇋𓀅', '𓀅𓀀𓀁𓇋𓀅','𓀅𓀀𓀁𓇋𓀅' ],
+              ttime:0,
+              messagesArr: [
+              '𓇋𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅',
+              '𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
+              '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅',
+              '𓀅𓆲𓀀𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓆭𓇋𓀀𓀁𓇋𓀅𓇋𓀁𓀅',
+              '𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀁𓇋𓀅𓆭𓇋',
+              '𓄿𓀀𓀁𓀅𓀅𓇋',
+              '𓀀𓀁𓇋𓀅𓀅',
+              '𓀅𓀀𓀁𓀅𓇋𓆲',
+              '𓄿𓀀𓀁𓀅𓇋𓀅',
+              '𓀅𓀀𓀁𓇋𓀅',
+              '𓀅𓀀𓀁𓇋𓀅'
+             ],
+             ttimet:0,
+             messagesArrTM: [
+              `Yo, Big Shaq, the one and only\nMan's not hot, never hot\nSkrrat (GottiOnEm), skidi-kat-kat\nBoom`,
+              'Two plus two is four',
+              'Minus one that\'s three, quick maths',
+              'Everyday man\s on the block',
+              'Smoke trees (Ah)',
+              'See your girl in the park',
+              'That girl is a uckers',
+              'When the ting went quack-quack-quack',
+              'You man were ducking',
+              'Hold tight, Asznee',
+              'I said, "Babes,'
+             ],
             }
           },
           watched: {
@@ -514,133 +545,124 @@ Echo %_RESET%
               this.lottiekey = Number(this.lottiekey) + 1;
             }
           },
+          computed:{
+            ttime: function(){
+              this.ttimet = this.ttimet + (Math.floor(Math.random() * 10) * 1000);
+              return this.ttimet
+            }
+          },
           mounted: function() {
             let _vm = this;
+            let AAwrite = _.delay(function(t){window.term.writeln(t);},1000);
+            window['AAwrite'] = AAwrite;
             setTimeout(function() {
               _vm.xtermLoad();
-            }, 0)
+            }, 10)
             _vm.$q.dark.set(true);
             setTimeout(function() {
-              _vm.speed = 2
               _vm.showMessage()
-              _vm.showTyping = false
-              _vm.speed = 1
               window.term.clear();
-              window.term.clear();
-              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
               window.term.focus();
-            }, 500);
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showTyping = true
-              _vm.speed = 1.5
-            }, 1000);
+            }, _vm.ttime);
             setTimeout(function() {
-              _vm.speed = 2
               _vm.showMessage()
-              _vm.showTyping = false
-               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
               window.term.focus();
-            }, 1200);
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showTyping = true
-              _vm.speed = 1.2
-            }, 1500);
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showMessage()
-               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
               _vm.term.focus();
               _vm.showTyping = false
-              _vm.speed = 2
-            }, 2000);
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showTyping = true
               _vm.speed = 1
-            }, 2500);
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showMessage()
-              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
               _vm.term.focus();
               _vm.showTyping = false
-              _vm.speed = 2
-            }, 3000);
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showTyping = true
-              _vm.speed = 1
-            }, 3500);
+            }, _vm.ttime);
             setTimeout(function() {
-              _vm.speed = 2
               _vm.showMessage()
-              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
               _vm.term.focus();
               _vm.showTyping = false
-            }, 4000);
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showTyping = true
-              _vm.speed = 1
-            }, 4500);
+            }, _vm.ttime);
             setTimeout(function() {
-              _vm.speed = 2
               _vm.showMessage()
-             window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
               _vm.term.focus();
               _vm.showTyping = false
-            }, 5000);
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showTyping = true
-            }, 5500);
-            setTimeout(function() {
-              _vm.speed = 2
-              _vm.showMessage()
-               window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
-              window.term.focus();
-              _vm.showTyping = false
-            }, 5000);
-            setTimeout(function() {
-              _vm.speed = 2
-              _vm.showMessage()
-              window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
-              window.term.focus();
-              _vm.showTyping = false
-            }, 5500);
-            setTimeout(function() {
-              _vm.speed = 2
-              _vm.showMessage()
-             window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
-              window.term.focus();
-              _vm.showTyping = false
-            }, 5000);
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showMessage()
-             window.term.writeln(_vm.messagesArr[_vm.messageNumber]);
+              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
               window.term.focus();
               _vm.showTyping = false
-            }, 5500);
+            }, _vm.ttime);
+            setTimeout(function() {
+              _vm.showMessage()
+              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
+              window.term.focus();
+              _vm.showTyping = false
+            }, _vm.ttime);
+            setTimeout(function() {
+              _vm.showMessage()
+              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
+              window.term.focus();
+              _vm.showTyping = false
+            }, _vm.ttime);
+            setTimeout(function() {
+              _vm.showMessage()
+              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
+              window.term.focus();
+              _vm.showTyping = false
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showRAT = true
-            }, 6000);
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showISIST[0] = true
-            }, 6500);
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showISISes[0] = true
-            }, 7000);
+            }, _vm.ttime);
           setTimeout(function() {
               _vm.showRA = true
-            }, 7500);
+            }, _vm.ttime);
             setTimeout(function() {
              _vm.showME = true
-            }, 8000);
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showISISes[1] = true
-            }, 8500);
+            }, _vm.ttime);
             setTimeout(function() {
              _vm.showISIST[0] = false
               _vm.showISIST[1] = true
-            }, 9000);
+            }, _vm.ttime);
             setTimeout(function() {
               _vm.showISIS = true
-              window.term.write(_vm.messagesISIS2.join('\r\n'));
-            },9500)
+              _vm.messagesISIS2.map(function(x){AAwrite(x)})
+            },_vm.ttime)
             setTimeout(function() {
               _vm.showBASTET = true
               window.term.clear()
@@ -651,52 +673,51 @@ Echo %_RESET%
               window.term.writeln('')
               window.term.writeln('')
               setTimeout(function(){
-                window.term.writeln(`
-                                        When you're alone
-                                        And life is making you lonely,
-                                        You can always go downtown
-                                        When you've got worries,
-                                        All the noise and the hurry
-                                        Seems to help, I know, downtown
-                                        Just listen to the music of the traffic in the city
-                                        Linger on the sidewalk where the neon signs are pretty
-                                        How can you lose?
-                                        The lights are much brighter there
-                                        You can forget all your troubles, forget all your cares and go
-                                        Downtown, things'll be great when you're
-                                        Downtown, no finer place for sure,
-                                        Downtown, everything's waiting for you
-                                        (Downtown)
-                                        Don't hang around
-                                        And let your problems surround you
-                                        There are movie shows downtown
-                                        Maybe you know
-                                        Some little places to go to
-                                        Where they never close downtown
-                                        Just listen to the rhythm of a gentle bossanova
-                                        You'll be dancing with 'em, too, before the night is over
-                                        Happy again
-                                        The lights are much brighter there
-                                        You can forget all your troubles, forget all your cares and go
-                                        Downtown where all the lights are bright,
-                                        Downtown, waiting for you tonight,
-                                        Downtown, you're gonna be alright now
-                                        (Downtown downtown)
-                                        Downtown
-                                        (Downtown)
-                                        And you may find somebody kind to help and understand you
-                                        Someone who is just like you and needs a gentle hand to
-                                        Guide them along
-                                        So, maybe I'll see you there
-                                        We can forget all our troubles, forget all our cares and go
-                                        Downtown, things'll be great when you're
-                                        Downtown, don't wait a minute more,
-                                        Downtown, everything's waiting for you
-                                        Downtown (downtown) downtown (downtown)
-                                        Downtown (downtown) downtown (downtown)
-                `)
+                let a = `When you're alone
+ And life is making you lonely,
+You can always go downtown
+When you've got worries,
+All the noise and the hurry
+Seems to help, I know, downtown
+Just listen to the music of the traffic in the city
+Linger on the sidewalk where the neon signs are pretty
+How can you lose?
+The lights are much brighter there
+You can forget all your troubles, forget all your cares and go
+Downtown, things'll be great when you're
+Downtown, no finer place for sure,
+Downtown, everything's waiting for you
+(Downtown)
+Don't hang around
+And let your problems surround you
+There are movie shows downtown
+Maybe you know
+Some little places to go to
+Where they never close downtown
+Just listen to the rhythm of a gentle bossanova
+You'll be dancing with 'em, too, before the night is over
+Happy again
+The lights are much brighter there
+You can forget all your troubles, forget all your cares and go
+Downtown where all the lights are bright,
+Downtown, waiting for you tonight,
+Downtown, you're gonna be alright now
+(Downtown downtown)
+Downtown
+(Downtown)
+And you may find somebody kind to help and understand you
+Someone who is just like you and needs a gentle hand to
+Guide them along
+So, maybe I'll see you there
+We can forget all our troubles, forget all our cares and go
+Downtown, things'll be great when you're
+Downtown, don't wait a minute more,
+Downtown, everything's waiting for you
+Downtown (downtown) downtown (downtown)
+Downtown (downtown) downtown (downtown)`;
+                a.split('\n').map(function(x){AAwrite(x)})
               },1000)     
-            },10000)
+            },_vm.ttime)
           },
           methods: {
             learnm: function() {
@@ -728,18 +749,7 @@ Echo %_RESET%
               this.term = term;
               window['term'] = term;
               term.open(document.getElementById('terminal'));
-              let aa3255=` ,-----------------------------------------------------------------v
- n           ,-~~\   <~)_   n\             /\    ,-.       ,-.     n
- n  _,===-.,  (   \   ( v~\ n n  _,===-.,  \/   <,- \_____/  '     n
- n (______,.   n\. \   \_/'  \n (______,. /__\    /  ___. \  -===- n
- n            _a_a'\\  /\     n           \--/ ,_(__/ ,_(__\       n
- '-sanne-jabs------------------------------------------------------y
- ,-----------------------------------------------------------v
- n  ,'~.   ,-.  ,-~~\              n\  ,-~~\         n  ,-.  n
- n     n   n n   (   \   /\/\/\/\  n n  (   \        n  n n  n
- n    \n/  n      n\. \  /\/\/\/\   \n   n\. \      ,n  n    n
- n    \n/  n     _a_a'\\             n  _a_a'\\  o'~_n  n    n
- '-----------------------------------------------------------y` 
+              let aa3255=`` 
               aa3255.split('\n').map(function(x){
                  term.write('\r\n\   '+x)
               })

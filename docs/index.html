@@ -548,7 +548,8 @@ Echo %_RESET%
             }
           },
           mounted: function() {
-            setTimeout(function() {_vm.xtermLoad();}, 0)
+            let _vm = this;
+            setTimeout(function() {_vm.xtermLoad();},0);
             let random_mumps=`
                     TKAAUTIL ;Utility Routines ;04/07/2015 16:12:31 ;Apr 6 2015 ;AA
                     ; ADS Corp. Copyright
@@ -559,7 +560,7 @@ Echo %_RESET%
                     s path=##class(%File).ManagerDirectory()
                     i '##class(%File).DirectoryExists(path) Q ""
                     q path`;
-            let _vm = this;
+           
             _vm.$q.dark.set(true);
             let tf =window.term.focus;
             let tc =indow.term.clear;

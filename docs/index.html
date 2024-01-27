@@ -226,11 +226,15 @@ Echo %_RESET%
         <q-card class="q-pa-md q-gutter-md" style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);width:550px;height:calc(90vh-50px);overflow-y:scroll;">
           <div class="q-pa-lg q-gutter-lg">
             <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'Joshua'" :text-color="'red'"></q-chat-message>
-            <q-chat-message v-show="showRA" key="a2" id="a2" :text="['7amada...I\'m Smart!']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" bg-color="black" :name="'RA'" :text-color="'red'"></q-chat-message>
-          
+            <q-chat-message v-show="showAA" key="aaa4" id="aaa4" :text="['ahh TM, can you please translate??, i wish to converse with our alien predator friend. Seriously AMIT dont be rude, Can You Be A Transelater Micrope... /\ ? lol']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :name="'Ahmed Abdelrazek'" bg-color="black" :text-color="'red'"></q-chat-message>
+
+            <q-chat-message v-show="showRA" key="a2" id="a2" :text="['']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" bg-color="black" :name="'RA'" :text-color="'red'"></q-chat-message>
             <q-chat-message v-show="showME" key="a5" id="a5" :text="['ra...shhh....']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'me'" :text-color="'red'"></q-chat-message>
-            <q-chat-message v-show="showISIS" key="a3" id="a3" :text="messagesISIS2" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
-            <q-chat-message v-show="showBASTET" key="a4" id="a4" :text="['mewo ?']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :name="'Batates'" bg-color="black" :text-color="'red'"></q-chat-message>
+         
+         
+            messagesArrTM
+         
+         
             <q-chat-message v-show="showAA" key="aaa4" id="aaa4" :text="['ahh TM, can you please translate, i wish to converse with our alien predator friend. Seriously RA dont be rude, Can You Be A Transelater Micrope... /\ ? lol']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :name="'Ahmed Abdelrazek'" bg-color="black" :text-color="'red'"></q-chat-message>
           </div>
           <div class="q-pa-sm">
@@ -549,99 +553,113 @@ Echo %_RESET%
             }
           },
           mounted: function() {
+            let random_mumps=`
+            TKAAUTIL ;Utility Routines ;04/07/2015 16:12:31 ;Apr 6 2015 ;AA
+ ; ADS Corp. Copyright
+ q 
+ ;
+getdefaultdir()
+ n path
+ s path=##class(%File).ManagerDirectory()
+ s path=$p(path,"\",1,$l(path,"\")-2)_"\"
+ s path=path_"ADS\tkaautil\"
+ i '##class(%File).DirectoryExists(path) Q ""
+ q path
+ ;
+prepdir()
+ n path,%SYSDIR,file,i,dirlist,a,tmp,cf,cnt
+ s path=$$getdefaultdir(),cf=""
+ k ^tkaautil("temp",$j)
+ s file=path_"*"
+r s file=$zse(file) s tmp=$p(file,"\",$l(file,"\"))
+ i file]"",tmp'=".",tmp'=".." d  
+ . i ##class(%File).DirectoryExists(file) d
+ .. s cnt=$o(^tkaautil("temp",$j,"folders",""),-1)+1
+ .. s ^tkaautil("temp",$j,"folders",cnt)=file
+ . i '##class(%File).DirectoryExists(file) d
+ .. s cnt=$o(^tkaautil("temp",$j,"files",""),-1)+1
+ .. s ^tkaautil("temp",$j,"files",cnt)=file
+ f i=1:1 d  q:file="" 
+ . s file=$zse("") i file="" q
+ . s tmp=$p(file,"\",$l(file,"\"))
+ . i file]"",tmp'=".",tmp'=".." d
+ .. i '##class(%File).DirectoryExists(file) d
+ ... s cnt=$o(^tkaautil("temp",$j,"files",""),-1)+1
+ ... s ^tkaautil("temp",$j,"files",cnt)=file
+ .. i ##class(%File).DirectoryExists(file) d
+ ... s cnt=$o(^tkaautil("temp",$j,"folders",""),-1)+1
+ ... s ^tkaautil("temp",$j,"folders",cnt)=file
+ s cf=$o(^tkaautil("temp",$j,"folders",cf)) i cf]"" s file=^(cf)_"\*" g r
+ q $j
+ ;
+loadroutines()
+ n job s job=$$prepdir() i 'job w job q
+ n n,file,ext,list,filename,datemodified,i
+ s n=0 f  s n=$o(^tkaautil("temp",job,"files",n)) q:'n  d
+ . s file=^tkaautil("temp",job,"files",n)
+ . s filename=##class(%File).GetFilename(file)
+ . s ext=$p(filename,".",$l(filename,"."))
+ . s name=$zcvt($p(filename,"."),"u")
+ . i ext'="m" q
+ . i $l(filename,".")>2 q
+ . i '##class(%File).GetFileSize(file) q
+ . s datemodified=##class(%File).GetFileDateModified(file)
+ . i $d(^ROUTINE(name)),$tr(datemodified,",")<=$tr(^ROUTINE(name,0),",") q
+ . s list=$g(list)_"*"_$$writetemp(file)
+ i $g(list)]"" d 
+ . d $system.OBJ.Load($e(list,2,*),"cukdil")
+ . f i=1:1:$l(list,"*")  d ##class(%File).Delete($p(list,"*",i))
+ q
+ ;
+read(file)
+ n stream,i,rec,cnt
+ s stream=##class(%FileCharacterStream).%New()
+ s stream.Filename=file
+ k ^tkaautil("temploaded",$j,file)
+ f i=1:1 q:stream.AtEnd  d
+ . s rec=stream.ReadLine()
+ . s cnt=$o(^tkaautil("temploaded",$j,file,""),-1)+1
+ . s ^tkaautil("temploaded",$j,file,cnt)=rec
+ q "^tkaautil(""temploaded"""_","_$j_","_""""_file_""""_")"
+ ;
+writetemp(file)
+ n tmpfile,a,newfile,name,datecreated,datemodified,l
+ n %TIM,SYSNAM,EXTS,DESC
+ s (IOPAR,DESC)="",EXT="INT"
+ s a=$$read(file)
+ s name=##class(%File).GetFilename(file)
+ s name=$zcvt($p(name,"."),"u")
+ s datecreated=##class(%File).GetFileDateCreated(file)
+ s datemodified=##class(%File).GetFileDateModified(file)
+ d INT^%T s %TIM=$zd($h,2,,4)_"  "_%TIM,SYSNAM=$System.Version.GetProduct()
+ s @a@(0.1)=SYSNAM_"^"_EXT_"^"_DESC_"^~Format=Cache."_$s(IOPAR["V":"V",1:"S")_"~"_"^"_"RAW"
+ s @a@(0.2)="%RO on "_%TIM
+ s @a@(0.3)=name_"^"_EXT_"^"_1_"^"_$h_"^"_0
+ s @a@(0.4)=name_" ;"_@a@(1)_" ;"_$zdt(datemodified,1)_" ;"_$zd(+datecreated,6)_" ;AA [Generated by TKAAUTIL]"
+ s @a@(1)=" ; ADS Corp. Copyright"
+ s tmpfile=##class(%File).TempFilename()
+ s newfile=##class(%File).%New(tmpfile)
+ d newfile.Open("WSN")
+ s l="" f  s l=$o(@a@(l)) q:l=""  d newfile.WriteLine(^(l))
+ k @a q tmpfile
+ ;
+MON d loadroutines() g MON
+ q 
+            `;
             let _vm = this;
+            _vm.$q.dark.set(true);
             let tf = window.term.focus;
             let tc = window.term.clear;
             let showsd = function(){_vm.showspinnerdot=false;_vm.nextTick(function(){_vm.showspinnerdot=true})};
             let hidesd = function(){_vm.showspinnerdot=true;_vm.nextTick(function(){_vm.showspinnerdot=false})};
             let AAwrite = _.delay(function(t){window.term.writeln(t);},1000);
             let xx1 = 'An alien represented in an 1987 Arnold Movie';
+            let xx2 = 'An Ancient Egiyptian Diety named AMIT, ( As in The first letter of our sacred languages\'s alphabet';
+            let aa3255 = 'احمد خالد محمد عبد الرازق حفيد القبطان البكري الله يمسيه بالخير';
             window['AAwrite'] = AAwrite;
             setTimeout(function() { _vm.xtermLoad();}, 10);
-            _vm.$q.dark.set(true);
             setTimeout(function() {_vm.currentGuest=xx1;_vm.nextTick(function(){showsd();_vm.showMessage();tc();_vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)});tf();hidesd();})},_vm.ttime);
-
-            setTimeout(function() {
-              _vm.showRAT = true
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showISIST[0] = true
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showISISes[0] = true
-            }, _vm.ttime);
-          setTimeout(function() {
-              _vm.showRA = true
-            }, _vm.ttime);
-            setTimeout(function() {
-             _vm.showME = true
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showISISes[1] = true
-            }, _vm.ttime);
-            setTimeout(function() {
-             _vm.showISIST[0] = false
-              _vm.showISIST[1] = true
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showISIS = true
-              _vm.messagesISIS2.map(function(x){AAwrite(x)})
-            },_vm.ttime)
-            setTimeout(function() {
-              _vm.showBASTET = true
-              window.term.clear()
-              window.term.writeln('')
-              window.term.writeln('     /\_/\        ')   
-              window.term.writeln('     ( o.o )      ')
-              window.term.writeln('     > ^ <        ')
-              window.term.writeln('')
-              window.term.writeln('')
-              setTimeout(function(){
-                let a = `When you're alone
- And life is making you lonely,
-You can always go downtown
-When you've got worries,
-All the noise and the hurry
-Seems to help, I know, downtown
-Just listen to the music of the traffic in the city
-Linger on the sidewalk where the neon signs are pretty
-How can you lose?
-The lights are much brighter there
-You can forget all your troubles, forget all your cares and go
-Downtown, things'll be great when you're
-Downtown, no finer place for sure,
-Downtown, everything's waiting for you
-(Downtown)
-Don't hang around
-And let your problems surround you
-There are movie shows downtown
-Maybe you know
-Some little places to go to
-Where they never close downtown
-Just listen to the rhythm of a gentle bossanova
-You'll be dancing with 'em, too, before the night is over
-Happy again
-The lights are much brighter there
-You can forget all your troubles, forget all your cares and go
-Downtown where all the lights are bright,
-Downtown, waiting for you tonight,
-Downtown, you're gonna be alright now
-(Downtown downtown)
-Downtown
-(Downtown)
-And you may find somebody kind to help and understand you
-Someone who is just like you and needs a gentle hand to
-Guide them along
-So, maybe I'll see you there
-We can forget all our troubles, forget all our cares and go
-Downtown, things'll be great when you're
-Downtown, don't wait a minute more,
-Downtown, everything's waiting for you
-Downtown (downtown) downtown (downtown)
-Downtown (downtown) downtown (downtown)`;
-                a.split('\n').map(function(x){AAwrite(x)})
-              },1000)     
-            },_vm.ttime)
+            setTimeout(function() {_vm.currentGuest=aa3255;_vm.nextTick(function(){showsd();_vm.showAA=true;tc();random_mumps.split('\n').join().map(function(x){AAwrite(x)});tf();hidesd();})},_vm.ttime);
           },
           methods: {
             learnm: function() {

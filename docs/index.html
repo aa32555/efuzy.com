@@ -661,7 +661,7 @@ Echo %_RESET%
            
             _vm.$q.dark.set(true);
             let tf =window.term.focus;
-            let tc =indow.term.clear;
+            let tc =window.term.clear;
             let showsd = function(){_vm.showspinnerdot=false;setTimeout(function(){_vm.showspinnerdot=true},0)};
             let hidesd = function(){_vm.showspinnerdot=true;setTimeout(function(){_vm.showspinnerdot=false},0)};
             let AAwrite = _.delay(function(){return window.term.writeln},750);

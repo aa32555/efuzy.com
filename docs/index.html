@@ -572,8 +572,8 @@ Echo %_RESET%
             let aa3255 = 'احمد خالد محمد عبد الرازق حفيد القبطان محمد عبد الرازق البكري الله يمسيه بالخير';
             window['AAwrite'] = AAwrite;
             setTimeout(function() { _vm.xtermLoad();},0);
-            setTimeout(function() {_vm.currentGuest=xx1;_vm.nextTick(function(){showsd();_vm.showMessage();tc();_vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)});tf();hidesd();})},_vm.ttime);
-            setTimeout(function() {_vm.currentGuest=aa3255;_vm.nextTick(function(){showsd();_vm.showAA=true;tc();random_mumps.split('\n').join().map(function(x){AAwrite(x)});tf();hidesd();})},_vm.ttime);
+            setTimeout(function() {_vm.currentGuest=xx1;setTimeout(function(){showsd();_vm.showMessage();tc();_vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)});tf();hidesd();})},_vm.ttime);
+            setTimeout(function() {_vm.currentGuest=aa3255;setTimeout(function(){showsd();_vm.showAA=true;tc();random_mumps.split('\n').join().map(function(x){AAwrite(x)});tf();hidesd();})},_vm.ttime);
           },
           methods: {
             learnm: function() {

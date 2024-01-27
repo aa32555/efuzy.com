@@ -230,11 +230,7 @@ Echo %_RESET%
 
             <q-chat-message v-show="showRA" key="a2" id="a2" :text="['']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" bg-color="black" :name="'RA'" :text-color="'red'"></q-chat-message>
             <q-chat-message v-show="showME" key="a5" id="a5" :text="['ra...shhh....']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'me'" :text-color="'red'"></q-chat-message>
-         
-         
-            messagesArrTM
-         
-         
+
             <q-chat-message v-show="showAA" key="aaa4" id="aaa4" :text="['ahh TM, can you please translate, i wish to converse with our alien predator friend. Seriously RA dont be rude, Can You Be A Transelater Micrope... /\ ? lol']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :name="'Ahmed Abdelrazek'" bg-color="black" :text-color="'red'"></q-chat-message>
           </div>
           <div class="q-pa-sm">
@@ -552,29 +548,29 @@ Echo %_RESET%
             }
           },
           mounted: function() {
+            setTimeout(function() {_vm.xtermLoad();}, 0)
             let random_mumps=`
-TKAAUTIL ;Utility Routines ;04/07/2015 16:12:31 ;Apr 6 2015 ;AA
- ; ADS Corp. Copyright
- q 
- ;
-getdefaultdir()
- n path
- s path=##class(%File).ManagerDirectory()
- i '##class(%File).DirectoryExists(path) Q ""
- q path
- `;
+                    TKAAUTIL ;Utility Routines ;04/07/2015 16:12:31 ;Apr 6 2015 ;AA
+                    ; ADS Corp. Copyright
+                    q 
+                    ;
+                    getdefaultdir()
+                    n path
+                    s path=##class(%File).ManagerDirectory()
+                    i '##class(%File).DirectoryExists(path) Q ""
+                    q path`;
             let _vm = this;
             _vm.$q.dark.set(true);
-            let tf =console.log ; //window.term.focus;
-            let tc =console.log ; //indow.term.clear;
-            let showsd = function(){_vm.showspinnerdot=false;_vm.nextTick(function(){_vm.showspinnerdot=true})};
-            let hidesd = function(){_vm.showspinnerdot=true;_vm.nextTick(function(){_vm.showspinnerdot=false})};
-            let AAwrite = _.delay(function(t){window.term.writeln(t);},1000);
+            let tf =window.term.focus;
+            let tc =indow.term.clear;
+            let showsd = function(){_vm.showspinnerdot=false;setTimeout(function(){_vm.showspinnerdot=true},0)};
+            let hidesd = function(){_vm.showspinnerdot=true;setTimeout(function(){_vm.showspinnerdot=false},0)};
+            let AAwrite = _.delay(function(){return window.term.writeln},750);
             let xx1 = 'An alien represented in an 1987 Arnold Movie';
             let xx2 = 'An Ancient Egiyptian Diety named AMIT, ( As in The first letter of our sacred languages\'s alphabet';
             let aa3255 = 'احمد خالد محمد عبد الرازق حفيد القبطان محمد عبد الرازق البكري الله يمسيه بالخير';
             window['AAwrite'] = AAwrite;
-            setTimeout(function() { _vm.xtermLoad();}, 10);
+            setTimeout(function() { _vm.xtermLoad();},0);
             setTimeout(function() {_vm.currentGuest=xx1;_vm.nextTick(function(){showsd();_vm.showMessage();tc();_vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)});tf();hidesd();})},_vm.ttime);
             setTimeout(function() {_vm.currentGuest=aa3255;_vm.nextTick(function(){showsd();_vm.showAA=true;tc();random_mumps.split('\n').join().map(function(x){AAwrite(x)});tf();hidesd();})},_vm.ttime);
           },

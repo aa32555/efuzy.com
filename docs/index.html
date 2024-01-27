@@ -565,8 +565,9 @@ getdefaultdir()
  `;
             let _vm = this;
             _vm.$q.dark.set(true);
-            let tf = window.term.focus;
-            let tc = window.term.clear;
+
+            let tf =console.log ; //window.term.focus;
+            let tc =console.log ; //indow.term.clear;
             let showsd = function(){_vm.showspinnerdot=false;_vm.nextTick(function(){_vm.showspinnerdot=true})};
             let hidesd = function(){_vm.showspinnerdot=true;_vm.nextTick(function(){_vm.showspinnerdot=false})};
             let AAwrite = _.delay(function(t){window.term.writeln(t);},1000);

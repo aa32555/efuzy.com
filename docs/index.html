@@ -227,6 +227,7 @@ Echo %_RESET%
           <div class="q-pa-lg q-gutter-lg">
             <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'Joshua'" :text-color="'red'"></q-chat-message>
             <q-chat-message v-show="showRA" key="a2" id="a2" :text="['7amada...I\'m Smart!']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/RA.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" bg-color="black" :name="'RA'" :text-color="'red'"></q-chat-message>
+          
             <q-chat-message v-show="showME" key="a5" id="a5" :text="['ra...shhh....']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'me'" :text-color="'red'"></q-chat-message>
             <q-chat-message v-show="showISIS" key="a3" id="a3" :text="messagesISIS2" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/ISIS.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" :name="'ISIS'" bg-color="black" :text-color="'red'"></q-chat-message>
             <q-chat-message v-show="showBASTET" key="a4" id="a4" :text="['mewo ?']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true" :name="'Batates'" bg-color="black" :text-color="'red'"></q-chat-message>
@@ -235,7 +236,7 @@ Echo %_RESET%
           <div class="q-pa-sm">
             <q-spinner-dots key="spinnerIb3" id="spinnerIb3" size="4rem" v-show="showspinnerdots"></q-spinner-dots>
             <span class="text-h6 bg-black text-green" >{{spinnerdotstext}}</q-bar>
-              <span class="bg-grey text-black" >{{istypingtext}}</q-bar>
+              <pre><span class="bg-grey text-black" >{{istypingtext}}</span></pre></q-bar>
           </div> 
         </q-card>
         <q-card class="q-pa-lg " style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
@@ -476,6 +477,7 @@ Echo %_RESET%
                 'You can\'t get me, like Eric Cartman',
                 'Naughty little kitty go "meow"',
               ],
+              currentGuest:'',
               maximizedpgToggle:false,
               ti2: '',
               mtabsbooted: false,
@@ -512,17 +514,9 @@ Echo %_RESET%
               termiibooted: false,
               ttime:0,
               messagesArr: [
-              '𓇋𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅',
-              '𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅',
-              '𓀅𓆲𓀀𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓆭𓇋𓀀𓀁𓇋𓀅𓇋𓀁𓀅',
-              '𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀁𓇋𓀅𓆭𓇋',
-              '𓄿𓀀𓀁𓀅𓀅𓇋',
-              '𓀀𓀁𓇋𓀅𓀅',
-              '𓀅𓀀𓀁𓀅𓇋𓆲',
-              '𓄿𓀀𓀁𓀅𓇋𓀅',
-              '𓀅𓀀𓀁𓇋𓀅',
-              '𓀅𓀀𓀁𓇋𓀅'
+              '𓇋𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
+              '𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
+              '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
              ],
              ttimet:0,
              messagesArrTM: [
@@ -549,94 +543,24 @@ Echo %_RESET%
             ttime: function(){
               this.ttimet = this.ttimet + (Math.floor(Math.random() * 10) * 1000);
               return this.ttimet
+            },
+            istypingtext: function(){
+              return `${this.currentGuest} is typing...`
             }
           },
           mounted: function() {
             let _vm = this;
+            let tf = window.term.focus;
+            let tc = window.term.clear;
+            let showsd = function(){_vm.showspinnerdot=false;_vm.nextTick(function(){_vm.showspinnerdot=true})};
+            let hidesd = function(){_vm.showspinnerdot=true;_vm.nextTick(function(){_vm.showspinnerdot=false})};
             let AAwrite = _.delay(function(t){window.term.writeln(t);},1000);
+            let xx1 = 'An alien represented in an 1987 Arnold Movie';
             window['AAwrite'] = AAwrite;
-            setTimeout(function() {
-              _vm.xtermLoad();
-            }, 10)
+            setTimeout(function() { _vm.xtermLoad();}, 10);
             _vm.$q.dark.set(true);
-            setTimeout(function() {
-              _vm.showMessage()
-              window.term.clear();
-              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
-              window.term.focus();
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showTyping = true
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showMessage()
-              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
-              window.term.focus();
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showTyping = true
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showMessage()
-              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
-              _vm.term.focus();
-              _vm.showTyping = false
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showTyping = true
-              _vm.speed = 1
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showMessage()
-              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
-              _vm.term.focus();
-              _vm.showTyping = false
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showTyping = true
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showMessage()
-              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
-              _vm.term.focus();
-              _vm.showTyping = false
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showTyping = true
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showMessage()
-              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
-              _vm.term.focus();
-              _vm.showTyping = false
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showTyping = true
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showMessage()
-              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
-              window.term.focus();
-              _vm.showTyping = false
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showMessage()
-              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
-              window.term.focus();
-              _vm.showTyping = false
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showMessage()
-              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
-              window.term.focus();
-              _vm.showTyping = false
-            }, _vm.ttime);
-            setTimeout(function() {
-              _vm.showMessage()
-              _vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)})
-              window.term.focus();
-              _vm.showTyping = false
-            }, _vm.ttime);
+            setTimeout(function() {_vm.currentGuest=xx1;_vm.nextTick(function(){showsd();_vm.showMessage();tc();_vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)});tf();hidesd();})},_vm.ttime);
+
             setTimeout(function() {
               _vm.showRAT = true
             }, _vm.ttime);

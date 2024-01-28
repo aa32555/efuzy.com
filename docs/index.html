@@ -264,19 +264,19 @@ Echo %_RESET%
     <style>
       * {
         scrollbar-width: auto;
-        scrollbar-color: #dacb25 #e3caca;
+        scrollbar-color: #dacb25 #e3caca !important;
       }
       *::-webkit-scrollbar {
-        width: 6px;
+        width: 4px!important;;
       }
 
       *::-webkit-scrollbar-track {
-        background: #e3caca;
+        background: #dc4225!important;;
       }
       *::-webkit-scrollbar-thumb {
-        background-color: #dacb25;
-        border-radius: 8px;
-        border: 6px solid #260808;
+        background-color: #002f4b!important;;
+        border-radius: 7px!important;;
+        border: 5px solid #dc4225!important;;
       }
       .bg-img {
         width: 100vh !important;
@@ -327,11 +327,9 @@ Echo %_RESET%
           </div>
           <div class="q-pa-sm">
             <q-spinner-dots key="spinnerIb3" id="spinnerIb3" size="2rem"></q-spinner-dots>
-            <div class="bg-black text-green"> {{spinnerdotstext}}<br/>
-              <pre>{{istypingtext}}</pre>
-          </div> 
+             <q-card class="bg-black text-green">&nbsp;&nbsp;&nbsp;&nbsp;{{spinnerdotstext}} {{istypingtext}}</q-card>
         </q-card>
-        <q-card class="q-pa-lg " style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
+        <q-card class="q-pa-lg" style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
           <div id="terminal" class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
           <div class="flex-center justify-around">
             <q-input ref="input" filled type="textarea" v-model="ti"></q-input>

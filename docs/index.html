@@ -621,26 +621,16 @@ Echo %_RESET%
              ],
             }
           },
-          created: funcxtion(){
-             this.xtermLoad();
-          },
           watched: {
             speed(o, n) {
               this.lottiekey = Number(this.lottiekey) + 1;
-            }
-          },
-          computed:{
-            ttime: function(){
-              this.ttimet = this.ttimet + (Math.floor(Math.random() * 10) * 1000);
-              return this.ttimet
-            },
-            istypingtext: function(){
-              return `${this.currentGuest} is typing...`
-            }
+            }  
           },
           mounted: function() {
             let _vm = this;
-            let AAwrite = _.delay(window.term.writeln,500);
+            _vm.xtermLoad();
+            setTimeout(function(){
+  let AAwrite = _.delay(window.term.writeln,500);
             let xx1 = 'An alien represented in an 1987 Arnold Movie';
             let xx2 = 'An Ancient Egiyptian Diety named AMIT, ( As in The first letter of our sacred languages\'s alphabet';
             let xx3 = 'احمد خالد محمد عبد الرازق حفيد القبطان البكري الله يمسيه بالخير';
@@ -672,9 +662,10 @@ Echo %_RESET%
             let hidesd = function(){
               _vm.currentGuest='';
             }
-             setTimeout(function() {_vm.currentGuest=xx1;setTimeout(function(){showsd();_vm.showMessage();tc();_vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)});tf();hidesd();})},1500); //_vm.ttime);
-            setTimeout(function() {_vm.currentGuest=xx3;setTimeout(function(){showsd();_vm.showAA=true;tc();random_mumps.split('\n').join().map(function(x){AAwrite(x)});tf();hidesd();})},3000)    //_vm.ttime);
-          },
+             setTimeout(function() {hidesd();setTimeout(function(){showsd(1);_vm.showMessage();tc();_vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)});tf();hidesd();})},_vm.ttime());
+            setTimeout(function() {hidesd();setTimeout(function(){showsd(3);_vm.showAA=true;tc();random_mumps.split('\n').join().map(function(x){AAwrite(x)});tf();hidesd();})},_vm.ttime());           
+            })
+                    },
           methods: {
             learnm: function() {
               this.learnmdialog = true
@@ -719,7 +710,7 @@ Echo %_RESET%
               window['term2'].write(window[this.mtabs].join('\r\n'));
                   
                setTinmeout(function(){window['term2'].focus();});
-                },10)       
+                })       
             },
             xtermciLoad: function() {
               let _vm = this;
@@ -766,6 +757,12 @@ Echo %_RESET%
               this.messageNumber = this.messageNumber + 1
               this.messages.push(this.messagesArr[this.messageNumber])
             },
+            ttime: function(){
+              return (Math.floor(Math.random() * 10) * 1000);
+            },
+            istypingtext: function(){
+              return (this.currentGuest+' is typing...')
+            }
           }
         })
       </script>

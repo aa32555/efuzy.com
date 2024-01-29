@@ -500,12 +500,7 @@ Echo %_RESET%
       <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
       <script>
-        window['zp'] = ['hello world!'];
-        window['zl'] = ['hello world!'];
-        window['zc'] = ['hello world!'];
-        window['za'] = ['hello world!'];
   new Vue({
           el: '#q-app',
           data: function() {
@@ -600,48 +595,12 @@ Echo %_RESET%
               xx9:'Pornstar (I befriended) that looks like Goerge\'s dauther, but tall and pretty and not a jew',
             }
           },
-          watched: {
-            speed(o, n) {
-              this.lottiekey = Number(this.lottiekey) + 1;
-            }  
-          },
           mounted: function() {
             let _vm = this;
             _vm.xtermLoad();
-            setTimeout(function(){
-            let AAwrite = _.delay(window.term.writeln,500);
-            window['AAwrite'] = AAwrite;
-            let random_mumps=`
-                    TKAAUTIL ;Utility Routines ;04/07/2015 16:12:31 ;Apr 6 2015 ;AA
-                    ; ADS Corp. Copyright
-                    q 
-                    ;
-                    getdefaultdir()
-                    n path
-                    s path=##class(%File).ManagerDirectory()
-                    i '##class(%File).DirectoryExists(path) Q ""
-                    q path`;
             _vm.$q.dark.set(true);
-            let tf = window.term.focus;
-            let tc = window.term.clear;
-            let showsd = function(n) {
-                if (n===1) {
-                  _vm.currentGuest=xx1;
-                }
-                if (n===2) {
-                  _vm.currentGuest=xx2;
-                }
-                if (n===3) {
-                  _vm.currentGuest=xx3;
-                }
-            }         
-            let hidesd = function(){
-              _vm.currentGuest='';
-            }
-             setTimeout(function() {hidesd();setTimeout(function(){showsd(1);_vm.showMessage();tc();_vm.messagesArr[_vm.messageNumber].map(function(x){AAwrite(x)});tf();hidesd();})},_vm.ttime());
-            setTimeout(function() {hidesd();setTimeout(function(){showsd(3);_vm.showAA=true;tc();random_mumps.split('\n').join().map(function(x){AAwrite(x)});tf();hidesd();})},_vm.ttime());           
-            })
-                    },
+    
+        },
           methods: {
             learnm: function() {
               this.learnmdialog = true

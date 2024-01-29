@@ -627,7 +627,9 @@ Echo %_RESET%
             xtermInitialize: function() {},
             xtermBoot: function() {
               this.termExists = true;
-              let term = window['term'] || new Terminal();
+              let term = window['term'] || new Terminal({
+                cursorBlink:true
+              });
               this.term = term;
               window['term'] = term;
               term.open(document.getElementById('terminal'));

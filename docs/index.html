@@ -625,7 +625,10 @@ Echo %_RESET%
             xtermBoot: function() {
               this.termExists = true;
               let term = window['term'] || new Terminal({
-                cursorBlink:true
+                cursorBlink:true,
+                convertEol:true,
+                fontSize:22,
+
               });
               this.term = term;
               window['term'] = term;

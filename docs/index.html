@@ -594,6 +594,7 @@ Echo %_RESET%
             let _vm = this;
             _vm.xtermLoad();
             _vm.$q.dark.set(true);
+            window['term'].write('hello world, its me ahmed');
     
         },
           methods: {

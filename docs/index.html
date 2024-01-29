@@ -309,32 +309,14 @@ Echo %_RESET%
           <q-tab name="Instagram" label="Instagram" @click="insta"></q-tab>
         </q-tabs>
       </div>
-      <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
 
-        <q-card class="q-pa-md q-gutter-md" style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);width:550px;height:calc(90vh-50px);overflow-y:scroll;">
-          <div class="q-pa-lg q-gutter-lg">
-            <q-chat-message key="a1" id="a1" :text="messages" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="false" bg-color="black" :name="'Joshua'" :text-color="'red'"></q-chat-message>
-            <q-chat-message v-show="showAA" key="aaa4" id="aaa4" :text="['ahh TM, can you please translate??, i wish to converse with our alien predator friend. Seriously AMIT dont be rude, Can You Be A Transelater Micrope... ? lol']" :avatar="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/m.png'" :stamp="Date().toLocaleString().split(' ').splice(0,5).join(' ')" :sent="true"  bg-color="black" :text-color="'red'"></q-chat-message>
-          </div>
-          <div class="q-pa-sm">
-            <q-spinner-dots  v-show="currentGuest===''?false:true" key="spinnerIb3" id="spinnerIb3" size="2rem"></q-spinner-dots>
-             <q-card v-show="currentGuest===''?false:true" class="bg-black text-green">&nbsp;&nbsp;&nbsp;&nbsp;{{currentGuest}} is typing...</q-card>
-        </q-card>
-        <q-card class="q-pa-lg" style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
-          <div id="terminal" class="q-pa-md q-gutter-md" style="overflow:hidden;"></div>
-          <div class="flex-center justify-around">
-            <q-input ref="input" filled type="textarea" v-model="ti"></q-input>
-            <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term'].write(ti)"></q-btn>
-            <q-btn dense flat round class="q-pa-sm" label="writeln" @click="window['term'].writeln(ti)"></q-btn>
-            <q-btn dense flat round class="q-pa-sm" label="focus" @click="window['term'].focus()"></q-btn>
-            <q-btn dense flat round class="q-pa-sm" label="clear" @click="window['term'].clear()"></q-btn>
-            <q-btn dense flat round class="q-pa-sm" label="type egyptian" @click="window['term'].write(messagesArr.join('  '))"></q-btn>   
-          </div>
-          <div class="q-video q-pa-md q-gutter-md">
-            <iframe src="https://www.youtube-nocookie.com/embed/BdRVduf7Ylk?si=WqxrULG12Dv7TJlk&amp;start=495" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
+      
+      <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
+        <q-card class="q-pa-lg" style="height:calc(100vh-100px);background-image:linear-gradient(to bottom right,#002f4b,#dc4225);">
+          <div id="terminal" class="q-pa-md q-gutter-md full-width justify-around" style="overflow:hidden;margin: auto"></div>
         </q-card>
       </div>
+
       <q-dialog v-model="learnmdialog" persistent :maximized="maximizedToggle" transition-show="slide-up" transition-hide="slide-down">
         <q-card class="full-width" style="width:100%;min-width:85vw;height:100vh;"  style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
           <q-bar>

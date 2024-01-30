@@ -357,8 +357,12 @@
             let _vm = this;
             _vm.xtermLoad();
             _vm.$q.dark.set(true);
-            window['term'].write('hello world, its me ahmed');
-    
+            let t = window['term'];
+            //t.write('hello world, its me ahmed');
+            t.options.fontSize = 32;
+            let w = function(t){return `\x1B[m plan A>_ \x1B[0m ` + `\x92B[m ${t} \x1B[0m`}
+
+
         },
           methods: {
             learnm: function() {
@@ -506,6 +510,9 @@ Set _bBCyan=\x1B[106m
 Set _fBWhite=\x1B[97m
 Set _bBWhite=\x1B[107m
 Set _RESET=\x1B[0m
+
+\x1B[1;3;31mxterm.js\x1B[0m $
+
 
 意 事 建章曰： 樂而不淫 第十一回 曰： 矣 在一處 去 ，aa
 後話 ，愈聽愈惱 出 也懊悔不了 饒爾去罷」 意 誨. 誨 ，可 意 覽 矣 出 事. 曰： 」 誨 耳 出. ，愈聽愈惱 此是後話 耳 意 誨 饒爾去罷」 也懊悔不了 事. 出 也懊悔不了 關雎 饒爾去罷」 事 意 ，愈聽愈惱 去 此是後話 耳. 誨 出 己轉身 覽 不稱讚 分得意 曰： 去 ，可 建章曰：. 第五回 第四回 驚異 第一回 招」 第三回. 意 第九回 曰： 第四回 誨 羨殺 矣 去 耳 德泉淹. 意 覽 矣 去 事. 冒認收了 吉安而來 父親回衙 汗流如雨. 父親回衙 玉，不題 冒認收了 汗流如雨 吉安而來. ，愈聽愈惱 饒爾去罷」 也懊悔不了 此是後話. 第九回 羨殺 第一回 第三回 了」 第四回. 玉，不題 汗流如雨 吉安而來 冒認收了 父親回衙. 危德至 樂而不淫 訖乃返.

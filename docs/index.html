@@ -80,17 +80,16 @@
       text-color=""green"
       size="12"
     >
-      <template v-slot:name>Mary</template>
+      <template v-slot:name>{{guests[xxc]}}</template>
       <template v-slot:avatar>
         <img
-          class="q-message-avatar q-message-avatar--received"
-          src="https://cdn.quasar.dev/img/avatar2.jpg"
+          class="q-message-avatar"
+          :src="{{guestsi[xxc]}}"
         >
       </template>
 
-      <div>
-        Already building an app with it...
-        <img src="https://cdn.quasar.dev/img/discord-qeart.png" class="my-emoji">
+      <div style="max-width:50vw;">
+        {{chatmessage}}
       </div>
 
       <q-spinner-dots size="2rem" />
@@ -288,6 +287,7 @@
           el: '#q-app',
           data: function() {
             return {
+              chatmessage:'',
               showAA:false,
               spinnerdotstext:'',
               showspinnerdots:false,

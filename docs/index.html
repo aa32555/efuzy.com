@@ -358,11 +358,8 @@
             _vm.xtermLoad();
             _vm.$q.dark.set(true);
             let t = window['term'];
-            //t.write('hello world, its me ahmed');
-            t.options.fontSize = 32;
-            let w = function(t){return `\x1B[m plan A>_ \x1B[0m ` + `\x92B[m ${t} \x1B[0m`}
-            t.write('\x92B[m'+'hello world, its me ahmed');
-
+            t.options.fontSize = 28;
+            t.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ')
 
         },
           methods: {

@@ -73,7 +73,32 @@
         </q-tabs>
       </div>
       <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
-        <q-card class="q-pa-lg-q-gutter-slg text-green bg-black" style="min-height:50vh;max-height:95vh;overflow:hidden;scrollbar-width:1px;">
+        <q-card class="q-pa-sm q-gutter-sm text-green bg-black full-width">
+          
+      <q-chat-message
+      bg-color="black"
+      text-color=""green"
+      size="12"
+    >
+      <template v-slot:name>Mary</template>
+      <template v-slot:avatar>
+        <img
+          class="q-message-avatar q-message-avatar--received"
+          src="https://cdn.quasar.dev/img/avatar2.jpg"
+        >
+      </template>
+
+      <div>
+        Already building an app with it...
+        <img src="https://cdn.quasar.dev/img/discord-qeart.png" class="my-emoji">
+      </div>
+
+      <q-spinner-dots size="2rem" />
+    </q-chat-message>
+
+
+        </q-card>
+        <q-card class="q-pa-md q-gutter-md text-green bg-black" style="min-height:50vh;max-height:95vh;overflow:hidden;scrollbar-width:1px;">
             <div id="terminal" class="q-pa-md q-gutter-md full-width justify-around" style="overflow:hidden;margin:auto"></div>
         </q-card>
       </div>
@@ -342,6 +367,7 @@
                 'You can\'t get me, like Eric Cartman',
                 'Naughty little kitty go "meow"',
               ],
+              guests:{
               xx1:'An alien represented in an 1987 Arnold Movie',
               xx2:'An Ancient Egiyptian Diety named AMIT, ( As in The first letter of our sacred languages\'s alphabet',
               xx3:'احمد خالد محمد عبد الرازق حفيد القبطان البكري الله يمسيه بالخير',
@@ -351,7 +377,9 @@
               xx7:'Goddess ISIS () Goddess of Love ()',
               xx8:'George Grodentzik',
               xx9:'Pornstar (I befriended) that looks like Goerge\'s dauther, but tall and pretty and not a jew',
+              xxc:'xx1'
             }
+          }
           },
           mounted: function() {
             let _vm = this;

@@ -371,8 +371,15 @@
             a = 'await instructions...' ;t.writeln('\x1B[1;92m '+ a +' \x1B[0m');
             a = '.this is a representative from the BANOON space race...' ;t.writeln('\x1B[1;92m '+ a +' \x1B[0m');
             _vm.bsmnharr.map(function(x){
-            let a = x 
+             setTimeout(function(){
+                  let a = 'hello planet...' ; window['term'].writeln('\x1B[1;92m '+ a +' \x1B[0m');
+            let a = 'await instructions...' ; window['term'].writeln('\x1B[1;92m '+ a +' \x1B[0m');
+            let a = '.this is a representative from the BANOON space race...' ;t.writeln('\x1B[1;92m '+ a +' \x1B[0m');
+                  let a = '.....e...' ;t.writeln('\x1B[1;31m '+ a +' \x1B[0m');
+                  let a = x 
                window['term'].writeln('\x1B[1;92m '+ x +' \x1B[0m');
+             },2000)
+
             })
             /*
         bsmnharr

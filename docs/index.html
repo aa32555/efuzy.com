@@ -72,8 +72,8 @@
           <q-tab name="Instagram" label="Instagram" @click="insta"></q-tab>
         </q-tabs>
       </div>
-      <div class="flex fit row text-green bg-black">
-          <q-card class="flex-center justify-around text-green bg-black" style="width: 100%; max-width: 400px;">
+      <div class="flex-center fit row text-green bg-black" style="width: 100%; max-width: 400px;">
+          <q-card>
           <q-item clickable v-ripple @click="showaa1=!showaa1">
             <q-item-section side>
               <q-avatar round size="80px">
@@ -83,15 +83,16 @@
             </q-item-section>
             <q-item-section>
               <q-item-label>{{currentText}}</q-item-label>
-              <q-item-label caption> <q-spinner-dots size="2rem" ></q-spinner-dots></q-item-label>
+              <q-item-label caption> <q-spinner-dots size="2rem"></q-spinner-dots></q-item-label>
             </q-item-section>
             <q-item-section side>
              <span class="text-green bg-black"> {{currentTimestamp}}</span>
             </q-item-section>
           </q-item>
         </q-card>
-        <q-card class="flex-center justify-around text-green bg-black col" style="width: 100%; max-width: 400px;">
-          <div id="terminal" style="scrollbar-width:1px;"></div>
+        <br/>
+        <q-card>
+          <div id="terminal"></div>
         </q-card>
       </div>
       <q-dialog v-model="learnmdialog" persistent :maximized="maximizedToggle" transition-show="slide-up" transition-hide="slide-down">

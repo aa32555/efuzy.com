@@ -77,7 +77,7 @@
         </q-tabs>
       </div>
       <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
-        <q-card class="q-pa-sm q-gutter-sm text-green bg-black" style="min-height:50vh;max-height:95vh;overflow:hidden;scrollbar-width:1px;">
+        <q-card class="q-pa-lg q-gutter-lg text-green bg-black" style="min-height:50vh;max-height:95vh;overflow:hidden;scrollbar-width:1px;">
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
             <q-item-section side>
               <q-avatar round size="120px">
@@ -91,7 +91,7 @@
               <q-item-label> 
              </q-item-label>
             </q-item-section>
-            <q-item-section>
+            <q-item-sectionn side>
               <q-item-label>
                 <pre><code class="text-red bg-black">{{currentText}}</code></pre>
             </q-item-label>
@@ -428,9 +428,9 @@
             _vm.$q.dark.set(true);
             let t = window['term'];
             let a;
-            t.options.fontSize = 22;
-            t.options.scrollLines=50;
-            t.options.scrollPages=50
+            t.options.fontSize = 32;
+            t.options.scrollLines=150;
+            t.options.scrollPages=150
             let faa=function(parr){
               let id1 = setInterval(function(){
                 parr.map(function(a,i1){
@@ -440,15 +440,15 @@
                  window['term'].writeln('\x1B[1;92m '+ a +' \x1B[0m');
                  _vm.currentText 
                 })
-             },3000);
+             },10);
           }
           _vm.currentTimestamp = 'hello planet...\r\nawait instructions...\r\nthis is a representative from the BANOON space race...\r\n'
           _vm.currentGuest=_vm.xx1
           faa(_vm.bsmnharr);
           t.focus();
           setTimeout(function(){
-            t.clear();
-          },1000)
+            window['term'].clear();
+          },5000)
           },
           methods: {
             learnm: function() {

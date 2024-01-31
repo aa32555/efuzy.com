@@ -434,17 +434,13 @@
             t.options.scrollPages=150
             let faa=async function(parr){
                 parr.map(async function(a,i1){
-                  await sleep(1000);
                  window['term'].writeln('\x1B[1;92m '+ a +' \x1B[0m');
-                 await sleep(1000);
-                 _vm.currentText = '';
-                 await sleep(1000);
                  window['term'].focus();
                  await sleep(1000);
                 })
           }
           _vm.currentTimestamp = 'hello planet...\r\nawait instructions...\r\nthis is a representative from the BANOON space race...\r\n'
-          _vm.currentGuest=_vm.xx1
+          _vm.currentText=_vm.xx1
           await faa(_vm.bsmnharr)
         },
           methods: {

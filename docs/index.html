@@ -79,12 +79,15 @@
             <q-item-section side>
               <q-avatar round size="80px">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png" ></q-avatar>
-           <q-badge floating color="red">{{currentGuest}}</q-badge> 
               </q-avatar>
             </q-item-section>
-            <q-item-section side>
-              <q-item-label><pre><code class="text-green bg-black"> {{currentText}}</code></pre></q-item-label>
-              <q-item-label > <q-spinner-dots size="4rem"></q-spinner-dots></q-item-label>
+            <q-item-section>
+              <q-item-label>
+                <pre><code class="text-green bg-black"> {{currentText}}</code></pre></q-item-label>
+              <q-item-label> 
+                <pre><code class="text-green bg-black"> {{currentTimestamp}}</code></pre></q-item-label>
+                <br/>
+                <q-spinner-dots size="4rem"></q-spinner-dots></q-item-label>
             </q-item-section>
           </q-item>
         </q-card>      

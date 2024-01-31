@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 ###################################################################
--->
+-->aa
 <!DOCTYPE html>
 <html>
   <head>
@@ -377,7 +377,8 @@
             _vm.$q.dark.set(true);
             let t = window['term'];
             let a;
-            t.options.fontSize = 24;
+            t.options.fontSize = 20;
+            /*
             //t.write('\x1B[1;92m hello planet...await instructions...this is a representative from the BANOON space race. \x1B[0m');
            
             a = 'hello planet...' ;t.writeln('\x1B[1;92m '+ a +' \x1B[0m');
@@ -387,18 +388,31 @@
             t.writeln(' ');
             t.writeln(' ');
             t.writeln(' ');
-            let b=2000
-            _vm.bsmnharr.map(function(x){
-             setTimeout(function(){
-               b=b+2000;
-               window['term'].writeln('\x1B[1;92m '+ x +' \x1B[0m');
-             },b)
-            })
-            /*
-        bsmnharr
-        */
-          
-          },
+            */
+            let c=0;
+            let faa=function(){
+              let id1 = setInterval(function(){
+                _vm.bsmnharr.map(function(a,i1){
+                  if (i1>_vm.bsmnharr1.length){
+                    clearInterval(id1)
+                  }
+                  let id2 = setInterval(function(){
+                    a.split('').map(function(aaa,i2){
+                      c=c+1
+                      if (c>40){
+                         c=0;
+                         window['term'].write('\r\n');
+                      }
+                      window['term'].writeln('\x1B[1;92m '+ aaa +' \x1B[0m');
+                      if (i2>a.length){
+                        clearInterval(id2)
+                      }
+                    });
+                  });
+                })
+             })
+          }
+        },
           methods: {
             learnm: function() {
               this.learnmdialog = true

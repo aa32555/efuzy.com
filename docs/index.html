@@ -83,7 +83,7 @@
             </q-item-section>
             <q-item-section>
               <q-item-label>{{currentText}}</q-item-label>
-              <q-item-label caption> <q-spinner-dots size="2rem" ></q-spinner-dots></q-item-label>
+              <q-item-label caption> <q-spinner-dots size="3rem" ></q-spinner-dots></q-item-label>
             </q-item-section>
             <q-item-section side>
               {{currentTimestamp}}
@@ -279,6 +279,8 @@
           el: '#q-app',
           data: function() {
             return {
+              currentTimestamp:'few mins ago',
+              currentText:'',
               showAA:false,
               spinnerdotstext:'',
               showspinnerdots:false,
@@ -499,9 +501,6 @@
             },
             ttime: function(){
               return (Math.floor(Math.random() * 10) * 1000);
-            },
-            istypingtext: function(){
-              return (this.currentGuest+' is typing...')
             }
           }
         })

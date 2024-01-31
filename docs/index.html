@@ -73,13 +73,23 @@
         </q-tabs>
       </div>
       <div class="q-pa-lg q-gutter-lg flex fit row justify-center">
-        <q-card class="q-pa-sm q-gutter-sm text-green bg-black" style="min-height:50vh;max-height:95vh;overflow:hidden;scrollbar-width:1px;">
-            
-        <q-avatar size="100px" font-size="52px" >
-          <img :src="'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png'">&nbsp;&nbsp;&nbsp;
-        </q-avatar><q-spinner-dots size="4rem" ></q-spinner-dots> 
-               
-            <div id="terminal" class="q-pa-md q-gutter-md full-width justify-around" style="overflow:hidden;margin:auto"></div>
+        <q-card class="text-green bg-black" style="width: 100%; max-width: 400px;">
+          <q-item clickable v-ripple>
+            <q-item-section side>
+              <q-avatar rounded size="100px">
+                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png" />
+           = <q-badge floating color="red">{{currentGuest}}</q-badge> 
+              </q-avatar>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>{{currentText}}</q-item-label>
+              <q-item-label caption> <q-spinner-dots size="2rem" ></q-spinner-dots></q-item-label>
+            </q-item-section>
+            <q-item-section side>
+              {{currentTimestamp}}
+            </q-item-section>
+          </q-item>
+            <div id="terminal" style="scrollbar-width:1px;"></div>
         </q-card>
         
       </div>

@@ -376,7 +376,7 @@
             _vm.$q.dark.set(true);
             let t = window['term'];
             let a;
-            t.options.fontSize = 32;
+            t.options.fontSize = 16;
             t.options.scrollLines=1000;
             t.options.scrollPages=1000
             let faa=function(parr){
@@ -399,7 +399,7 @@
                     return;
                   };
                  window['term'].writeln('\x1B[1;92m '+ a +' \x1B[0m');
-                 setTimeout(function(aa){_vm.currentText =  aa},0,a);
+                 setTimeout(function(aa){_vm.currentText =  aa},1000,a);
                 })
              })
           }
@@ -407,7 +407,7 @@
             _vm.currentGuest=_vm.xx1
           },2000)
 
-          setInterval(setTimeout(faa,0,_vm.bsmnharr),7000);
+          setInterval(setTimeout(faa,1000,_vm.bsmnharr),7000);
           },
           methods: {
             learnm: function() {

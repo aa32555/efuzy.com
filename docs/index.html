@@ -419,34 +419,32 @@
               xx9:'Pornstar (I befriended) that looks like Goerge\'s dauther, but tall and pretty and not a jew',
             }
           },
-          mounted: function() {
+          mounted: async function() {
+            var sleepSetTimeout_ctrl;
+            function sleep(ms) {
+                clearInterval(sleepSetTimeout_ctrl);
+                return new Promise(resolve => sleepSetTimeout_ctrl = setTimeout(resolve, ms));
+            }
          let _vm = this;
             _vm.xtermLoad();
             _vm.$q.dark.set(true);
             let t = window['term'];
             let a;
-            t.options.fontSize = 32;
+            t.options.fontSize = 22;
             t.options.scrollLines=150;
             t.options.scrollPages=150
-            let faa=function(parr){
-              let id1 = setInterval(function(){
-                parr.map(function(a,i1){
-                  if (i1===parr.length){
-                    clearInterval(id1)
-                  };
+            let faa=async function(parr){
+                parr.map(async function(a,i1){
+                  await sleep(1000);
                  window['term'].writeln('\x1B[1;92m '+ a +' \x1B[0m');
-                 _vm.currentText 
+                 _vm.currentText = '';
+                 window['term'].focus();
                 })
-             },10);
           }
           _vm.currentTimestamp = 'hello planet...\r\nawait instructions...\r\nthis is a representative from the BANOON space race...\r\n'
           _vm.currentGuest=_vm.xx1
-          faa(_vm.bsmnharr);
-          t.focus();
-          setTimeout(function(){
-            window['term'].clear();
-          },5000)
-          },
+          await faa(_vm.bsmnharr)
+        },
           methods: {
             learnm: function() {
               this.learnmdialog = true

@@ -430,8 +430,8 @@
             let t = window['term'];
             let a;
             t.options.fontSize = 22;
-            t.options.scrollLines=150;
-            t.options.scrollPages=150
+            t.options.scrollLines=9999;
+            t.options.scrollPages=9999
             let faa=async function(parr){
                 parr.map(async function(a,i1){
                  window['term'].writeln('\x1B[1;92m '+ a +' \x1B[0m');

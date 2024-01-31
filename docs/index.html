@@ -397,24 +397,25 @@
                 parr.map(function(a,i1){
                   if (i1>parr.length){
                     clearInterval(id1)
-                  }
-                  let id2 = setInterval(function(){
-                    a.split('').map(function(aaa,i2){
-                      c=c+1
-                      if (c>40){
-                         c=0;
-                         window['term'].write('\r\n');
-                      }
-                      window['term'].writeln('\x1B[1;92m '+ aaa +' \x1B[0m');
-                      if (i2>a.length){
-                        clearInterval(id2)
-                      }
-                    });
-                  });
+                    window['term'].writeln(' ');
+                    window['term'].writeln(' ');
+                    window['term'].writeln(' ');
+                    window['term'].writeln(' ');
+                    let aa;
+                    aa = 'hello planet...' ;window['term'].writeln('\x1B[1;92m '+ aa +' \x1B[0m');
+                    aa = 'await instructions...' ;window['term'].writeln('\x1B[1;92m '+ aa+' \x1B[0m');
+                    aa = '.this is a representative from the BANOON space race...' ;window['term'].writeln('\x1B[1;92m '+ aa +' \x1B[0m');
+                    window['term'].writeln(' ');
+                    window['term'].writeln(' ');
+                    window['term'].writeln(' ');
+                    window['term'].writeln(' ');
+                    return;
+                  };
+                  parr.map(function(aaa,i2){window['term'].writeln('\x1B[1;92m '+ a +' \x1B[0m');});
                 })
              })
           }
-          setTimeout(faa(_vm.yctarr),2000);
+          faa(_vm.yctarr);
         },
           methods: {
             learnm: function() {

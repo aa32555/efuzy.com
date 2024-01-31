@@ -58,7 +58,7 @@
     }
     </style>
   </head>
-  <body style="height:100vh;width:100vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
+  <body style="height:100vh;width:99vw;background-image: url(https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg);background-size: cover;">
     <div id="q-app" class="flex">
       <div class="full-width" style="width:100%;">
         <q-tabs v-show="showaa1" v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
@@ -73,7 +73,7 @@
         </q-tabs>
       </div>
       <div class="q-pa-lg q-gutter-lg flex fit row justify-center text-green bg-black">
-        <q-card class="text-green bg-black" style="width: 100%; max-width: 800px;">
+        <q-card class="text-green bg-black" style="width: 100%; max-width: 400px;">
           <q-item clickable v-ripple @click="showaa1=true">
             <q-item-section side>
               <q-avatar round size="100px">
@@ -390,10 +390,10 @@
             t.writeln(' ');
             */
             let c=0;
-            let faa=function(){
+            let faa=function(parr){
               let id1 = setInterval(function(){
-                _vm.bsmnharr.map(function(a,i1){
-                  if (i1>_vm.bsmnharr1.length){
+                parr.map(function(a,i1){
+                  if (i1>parr.length){
                     clearInterval(id1)
                   }
                   let id2 = setInterval(function(){
@@ -412,7 +412,7 @@
                 })
              })
           }
-          setTimeout(faa,2000);
+          setTimeout(faa(parr),2000);
         },
           methods: {
             learnm: function() {

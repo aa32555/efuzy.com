@@ -428,11 +428,14 @@
             t.options.fontSize = 11;
             t.options.scrollLines=999;
             t.options.scrollPages=999
-                let now = Date.now();  
-                for (let i;i<que.length;i++){
-                  if ( (Date.now() - now) > 2000 ){
-                    window['term'].writeln('\x1B[1;92m '+ que[i] +' \x1B[0m');
-                  }
+                let now = Date.now();
+                let counter = 0;  
+                for (let i;;i++){
+                  if ( ((Date.now() - now) > 2000)&&(typeof que[counter] !== 'undefinded')){
+                    window['term'].writeln('\x1B[1;92m '+ que[counteri] +' \x1B[0m');
+                    now = Date.now(); 
+                    counter = counter + 1;
+                  } 
                 }
           _vm.currentTimestamp = 'hello planet...\r\nawait instructions...\r\nthis is a representative from the BANOON space race...\r\n'
           _vm.currentText=_vm.xx1

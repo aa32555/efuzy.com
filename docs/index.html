@@ -426,9 +426,9 @@
             let t = window['term'];
             let a;
             let que = _vm.bsmnharr;
-            t.options.fontSize = 22;
-            t.options.scrollLines=999;
-            t.options.scrollPages=999
+            t.options.fontSize = 16;
+            t.options.scrollLines=1000;
+            t.options.scrollPages=1000
             let x = 1000
             _vm.sd=true;x=x+4000;setTimeout(function(){window['term'].writeln('\x1B[92m '+ 'hello...' +' \x1B[0m');_vm.sd=false;window['term'].focus()},x);
             _vm.sd=true;x=x+7000;setTimeout(function(){window['term'].writeln('\x1B[92m '+ '....is anyone there?' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
@@ -467,7 +467,7 @@
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:22,
+                fontSize:16,
                 allowTransparency:true,
                 cursorStyle:'underline',
                 cursorInactiveStyle:'block',

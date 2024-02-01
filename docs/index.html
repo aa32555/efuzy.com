@@ -1,4 +1,4 @@
-<!--
+ <!--
 ####################################################################
 # Copyright (c) 2024 efuzy.com and/or its subsidiaries.            #
 # All rights reserved.                                             #
@@ -420,25 +420,25 @@
             let t = window['term'];
             let a;
             let que = _vm.bsmnharr;
-            t.options.fontSize = 22;
+            t.options.fontSize = 28;
             t.options.scrollLines=1000;
             t.options.scrollPages=1000
             let x = 1000
-            _vm.sd=true;x=x+5000;setTimeout(function(){_vm.host='ahmed';window['term'].writeln('\x1B[92m '+ 'hello...!!!!!!!!' +' \x1B[0m');window['term'].focus()},x);
-            _vm.sd=true;x=x+8000;setTimeout(function(){_vm.host='ahmed';window['term'].writeln('\x1B[92m '+ '....is anyone there?!!!!' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+7000;setTimeout(function(){_vm.host='ahmed';window['term'].writeln('\x1B[92m '+ 'اي حد هنا!!! ... الو' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+8000;setTimeout(function(){_vm.host='ahmed';window['term'].writeln('\x1B[92m'+  'I need help!!!!!!!!!!!!' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';window['term'].writeln('\x1B[31m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ɑ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';window['term'].writeln('\x1B[31m'+  'ɑ ɑ ɑ ɑ   ɑ  \r\nɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';window['term'].writeln('\x1B[31m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';window['term'].writeln('\x1B[31m'+  'ɑ ɑ       ɑ  \r\nɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';window['term'].writeln('\x1B[31m'+  'ɑ ɑ       ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';window['term'].writeln('\x1B[31m'+  'ɑ ɑ       ɑ  \r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';window['term'].writeln('\x1B[31m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';window['term'].writeln('\x1B[31m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+8000;setTimeout(function(){_vm.host='joshua';;window['term'].writeln('\x1B[31m'+ 'HOLD ON, WE\'RE COMING TO GET YOU\r\n\r\n' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+9000;setTimeout(function(){window['term'].focus();},x);
-            _vm.sd=true;x=x+9000;setTimeout(function(){ _vm.sd=false;_vm.showaa1=true;_vm.host='';window['term'].clear();},x);
+            _vm.sd=true;x=x+5000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m '+ 'hello...!!!!!!!!' +' \x1B[0m');window['term'].focus()},x);
+            _vm.sd=true;x=x+8000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m '+ '....is anyone there?!!!!' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+7000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m '+ 'اي حد هنا!!! ... الو' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+8000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m'+  'I need help!!!!!!!!!!!!' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ɑ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ ɑ ɑ   ɑ  \r\nɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ       ɑ  \r\nɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ       ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ       ɑ  \r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[31m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[31m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+8000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[31m'+ 'HOLD ON, WE\'RE COMING TO GET YOU\r\n\r\n' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+9000;setTimeout(function(){t.focus();},x);
+            _vm.sd=true;x=x+9000;setTimeout(function(){ _vm.sd=false;_vm.showaa1=true;_vm.host='';t.clear();},x);
         },
           methods: {
             learnm: function() {
@@ -469,10 +469,10 @@
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:22,
+                fontSize:28,
                 allowTransparency:true,
-                cursorStyle:'underline',
-                cursorInactiveStyle:'underline',
+                cursorStyle:'block',
+                cursorInactiveStyle:'block',
               });
               this.term = term;
               window['term'] = term;

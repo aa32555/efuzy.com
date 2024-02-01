@@ -76,10 +76,13 @@
         <q-card class="q-pa-lg q-gutter-lg text-green bg-black" style="min-height:50vh;max-height:95vh;overflow:hidden;scrollbar-width:1px;">
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
             <q-item-section side>
-              <q-avatar size="100px" v-show="showjoshua">
-                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png" ></q-avatar>
+              <q-avatar size="180px" v-if="host==='joshua'">
+                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png">
               </q-avatar>
-              <q-spinner-dots size="4rem" v-if="sd"></q-spinner-dots>
+              <q-avatar size="180px" v-if="host==='ahmed'">
+                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/155005073.jpg">
+              </q-avatar>
+              <q-spinner-dots size="6rem" v-if="sd"></q-spinner-dots>
             </q-item-section>
           </q-item>    
             <div id="terminal" class="q-pa-md q-gutter-md full-width justify-around" style="overflow:hidden;margin:auto"></div>
@@ -272,6 +275,7 @@
           el: '#q-app',
           data: function() {
             return {
+              host:'ahmed',
               sd:false,
               showjoshua:false,
               currentTimestamp:'',
@@ -413,17 +417,17 @@
             let t = window['term'];
             let a;
             let que = _vm.bsmnharr;
-            t.options.fontSize = 16;
+            t.options.fontSize = 22;
             t.options.scrollLines=1000;
             t.options.scrollPages=1000
             let x = 1000
-            _vm.sd=true;x=x+4000;setTimeout(function(){window['term'].writeln('\x1B[92m '+ 'hello...!!!!!!!!' +' \x1B[0m');_vm.sd=false;window['term'].focus()},x);
-            _vm.sd=true;x=x+7000;setTimeout(function(){window['term'].writeln('\x1B[92m '+ '....is anyone there?!!!!' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
-            _vm.sd=true;x=x+8000;setTimeout(function(){window['term'].writeln('\x1B[92m '+ 'اي حد هنا!!! ... الو' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
-            _vm.sd=true;x=x+9000;setTimeout(function(){window['term'].writeln('\x1B[92m'+  'I need help!!!!!!!!!!!!' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
-            _vm.sd=true;x=x+12000;setTimeout(function(){_vm.showjoshua=true;window['term'].writeln('\x1B[31m '+  'ɑ ɑ ɑ  ɑ ɑ  ɑ ɑ ɑ ɑ  ɑ ɑ\r\nɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
-            _vm.sd=true;x=x+30000;setTimeout(function(){_vm.showjoshua=true;window['term'].writeln('\x1B[31m '+ 'HOLD ON, WE\'RE COMING TO GET YOU' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
-            _vm.sd=true;x=x+3000;setTimeout(function(){_vm.showjoshua=false;window['term'].writeln('\x1B[92m '+ 'THANK YOU <3\r\nTHANK YOU <3\r\nTHANK YOU <3\r\nTHANK YOU <3 ' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
+            _vm.sd=true;x=x+4000;setTimeout(function(){_vm.host='ahmed';window['term'].writeln('\x1B[92m '+ 'hello...!!!!!!!!' +' \x1B[0m');_vm.sd=false;window['term'].focus()},x);
+            _vm.sd=true;x=x+7000;setTimeout(function(){_vm.host='ahmed';window['term'].writeln('\x1B[92m '+ '....is anyone there?!!!!' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
+            _vm.sd=true;x=x+8000;setTimeout(function(){_vm.host='ahmed';window['term'].writeln('\x1B[92m '+ 'اي حد هنا!!! ... الو' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
+            _vm.sd=true;x=x+9000;setTimeout(function(){_vm.host='ahmed';window['term'].writeln('\x1B[92m'+  'I need help!!!!!!!!!!!!' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
+            _vm.sd=true;x=x+12000;setTimeout(function(){_vm.host='joshua';window['term'].writeln('\x1B[31m '+  'ɑ ɑ ɑ  ɑ ɑ  ɑ ɑ ɑ ɑ  ɑ ɑ\r\nɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
+            _vm.sd=true;x=x+30000;setTimeout(function(){_vm.host='joshua';;window['term'].writeln('\x1B[31m '+ 'HOLD ON, WE\'RE COMING TO GET YOU' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
+        
         },
           methods: {
             learnm: function() {

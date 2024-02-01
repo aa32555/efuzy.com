@@ -76,23 +76,23 @@
         <q-card class="q-pa-lg q-gutter-lg text-green bg-black" style="min-height:50vh;max-height:95vh;overflow:hidden;scrollbar-width:1px;">
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
             <q-item-section side>
-              <q-avatar round size="120px">
+              <q-avatar round size="180px">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png" ></q-avatar>
               </q-avatar>
             </q-item-section>
             <q-item-section>
               <q-item-label>
-                <pre><code class="text-red bg-black">{{currentTimestamp}}</code></pre>
+                <pre><code class="text-green bg-black">{{currentTimestamp}}</code></pre>
             </q-item-label>
               <q-item-label> 
              </q-item-label>
             </q-item-section>
             <q-item-sectionn side>
               <q-item-label>
-                <pre><code class="text-red bg-black">{{currentText}}</code></pre>
+                <pre><code class="text-green bg-black">{{currentText}}</code></pre>
             </q-item-label>
               <q-item-label> 
-                <q-spinner-dots size="3rem" color="red" class="text-red"></q-spinner-dots>
+                <q-spinner-dots size="6rem" color="red" class="text-green" v-if="sd"></q-spinner-dots>
               </q-item-label>
             </q-item-section>
           </q-item>    
@@ -286,6 +286,7 @@
           el: '#q-app',
           data: function() {
             return {
+              sd:false,
               currentTimestamp:'',
               currentText:'',
               showAA:false,
@@ -425,23 +426,17 @@
             let t = window['term'];
             let a;
             let que = _vm.bsmnharr;
-            t.options.fontSize = 11;
+            t.options.fontSize = 22;
             t.options.scrollLines=999;
             t.options.scrollPages=999
-                let now = Date.now();
-                let counter = 0;  
-                for (let i;;i++){
-                  if (typeof que[counter] !== 'undefinded'){
-                    return;
-                  }
-                  if ( ((new Date.now() - now) > 1000)&&(typeof que[counter] !== 'undefinded')){
-                    window['term'].writeln('\x1B[1;92m '+ que[counter] +' \x1B[0m');
-                    now = Date.now(); 
-                    counter = counter + 1;
-                  } 
-                }
-          _vm.currentTimestamp = 'hello planet...\r\nawait instructions...\r\nthis is a representative from the BANOON space race...\r\n'
-          _vm.currentText=_vm.xx1
+            let x = 1000
+            _vm.sd=true;x=x+1000;setTimeout(function(){window['term'].writeln('\x1B[92m '+ 'hello...' +' \x1B[0m');_vm.sd=false;window['term'].focus()},x);
+            _vm.sd=true;x=x+3000;setTimeout(function(){window['term'].writeln('\x1B[92m '+ '....is anyone there?' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
+            _vm.sd=true;x=x+2000;setTimeout(function(){window['term'].writeln('\x1B[92m '+ 'اي حد هنا ... الو' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
+            _vm.sd=true;x=x+2000;setTimeout(function(){window['term'].writeln('\x1B[92 '+  'I need help' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
+            _vm.sd=true;x=x+2000;setTimeout(function(){window['term'].writeln('\x1B[31m '+  '\r\n\r\n\r\n\r\n ɑ ɑ ɑ   ɑ ɑ    ɑ ɑ ɑ ɑ\r\n\r\n\r\n' +' \x1B[0m');_vm.sd=false;window['term'].focus();},x);
+            _vm.currentTimestamp = 'ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ    ɑ ɑ ɑ   ɑ ɑ    ɑ ɑ ɑ ɑ';
+            _vm.currentText=_vm.xx1
         },
           methods: {
             learnm: function() {

@@ -83,9 +83,12 @@
               <q-avatar size="100px" v-if="host==='ahmed'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/155005073.jpg">
               </q-avatar>
+              <q-avatar size="100px" v-if="host==='bastet'">
+                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png">
+              </q-avatar>
             </q-item-section>
             <q-item-section side>
-              <q-spinner-dots size="3rem" v-show="sd"></q-spinner-dots>
+              <q-spinner-dots size="4rem" v-show="sd"></q-spinner-dots>
             </q-item-section>
           </q-item>    
             <div id="terminal" class="q-pa-sm justify-around" style="overflow:hidden;margin:auto"></div>
@@ -145,7 +148,7 @@ The $PIECE() function returns a substring delimited by a specified string delimi
             <br />
             <br />
             <q-card-section>
-              <center><div id="terminalii" class="flex flex-center" style="overflow:hidden;"></div></center>
+              <center><div id="terminalii" class="flex flex-center q-pa-sm q-gutter-sm" style="overflow:hidden;"></div></center>
               <div class="flex-center justify-around">
                 <q-input ref="input" filled type="textarea" v-model="ti2"></q-input>
                 <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term2'].write(ti2)"></q-btn>
@@ -421,30 +424,40 @@ The $PIECE() function returns a substring delimited by a specified string delimi
             let t = window['term'];
             let a;
             let que = _vm.bsmnharr;
-            t.options.fontSize = 28;
-            t.options.scrollLines=1000;
-            t.options.scrollPages=1000
+            t.options.fontSize = 22;
+           // t.options.scrollLines=1000;
+           // t.options.scrollPages=1000
             let x = 1000
-           _vm.sd=true;x=x+5000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m '+ 'hello...!!!!!!!!' +' \x1B[0m');window['term'].focus()},x);
-            _vm.sd=true;x=x+8000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m '+ '....is anyone there?!!!!' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+7000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m '+ 'اي حد هنا!!! ... الو' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+8000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[102m'+  'I need help!!!!!!!!!!!!' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ɑ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ ɑ ɑ   ɑ  \r\nɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ       ɑ  \r\nɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ       ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ       ɑ  \r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+6000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+8000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[31m'+ 'HOLD ON, WE\'RE COMING TO GET YOU\r\n\r\n' +  ' \x1B[0m');window['term'].focus();},x);
-            _vm.sd=true;x=x+9000;setTimeout(function(){t.focus();},x);
-            _vm.sd=true;x=x+9000;setTimeout(function(){ _vm.sd=false;_vm.showaa1=true;_vm.host='';t.clear();},x);
-            _vm.sd=true;x=x+5000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m '+'             /\\'+'\x1B[0m');t.scrollToBottom();},x);
- /* ___                  /  \                  ___
- /   \     __         /    \         __     /
-/     \   /  \   _   / <()> \   _   /  \   /
-       \_/    \_/ \_/________\_/ \_/    \_/
+           _vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m '+ 'hello...!!!!!!!!' +' \x1B[0m');window['term'].focus()},x);
+            _vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m '+ '....is anyone there?!!!!' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m '+ 'اي حد هنا!!! ... الو' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[102m'+  'I need help!!!!!!!!!!!!' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ɑ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ ɑ ɑ   ɑ  \r\nɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ       ɑ  \r\nɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ       ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+4000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ       ɑ  \r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[101m'+  'ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ' +' \x1B[0m');window['term'].focus();},x);
+            _vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[31m'+ 'HOLD ON, WE\'RE COMING TO GET YOU\r\n\r\n' +  ' \x1B[0m');window['term'].focus();},x);
+        
+            
+            _vm.sd=false;x=x+7000;setTimeout(function(){tt.scrollToBottom();t.focus();},x);
+            
+            _vm.sd=true;x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[45m '+'                        /\\        '+'\x1B[0m');t.scrollToBottom();},x);
+            _vm.sd=true;x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[45m '+'                       /  \        '+'\x1B[0m');t.scrollToBottom();},x);              
+            _vm.sd=true;x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[45m '+'                      /    \       '+'\x1B[0m');t.scrollToBottom();},x);       
+            _vm.sd=true;x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[45m '+'                     / <()> \      '+'\x1B[0m');t.scrollToBottom();},x);
+
+            
+            
+            /*
+ 
+ 
+ 
+ 
+ \_/    \_/ \_/________\_/ \_/    \_/
  __________________/__I___I___\________________
                   /_I___I___I__\
                  /I___I___I___I_\
@@ -489,7 +502,7 @@ The $PIECE() function returns a substring delimited by a specified string delimi
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:28,
+                fontSize:22,
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'block',

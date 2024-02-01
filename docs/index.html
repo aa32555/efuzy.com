@@ -419,29 +419,23 @@
             }
           },
           mounted: async function() {
-            var sleepSetTimeout_ctrl;
-            function sleep(ms) {
-                clearInterval(sleepSetTimeout_ctrl);
-                return new Promise(resolve => sleepSetTimeout_ctrl = setTimeout(resolve, ms));
-            }
          let _vm = this;
             _vm.xtermLoad();
             _vm.$q.dark.set(true);
             let t = window['term'];
             let a;
-            t.options.fontSize = 22;
-            t.options.scrollLines=9999;
-            t.options.scrollPages=9999
-            let faa=async function(parr){
-                parr.map(async function(a,i1){
-                 window['term'].writeln('\x1B[1;92m '+ a +' \x1B[0m');
-                 window['term'].focus();
-                 await sleep(1000);
-                })
-          }
+            let que = _vm.bsmnharr;
+            t.options.fontSize = 11;
+            t.options.scrollLines=999;
+            t.options.scrollPages=999
+                let now = Date.now();  
+                for (let i;i<que.length;i++){
+                  if ( (Date.now() - now) > 2000 ){
+                    window['term'].writeln('\x1B[1;92m '+ que[i] +' \x1B[0m');
+                  }
+                }
           _vm.currentTimestamp = 'hello planet...\r\nawait instructions...\r\nthis is a representative from the BANOON space race...\r\n'
           _vm.currentText=_vm.xx1
-          await faa(_vm.bsmnharr)
         },
           methods: {
             learnm: function() {

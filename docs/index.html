@@ -431,7 +431,10 @@
                 let now = Date.now();
                 let counter = 0;  
                 for (let i;;i++){
-                  if ( ((Date.now() - now) > 5000)&&(typeof que[counter] !== 'undefinded')){
+                  if (typeof que[counter] !== 'undefinded'){
+                    return;
+                  }
+                  if ( ((new Date.now() - now) > 1000)&&(typeof que[counter] !== 'undefinded')){
                     window['term'].writeln('\x1B[1;92m '+ que[counter] +' \x1B[0m');
                     now = Date.now(); 
                     counter = counter + 1;

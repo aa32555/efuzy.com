@@ -94,23 +94,23 @@
           <q-tab name="li" @click="li" label="LinkedIn"></q-tab>
           <q-tab name="youtube" label="youtube" @click="youtube"></q-tab>
           <q-tab name="Instagram" label="Instagram" @click="insta"></q-tab>
-          <q-tab name="checkya" label="Donate (paypal @asolok)" @click="paypal"></q-tab>
+          <q-tab name="paypal" label="Donate (paypal @asolok)" @click="paypal"></q-tab>
         </q-tabs>
       </div>
       <div>
         <q-card class=" text-green bg-black" style="overflow:hidden;scrollbar-width:1px;">
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
             <q-item-section side>
-              <q-avatar size="137px" v-if="host==='joshua'">
+              <q-avatar size="100px" v-if="host==='joshua'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png">
               </q-avatar>
-              <q-avatar size="137px" v-if="host==='ahmed'">
+              <q-avatar size="100px" v-if="host==='ahmed'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/155005073.jpg">
               </q-avatar>
-              <q-avatar size="137px" v-if="host==='bastet'">
+              <q-avatar size="100px" v-if="host==='bastet'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png">
               </q-avatar>
-              <q-spinner-dots size="3rem" class="text-green bg-black"></q-spinner-dots>
+              <q-spinner-dots size="2rem" class="text-grey bg-black"></q-spinner-dots>
             </q-item-section>
           </q-item>  
             <div id="terminal" class="q-pa-sm justify-around" style="overflow:hidden;margin:auto"></div>
@@ -142,10 +142,9 @@
             <q-card-section v-show="mtabs==='zp'">
               <div class="text-h5">Let's learn MUMPS (M) for a spaceship</div>
               <div class="text-h6">No Strings Attached </div>
-              <span class="bg-black text-red text-h6">&nbsp;&nbsp;$PIECE ($P)</span><pre><code>
-The $PIECE() function returns a substring delimited by a specified string delimiter,made up of
- one or more characters. For more information and usage examples, refer to “$Piece()” (page 230).
-</code></pre>
+              <span class="bg-black text-red text-h6">&nbsp;&nbsp;$PIECE ($P)</span>
+                The $PIECE() function returns a substring delimited by a specified string delimiter,made up of
+                one or more characters. For more information and usage examples, refer to “$Piece()” (page 230).
             </q-card-section>
             <q-card-section v-show="mtabs==='zl'">
               <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
@@ -480,7 +479,9 @@ The $PIECE() function returns a substring delimited by a specified string delimi
             _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                  /____________\\                                  '+'\x1B[0m');t.scrollToBottom();},x);
             _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                 /______________\\                                 '+'\x1B[0m');t.scrollToBottom();},x);
             _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                /________________\\                                '+'\x1B[0m');t.scrollToBottom();},x);
-            _vm.bgc='bg3';;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'               /__________________\\                               '+'\x1B[0m');t.scrollToBottom();},x);
+            _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'               /__________________\\                               '+'\x1B[0m');t.scrollToBottom();},x);
+            _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'              /__I___I___I___I_____\\                              '+'\x1B[0m');t.scrollToBottom();},x);
+            _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'             /_I___I___I___I___I____\\                             '+'\x1B[0m');t.scrollToBottom();},x);
             //
             _vm.bgc='bg2';_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ɑ  '+' \x1B[0m');window['term'].focus();},x);
             _vm.bgc='bg2';_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ     ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ    '+' \x1B[0m');window['term'].focus();},x);

@@ -10,7 +10,7 @@
 #            ( I OWN the DOMAIN @ 12 ELK ST)                       #
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
-###################################################################efuzy
+###################################################################efu
 -->
 <!DOCTYPE html>
 <html>
@@ -21,6 +21,30 @@
     <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css">
     <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/main.css" rel="stylesheet" type="text/css">
     <style>
+
+
+    .bg1 {
+      height:100vh !important;
+      width:100vw !important;
+      background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png')!important;;
+      background-size: cover;
+    }
+
+    .bg2 {
+      height:100vh !important;
+      width: 100vw !important;
+      background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png')!important;
+      background-size: cover!important;;
+    }
+
+    .bg3 {
+      height:100vh;
+      width:100vw;
+      background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png');
+      background-size: cover;
+    }
+
+
     .xterm .xterm-viewport {
     background-color: black !important;
     overflow-y: hidden !important;
@@ -58,7 +82,7 @@
     }
     </style>
   </head>
-  <body :style="'height:100vh;width:100vw;background-image: url(' + bgs +');background-size: cover;'">
+  <body :style="`height:100vh;width:100vw;background-image: url('` + bgs + `');background-size: cover`">
     <div id="q-app" class="flex fit flex-center q-pa-lg">
       <div class="full-width" style="width:100%;">
         <q-tabs v-show="showaa1" v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
@@ -73,10 +97,11 @@
           <q-tab name="checkya" label="Donate (checkya)" @click="checkya"></q-tab>
         </q-tabs>
       </div>
-      <div class="offset-6">
+      <div>
         <q-card class=" text-green bg-black" style="overflow:hidden;scrollbar-width:1px;">
+        <q-list bordered>
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
-            <q-item-section>
+            <q-item-section avatar>
               <q-avatar size="100px" v-if="host==='joshua'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png">
               </q-avatar>
@@ -87,10 +112,11 @@
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png">
               </q-avatar>
             </q-item-section>
-            <q-item-section>
+            <q-item-section caption>
               <q-spinner-dots size="3rem" v-show="sd"></q-spinner-dots>
             </q-item-section>
           </q-item>    
+        </q-list>
             <div id="terminal" class="q-pa-sm justify-around" style="overflow:hidden;margin:auto"></div>
         </q-card>
         
@@ -282,6 +308,7 @@ The $PIECE() function returns a substring delimited by a specified string delimi
           el: '#q-app',
           data: function() {
             return {
+              hostc:'',
               bgs:'',
               bg1:'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png',
               bg2:'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b2.png',
@@ -304,8 +331,8 @@ The $PIECE() function returns a substring delimited by a specified string delimi
               ti2: '',
               mtabsbooted: false,
               mtabs: 'zp',
-              maximizedToggle: false,
-              maximizedTogglepg: false,
+              maximizedToggle: true,
+              maximizedTogglepg: true,
               tab2: 'dollarp',
               learnmdialog: false,
               learnmpgdialog: false,
@@ -431,20 +458,20 @@ The $PIECE() function returns a substring delimited by a specified string delimi
             t.options.fontSize = 22;
            // t.options.scrollLines=1000;
            // t.options.scrollPages=1000
-            let x = 1000
+            let x = 1000;
            _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m'+ 'hello...!!!!!!!!' +' \x1B[0m');window['term'].focus()},x);
            _vm.bgs=_vm.bg1;_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m'+ '....is anyone there?!!!!' +' \x1B[0m');window['term'].focus();},x);
            _vm.bgs=_vm.bg1;_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m'+ 'اي حد هنا!!! ... الو' +' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[102m'+  'I need help!!!!!!!!!!!!' +' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ɑ             '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ  \r\nɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ               '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ                 '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ  \r\nɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ                      '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ                        '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+4000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ  \r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ                          '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ                          '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ\r\nɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ                            '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[1;3;31m'+ 'HOLD ON, WE\'RE COMING TO GET YOU\r\n\r\n' +  ' \x1B[0m');window['term'].focus();},x);
+           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[30;102m'+  'I need help!!!!!!!!!!!! ' +' \x1B[0m');window['term'].focus();},x);
+           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ɑ  '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ     ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ    '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ      '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ     ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ           '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ             '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+4000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ               '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ               '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ                 '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[3;31m'+ 'HOLD ON, WE\'RE COMING TO GET YOU\r\n\r\n' +  ' \x1B[0m');window['term'].focus();},x);
             //
            _vm.bgs=_vm.bg1;_vm.sd=false;x=x+2000;setTimeout(function(){t.scrollToBottom();t.focus();},x);
             //
@@ -459,7 +486,7 @@ The $PIECE() function returns a substring delimited by a specified string delimi
             _vm.bgs=_vm.bg3;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                /________________\\                                                    '+'\x1B[0m');t.scrollToBottom();},x);
             _vm.bgs=_vm.bg3;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'               /__________________\\                                                   '+'\x1B[0m');t.scrollToBottom();},x);
             //
-            _vm.sd=false;x=x+7000;setTimeout(function(){t.scrollToBottom();t.focus();t.clear();_vm.showaa1=true;_vm.bgs=_vm.bg1;},x);
+            _vm.sd=false;x=x+7000;setTimeout(function(){t.scrollToBottom();t.focus();t.clear();_vm.showaa1=true;_vm.bgs=_vm.bg1;_vm.host=''},x);
             //
             x=x+2000;setTimeout(function(){_vm.learnmdialog=true;},x);
             /*

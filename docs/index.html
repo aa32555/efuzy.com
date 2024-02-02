@@ -82,7 +82,7 @@
     }
     </style>
   </head>
-  <body class="bg1">
+  <body :class="bgc">
     <div id="q-app" class="flex fit flex-center q-pa-lg">
       <div class="full-width" style="width:100%;">
         <q-tabs v-show="showaa1" v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
@@ -304,7 +304,7 @@ The $PIECE() function returns a substring delimited by a specified string delimi
           data: function() {
             return {
               hostc:'',
-              bgc:'.bg1',
+              bgc:'bg1',
               bgs:'',
               bg1:'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png',
               bg2:'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b2.png',
@@ -455,42 +455,42 @@ The $PIECE() function returns a substring delimited by a specified string delimi
            // t.options.scrollLines=1000;
            // t.options.scrollPages=1000
             let x = 1000;
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m'+ 'hello...!!!!!!!!' +' \x1B[0m');window['term'].focus()},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m'+ '....is anyone there?!!!!' +' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m'+ 'اي حد هنا!!! ... الو' +' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[30;102m'+  'I need help!!!!!!!!!!!! ' +' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ɑ  '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ     ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ    '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ      '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ     ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ           '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ             '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+4000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ               '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ               '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ                 '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgc='bg1';_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m'+ 'hello...!!!!!!!!' +' \x1B[0m');window['term'].focus()},x);
+           _vm.bgc='bg1';_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m'+ '....is anyone there?!!!!' +' \x1B[0m');window['term'].focus();},x);
+           _vm.bgc='bg1';_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[92m'+ 'اي حد هنا!!! ... الو' +' \x1B[0m');window['term'].focus();},x);
+           _vm.bgc='bg1';_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[30;102m'+  'I need help!!!!!!!!!!!! ' +' \x1B[0m');window['term'].focus();},x);
+           _vm.bgc='bg2';_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ɑ  '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgc='bg2';_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ     ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ    '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgc='bg2';_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ      '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgc='bg2';_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ     ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ           '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgc='bg2';_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ             '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgc='bg2';_vm.sd=true;x=x+4000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ               '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgc='bg2';_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ               '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgc='bg2';_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ                 '+' \x1B[0m');window['term'].focus();},x);
             //
-           _vm.bgs=_vm.bg1;_vm.sd=false;x=x+2000;setTimeout(function(){t.scrollToBottom();t.focus();},x);
+           _vm.sd=false;x=x+2000;setTimeout(function(){t.scrollToBottom();t.focus();},x);
             //
-            _vm.bgs=_vm.bg3;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                        /\\                                        '+'\x1B[0m');t.scrollToBottom();},x);
-            _vm.bgs=_vm.bg3;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                       /  \\                                       '+'\x1B[0m');t.scrollToBottom();},x);              
-            _vm.bgs=_vm.bg3;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                      /    \\                                      '+'\x1B[0m');t.scrollToBottom();},x);       
-            _vm.bgs=_vm.bg3;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                     / <()> \\                                     '+'\x1B[0m');t.scrollToBottom();},x);
-            _vm.bgs=_vm.bg3;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                    /________\\                                    '+'\x1B[0m');t.scrollToBottom();},x);
-            _vm.bgs=_vm.bg3;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                   /__________\\                                   '+'\x1B[0m');t.scrollToBottom();},x);
-            _vm.bgs=_vm.bg3;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                  /____________\\                                  '+'\x1B[0m');t.scrollToBottom();},x);
-            _vm.bgs=_vm.bg3;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                 /______________\\                                 '+'\x1B[0m');t.scrollToBottom();},x);
-            _vm.bgs=_vm.bg3;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                /________________\\                                '+'\x1B[0m');t.scrollToBottom();},x);
-            _vm.bgs=_vm.bg3;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'               /__________________\\                               '+'\x1B[0m');t.scrollToBottom();},x);
+            _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                        /\\                                        '+'\x1B[0m');t.scrollToBottom();},x);
+            _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                       /  \\                                       '+'\x1B[0m');t.scrollToBottom();},x);              
+            _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                      /    \\                                      '+'\x1B[0m');t.scrollToBottom();},x);       
+            _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                     / <()> \\                                     '+'\x1B[0m');t.scrollToBottom();},x);
+            _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                    /________\\                                    '+'\x1B[0m');t.scrollToBottom();},x);
+            _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                   /__________\\                                   '+'\x1B[0m');t.scrollToBottom();},x);
+            _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                  /____________\\                                  '+'\x1B[0m');t.scrollToBottom();},x);
+            _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                 /______________\\                                 '+'\x1B[0m');t.scrollToBottom();},x);
+            _vm.bgc='bg3';_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'                /________________\\                                '+'\x1B[0m');t.scrollToBottom();},x);
+            _vm.bgc='bg3';;_vm.sd=true;x=x+1500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[30;103m'+'               /__________________\\                               '+'\x1B[0m');t.scrollToBottom();},x);
             //
-          _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ɑ  '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ     ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ    '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ      '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ     ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ           '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ             '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+4000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ               '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ               '+' \x1B[0m');window['term'].focus();},x);
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ                 '+' \x1B[0m');window['term'].focus();},x);
-            
-           _vm.bgs=_vm.bg1;_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[3;31m'+ 'HOLD ON, WE\'RE COMING TO GET YOU\r\n\r\n' +  ' \x1B[0m');t.writeln('');t.writeln('');window['term'].focus();},x);
+            _vm.bgc='bg2';_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ ɑ  '+' \x1B[0m');window['term'].focus();},x);
+            _vm.bgc='bg2';_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ     ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ ɑ    '+' \x1B[0m');window['term'].focus();},x);
+            _vm.bgc='bg2';_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ    ɑ      '+' \x1B[0m');window['term'].focus();},x);
+            _vm.bgc='bg2';_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ     ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ           '+' \x1B[0m');window['term'].focus();},x);
+            _vm.bgc='bg2';_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ ɑ             '+' \x1B[0m');window['term'].focus();},x);
+            _vm.bgc='bg2';_vm.sd=true;x=x+4000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ       ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ               '+' \x1B[0m');window['term'].focus();},x);
+            _vm.bgc='bg2';_vm.sd=true;x=x+3000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ ɑ               '+' \x1B[0m');window['term'].focus();},x);
+           _vm.bgc='bg2';_vm.sd=true;x=x+2000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ                 '+' \x1B[0m');window['term'].focus();},x);
+             
+           _vm.bgc='bg3';_vm.sd=true;x=x+1000;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[3;31m'+ 'HOLD ON, WE\'RE COMING TO GET YOU\r\n\r\n' +  ' \x1B[0m');t.writeln('');t.writeln('');window['term'].focus();},x);
          
             _vm.sd=false;x=x+7000;setTimeout(function(){t.scrollToBottom();t.focus();t.clear();_vm.showaa1=true;_vm.bgs=_vm.bg1;_vm.host=''},x);
             //

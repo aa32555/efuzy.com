@@ -83,7 +83,7 @@
     </style>
   </head>
   <body class="bg1">
-    <div id="q-app" class="flex fit flex-center q-pa-xs">
+    <div id="q-app" class="flex fit flex-center">
       <div class="full-width" style="width:100%;">
         <q-tabs v-show="showaa1" v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
           <q-tab class="bg-black text-red" name="learnm" label="learn MUMPS (M)" @click="learnm"></q-tab>
@@ -110,9 +110,7 @@
               <q-avatar size="160px" v-if="host==='bastet'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png">
               </q-avatar>
-            </q-item-section>
-            <q-item-section side>
-              <q-spinner-dots size="4rem" v-show="sd"></q-spinner-dots>
+              <q-spinner-dots size="4rem" ></q-spinner-dots>
             </q-item-section>
           </q-item>  
             <div id="terminal" class="q-pa-sm justify-around" style="overflow:hidden;margin:auto"></div>

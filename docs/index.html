@@ -83,8 +83,8 @@
     </style>
   </head>
   <body>
-    <div id="q-app" class="flex fit flex-center q-pa-lg" :class="bgc">
-      <div class="full-width" style="width:100%;">
+    <div id="q-app" class="flex fit flex-center">
+      <div :class="bgc" style="width:100%;">
         <q-tabs v-show="showaa1" v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
           <q-tab class="bg-black text-red" name="learnm" label="learn MUMPS (M)" @click="learnm"></q-tab>
           <q-tab class="bg-black text-red" name="learnmpg" label="(M) Full Guide" @click="window.open('https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M%20Programmers%20Guide.pdf','_blank')"></q-tab>

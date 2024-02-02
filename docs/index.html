@@ -83,7 +83,7 @@
     </style>
   </head>
   <body class="bg1">
-    <div id="q-app" class="flex fit flex-center q-pa-sm">
+    <div id="q-app" class="flex fit flex-center q-pa-xs">
       <div class="full-width" style="width:100%;">
         <q-tabs v-show="showaa1" v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
           <q-tab class="bg-black text-red" name="learnm" label="learn MUMPS (M)" @click="learnm"></q-tab>
@@ -100,18 +100,21 @@
       <div>
         <q-card class=" text-green bg-black" style="overflow:hidden;scrollbar-width:1px;">
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
-            <q-item-section>
-              <q-avatar size="100px" v-if="host==='joshua'">
+            <q-item-section side>
+              <q-avatar size="160px" v-if="host==='joshua'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png">
               </q-avatar>
-              <q-avatar size="100px" v-if="host==='ahmed'">
+              <q-avatar size="160px" v-if="host==='ahmed'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/155005073.jpg">
               </q-avatar>
-              <q-avatar size="100px" v-if="host==='bastet'">
+              <q-avatar size="160px" v-if="host==='bastet'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png">
               </q-avatar>
             </q-item-section>
-          </q-item>    
+            <q-item-section side>
+              <q-spinner-dots size="4rem" v-show="sd"></q-spinner-dots>
+            </q-item-section>
+          </q-item>  
             <div id="terminal" class="q-pa-sm justify-around" style="overflow:hidden;margin:auto"></div>
         </q-card>
         

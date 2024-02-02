@@ -82,8 +82,8 @@
     }
     </style>
   </head>
-  <body :class="bgc">
-    <div id="q-app" class="flex fit flex-center q-pa-lg">
+  <body>
+    <div id="q-app" class="flex fit flex-center q-pa-lg" :class="bgc">
       <div class="full-width" style="width:100%;">
         <q-tabs v-show="showaa1" v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
           <q-tab class="bg-black text-red" name="learnm" label="learn MUMPS (M)" @click="learnm"></q-tab>

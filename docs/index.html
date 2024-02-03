@@ -24,24 +24,24 @@
 
 
     .bg1 {
-      height:100vh !important;
-      width:100vw !important;
       background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png')!important;;
-      background-size: cover;
+      background-size: cover!important;;
+      padding: 100px 100px 100px 100px;
+      scrollbar-width:1px
     }
 
     .bg2 {
-      height:100vh !important;
-      width: 100vw !important;
       background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png')!important;
-      background-size: cover!important;;
+      background-size: cover!important;
+      padding: 100px 100px 100px 100px;
+      scrollbar-width:1px
     }
 
     .bg3 {
-      height:100vh;
-      width:100vw;
-      background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png');
-      background-size: cover;
+      background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png')!important;
+      background-size: cover!important;
+      padding: 100px 100px 100px 100px;
+      scrollbar-width:1px;
     }
 
 
@@ -52,7 +52,7 @@
       .bg-img-1 {
         width: 100vh !important;
         height: 100vw !important;
-        background: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg') cover;
+        background: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png') cover;
         background-size: cover;
 
         .bg-img-2 {
@@ -82,7 +82,7 @@
     }
     </style>
   </head>
-  <body class="bg1">
+  <body class="bg-img-1">
     <div id="q-app" class="flex fit flex-center">
       <div class="full-width" style="width:100%;">
         <q-tabs v-show="showaa1" v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
@@ -98,7 +98,7 @@
         </q-tabs>
       </div>
       <div>
-        <q-card  :style="'padding: 100px 100px 100px 100px;scrollbar-width:1px;background-image: url(\'' + bgs + '\');background-size: cover;'">
+        <q-card :class="mc">
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
             <q-item-section side>
               <q-avatar square size="130px" v-if="host==='joshua'">
@@ -303,6 +303,7 @@
           el: '#q-app',
           data: function() {
             return {
+              mc:'bg2',
               showsd:true,
               hostc:'',
               bgc:'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b2.png',

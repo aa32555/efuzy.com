@@ -103,7 +103,7 @@
         </q-tabs>
       </div>
       <div>
-        <q-card :class="'comic'+ (host==='ahmed'?'1':(host==='joshua'?'2':'3')) +'c'">
+        <q-card :class="'comic'+ (host==='ahmed'?'1':(host==='joshua'?'2':host==='bastet'?'3':'1')) +'c'">
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
             <q-item-section side>
               <q-avatar square size="130px" v-if="host==='joshua'">

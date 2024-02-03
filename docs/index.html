@@ -22,6 +22,14 @@
     <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/main.css" rel="stylesheet" type="text/css">
     <style>
 
+
+.bg1 {
+      height:100vh !important;
+      width:100vw !important;
+      background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png')!important;;
+      background-size: cover;
+    }
+
     .comic1c {
       background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png')!important;;
       background-size: cover!important;;
@@ -38,12 +46,6 @@
       background-size: cover!important;;
     }
 
-
-
-    .bg1 {
-      background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png')!important;;
-      background-size: cover!important;;
-    }
 
     .bg2 {
       background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png')!important;
@@ -109,7 +111,7 @@
         </q-tabs>
       </div>
       <div>
-        <q-card :class="'comic'+1+'c'">
+        <q-card :class="'comic'+2+'c'">
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
             <q-item-section side>
               <q-avatar square size="130px" v-if="host==='joshua'">

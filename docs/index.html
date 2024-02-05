@@ -122,11 +122,11 @@
         </q-card>
         
       </div>
-      <q-dialog v-model="learnmdialog" persistent :maximized="maximizedToggle" transition-show="slide-up" transition-hide="slide-down">
+      <q-dialog style="max-width:100vw;max-height:100vh;min-height:80hv;min-width:80vw" v-model="learnmdialog" persistent :maximized="maximizedToggle" transition-show="slide-up" transition-hide="slide-down">
         <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
             <q-card-section>
              <div id="terminalii" class="flex flex-center q-pa-sm q-gutter-sm" style="overflow:hidden;margin:0 auto"></div>
-              <div class="flex-center justify-around">
+              <div class="flex-center justify-around" v-show="false">
                 <q-input ref="input" filled type="textarea" v-model="ti2"></q-input>
                 <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term2'].write(ti2)"></q-btn>
                 <q-btn dense flat round class="q-pa-sm" label="writeln" @click="window['term2'].writeln(ti2)"></q-btn>

@@ -3525,10 +3525,9 @@ GTM>
             let t = window['term'];
             let a;
             let que = _vm.bsmnharr;
-            t.options.fontSize = 18;
-
+            
            // t.options.scrollLines=1000;
-           // t.options.scrollPages=1000
+            //t.options.scrollPages=1000
             let x = 1000;
            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ 'hello...!!!!!!!!' +' \x1B[0m');t.focus();;},x);
            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ '....is anyone there?!!!!' +' \x1B[0m');t.focus();},x);
@@ -3587,7 +3586,7 @@ GTM>
             x=x+3500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ 'عازيني اتعلم لغة حاسوب آلي' +' \x1B[0m');t.focus();;},x);
             x=x+3000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ 'مؤمنة كاءناء  '+' \x1B[0m');t.focus();;},x);
             //
-            x=x+2500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ '  translation:    They want me to learn \n\ra compouter programming language,\n\r thats protetected by alients.' +' \x1B[0m');t.focus();;},x);
+            x=x+2500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ '  translation:    They want me to learn.' +' \x1B[0m');t.focus();;},x);
 
             x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
             x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);              
@@ -3596,20 +3595,6 @@ GTM>
      
         
             x=x+5000;setTimeout(function(){t.scrollToBottom();t.focus();t.clear();;_vm.bgs=_vm.bg1;_vm.host='';_vm.showaa1=true;_vm.showsd=false;},x);
-
-            /*
- \_/    \_/ \_/________\_/ \_/    \_/
- __________________/__I___I___\________________
-/_I___I___I__\
-                 /I___I___I___I_\
-                /___I___I___I___I\
-               /__I___I___I___I___\
-              /_I___I___I___I___I__\
-             /I___I___I___I___I___I_\
-            /___I___I___I___I___I___I\
-           /__I___I___I___I___I___I___\
-          /_I___I___I___I___I___I___I__\
-*/   
           },
           methods: {
             learnm: function() {
@@ -3637,12 +3622,24 @@ GTM>
             xtermInitialize: function() {},
             xtermBoot: function() {
               this.termExists = true;
+              let _vm=this;
+              let fontsize=22;
+              t.options.fontSize = 22;
+            if (_vm.$q.screen.lt.md){
+              fontsize = 14;
+            } 
+            if (_vm.$q.screen.lt.sm){
+              fontsize= 8;
+            } 
+            if (_vm.$q.screen.gt.md){
+              fontsize= 22;
+            } 
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:18,
-                cols:20,
-                row:40,
+                fontSize:fontsize,
+                //cols:20,
+                //row:40,
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'block',

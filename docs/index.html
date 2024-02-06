@@ -140,14 +140,14 @@
             </q-btn>
             <q-btn dense flat icon="close" @click="learnmdialog = false"></q-btn>
           </q-bar>
-          <q-card-section class="q-pt-none">
-            <q-splitter
-              v-model="splitterModel"
-              style="height: 100%;"
-            >
+
+          <q-card-section class="q-pa-md q-gutter-md">
+            <q-btn color="danger" squar class="q-pa-sm" label="Start Session (1 $P)" @click="startSessionI"></q-btn>
+          </q-card-section>
+          <q-card-section class="q-pa-md">
+            <q-splitter v-model="splitterModel" style="height: 100%;">
       <template v-slot:after>
         <div class="q-pa-md">
-        
             <q-card-section>
              <div id="terminalii" class="flex flex-center q-pa-sm q-gutter-sm" style="overflow:hidden;margin:0 auto"></div>
               <div class="flex-center justify-around" >
@@ -3713,6 +3713,9 @@ _vm.mtabsbooted = true;
             },
             istypingtext: function(){
               return (this.currentGuest+' is typing...')
+            },
+            startSessionI: function(){
+              let t=['window']
             }
           }
         })

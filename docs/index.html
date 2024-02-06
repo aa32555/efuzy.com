@@ -124,8 +124,13 @@
         </q-card>
         
       </div>
-<q-dialog v-model="sessionIdialog" >
+
+<q-dialog v-model="sessionIdialog" :maximized="true" transition-show="slide-up" transition-hide="slide-down" >
   <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);" class="full-width flex flex-center" style="width:100%;">
+    <q-bar>
+            <q-space></q-space>
+            <q-btn dense flat icon="close" @click="sessionIdialog = false"></q-btn>
+          </q-bar>
     <div class="q-pa-md">
       <q-stepper
         v-model="sessionIsteppermodel"sessionIdialog

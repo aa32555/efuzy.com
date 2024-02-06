@@ -3733,23 +3733,23 @@ GTM>
             },
             porocessNotes: function(){
               window['term2'].write(this.editor);
-            },
+            },//'\x1B[1;30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ '+'\x1B[0m'
             startSessionI: function(){
               window['term2'].clear();
               window['term2'].focus();
               let _vm = this;
-              window['term2'].writeln('      Start Session I is about to start        ')
+              window['term2'].writeln('\x1B[1;30;101m'+ '         Start Session I is about to start           '+'\x1B[0m')
             setTimeout(function(){
-              window['term2'].writeln('      predator God wants us to start w/ $p     ')
-              window['term2'].writeln('      something MAGICAL is going to happen     ')
-               window['term2'].writeln('     in 7 seconds....stay tuned..........     ')
+              window['term2'].writeln('\x1B[1;30;101m'+ '         predator God wants us to start w/ $p        '+'\x1B[0m')
+              window['term2'].writeln('\x1B[1;30;101m'+ '         something MAGICAL is going to happen        '+'\x1B[0m')
+               window['term2'].writeln('\x1B[1;30;101m'+'         in 7 seconds....stay tuned..........        '+'\x1B[0m')
             },3000)
 
            setTimeout(function(){
-              _vm.sessionIdialog=true;
+             window['term2'].writeln('\x1B[1;30;101m'+ '                         NOW                          '+'\x1B[0m',function(){
+               _vm.sessionIdialog=true;
+             })
             },10000)
-              
-            
             },
             xtermLoad: function() {
               this.xtermBoot();

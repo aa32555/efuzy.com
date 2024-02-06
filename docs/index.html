@@ -27,8 +27,8 @@
       height:100vh !important;
       width:100vw !important;
       background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png')!important;
-      background-size: cover;
-      background-repeat: no-repeat;
+      background-size: conatin !important;
+      background-repeat: no-repeat !important;
     }
 
     .comic1c {
@@ -3357,6 +3357,22 @@ GTM>
     </q-timeline>
   </div>
 </q-card></q-dialog>
+
+
+
+
+<q-dialog v-model="sessionIdialog" >
+<q-card class="bg-black text-red">
+
+</q-card>
+</q-dialog>
+
+
+
+
+
+
+
       <script>
         window.quasarConfig = {
           dialog: {},
@@ -3375,6 +3391,7 @@ GTM>
           el: '#q-app',
           data: function() {
             return {
+              sessionIdialog:false,
               editor:'',
               splitterModel:50,
               showsd:true,

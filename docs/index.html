@@ -138,14 +138,16 @@
             <q-btn dense flat icon="close" @click="learnmdialog = false"></q-btn>
           </q-bar>
           <q-card-section class="q-pt-none">
-            <q-tabs v-model="mtabs" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
-              <q-tab class="bg-black text-red" name="zch1" label="Strings(CH1)"></q-tab>
-              <q-space></q-space>
-              <q-tab name="zp" label="$PIECE ($P)"><a href="functions"></a></q-tab>
-              <q-tab name="zl" label="$LENGTH ($L)"><a href="#functions"></a></q-tab>
-              <q-tab name="ze" label="$EXTRACT ($E)" @click="window.open('#functions')"></q-tab>
-            </q-tabs>
-            <br />
+            <a href="#functions">Functions</a>
+            <br/>
+            <br/>
+            <q-splitter
+              v-model="splitterModel"
+              style="height: 100%"
+            >
+      <template v-slot:after>
+        <div class="q-pa-md">
+          <div class="text-h4 q-mb-md">M Manual</div>
             <q-card-section>
              <div id="terminalii" class="flex flex-center q-pa-sm q-gutter-sm" style="overflow:hidden;margin:0 auto"></div>
               <div class="flex-center justify-around" v-show="false">
@@ -156,6 +158,11 @@
                 <q-btn dense flat round class="q-pa-sm" label="clear" @click="window['term2'].clear()"></q-btn>
               </div>
             </q-card-section>
+          </div>
+        </template>
+        <template v-slot:before>
+          <div class="q-pa-md">
+            <div class="text-h4 q-mb-md">Terminal</div>
             <q-card-section>
              <br/><br/>
 <pre style="background-color:black"> <code style="background-color:#000000;color:#00FF41;">
@@ -3221,6 +3228,10 @@ GTM>
                 </code>
               </pre>
             </q-card-section>
+            </div>
+            </template>
+            </q-splitter>
+          
         </q-card>
       </q-dialog>
       <q-dialog v-model="learnmpgdialog" persistent :maximized="maximizedTogglepg" transition-show="slide-up" transition-hide="slide-down">
@@ -3346,6 +3357,7 @@ GTM>
           el: '#q-app',
           data: function() {
             return {
+              splitterModel:50,
               showsd:true,
               bgn:2,
               hostc:'',

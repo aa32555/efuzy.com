@@ -124,7 +124,100 @@
         </q-card>
         
       </div>
-     
+<q-dialog v-model="sessionIdialog" >
+  <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
+    <div class="q-pa-md">
+      <q-stepper
+        v-model="sessionIsteppermodel"sessionIdialog
+        color="amber-3"
+        animated
+      >
+        <q-step
+          :name="1"
+          title="Session I ( Dollar P )"
+          :done="false"
+        >
+<pre style="background-color:black;color:#00FF41;"> <code style="background-color:#000000;color:#00FF41;">
+  $Piece()
+  Returns a substring delimited by a specified string delimiter made up of one or more characters. In M, $PIECE() returns a logical
+  field from a logical record.
+  The format for the $PIECE function is:
+  $P[IECE](expr1,expr2[,intexpr1[,intexpr2]])
+  • The first expression specifies the string from which $PIECE() computes its result.
+  • The second expression specifies the delimiting string that determines the piece "boundaries"; if this argument is an empty
+  string, $PIECE() returns an empty string.
+  • If the second expression does not appear anywhere in the first expression, $PIECE() returns the entire first expression (unless
+  forced to return an empty string by the second integer expression).
+  • The optional first integer expression (third argument) specifies the beginning piece to return; if this argument is missing,
+  $PIECE() returns the first piece.
+  • The optional second integer expression (fourth argument) specifies the last piece to return. If this argument is missing,
+  $PIECE() returns only one piece unless the first integer expression is zero (0) or negative, in which case it returns a null
+  string. If this argument is less than the first integer expression, $PIECE() returns an empty string.
+  • If the second integer expression exceeds the actual number of pieces in the first expression, $PIECE() returns all of the
+  expression after the delimiter selected by the first integer expression.
+  • The $PIECE() result never includes the "outside" delimiters; however, when the second integer argument specifies multiple
+  pieces, the result contains the "inside" occurrences of the delimiter.
+  Functions
+  231
+  • $PIECE() can also be used as tool for efficiently using values that contain multiple elements or fields, each of which may be
+  variable in length.
+  • Applications typically use a single character for a $PIECE() delimiter (second argument) to minimize storage overhead,
+  and increase efficiency at run-time. The delimiter must be chosen so the data values never contain the delimiter. Failure
+  to enforce this convention with edit checks may result in unanticipated changes in the position of pieces within the data
+  value. The caret symbol (^), backward slash (\), and asterisk (*) characters are examples of popular visible delimiters. Multiple
+  character delimiters may reduce the likelihood of conflict with field contents. However, they decrease storage efficiency, and
+  are processed with less efficiency than single character delimiters. Some applications use control characters, which reduce
+  the chances of the delimiter appearing in the data but sacrifice the readability provided by visible delimiters.
+  • A SET command argument can have something that has the format of a $PIECE() on the left-hand side of its equal sign
+  (=). This construct permits easy maintenance of individual pieces within a string. It also can be used to generate a string of
+  delimiters. For more information on SET $PIECE(), refer to “Set” (page 143).
+  • $PIECE() can also be used as target in a SET command to change part of the value of a node. Also, when SET arguments
+  have multiple parenthesized (set-left) targets and a target is used as a subscript in more than one item in the list of targets
+  that follow, all the targets use the before-SET value (not the after-SET value) in conformance to the M-standard. For more
+  information on SET $PIECE(), refer to “Set” (page 143).
+  • For a proces started in UTF-8 mode, $PIECE() interprets the string arguments as UTF-8 encoded. With VIEW "BADCHAR"
+  enabled, $PIECE() produces a run-time error when it encounters a malformed character, but it does not process the characters
+  that fall after the span specified by the arguments.
+  • $ZPIECE() is the parallel function of $PIECE(). Irrespective of the settings of VIEW "BADCHAR" and $ZCHSET, $ZPIECE()
+  interprets string arguments as a sequence of bytes (rather than a sequence of characters) and can perform all byte-oriented
+  $PIECE() operations. For more information, refer to “$ZPIece()” (page 272).
+  Examples of $PIECE()
+  Example:
+  GTM>for i=0:1:3 write !,$piece("1 2"," ",i),"<"
+  <
+  1<
+  2<
+  <
+  GTM>
+  This loop displays the result of $PIECE(), specifying a space as a delimiter, a piece position "before," first and second, and "after"
+  the string.
+  Example:
+  GTM>for i=-1:1:3 write !,$piece("1 2"," ",i,i+1),"<"
+  <
+  1<
+  1 2<
+  2<
+  <
+  GTM>
+  This example is similar to the previous example except that it displays two pieces on each iteration. Notice the delimiter (a
+  space) in the middle of the output for the third iteration, which displays both pieces.
+  Functions
+  232
+  Example:
+  for p=1:1:$length(x,"/") write ?p-1*10,$piece(x,"/",p)
+  This example uses $LENGTH() and $PIECE() to display all the pieces of x in columnar format.
+  Example:
+  GTM>set $piece(x,".",25)="" write x
+  ........................
+  This SETs the 25th piece of the variable x to null, with a delimiter of a period. This produces a string of 24 periods preceding the
+  null.
+</code>
+</pre> 
+        </q-step>
+      </q-stepper>
+    </div>
+  </q-card>
+</q-dialog>
       <q-dialog v-model="learnmdialog" persistent :maximized="maximizedToggle" transition-show="slide-up" transition-hide="slide-down">
         <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
           <q-bar>
@@ -3374,6 +3467,8 @@ GTM>
           el: '#q-app',
           data: function() {
             return {
+              sessionIsteppermodel:1,
+              sessionIdialog:false,
               editor:'',
               splitterModel:50,
               showsd:true,
@@ -3652,8 +3747,9 @@ GTM>
               window['term2'].write(this.editor);
             },
             startSessionI: function(){
+              let _vm = this;
               window['term2'].write('Start Session I...Dollar P',function(){
-                alert(1);
+                _vm.sessionIdialog=true;
               });
             },
             xtermLoad: function() {
@@ -3672,21 +3768,21 @@ GTM>
               setTimeout(function() {
                 let term2;
                 if (typeof window['term2'] === 'undefined') {
-term2 = window['term2'] || new Terminal();
-window['term2'] = term2;
-                } else {
-term2 = window['term2'];
-                }
-                if (_vm.mtabsbooted === false) {
-term2.open(document.getElementById('terminalii'));
-term2.write(window[_vm.mtabs].join('\r\n'));
-term2.focus();
-_vm.mscreenboot[_vm.mtabs] = true;
-                } else {
-term2.clear()
-term2.write(window[_vm.mtabs].join('\r\n'));
-term2.focus();
-_vm.mtabsbooted = true;
+                  term2 = window['term2'] || new Terminal();
+                  window['term2'] = term2;
+                                  } else {
+                  term2 = window['term2'];
+                                  }
+                                  if (_vm.mtabsbooted === false) {
+                  term2.open(document.getElementById('terminalii'));
+                  term2.write(window[_vm.mtabs].join('\r\n'));
+                  term2.focus();
+                  _vm.mscreenboot[_vm.mtabs] = true;
+                                  } else {
+                  term2.clear()
+                  term2.write(window[_vm.mtabs].join('\r\n'));
+                  term2.focus();
+                  _vm.mtabsbooted = true;
                 }
               }, 1000)
             },

@@ -142,7 +142,8 @@
           </q-bar>
 
           <q-card-section class="q-pa-md q-gutter-md">
-            <q-btn color="danger" squar class="q-pa-sm" label="Start Session (1 $P)" @click="startSessionI"></q-btn>
+            <q-space></q-space>
+            <q-btn color="amber-3" round class="q-pa-lg bg-amber-3 text-white" label="Start Session (1 $P)" @click="startSessionI"></q-btn>
           </q-card-section>
           <q-card-section class="q-pa-md">
             <q-splitter v-model="splitterModel" style="height: 100%;">
@@ -3875,7 +3876,11 @@ _vm.mtabsbooted = true;
               return (this.currentGuest+' is typing...')
             },
             startSessionI: function(){
-              let t=['window']
+              let _vm = this;
+              let t=['window'].term2.writeln;
+              t('\n\r\n\tsession I\n\r\n\r$p (pronounced dollar P)',function(){
+                  _vm.sessionIdialog = true;
+              })
             }
           }
         })

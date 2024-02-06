@@ -138,12 +138,9 @@
             <q-btn dense flat icon="close" @click="learnmdialog = false"></q-btn>
           </q-bar>
           <q-card-section class="q-pt-none">
-            <a href="#functions">Functions</a>
-            <br/>
-            <br/>
             <q-splitter
               v-model="splitterModel"
-              style="height: 100%"
+              style="height: 100%;"
             >
       <template v-slot:after>
         <div class="q-pa-md">
@@ -151,12 +148,12 @@
             <q-card-section>
              <div id="terminalii" class="flex flex-center q-pa-sm q-gutter-sm" style="overflow:hidden;margin:0 auto"></div>
               <div class="flex-center justify-around" >
-                <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term2'].write(editor)"></q-btn>
+                <q-btn dense flat round class="q-pa-sm" label="write" @click="porocessNotes"></q-btn>
               </div>
             </q-card-section>
             <q-card-section>
-              <div class="q-pa-md q-gutter-sm" class="width:100%;height:100%;">
-                <h5>Notes (save coming soon)</h5>
+              <div class="q-pa-md q-gutter-sm" style="width:100%;height:100%;">
+                <h5>Notes</h5>
                 <q-editor
                   v-model="editor"
                   flat
@@ -3525,9 +3522,7 @@ GTM>
             _vm.xtermLoad();
             _vm.$q.dark.set(true);
             let t = window['term'];
-            let a;
-            let que = _vm.bsmnharr;
-            
+            let a;        
             t.options.scrollLines=1000;
             t.options.scrollPages=1000
             let x = 1000;
@@ -3545,19 +3540,19 @@ GTM>
            x=x+500;setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[1;30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ ɑ                 '+' \x1B[0m');},x);
             //
            _vm.sd=false;x=x+2000;setTimeout(function(){t.scrollToBottom();t.focus();},x);
-            //
-            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'      /\\    '+'\x1B[0m');t.scrollToBottom();},x);
-            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'     /  \\   '+'\x1B[0m');t.scrollToBottom();},x);              
-            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'    /    \\  '+'\x1B[0m');t.scrollToBottom();},x);       
-            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'   / <()> \\ '+'\x1B[0m');t.scrollToBottom();},x);
-            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'  /________\\'+'\x1B[0m');t.scrollToBottom();},x);
-            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+' /__________\\                 '+'\x1B[0m');t.scrollToBottom();},x);
-            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'/____________\\                '+'\x1B[0m');t.scrollToBottom();},x);
-            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'                 /______________\\               '+'\x1B[0m');t.scrollToBottom();},x);
-            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'                /________________\\              '+'\x1B[0m');t.scrollToBottom();},x);
-            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'               /__________________\\             '+'\x1B[0m');t.scrollToBottom();},x);
-            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'              /__I___I___I___I_____\\            '+'\x1B[0m');t.scrollToBottom();},x);
-            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'             /_I___I___I___I___I____\\           '+'\x1B[0m');t.scrollToBottom();},x);
+            //editor
+            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'                       /\\    '+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'                      /  \\   '+'\x1B[0m');t.scrollToBottom();},x);              
+            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'                     /    \\  '+'\x1B[0m');t.scrollToBottom();},x);       
+            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'                    / <()> \\ '+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'                   /________\\'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'                  /__________\\                 '+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'                 /____________\\                '+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'                /______________\\               '+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'               /________________\\              '+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'              /__________________\\             '+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'             /__I___I___I___I_____\\            '+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+'            /_I___I___I___I___I____\\           '+'\x1B[0m');t.scrollToBottom();},x);
             x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+''+'\x1B[0m');t.scrollToBottom();},x);
             x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+''+'\x1B[0m');t.scrollToBottom();},x);
             x=x+500;setTimeout(function(){_vm.host='bastet';t.scrollToBottom();t.writeln('\x1B[1;30;103m'+''+'\x1B[0m');t.scrollToBottom();},x);
@@ -3650,6 +3645,9 @@ GTM>
             },
             w: function(a) {
               this.term.write('\r\n' + a);
+            },
+            porocessNotes: function(){
+              window['term2'].write(this.editor);
             },
             xtermLoad: function() {
               this.xtermBoot();

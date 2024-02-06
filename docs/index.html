@@ -3778,20 +3778,6 @@ GTM>
             xtermInitialize: function() {},
             xtermBoot: function() {
               this.termExists = true;
-              /*
-              let _vm=this;
-              let fontsize=22;
-              t.options.fontSize = 22;
-            if (_vm.$q.screen.lt.md){
-              fontsize = 14;
-            } 
-            if (_vm.$q.screen.lt.sm){
-              fontsize= 8;
-            } 
-            if (_vm.$q.screen.gt.md){
-              fontsize= 22;
-            } 
-            */
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
@@ -3827,23 +3813,23 @@ GTM>
             xtermciLoad: function() {
               let _vm = this;
               setTimeout(function() {
-                let term2;
-                if (typeof window['term2'] === 'undefined') {
-term2 = window['term2'] || new Terminal();
-window['term2'] = term2;
-                } else {
-term2 = window['term2'];
-                }
-                if (_vm.mtabsbooted === false) {
-term2.open(document.getElementById('terminalii'));
-term2.write(window[_vm.mtabs].join('\r\n'));
-term2.focus();
-_vm.mscreenboot[_vm.mtabs] = true;
-                } else {
-term2.clear()
-term2.write(window[_vm.mtabs].join('\r\n'));
-term2.focus();
-_vm.mtabsbooted = true;
+                      let term2;
+                      if (typeof window['term2'] === 'undefined') {
+                      term2 = window['term2'] || new Terminal();
+                      window['term2'] = term2;
+                                      } else {
+                      term2 = window['term2'];
+                                      }
+                                      if (_vm.mtabsbooted === false) {
+                      term2.open(document.getElementById('terminalii'));
+                      term2.write(window[_vm.mtabs].join('\r\n'));
+                      term2.focus();
+                      _vm.mscreenboot[_vm.mtabs] = true;
+                                      } else {
+                      term2.clear()
+                      term2.write(window[_vm.mtabs].join('\r\n'));
+                      term2.focus();
+                      _vm.mtabsbooted = true;
                 }
               }, 1000)
             },
@@ -3877,8 +3863,7 @@ _vm.mtabsbooted = true;
             },
             startSessionI: function(){
               let _vm = this;
-              let t=['window'].term2.writeln;
-              t('\n\r\n\tsession I\n\r\n\r$p (pronounced dollar P)',function(){
+              ['window'].term2.writeln('\n\r\n\tsession I\n\r\n\r$p (pronounced dollar P)',function(){
                   _vm.sessionIdialog = true;
               })
             }

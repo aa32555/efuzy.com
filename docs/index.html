@@ -151,11 +151,7 @@
             <q-card-section>
              <div id="terminalii" class="flex flex-center q-pa-sm q-gutter-sm" style="overflow:hidden;margin:0 auto"></div>
               <div class="flex-center justify-around" >
-                <q-input ref="input" filled type="textarea" v-model="ti2"></q-input>
-                <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term2'].write(ti2)"></q-btn>
-                <q-btn dense flat round class="q-pa-sm" label="writeln" @click="window['term2'].writeln(ti2)"></q-btn>
-                <q-btn dense flat round class="q-pa-sm" label="focus" @click="window['term2'].focus()"></q-btn>
-                <q-btn dense flat round class="q-pa-sm" label="clear" @click="window['term2'].clear()"></q-btn>
+                <q-btn dense flat round class="q-pa-sm" label="write" @click="window['term2'].write(editor)"></q-btn>
               </div>
             </q-card-section>
             <q-card-section>
@@ -3379,6 +3375,7 @@ GTM>
           el: '#q-app',
           data: function() {
             return {
+              editor:'',
               splitterModel:50,
               showsd:true,
               bgn:2,

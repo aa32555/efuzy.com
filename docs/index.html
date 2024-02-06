@@ -3596,6 +3596,7 @@ GTM>
             xtermInitialize: function() {},
             xtermBoot: function() {
               this.termExists = true;
+              /*
               let _vm=this;
               let fontsize=22;
               t.options.fontSize = 22;
@@ -3608,10 +3609,11 @@ GTM>
             if (_vm.$q.screen.gt.md){
               fontsize= 22;
             } 
+            */
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:fontsize,
+                fontSize:22,
                 //cols:20,
                 //row:40,
                 allowTransparency:true,

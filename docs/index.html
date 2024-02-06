@@ -129,13 +129,13 @@ bookAppointment(D,O)
         ( host==='joshua'?'2': host==='bastet'?'3':'1')) +'c'">
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
             <q-item-section side>
-              <q-avatar square size="130px" v-if="host==='joshua'">
+              <q-avatar square size="150px" v-if="host==='joshua'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png">
               </q-avatar>
-              <q-avatar square size="130px" v-if="host==='ahmed'">
+              <q-avatar square size="150px" v-if="host==='ahmed'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/155005073.jpg">
               </q-avatar>
-              <q-avatar square size="130px" v-if="host==='bastet'">
+              <q-avatar square size="150px" v-if="host==='bastet'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png">
               </q-avatar>
               <q-spinner-dots size="3rem" style="color:white;background-color: black;" v-show="showsd"></q-spinner-dots>
@@ -145,6 +145,26 @@ bookAppointment(D,O)
         </q-card>
         
       </div>
+<!--
+
+********************************************************
+-->
+
+
+
+<q-dialog v-model="imgdialog" :maximized="true" transition-show="slide-up" transition-hide="slide-down" >
+  <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
+      <q-img :src="modalimg" :ratio="16/9" ></q-img>
+     <q-btn label="OK" @click="imgdialog=false">
+     </q-btn>
+  </q-card>
+</q-dialog>
+
+<!--
+
+********************************************************
+-->
+
 
 <q-dialog v-model="sessionIdialog" :maximized="true" transition-show="slide-up" transition-hide="slide-down" >
   <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
@@ -3494,6 +3514,8 @@ GTM>
           el: '#q-app',
           data: function() {
             return {
+              modalimg:'',
+              imgdialog:false,
               sessionIsteppermodel:1,
               sessionIdialog:false,
               editor:'',
@@ -3653,10 +3675,10 @@ GTM>
             let bgn = function(){
              return x=x+(_vm.ttime()*750);
             }
-           setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[107;97m'+ 'hello...!!!!!!!!                              ' +'\x1B[0m');t.focus();;},x);
-bgn();setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[107;97m'+ '....is anyone there?!!!!                      ' +'\x1B[0m');t.focus();},x);
-bgn();setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[107;97m'+ '                          اي حد هنا!!! ... الو' +'\x1B[0m');t.focus();;},x);
-bgn();setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[107;97m'+  'I need help!!!!!!!!!!!!                      ' +'\x1B[0m');t.focus();;},x);
+bgn();setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[107;30m'+ 'hello...!!!!!!!!                              ' +'\x1B[0m');t.focus();;},x);
+bgn();setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[107;30m'+ '....is anyone there?!!!!                      ' +'\x1B[0m');t.focus();},x);
+bgn();setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[107;30m'+ '                          اي حد هنا!!! ... الو' +'\x1B[0m');t.focus();;},x);
+bgn();setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[107;30m'+  'I need help!!!!!!!!!!!!                      ' +'\x1B[0m');t.focus();;},x);
 bgn();setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[1;30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ '+'\x1B[0m');},x);
 bgn();setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[1;30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ     ɑ ɑ ɑ ɑ ɑ '+'\x1B[0m');},x);
 bgn();setTimeout(function(){_vm.host='joshua';t.scrollToBottom();t.writeln('\x1B[1;30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ '+'\x1B[0m');},x);
@@ -3843,11 +3865,8 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
               return (this.currentGuest+' is typing...')
             },
             limage: function(img){
-              Quasar.plugins.dialog({
-                  title: ' ',
-                  message: '<q-img src="'+img+'" :ratio="16/9" ></q-img>',
-                  html: true
-                  })
+              this.modalimg = img;
+              this.imgdialog = true;
             }
           }
         })

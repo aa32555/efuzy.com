@@ -11,6 +11,27 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com      #
 ###################################################################
+bookAppointment(D,O)
+	S OR=(D("data","override")="true")
+	S ERROR=0 D verifyAppointment   
+	S O("data","message")="GRANDTOTAL MATCH!"
+	;
+	N APP M APP=D("data","appointment")
+	N APPS,WARN S WARN=0 D saveAppointment(.APP,"",.ERROR,.WARN,OR)
+	I ERROR S O("data","status")="error",O("data","message")="Appointment did not save, an error occured!"
+	I WARN,'ERROR S O("data","status")="warn",O("data","message")=WARN("MESSAGE") Q
+	I 'WARN,'ERROR S O("data","status")="booked" D
+	. S NDATE=APP("date")
+	. S NTIME=APP("time")
+	. S NSTAFF=@%G@("STAFF","DATA",APP("services",1,"staff","id"),"name")
+	. D Notify^FCM("Appointment booked by staff: "_NDATE_" "_NTIME_" with "_NSTAFF,"URL","Appointment Notifications")
+	Q
+       <q-img
+          src="https://picsum.photos/500/300"
+          :ratio="16/9"
+        />
+        https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png
+        
 -->
 <!DOCTYPE html>
 <html>

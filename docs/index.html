@@ -10,7 +10,7 @@
 #            ( I OWN the DOMAIN @ 12 ELK ST)     #
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com      #
-###################################################################=c
+####################################################################
 -->
 <!DOCTYPE html>
 <html>
@@ -91,10 +91,10 @@
     <div id="q-app" class="flex fit flex-center">
       <div class="full-width" style="width:100%;">
         <q-tabs v-show="showaa1" v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
-          <q-tab class="bg-black"  style="color:#00ff41" name="learnm" label="learn MUMPS (M) by Order of Predator God" @click="learnm"></q-tab>
-          <q-tab v-show="false" class="bg-black text-red" name="learnmpg" label="(M) Full Guide" @click="window.open('https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M%20Programmers%20Guide.pdf','_blank')"></q-tab>
+          <q-tab class="bg-black text-red" name="learnm" label="learn MUMPS (M)" @click="learnm"></q-tab>
+          <q-tab class="bg-black text-red" name="learnmpg" label="(M) Full Guide" @click="window.open('https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M%20Programmers%20Guide.pdf','_blank')"></q-tab>
           <q-space></q-space>
-          <q-tab v-show="false" class="bg-black text-red" name="mystory" label="my story" @click="mystorydialog=true"></q-tab>
+          <q-tab class="bg-black text-red" name="mystory" label="my story" @click="mystorydialog=true"></q-tab>
           <q-tab name="repo" @click="repo" label="Repo"></q-tab>
           <q-tab name="li" @click="li" label="LinkedIn"></q-tab>
           <q-tab name="youtube" label="youtube" @click="youtube"></q-tab>
@@ -103,9 +103,7 @@
         </q-tabs>
       </div>
       <div>
-        <q-card :class="'comic'+
-        ( host==='ahmed'?'1':
-        ( host==='joshua'?'2': host==='bastet'?'3':'1')) +'c'">
+        <q-card :class="'comic'+ (host==='ahmed'?'1':(host==='joshua'?'2':host==='bastet'?'3':'1')) +'c'">
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
             <q-item-section side>
               <q-avatar square size="130px" v-if="host==='joshua'">
@@ -124,58 +122,8 @@
         </q-card>
         
       </div>
-     
       <q-dialog v-model="learnmdialog" persistent :maximized="maximizedToggle" transition-show="slide-up" transition-hide="slide-down">
         <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
-          <q-bar>
-            <q-space></q-space>
-            <q-btn dense flat icon="minimize" @click="maximizedToggle = false" :disable="!maximizedToggle">
-              <q-tooltip :disabled="maximizedToggle">Minimize</q-tooltip>
-            </q-btn>
-            <q-btn dense flat icon="crop_square" @click="maximizedToggle = true" :disable="maximizedToggle">
-              <q-tooltip disabled="!maximizedToggle">Maximize</q-tooltip>
-            </q-btn>
-            <q-btn dense flat icon="close" @click="learnmdialog = false"></q-btn>
-          </q-bar>
-          <q-card-section class="q-pt-none">
-            <q-tabs v-model="mtabs" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
-              <q-tab class="bg-black text-red" name="zch1" label="Strings(CH1)"></q-tab>
-              <q-space></q-space>
-              <q-tab name="zp" label="$PIECE ($P)" @click="processmtabs"></q-tab>
-              <q-tab name="zl" label="$LENGTH ($L)" @click="processmtabs"></q-tab>
-              <q-tab name="ze" label="$EXTRACT ($E)" @click="processmtabs"></q-tab>
-              <q-tab name="zc" label="$CHAR ($C)" @click="processmtabs"></q-tab>
-              <q-tab name="za" label="$ASCII ($A)" @click="processmtabs"></q-tab>
-            </q-tabs>
-            <q-card-section v-show="mtabs==='zp'">
-              <div class="text-h5">Let's learn MUMPS (M) for a spaceship</div>
-              <div class="text-h6">No Strings Attached </div>
-              <span class="bg-black text-red text-h6">&nbsp;&nbsp;$PIECE ($P)</span>
-                The $PIECE() function returns a substring delimited by a specified string delimiter,made up of
-                one or more characters. For more information and usage examples, refer to “$Piece()” (page 230).
-            </q-card-section>
-            <q-card-section v-show="mtabs==='zl'">
-              <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
-              <div class="text-h4">No Strings Attached </div>
-              <span class="bg-black text-red text-h4">&nbsp;&nbsp;$LENGTH ($L)</span>
-            </q-card-section>
-            <q-card-section v-show="mtabs==='ze'">
-              <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
-              <div class="text-h4">No Strings Attached </div>
-              <span class="bg-black text-red text-h4">&nbsp;&nbsp;$EXTRACT ($E)</span>
-            </q-card-section>
-            <q-card-section v-show="mtabs==='zc'">
-              <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
-              <div class="text-h4">No Strings Attached </div>
-              <span class="bg-black text-red text-h4">&nbsp;&nbsp;$CHAR ($C)</span>
-            </q-card-section>
-            <q-card-section v-show="mtabs==='za'">
-              <div class="text-h3">Let's learn MUMPS (M) for a spaceship lll</div>
-              <div class="text-h4">No Strings Attached </div>
-              <span class="bg-black text-red text-h4">&nbsp;&nbsp;$ASCII ($A)</span>
-            </q-card-section>
-            <br />
-            <br />
             <q-card-section>
              <div id="terminalii" class="flex flex-center q-pa-sm q-gutter-sm" style="overflow:hidden;margin:0 auto"></div>
               <div class="flex-center justify-around">
@@ -332,8 +280,7 @@ Revision V6.0-001 21 March 2013 • Added the descriptions of “$ZWRite()” (p
 • Added information about TRIGGER and
 ZINTR return values for $STACK(lvl) in
 “$STack()” (page 237).
-
-<h5 id="functions"> Functions</h5>
+Functions
 214
 This chapter describes M language Intrinsic Functions implemented in GT.M. Traditional string processing functions
 have parallel functions that start with the letter "z". The parallel functions extend the byte-oriented functionality of their
@@ -3431,7 +3378,7 @@ GTM>
               messageDirection: true,
               showReply: false,
               termiibooted: false,
-              showaa1:true,
+              showaa1:false,
               rharr: [
               '𓇋𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
               '𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
@@ -3525,9 +3472,9 @@ GTM>
             let t = window['term'];
             let a;
             let que = _vm.bsmnharr;
-            
+            t.options.fontSize = 18;
            // t.options.scrollLines=1000;
-            //t.options.scrollPages=1000
+           // t.options.scrollPages=1000
             let x = 1000;
            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ 'hello...!!!!!!!!' +' \x1B[0m');t.focus();;},x);
            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ '....is anyone there?!!!!' +' \x1B[0m');t.focus();},x);
@@ -3575,29 +3522,46 @@ GTM>
             x=x+2500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ '  translation:    this time it\'s very different' +' \x1B[0m');t.focus();;},x);
             x=x+2500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ '  translation:    I\'m scared for the first time' +' \x1B[0m');t.focus();;},x);
             //
-            x=x+3500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ 'آْه' +' \x1B[0m');t.focus();;},x);
-            x=x+3000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ 'المرة دى مختلفة خالس' +' \x1B[0m');t.focus();;},x);
-            x=x+3500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ 'لاول مرة وانا خايف' +' \x1B[0m');t.focus();;},x);
-            //
-            x=x+2500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ '  translation:    Yess' +' \x1B[0m');t.focus();;},x);
-            x=x+2500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ '  translation:    this time it\'s very different' +' \x1B[0m');t.focus();;},x);
-            x=x+2500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ '  translation:    I\'m scared for the first time' +' \x1B[0m');t.focus();;},x);
-            //
-            x=x+3500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ 'عازيني اتعلم لغة حاسوب آلي' +' \x1B[0m');t.focus();;},x);
-            x=x+3000;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ 'مؤمنة كاءناء  '+' \x1B[0m');t.focus();;},x);
-            //
-            x=x+2500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ '  translation:    They want me to learn.' +' \x1B[0m');t.focus();;},x);
-            x=x+2500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ '  translation:    a computer programming language' +' \x1B[0m');t.focus();;},x);
-            x=x+2500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+ '  translation:    that is protected by Predator God.' +' \x1B[0m');t.focus();;},x);
-            //
-            //
             x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
             x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);              
             x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);       
             x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
-     
-        
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);              
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);       
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            x=x+500;setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[97m'+'...................................................................'+'\x1B[0m');t.scrollToBottom();},x);
+            // end
             x=x+5000;setTimeout(function(){t.scrollToBottom();t.focus();t.clear();;_vm.bgs=_vm.bg1;_vm.host='';_vm.showaa1=true;_vm.showsd=false;},x);
+
+            /*
+ \_/    \_/ \_/________\_/ \_/    \_/
+ __________________/__I___I___\________________
+/_I___I___I__\
+                 /I___I___I___I_\
+                /___I___I___I___I\
+               /__I___I___I___I___\
+              /_I___I___I___I___I__\
+             /I___I___I___I___I___I_\
+            /___I___I___I___I___I___I\
+           /__I___I___I___I___I___I___\
+          /_I___I___I___I___I___I___I__\
+*/   
           },
           methods: {
             learnm: function() {
@@ -3625,24 +3589,10 @@ GTM>
             xtermInitialize: function() {},
             xtermBoot: function() {
               this.termExists = true;
-              let _vm=this;
-              let fontsize=22;
-              t.options.fontSize = 22;
-            if (_vm.$q.screen.lt.md){
-              fontsize = 14;
-            } 
-            if (_vm.$q.screen.lt.sm){
-              fontsize= 8;
-            } 
-            if (_vm.$q.screen.gt.md){
-              fontsize= 22;
-            } 
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:fontsize,
-                //cols:20,
-                //row:40,
+                fontSize:18,
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'block',

@@ -3779,29 +3779,20 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
             porocessNotes: function(){
               window['term2'].write(this.editor);
             },//'\x1B[1;30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ '+'\x1B[0m'
+              
             startSessionI: function(){
-              setTimeout(function(){
-              window['term2'].clear();
-              window['term2'].focus();
-              },0)
+              let ta = window['term2'].clear;
+              let tb = window['term2'].focus;
+              let tc = window['term2'].scrollToBottom;
+              let td = window['term2'].writeln;
+              let te = window['term2'].write;
               let _vm = this;
-              window['term2'].writeln('\x1B[30;101m'   + '            Start Session I is about to start              '+'\x1B[0m')
-            setTimeout(function(){
-              window['term2'].writeln('\x1B[30;101m'   + '            predator God wants us to start w/ $p           '+'\x1B[0m')
-              window['term2'].writeln('\x1B[30;101m'   + '            something MAGICAL is going to happen           '+'\x1B[0m')
-             
-              window['term2'].writeln('\x1B[30;101m'   + '                                                           '+'\x1B[0m')
-              window['term2'].writeln('\x1B[1;30;103m'+'                       THE BUTTON                          '+'\x1B[0m')
-              window['term2'].writeln('\x1B[30;101m'   + '...below                                                   '+'\x1B[0m')
-              window['term2'].writeln('\x1B[30;101m'   + '                                                     '+'\x1B[0m')
-            },0)
-            /*
-           setTimeout(function(){
-             window['term2'].writeln('\x1B[1;30;101m'+ '                         NOW                          '+'\x1B[0m',function(){
-               
-             })
-            },10000)
-            */
+              let x = 0;
+              let bgn = function(){return x=x+(_vm.ttime()*250);};
+              setTimeout(function(){ta();tb();tc();},500)
+              bgn();setTimeout(function(){t();td('\x1B[107;30m'   +  'aaaaaa                              ' +'\x1B[0m');tb();},x);
+              bgn();setTimeout(function(){t();td('\x1B[107;30m'   +  'aaaaaa                              ' +'\x1B[0m');tb();},x);
+              bgn();setTimeout(function(){t();td('\x1B[107;30m'   +  'aaaaaa                              ' +'\x1B[0m');tb();},x);
             },
             xtermLoad: function() {
               this.xtermBoot();

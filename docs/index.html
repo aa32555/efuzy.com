@@ -3678,7 +3678,7 @@ GTM>
             let bgn = function(){
              return x=x+(_vm.ttime()*250);
             }
-bgn();setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[107;30m'   +  'hello...!!!!!!!!                                                         ' +'\x1B[0m');t.focus();;},x);
+bgn();setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[107;30m'   +  'hello...!!!!!!!!                                                                  ' +'\x1B[0m');t.focus();;},x);
 bgn();setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[107;30m'   +  '....is anyone there?!!!!                      ' +'\x1B[0m');t.focus();},x);
 bgn();setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[107;30m'   +  '                          اي حد هنا!!! ... الو' +'\x1B[0m');t.focus();;},x);
 bgn();setTimeout(function(){_vm.host='ahmed';t.scrollToBottom();t.writeln('\x1B[107;30m'   +  'I need help!!!!!!!!!!!!                       ' +'\x1B[0m');t.focus();;},x);
@@ -3788,11 +3788,10 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
               let te = window['term2'].write;
               let _vm = this;
               let x = 0;
-              let bgn = function(){return x=x+(_vm.ttime()*250);};
               setTimeout(function(){ta();tb();tc();},500)
-              bgn();setTimeout(function(){t();td('\x1B[107;30m'   +  'aaaaaa                              ' +'\x1B[0m');tb();},x);
-              bgn();setTimeout(function(){t();td('\x1B[107;30m'   +  'aaaaaa                              ' +'\x1B[0m');tb();},x);
-              bgn();setTimeout(function(){t();td('\x1B[107;30m'   +  'aaaaaa                              ' +'\x1B[0m');tb();},x);
+              x=x+(_vm.ttime()*250);;setTimeout(function(){t();td('\x1B[107;30m'   +  'aaaaaa                              ' +'\x1B[0m');tb();},x);
+              x=x+(_vm.ttime()*250);;setTimeout(function(){t();td('\x1B[107;30m'   +  'aaaaaa                              ' +'\x1B[0m');tb();},x);
+              x=x+(_vm.ttime()*250);;setTimeout(function(){t();td('\x1B[107;30m'   +  'aaaaaa                              ' +'\x1B[0m');tb();},x);
             },
             xtermLoad: function() {
               this.xtermBoot();

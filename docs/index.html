@@ -3783,12 +3783,16 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
               window['term2'].clear();
               window['term2'].focus();
               let _vm = this;
-              window['term2'].writeln('\x1B[1;30;101m'+ '         Start Session I is about to start           '+'\x1B[0m')
+              window['term2'].writeln('\x1B[30;101m'   + '         Start Session I is about to start           '+'\x1B[0m')
             setTimeout(function(){
-              window['term2'].writeln('\x1B[1;30;101m'+ '         predator God wants us to start w/ $p        '+'\x1B[0m')
-              window['term2'].writeln('\x1B[1;30;101m'+ '         something MAGICAL is going to happen        '+'\x1B[0m')
-              window['term2'].writeln('\x1B[1;30;101m'+ '         if you click [1;30;103mTHE BUTTON] below.              '+'\x1B[0m')
-            },3000)
+              window['term2'].writeln('\x1B[30;101m'   + '         predator God wants us to start w/ $p        '+'\x1B[0m')
+              window['term2'].writeln('\x1B[30;101m'   + '         something MAGICAL is going to happen        '+'\x1B[0m')
+             
+              window['term2'].writeln('\x1B[30;101m'   + '                                                     '+'\x1B[0m')
+              window['term2'].writeln('\x1B[[1;30;103m'+'                     THE BUTTON                       '+'\x1B[0m')
+              window['term2'].writeln('\x1B[30;101m'   + '...below                                             '+'\x1B[0m')
+              window['term2'].writeln('\x1B[30;101m'   + '                                                     '+'\x1B[0m')
+            },0)
             /*
            setTimeout(function(){
              window['term2'].writeln('\x1B[1;30;101m'+ '                         NOW                          '+'\x1B[0m',function(){

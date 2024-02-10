@@ -3741,8 +3741,8 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
                 cursorBlink:true,
                 convertEol:false,
                 fontSize:26,
-               // cols:80,
-               // row:80,
+                cols:60,
+                row:640,
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -3757,7 +3757,7 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
             },
             porocessNotes: function(){
               window['term2'].write(this.editor);
-            },//'\x1B[1;30;101m'+  'ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ   ɑ ɑ   ɑ ɑ   ɑ ɑ '+'\x1B[0m'
+            },
               
             startSessionI: function(){
               let ta = window['term2'].clear;
@@ -3767,21 +3767,18 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
               let te = window['term2'].write;
               let _vm = this;
               let x = 0;
-              setTimeout(function(){ta();tb();tc();},500)
-              x=x+(_vm.ttime()*250);;setTimeout(function(){t();td('\x1B[107;30m'   +  'aaaaaa                              ' +'\x1B[0m');tb();},x);
-              x=x+(_vm.ttime()*250);;setTimeout(function(){t();td('\x1B[107;30m'   +  'aaaaaa                              ' +'\x1B[0m');tb();},x);
-              x=x+(_vm.ttime()*250);;setTimeout(function(){t();td('\x1B[107;30m'   +  'aaaaaa                              ' +'\x1B[0m');tb();},x);
+
+              x=x+(_vm.ttime()*250);setTimeout(function(){td('\x1B[30;101m'     + '            Start Session I is about to start             '+'\x1B[0m');},x);
+              x=x+(_vm.ttime()*250);setTimeout(function(){td('\x1B[30;101m'     + '            predator God wants us to start w/ $p          '+'\x1B[0m');},x);
+              x=x+(_vm.ttime()*250);setTimeout(function(){td('\x1B[30;101m'     + '            something MAGICAL is going to happen          '+'\x1B[0m');},x);
+              x=x+(_vm.ttime()*250);setTimeout(function(){td('\x1B[30;101m'     + '                        if you press                      '+'\x1B[0m');},x);
+              x=x+(_vm.ttime()*250);setTimeout(function(){td('\x1B[1;30;103m'   + '                       THE BUTTON                         '+'\x1B[0m');},x);
+              x=x+(_vm.ttime()*250);setTimeout(function(){td('\x1B[30;101m'     + ' ...below                                                 '+'\x1B[0m');},x);
+              x=x+(_vm.ttime()*250);setTimeout(function(){td('\x1B[30;101m'     + '(Press any key to continue)                               '+'\x1B[0m');},x);
+
             },
             xtermLoad: function() {
               this.xtermBoot();
-            },
-            processmtabs: function() {
-                window['term2'].clear();
-                setTinmeout(function(){
-              window['term2'].write(window[this.mtabs].join('\r\n'));
-
-               setTinmeout(function(){window['term2'].focus();});
-                })       
             },
             xtermciLoad: function() {
               let _vm = this;
@@ -3790,7 +3787,7 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
                 if (typeof window['term2'] === 'undefined') {
                   term2 = window['term2'] || new Terminal({
                 cursorBlink:true,
-                convertEol:false,
+                convertEol:true,
                 fontSize:26,
                 cols:60,
                 row:640,
@@ -3798,22 +3795,10 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
               });
-                  window['term2'] = term2;
-                                  } else {
+                  window['term2'] = term2;} else {
                   term2 = window['term2'];
-                                  }
-                                  if (_vm.mtabsbooted === false) {
-                  term2.open(document.getElementById('terminalii'));
-                  term2.write(window[_vm.mtabs].join('\r\n'));
-                  term2.focus();
-                  _vm.mscreenboot[_vm.mtabs] = true;
-                                  } else {
-                  term2.clear()
-                  term2.write(window[_vm.mtabs].join('\r\n'));
-                  term2.focus();
-                  _vm.mtabsbooted = true;
-                }
-              })
+                                          }
+                  })
             },
             li: function() {
               window.open('https://www.linkedin.com/in/ahmed-abdelrazek-16b44b187/', '_blank');

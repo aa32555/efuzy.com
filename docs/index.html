@@ -3720,12 +3720,12 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
               let _vm = this;
               setTimeout(function(){
               _vm.learnmdialog = true
-                },100)
+                },0)
             },
             learnmpg: function() {
               let _vm = this;
+              _vm.learnmpgdialog = true
               setTimeout(function(){
-                _vm.learnmpgdialog = true
                 _vm.startSessionI();
               },500)
              
@@ -3785,7 +3785,8 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
               });
                   window['term2'] = term2;} else {
                   term2 = window['term2'];
-                                          }
+                  term2.open(document.getElementById('terminalii'));
+                }
                  
                   },500)
             },

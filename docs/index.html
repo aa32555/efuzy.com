@@ -3649,6 +3649,9 @@ GTM>
           mounted: async function() {
          let _vm = this;
             _vm.xtermLoad();
+           setTimeout(function(){
+            _vm.xtermciLoad();
+           },500) 
             _vm.$q.dark.set(true);
             let t = window['term'];
             let a;        
@@ -3717,8 +3720,7 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
               let _vm = this;
               setTimeout(function(){
               _vm.learnmdialog = true
-              _vm.xtermciLoad();
-                },500)
+                },100)
             },
             learnmpg: function() {
               let _vm = this;

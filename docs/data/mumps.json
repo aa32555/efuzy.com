@@ -1,6 +1,4 @@
-{
-    readme:['Chapter 7. Functions'
-    ,'Revision History'
+{"readme":['Chapter 7. Functions','Revision History'
 ,'Revision V7.1-003 23 November 2023 • In “$ZPEEK()” (page 274), Revise the Note''
 ,'on selection among multiple replication'
 ,'journal pools'

@@ -1,16 +1,17 @@
 <!--
 ####################################################################
 # Copyright (c) 2024 efuzy.com and/or its subsidiaries.            #
-# All rights reserved.         #
-#            #
+# All rights reserved.                                             #
+#                                                                  #
 #   This source code contains the intellectual property            #
 #   of its copyright holder(s), and is made available              #
 #   under a license.  If you do not know the terms of              #
 #   the license, please stop and do not read further.              #
-#            ( I OWN the DOMAIN @ 12 ELK ST)     #
+#            ( I OWN the DOMAIN @ 12 ELK ST)                       #
 # aa3255@gmail.com ( identity is stolen no access to email         #
-# use aa3255@tutamail.com      #
-###################################################################
+# use aa3255@tutamail.com                                          #
+####################################################################
+AA
 -->
 <!DOCTYPE html>
 <html>
@@ -731,6 +732,37 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
             limage: function(img){
               this.modalimg = img;
               this.imgdialog = true;
+               axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/kyoto.json')
+                    .then(function (response) {
+                      // handle success
+                      console.log('raw'+response);
+                      try{
+                        console.log('raw'+ atob(response));
+                      } catch (err){
+                        console.log(err)
+                      }
+
+
+                    })
+                    .catch(function (error) {
+                      // handle error
+                      console.log(error);
+                    })
+                    .finally(function () {
+                      // always executed
+                    });
+                    /*
+                        // Define the string
+                        var string = 'Hello World!';
+
+                        // Encode the String
+                        var encodedString = btoa(string);
+                        console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+
+                        // Decode the String
+                        var decodedString = atob(encodedString);
+                        console.log(decodedString); // Outputs: "Hello World!"
+                    */
             }
           }
         })

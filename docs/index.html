@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 ####################################################################
-AA
+AAaa
 -->
 <!DOCTYPE html>
 <html>
@@ -735,9 +735,9 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
                axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/kyoto.json')
                     .then(function (response) {
                       // handle success
-                      console.log('raw'+response);
+                      console.log('raw'+response.data);
                       try{
-                        console.log('raw'+ atob(response));
+                        console.log('raw'+ atob(response.data.data));
                       } catch (err){
                         console.log(err)
                       }

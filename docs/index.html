@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 ####################################################################
-AAaa
+a7
 -->
 <!DOCTYPE html>
 <html>
@@ -370,6 +370,19 @@ AAaa
       <script>
   new Vue({
           el: '#q-app',
+          created: function() {
+            axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/efuzy.json')
+                    .then(function (response) {
+                   
+                      console.log('raw'+response.data.data.token1);
+                    
+                    })
+                    .catch(function (error) {
+                      // handle error
+                      console.log(error);
+                    })
+
+          },
           data: function() {
             return {
               modalimg:'',

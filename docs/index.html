@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 ####################################################################
-a7
+a88
 -->
 <!DOCTYPE html>
 <html>
@@ -112,13 +112,13 @@ a7
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
             <q-item-section side>
               <q-avatar  size="230px" v-if="host==='joshua'">
-                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/Joshua.png">
+                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/Joshua.png">
               </q-avatar>
               <q-avatar  size="230px" v-if="host==='ahmed'">
-                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/155005073.jpg">
+                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/155005073.jpg">
               </q-avatar>
               <q-avatar  size="230px" v-if="host==='bastet'">
-                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bastet.png">
+                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/bastet.png">
               </q-avatar>
               <q-spinner-dots size="3rem" style="color:white;background-color: black;" v-show="showsd"></q-spinner-dots>
             </q-item-section>
@@ -371,11 +371,30 @@ a7
   new Vue({
           el: '#q-app',
           created: function() {
+            let _vm=this;
             axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/efuzy.json')
                     .then(function (response) {
-                   
-                      console.log('raw'+response.data.data.token1);
-                    
+                      //
+                      _vm.bgc = response.data.data.token1;
+                      _vm.bg1 = response.data.data.token2;
+                      _vm.bg2 = response.data.data.token3;
+                      _vm.bg3 = response.data.data.token4;
+                      //
+                      _vm.bsmnharr = response.data.data.token6;
+                      _vm.yctarr = response.data.data.token7;
+                      _vm.xx1 = response.data.data.token8;
+                      _vm.xx2 = response.data.data.token9;
+                      _vm.xx3 = response.data.data.token10;
+                      _vm.xx4 = response.data.data.token11;
+                      _vm.rharr = response.data.data.token5;
+                      //
+                      _vm.token12 = response.data.data.token12;
+                      _vm.token13 = response.data.data.token13;
+                      _vm.token14 = response.data.data.token14;
+                      _vm.token15 = response.data.data.token15;
+                      _vm.token16 = response.data.data.token16;
+                      _vm.token17 = response.data.data.token17;
+                      //
                     })
                     .catch(function (error) {
                       // handle error
@@ -385,6 +404,12 @@ a7
           },
           data: function() {
             return {
+              token12:'',
+              token13:'',
+              token14:'',
+              token15:'',
+              token16:'',
+              token17:'',
               modalimg:'',
               imgdialog:false,
               sessionIsteppermodel:1,
@@ -394,11 +419,11 @@ a7
               showsd:true,
               bgn:2,
               hostc:'',
-              bgc:'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b2.png',
+              bgc:'', 
               bgs:'',
-              bg1:'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png',
-              bg2:'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b2.png',
-              bg3:'https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg',
+              bg1:'', 
+              bg2:'', 
+              bg3:'', 
               host:'ahmed',
               sd:true,
               showjoshua:false,
@@ -448,90 +473,13 @@ a7
               showReply: false,
               termiibooted: false,
               showaa1:true,
-              rharr: [
-              '𓇋𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓇋𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓇋𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-             ],
-             bsmnharr: [
-             '𓇋𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓇋𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓇋𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              `Yo, Big Shaq, the one and only\nMan's not hot, never hot\nSkrrat (GottiOnEm), skidi-kat-kat\nBoom`,
-              'Two plus two is four',
-              'Minus one that\'s three, quick maths',
-              'Everyday man\s on the block',
-              'Smoke trees (Ah)',
-              'See your girl in the park',
-              'That girl is a uckers',
-              'When the ting went quack-quack-quack',
-              'You man were ducking',
-              'Hold tight, Asznee',
-              'I said, "Babes,',
-              '𓇋𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓇋𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓇋𓀀𓀁𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              '𓄿𓀅𓀅𓆲𓀀𓇋𓀁𓀅𓀅𓀅𓀀𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅𓄿𓀅𓀅𓀅𓀀𓀁𓇋𓀅𓀀𓇋𓀁𓀅',
-              'There once was a little girl','Who had a crush on a bad, bad boy','But when that bad boy got out of prison','That little girl\'s ass was in big, big trouble',
-                'Daai bra Anies, hy\'s \'n fokken gam bra','Haai! Daai Anies, hy lam innie mang, ja','"Ken sy my nommer?" Xha! Boy, what\'s your number?','Twee ses? Twee sewe? Of is jy \'n ag bra?',
-                'Throw them devilish gang signs in the air',
-                'Start giving it up for little evil me',
-                'My fingers are green \'cause I\'m a mean dope fiend',
-                'I\'m wicked like a mad D.O.G.',
-                'Fresh like a little dark G.O.D.',
-                'Yo-Landi Vi$$er got the hypest flow',
-                'Start talking in tongues whenever I get stoned',
-                'Motherfucking minds get blown',
-                'Every time I rap into the microphone',
-                'My zef accent is very foreign',
-                'When I speak overseas they go "I beg your pardon?"',
-                'You can\'t get me, like Eric Cartman',
-                'Naughty little kitty go "meow"',
-    
-             ],
-             yctarr:[
-                'There once was a little girl','Who had a crush on a bad, bad boy','But when that bad boy got out of prison','That little girl\'s ass was in big, big trouble',
-                'Daai bra Anies, hy\'s \'n fokken gam bra','Haai! Daai Anies, hy lam innie mang, ja','"Ken sy my nommer?" Xha! Boy, what\'s your number?','Twee ses? Twee sewe? Of is jy \'n ag bra?',
-                'Throw them devilish gang signs in the air',
-                'Start giving it up for little evil me',
-                'My fingers are green \'cause I\'m a mean dope fiend',
-                'I\'m wicked like a mad D.O.G.',
-                'Fresh like a little dark G.O.D.',
-                'Yo-Landi Vi$$er got the hypest flow',
-                'Start talking in tongues whenever I get stoned',
-                'Motherfucking minds get blown',
-                'Every time I rap into the microphone',
-                'My zef accent is very foreign',
-                'When I speak overseas they go "I beg your pardon?"',
-                'You can\'t get me, like Eric Cartman',
-                'Naughty little kitty go "meow"',
-              ],
-              xx1:'An alien represented in an 1987 Arnold Movie',
-              xx2:'An Ancient Egiyptian Diety named AMIT, ( As in The first letter of our sacred languages\'s alphabet',
-              xx3:'احمد خالد محمد عبد الرازق حفيد القبطان البكري الله يمسيه بالخير',
-              xx4:'٤٩ אותיות',
-              xx5:'comment dit-on Macron en français',
-              xx6:'cat-woman-named-bastet-meow[4now]',
-              xx7:'Goddess ISIS () Goddess of Love ()',
-              xx8:'George Grodentzik',
-              xx9:'Pornstar (I befriended) that looks like Goerge\'s dauther, but tall and pretty and not a jew',
+              rharr: [],//token5
+             bsmnharr: [],//token6
+             yctarr:[],//token7
+              xx1:''//token8
+              xx2:''//token9,
+              xx3:'',//token10
+              xx4:'',//token11,
             }
           },
           mounted: async function() {
@@ -629,7 +577,7 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:false,
-                fontSize:26,
+                fontSize:23,
                // cols:80,
                // row:80,
                 allowTransparency:true,
@@ -690,9 +638,9 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
                   term2 = window['term2'] || new Terminal({
                 cursorBlink:true,
                 convertEol:false,
-                fontSize:26,
-                cols:60,
-                row:640,
+                fontSize:23,
+                //cols:60,
+                //row:640,
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -715,22 +663,22 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
               }, 1000)
             },
             li: function() {
-              window.open('https://www.linkedin.com/in/ahmed-abdelrazek-16b44b187/', '_blank');
+              window.open(this.token12, '_blank');
             },
             repo: function() {
-              window.open('https://www.github.com/aa32555', '_blank');
+              window.open(this.token13, '_blank');
             },
             insta: function() {
-              window.open('https://www.instagram.com/aa3255/', '_blank');
+              window.open(this.token14, '_blank');
             },
             youtube: function() {
-              window.open('https://www.youtube.com/@asolok', '_blank');
+              window.open(this.token15, '_blank');
             },
             gl: function() {
-              window.open('https://www.gitlab.com/ahmedydb', '_blank');
+              window.open(this.token16, '_blank');
             },
             paypal: function() {
-              window.open('https://paypal.me/asolok?country.x=US&locale.x=en_US', '_blank');
+              window.open(this.token17, '_blank');
             },
             showMessage: function() {
               this.messageNumber = this.messageNumber + 1
@@ -747,10 +695,9 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
               this.imgdialog = true;
                axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/kyoto.json')
                     .then(function (response) {
-                      // handle success
-                      console.log('raw'+response.data);
                       try{
-                        console.log('raw'+ atob(response.data.data));
+                        let audio = new Audio(atob(response.data.data));
+                             audio.play();
                       } catch (err){
                         console.log(err)
                       }
@@ -758,24 +705,10 @@ bgn();setTimeout(function(){_vm.host='';_vm.showsd=false;},x);
 
                     })
                     .catch(function (error) {
-                      // handle error
                       console.log(error);
                     })
                     .finally(function () {
-                      // always executed
                     });
-                    /*
-                        // Define the string
-                        var string = 'Hello World!';
-
-                        // Encode the String
-                        var encodedString = btoa(string);
-                        console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
-
-                        // Decode the String
-                        var decodedString = atob(encodedString);
-                        console.log(decodedString); // Outputs: "Hello World!"
-                    */
             }
           }
         })

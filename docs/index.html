@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 ####################################################################
-a100
+9855
 -->
 <!DOCTYPE html>
 <html>
@@ -370,38 +370,6 @@ a100
       <script>
   new Vue({
           el: '#q-app',
-          created: function() {
-            let _vm=this;
-            axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/efuzy.json')
-                    .then(function (response) {
-                      //
-                      _vm.bgc = response.data.data.token1;
-                      _vm.bg1 = response.data.data.token2;
-                      _vm.bg2 = response.data.data.token3;
-                      _vm.bg3 = response.data.data.token4;
-                      //
-                      _vm.bsmnharr = response.data.data.token6;
-                      _vm.yctarr = response.data.data.token7;
-                      _vm.xx1 = response.data.data.token8;
-                      _vm.xx2 = response.data.data.token9;
-                      _vm.xx3 = response.data.data.token10;
-                      _vm.xx4 = response.data.data.token11;
-                      _vm.rharr = response.data.data.token5;
-                      //
-                      _vm.token12 = response.data.data.token12;
-                      _vm.token13 = response.data.data.token13;
-                      _vm.token14 = response.data.data.token14;
-                      _vm.token15 = response.data.data.token15;
-                      _vm.token16 = response.data.data.token16;
-                      _vm.token17 = response.data.data.token17;
-                      //
-                    })
-                    .catch(function (error) {
-                      // handle error
-                      console.log(error);
-                    })
-
-          },
           data: function() {
             return {
               token12:'',
@@ -484,6 +452,50 @@ a100
           },
           mounted: async function() {
          let _vm = this;
+/***********************************************/
+            axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/efuzy.json')
+                    .then(function (response) {
+                      //
+                      _vm.bgc = response.data.data.token1;
+                      _vm.bg1 = response.data.data.token2;
+                      _vm.bg2 = response.data.data.token3;
+                      _vm.bg3 = response.data.data.token4;
+                      //
+                      _vm.bsmnharr = response.data.data.token6;
+                      _vm.yctarr = response.data.data.token7;
+                      _vm.xx1 = response.data.data.token8;
+                      _vm.xx2 = response.data.data.token9;
+                      _vm.xx3 = response.data.data.token10;
+                      _vm.xx4 = response.data.data.token11;
+                      _vm.rharr = response.data.data.token5;
+                      //
+                      _vm.token12 = response.data.data.token12;
+                      _vm.token13 = response.data.data.token13;
+                      _vm.token14 = response.data.data.token14;
+                      _vm.token15 = response.data.data.token15;
+                      _vm.token16 = response.data.data.token16;
+                      _vm.token17 = response.data.data.token17;
+                      //
+                    })
+                    .catch(function (error) {
+                      // handle error
+                      console.log(error);
+                    })
+/************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             _vm.xtermLoad();
             _vm.$q.dark.set(true);
             let t = window['term'];

@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 ####################################################################
-9855
+9855xxx
 -->
 <!DOCTYPE html>
 <html>
@@ -20,14 +20,14 @@
     <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css">
-    <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/main.css" rel="stylesheet" type="text/css">
+    <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/main.css" rel="stylesheet" type="text/css">
     <style>
 
 
 .bg1 {
       height:100vh !important;
       width:100vw !important;
-      background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png')!important;
+      background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/b1.png')!important;
       background-size: cover!important;
       background-repeat: no-repeat!important;
       
@@ -40,14 +40,14 @@
     }
 
     .comic2c {
-      background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b2.png')!important;
+      background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/datab2.png')!important;
       background-size: cover!important;
       background-repeat: no-repeat!important;
     }
 
 
     .comic3c {
-      background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg')!important;
+      background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/bgd.jpg')!important;
       background-size: cover!important;
       background-repeat: no-repeat!important;
     }
@@ -60,13 +60,13 @@
       .bg-img-1 {
         width: 100vh !important;
         height: 100vw !important;
-        background: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/b1.png') cover;
+        background: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/b1.png') cover;
         background-size: cover;
 
         .bg-img-2 {
         width: 100vh !important;
         height: 100vw !important;
-        background: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/bgd.jpg') cover;
+        background: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/bgd.jpg') cover;
         background-size: cover;
 
         &:before {
@@ -98,11 +98,11 @@
           <q-tab v-show="false" class="bg-black text-red" name="learnmpg" label="(M) Full Guide" @click="window.open('https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M%20Programmers%20Guide.pdf','_blank')"></q-tab>
           <q-space></q-space>
           <q-tab v-show="false" class="bg-black text-red" name="mystory" label="my story" @click="mystorydialog=true"></q-tab>
-          <q-tab name="repo" @click="repo" label="Repo"></q-tab>
-          <q-tab name="li" @click="li" label="LinkedIn"></q-tab>
-          <q-tab name="youtube" label="youtube" @click="youtube"></q-tab>
-          <q-tab name="Instagram" label="Instagram" @click="insta"></q-tab>
-          <q-tab name="paypal" label="Donate (paypal @asolok)" @click="paypal"></q-tab>
+          <q-tab name="repo" @click="repo" label="Repo" no-caps></q-tab>
+          <q-tab name="li" @click="li" label="LinkedIn" no-caps></q-tab>
+          <q-tab name="youtube" label="youtube" @click="youtube" no-caps></q-tab>
+          <q-tab name="Instagram" label="Instagram" @click="insta" no-caps></q-tab>
+          <q-tab name="paypal" label="Donate (paypal @asolok)" no-caps @click="paypal"></q-tab>
         </q-tabs>
       </div>
       <div>
@@ -455,26 +455,27 @@
 /***********************************************/
             axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/efuzy.json')
                     .then(function (response) {
+                      console.log(response).data;
                       //
-                      _vm.bgc = response.data.data.token1;
-                      _vm.bg1 = response.data.data.token2;
-                      _vm.bg2 = response.data.data.token3;
-                      _vm.bg3 = response.data.data.token4;
+                      _vm.bgc = response.data.token1;
+                      _vm.bg1 = response.data.token2;
+                      _vm.bg2 = response.data.token3;
+                      _vm.bg3 = response.data.token4;
                       //
-                      _vm.bsmnharr = response.data.data.token6;
-                      _vm.yctarr = response.data.data.token7;
-                      _vm.xx1 = response.data.data.token8;
-                      _vm.xx2 = response.data.data.token9;
-                      _vm.xx3 = response.data.data.token10;
-                      _vm.xx4 = response.data.data.token11;
-                      _vm.rharr = response.data.data.token5;
+                      _vm.bsmnharr = response.data.token6;
+                      _vm.yctarr = response.data.token7;
+                      _vm.xx1 = response.data.token8;
+                      _vm.xx2 = response.data.token9;
+                      _vm.xx3 = response.data.token10;
+                      _vm.xx4 = response.data.token11;
+                      _vm.rharr = response.data.token5;
                       //
-                      _vm.token12 = response.data.data.token12;
-                      _vm.token13 = response.data.data.token13;
-                      _vm.token14 = response.data.data.token14;
-                      _vm.token15 = response.data.data.token15;
-                      _vm.token16 = response.data.data.token16;
-                      _vm.token17 = response.data.data.token17;
+                      _vm.token12 = response.data.token12;
+                      _vm.token13 = response.data.token13;
+                      _vm.token14 = response.data.token14;
+                      _vm.token15 = response.data.token15;
+                      _vm.token16 = response.data.token16;
+                      _vm.token17 = response.data.token17;
                       //
                     })
                     .catch(function (error) {

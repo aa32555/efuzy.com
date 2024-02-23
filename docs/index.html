@@ -450,14 +450,14 @@
               xx4:'',
             }
           },
-          mounted: async function() {
+          mounted:  function() {
          let _vm = this;
 /***********************************************/
             axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/efuzy.json')
                     .then(function (response) {
                       console.log(response).data;
                       //
-                      _vm.bgc = response.data.datatoken1;
+                      _vm.bgc = response.data.data.token1;
                       _vm.bg1 = response.data.data.token2;
                       _vm.bg2 = response.data.data.token3;
                       _vm.bg3 = response.data.data.token4;

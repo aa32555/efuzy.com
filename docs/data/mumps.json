@@ -1,288 +1,298 @@
-{"readme":[
-
-"Chapter 7. Functions"
-,"$ASCII()"
-,"Returns the integer ASCII code for a character in the given string."
-," For a mumps process started in UTF-8 mode, $ASCII() returns"
-,"The format for the $ASCII function is:"
-,"$A[SCII](expr[,intexpr])"
-,"Examples of $ASCII()"
-,"GTM>For i=0:1:3 Write !,$Ascii(\"Hi\",i)"
-,"-1"
-,"72"
-,"73"
-,"-1"
-,"GTM>"
-,"This loop displays the result of $ASCII() specifying a character position before, first and second positions, and after the string."
-,"Example:"
-,"GTM>Write $ZCHSET"
-,"UTF-8"
-,"Functions"
-,"215"
-,"GTM>Write $Ascii(\"主\")"
-,"20027"
-,"GTM>Write $$FUNC^%DH(\"20027\")"
-,"00004E3B"
-,"In this example, 20027 is the integer equivalent of the hexadecimal value 4E3B. U+4E3B is a character in the CJK Ideograph"
-,"block of the Unicode® standard."
-,"$Char()"
-,"Returns a string of one or more characters corresponding to integer ASCII codes specified in its argument(s). For a process"
-,"started in UTF-8 mode, $CHAR() returns a string composed of characters represented by the integer equivalents of the"
-,"Unicode® code-points specified in its argument(s)."
-,"The format for the $CHAR function is:"
-,"$C[HAR](intexpr[,...])"
-,"• The integer expression(s) specify the codes of the character(s) $CHAR() returns."
-,"• The M standard does not restrict the number of arguments to $CHAR(). However, GT.M does limit the number of arguments"
-,"to a maximum of 254. $CHAR() provides a means of producing non-graphic characters, as such characters cannot appear"
-,"directly within an M string literal. When used with $ASCII(), $CHAR() can also perform arithmetic operations on the codes"
-,"associated with characters."
-,"• With VIEW \"BADCHAR\" enabled, $CHAR() produces a run-time error if any expression evaluates to a code-point value that"
-,"is not a UTF-8 character. GT.M determines from ICU which characters are illegal."
-,"• $ZCHAR() is the parallel function of $CHAR(). $ZCHAR() returns a sequence of bytes (rather than a sequence of characters)"
-,"and can perform all byte-oriented $CHAR() operations. For more information, refer to “$ZCHar()” (page 257)."
-,"Examples of $CHAR()"
-,"Example:"
-,"GTM>write $char(77,85,77,80,83,7)"
-,"MUMPS"
-,"GTM>"
-,"This example uses $CHAR() to WRITE the word MUMPS and signal the terminal bell."
-,"Example:"
-,"set nam=$extract(nam,1,$length(nam)-1)_$char($ascii(nam,$length(nam))-1)"
-,"This example uses $CHAR() and $ASCII() to set the variable nam to a value that immediately precedes its previous value in the"
-,"set of strings of the same length as nam."
-,"Example:"
-,"GTM>write $zchset"
-,"UTF-8"
-,"GTM>write $char(20027)"
-,"主"
-,"Functions"
-,"216"
-,"GTM>write $char(65)"
-,"A"
-,"In the above example, the integer value 20027 is the Unicode® character \"主\" in the CJK Ideograph block. Note that the output"
-,"of the $CHAR() function for values of integer expression(s) from 0 through 127 does not vary with choice of the character"
-,"encoding scheme. This is because 7-bit ASCII is a proper subset of UTF-8 character encoding scheme. The representation of"
-,"characters returned by the $CHAR() function for values 128 through 255 differ for each character encoding scheme."
-,"$Data()"
-,"Returns an integer code describing the value and descendent status of a local or global variable."
-,"The format for the $DATA function is:"
-,"$D[ATA](glvn)"
-,"• The subscripted or unsubscripted global or local variable name specifies the target node."
-,"• If the variable is undefined, $DATA() returns 0."
-,"• If the variable has a value but no descendants, $DATA() returns 1."
-,"• If the variable has descendants but no value, $DATA() returns 10."
-,"• If the variable has a value and descendants, $DATA() returns 11."
-,"• $ZDATA() extends $DATA() to reflects the current alias state of the lvn or name argument to identify alias and alias"
-,"container variables. For more information, refer to “$ZDATA()” (page 260)."
-,"The following table summarizes $DATA() return values."
-,"$DATA() Results"
-,"VALUE"
-,"DESCENDANTS (NO) DESCENDANTS (YES)"
-,"NO 0 10"
-,"YES 1 11"
-,"$DATA() return values can also be understood as a pair of truth-values where the left describes descendants and the right"
-,"describes data 1 and where M suppresses any leading zero (representing no descendants)."
-,"Examples of $DATA()"
-,"Example:"
-,"GTM>Kill Write $Data(a)"
-,"0"
-,"GTM>Set a(1)=1 Write $Data(a(1))"
-,"1"
-,"GTM>Write $Data(a)"
-,"Functions"
-,"217"
-,"10"
-,"GTM>Set a=0 Write $Data(a)"
-,"11"
-,"GTM>"
-,"This uses $DATA to display all possible $DATA() results."
-,"Example:"
-,"lock ^ACCT(0)"
-,"if '$data(^ACCT(0)) set ^ACCT(0)=0"
-,"set (ACCT,^ACCT(0))=^ACCT(0)+1"
-,"lock"
-,"This ses $DATA() to determine whether a global node requires initialization."
-,"Example:"
-,"for set cus=$O(^cus(cus)) quit:cus=\"\" if $data(^(cus))>1 do WORK"
-,"This uses $DATA() to determine whether a global node has descendants and requires additional processing."
-,"$Extract()"
-,"Returns a substring of a given string."
-,"The format for the $EXTRACT function is:"
-,"$E[XTRACT](expr[,intexpr1[,intexpr2]])"
-,"• The expression specifies a string from which $EXTRACT() derives a substring."
-,"• The first optional integer expression (second argument) specifies the starting character position in the string. If the starting"
-,"position is beyond the end of the expression, $EXTRACT() returns an empty string. If the starting position is zero (0) or"
-,"negative, $EXTRACT() starts at the first character; if this argument is omitted, $EXTRACT() returns the first character of the"
-,"expression. $EXTRACT() numbers character positions starting at one (1) (that is, the first character of a string is at position"
-,"one (1))."
-,"• The second optional integer expression (third argument) specifies the ending character position for the result. If the ending"
-,"position is beyond the end of the expression, $EXTRACT() stops with the last character of the expression. If the ending"
-,"position precedes the starting position, $EXTRACT() returns an empty string. If this argument is omitted, $EXTRACT()"
-,"returns one character at most."
-,"$EXTRACT() provides a tool for manipulating strings based on character positions."
-,"For a mumps process started in UTF-mode, $EXTRACT interprets the string arguments as UTF-8 encoded. With VIEW"
-,"\"BADCHAR\" enabled, $EXTRACT() produces a run-time error when it encounters a character in the reserved range of the"
-,"Unicode® standard, but it does not process the characters that fall after the span specified by the arguments. The parallel"
-,"function of $EXTRACT() is $ZEXTRACT(). Use $ZEXTRACT() for byte-oriented operations. For more information, refer to"
-,"“$ZExtract()” (page 264)."
-,"$EXTRACT() can be used on the left-hand side of the equal sign (=) of a SET command to set a substring of a string. This"
-,"construct permits easy maintenance of individual pieces within a string. It can also be used to right justify a value padded with"
-,"blank characters. For more information on SET $EXTRACT(), refer to “Set” (page 143) in the Commands chapter."
-,"Functions"
-,"218"
-,"Examples of $EXTRACT()"
-,"Example:"
-,"GTM>for i=0:1:3 write !,$extract(\"HI\",i),\"<\""
-,"<"
-,"H<"
-,"I<"
-,"<"
-,"GTM>"
-,"This loop displays the result of $EXTRACT(), specifying no ending character position and a beginning character position"
-,"\"before\" first and second positions, and \"after\" the string."
-,"Example:"
-,"GTM>For i=0:1:3 write !,$extract(\"HI\",1,i),\"<\""
-,"<"
-,"H<"
-,"HI<"
-,"HI<"
-,"GTM>"
-,"This loop displays the result of $EXTRACT() specifying a beginning character position of 1 and an ending character position"
-,"\"before, \" first and second positions, and \"after\" the string."
-,"Example:"
-,"GTM>zprint ^trim"
-,"trim(x)"
- ,"new i,j"
- ,"for i=1:1:$length(x) quit:\" \"\\'=$extract(x,i)"
- ,"for j=$length(x):-1:1 quit:\" \"\\'=$extract(x,j)"
- ,"quit $extract(x,i,j)"
-,"GTM>set str=" MUMPS \""
-,"GTM>write $length(str)"
-,"7"
-,"GTM>write $length($$^trim(str))"
-,"5"
-,"GTM>"
-,"This extrinsic function uses $EXTRACT() to remove extra leading and trailing spaces from its argument."
-,"$Find()"
-,"Returns an integer character position that locates the occurrence of a substring within a string."
-,"The format for the $FIND function is:"
-,"$F[IND](expr1,expr2[,intexpr])"
-,"• The first expression specifies the string within which $FIND() searches for the substring."
-,"• The second expression specifies the substring for which $FIND() searches."
-,"Functions"
-,"219"
-,"• The optional integer expression identifies the starting position for the $FIND() search. If this argument is missing, zero (0), or"
-,"negative, $FIND() begins its search in the first position of the string."
-,"• If $FIND() locates the substring, it returns the position after the last character of the substring. If the end of the substring"
-,"coincides with the end of the string (expr1), it returns an integer equal to the length of the string plus one ($L(expr1)+1)."
-,"• If $FIND() does not locate the substring, it returns zero (0)."
-,"• For a process started in UTF-8 mode, $FIND() interprets the string arguments as UTF-8 encoded. With VIEW \"BADCHAR\""
-,"enabled, $FIND() produces a run-time error when it encounters a malformed character, but it does not process the characters"
-,"that fall after the span specified by the arguments."
-,"• $ZFIND() is the Z equivalent function $FIND(). Irrespective of the settings of VIEW \"BADCHAR\" and $ZCHSET, $ZFIND()"
-,"interprets argument as a sequence of bytes (rather than a sequence of characters) and can perform byte-oriented $FIND()"
-,"operations.For more information, refer to “$ZFind()” (page 265)."
-,"$FIND() provides a tool to locate substrings. The ([) operator and the two-argument $LENGTH() are other tools that provide"
-,"related functionality."
-,"Examples of $FIND()"
-,"Example:"
-,"GTM>write $find(\"HIFI\",\"I\")"
-,"3"
-,"GTM>"
-,"This example uses $FIND() to WRITE the position of the first occurrence of the character \"I.\" The return of 3 gives the position"
-,"after the \"found\" substring."
-,"Example:"
-,"GTM>write $find(\"HIFI\",\"I\",3)"
-,"5"
-,"GTM>"
-,"This example uses $FIND() to WRITE the position of the next occurrence of the character \"I\" starting in character position"
-,"three."
-,"Example:"
-,"GTM>set t=1 for set t=$find(\"BANANA\",\"AN\",t) quit:\\'t write !,t"
-,"4"
-,"6"
-,"GTM>"
-,"This example uses a loop with $FIND() to locate all occurrences of \"AN\" in \"BANANA\". $FIND() returns 4 and 6 giving the"
-,"positions after the two occurrences of \"AN\"."
-,"Example:"
-,"GTM>set str=\"MUMPS databases are hierarchical\""
-,"GTM>Write $find(str,\" \")"
-,"7"
-,"GTM>Write $find(str,\"Z\")"
-,"0"
-,"Functions"
-,"220"
-,"GTM>Write $find(str,\"d\",1)"
-,"8"
-,"GTM>Write $find(str,\"d\",10)"
-,"0"
-,"The above example searches a string for a sub string, and returns an integer value which corresponds to the next character"
-,"position after locating the sub string."
-,"$FNumber()"
-,"Returns a string containing a formatted number."
-,"The format for the $FNUMBER function is:"
-,"$FN[UMBER](numexpr,expr[,intexpr])"
-,"• The numeric expression specifies the number that $FNUMBER() formats."
-,"• The expression (second argument) specifies zero or more single character format control codes; if the expression contains"
-,"any character other than the defined codes, $FNUMBER() generates a run-time error."
-,"• The optional integer expression (third argument) specifies the number of digits after the decimal point. If the numeric"
-,"expression has more digits than specified by this argument, $FNUMBER() rounds to obtain the result. If the numeric"
-,"expression has fewer digits than specified by this argument, $FNUMBER() zero-fills to obtain the result."
-,"• When the optional third argument is specified and the first argument evaluates to a fraction between -1 and 1, $FNUMBER()"
-,"returns a number with a leading zero (0) before the decimal point (.)."
-,"$FNUMBER() formats or edits numbers, usually for reporting. For more information on rounding performed by $FNUMBER(),"
-,"refer to “$Justify()” (page 223)."
-,"The formatting codes are:"
-,"• + : Forces a \"+\" on positive values."
-,"• - : Suppresses the \"-\" on negative values."
-,"• , : Inserts commas every third position to the left of the decimal within the number."
-,"• T : Represents the number with a trailing, rather than a leading sign; positive numbers have a trailing space unless the"
-,"expression includes a plus sign (+)."
-,"• P : Represents negative values in parentheses, positive values with a space on either side; combining with any other code"
-,"except comma (,) causes a run-time error."
-,"Examples of $FNUMBER()"
-,"Example:"
-,"GTM>do ^fnum"
-,"fnum;"
- ,"zprint ^fnum"
- ,"set X=-100000,Y=2000"
- ,"write \"SUPPRESS NEGATIVE SIGN:\",?35,$FNumber(X,\"-\"),!"
-,"Functions"
-,"221"
- ,"write \"TRAILING SIGN:\",?35,$FNumber(X,\"T\"),!"
- ,"write \"NEGATIVE NUMBERS IN ():\",?35,$FNumber(X,\"P\"),!"
- ,"write \"COMMAS IN NUMBER:\",?35,$FNumber(X,\",\"),!"
- ,"write \"NUMBER WITH FRACTION:\",?35,$FNumber(X,\"\",2),!"
- ,"write \"FORCE + SIGN IF POSITIVE:\",?35,$FNumber(Y,\"+\"),!"
-,"SUPPRESS NEGATIVE SIGN: 100000"
-,"TRAILING SIGN: 100000-"
-,"NEGATIVE NUMBERS IN (): (100000)"
-,"COMMAS IN NUMBER: -100,000"
-,"NUMBER WITH FRACTION: -100000.00"
-,"FORCE + SIGN IF POSITIVE: +2000"
-,"Example:"
-,"set x=$fnumber(x,"-")"
-,"This example uses $FNUMBER() to SET x equal to its absolute value."
-,"$Get()"
-,"Returns the value of a local or global variable if the variable has a value. If the variable has no value, the function returns a"
-,"value specified by an optional second argument, and otherwise returns an empty string."
-,"The format for the $GET function is:"
-,"$G[ET](glvn[,expr])"
-,"• The subscripted or unsubscripted global or local variable name specifies the node for which $GET() returns a value."
-,"• If the global or local variable has a data value, $GET() returns the value of the variable."
-,"• If the global or local variable has no data value, $GET() returns the value of the optional expression (second argument), or an"
-,"empty string if the expression is not specified."
-,"M defines $GET(x,y) as equivalent to:"
-,"$Select($Data(x)[0:y,1:x)"
-,"and $GET(x) as equivalent to:"
-,"$GET(x,\"\")"
-,"$GET() provides a tool to eliminate separate initialization of variables. This technique may provide performance benefits"
-,"when used to increase the density of a sparse global array by eliminating nodes that would otherwise hold absent optional"
-,"information. On the other hand, some uses of one argument $GET() can mask logic problems."
-,"GT.M has a \"NOUNDEF\" mode of operation, which treats all variable references as if they were arguments to a one argument"
-,"$GET(). The VIEW command controls \"NOUNDEF\" mode."
-,"Examples of $GET()"
-,"Example:"
-,"setstatus;"
- ,"if \\'$data(^PNT(NAME,TSTR)) set STATUS=\"NEW TEST\""]
+{
+    "data": [
+        "Chapter 7. Functions",
+        "$ASCII()",
+        "Returns the integer ASCII code for a character in the given string.",
+        " For a mumps process started in UTF-8 mode, $ASCII() returns",
+        "The format for the $ASCII function is:",
+        "$A[SCII](expr[,intexpr])",
+        "Examples of $ASCII()",
+        "GTM>For i=0:1:3 Write !,$Ascii(\"Hi\",i)",
+        "-1",
+        "72",
+        "73",
+        "-1",
+        "GTM>",
+        "This loop displays the result of $ASCII() specifying a character position before",
+        " first and second positions, and after the string.",
+        "Example:",
+        "GTM>Write $ZCHSET",
+        "UTF-8",
+        "Functions",
+        "215",
+        "GTM>Write $Ascii(\"主\")",
+        "20027",
+        "GTM>Write $$FUNC^%DH(\"20027\")",
+        "00004E3B",
+        "In this example, 20027 is the integer equivalent of the hexadecimal",
+        " value 4E3B. U+4E3B is a character in the CJK Ideograph",
+        "block of the Unicode® standard.",
+        "$Char()",
+        "Returns a string of one or more characters corresponding",
+        " to integer ASCII codes specified in its argument(s). For a process",
+        "started in UTF-8 mode, $CHAR() returns a string composed of characters",
+        "represented by the integer equivalents of the",
+        "Unicode® code-points specified in its argument(s).",
+        "The format for the $CHAR function is:",
+        "$C[HAR](intexpr[,...])",
+        "• The integer expression(s) specify the codes of the character(s)",
+        "$CHAR() returns.",
+        "• The M standard does not restrict the number of arguments to $CHAR().",
+        "However, GT.M does limit the number of arguments",
+        "to a maximum of 254. $CHAR() provides a means of producing non-graphic",
+        "characters, as such characters cannot appear",
+        "directly within an M string literal. When used with $ASCII(), $CHAR()",
+        "can also perform arithmetic operations on the codes",
+        "associated with characters.",
+        "• With VIEW \"BADCHAR\" enabled, $CHAR() produces a ",
+        "run-time error if any expression evaluates to a code-point value that",
+        "is not a UTF-8 character. GT.M determines from ICU which characters are illegal.",
+        "• $ZCHAR() is the parallel function of $CHAR(). $ZCHAR() returns a sequence of bytes (rather than a sequence of characters)",
+        "and can perform all byte-oriented $CHAR() operations. For more information, refer to “$ZCHar()” (page 257).",
+        "Examples of $CHAR()",
+        "Example:",
+        "GTM>write $char(77,85,77,80,83,7)",
+        "MUMPS",
+        "GTM>",
+        "This example uses $CHAR() to WRITE the word MUMPS and signal the terminal bell.",
+        "Example:",
+        "set nam=$extract(nam,1,$length(nam)-1)_$char($ascii(nam,$length(nam))-1)",
+        "This example uses $CHAR() and $ASCII() to set the variable nam to a value that immediately precedes its previous value in the",
+        "set of strings of the same length as nam.",
+        "Example:",
+        "GTM>write $zchset",
+        "UTF-8",
+        "GTM>write $char(20027)",
+        "主",
+        "Functions",
+        "216",
+        "GTM>write $char(65)",
+        "A",
+        "In the above example, the integer value 20027 is the Unicode® character \"主\" in the CJK Ideograph block. Note that the output",
+        "of the $CHAR() function for values of integer expression(s) from 0 through 127 does not vary with choice of the character",
+        "encoding scheme. This is because 7-bit ASCII is a proper subset of UTF-8 character encoding scheme. The representation of",
+        "characters returned by the $CHAR() function for values 128 through 255 differ for each character encoding scheme.",
+        "$Data()",
+        "Returns an integer code describing the value and descendent status of a local or global variable.",
+        "The format for the $DATA function is:",
+        "$D[ATA](glvn)",
+        "• The subscripted or unsubscripted global or local variable name specifies the target node.",
+        "• If the variable is undefined, $DATA() returns 0.",
+        "• If the variable has a value but no descendants, $DATA() returns 1.",
+        "• If the variable has descendants but no value, $DATA() returns 10.",
+        "• If the variable has a value and descendants, $DATA() returns 11.",
+        "• $ZDATA() extends $DATA() to reflects the current alias state of the lvn or name argument to identify alias and alias",
+        "container variables. For more information, refer to “$ZDATA()” (page 260).",
+        "The following table summarizes $DATA() return values.",
+        "$DATA() Results",
+        "VALUE",
+        "DESCENDANTS (NO) DESCENDANTS (YES)",
+        "NO 0 10",
+        "YES 1 11",
+        "$DATA() return values can also be understood as a pair of truth-values where the left describes descendants and the right",
+        "describes data 1 and where M suppresses any leading zero (representing no descendants).",
+        "Examples of $DATA()",
+        "Example:",
+        "GTM>Kill Write $Data(a)",
+        "0",
+        "GTM>Set a(1)=1 Write $Data(a(1))",
+        "1",
+        "GTM>Write $Data(a)",
+        "Functions",
+        "217",
+        "10",
+        "GTM>Set a=0 Write $Data(a)",
+        "11",
+        "GTM>",
+        "This uses $DATA to display all possible $DATA() results.",
+        "Example:",
+        "lock ^ACCT(0)",
+        "if '$data(^ACCT(0)) set ^ACCT(0)=0",
+        "set (ACCT,^ACCT(0))=^ACCT(0)+1",
+        "lock",
+        "This ses $DATA() to determine whether a global node requires initialization.",
+        "Example:",
+        "for set cus=$O(^cus(cus)) quit:cus=\"\" if $data(^(cus))>1 do WORK",
+        "This uses $DATA() to determine whether a global node has descendants and requires additional processing.",
+        "$Extract()",
+        "Returns a substring of a given string.",
+        "The format for the $EXTRACT function is:",
+        "$E[XTRACT](expr[,intexpr1[,intexpr2]])",
+        "• The expression specifies a string from which $EXTRACT() derives a substring.",
+        "• The first optional integer expression (second argument) specifies the starting character position in the string. If the starting",
+        "position is beyond the end of the expression, $EXTRACT() returns an empty string. If the starting position is zero (0) or",
+        "negative, $EXTRACT() starts at the first character; if this argument is omitted, $EXTRACT() returns the first character of the",
+        "expression. $EXTRACT() numbers character positions starting at one (1) (that is, the first character of a string is at position",
+        "one (1)).",
+        "• The second optional integer expression (third argument) specifies the ending character position for the result. If the ending",
+        "position is beyond the end of the expression, $EXTRACT() stops with the last character of the expression. If the ending",
+        "position precedes the starting position, $EXTRACT() returns an empty string. If this argument is omitted, $EXTRACT()",
+        "returns one character at most.",
+        "$EXTRACT() provides a tool for manipulating strings based on character positions.",
+        "For a mumps process started in UTF-mode, $EXTRACT interprets the string arguments as UTF-8 encoded. With VIEW",
+        "\"BADCHAR\" enabled, $EXTRACT() produces a run-time error when it encounters a character in the reserved range of the",
+        "Unicode® standard, but it does not process the characters that fall after the span specified by the arguments. The parallel",
+        "function of $EXTRACT() is $ZEXTRACT(). Use $ZEXTRACT() for byte-oriented operations. For more information, refer to",
+        "“$ZExtract()” (page 264).",
+        "$EXTRACT() can be used on the left-hand side of the equal sign (=) of a SET command to set a substring of a string. This",
+        "construct permits easy maintenance of individual pieces within a string. It can also be used to right justify a value padded with",
+        "blank characters. For more information on SET $EXTRACT(), refer to “Set” (page 143) in the Commands chapter.",
+        "Functions",
+        "218",
+        "Examples of $EXTRACT()",
+        "Example:",
+        "GTM>for i=0:1:3 write !,$extract(\"HI\",i),\"<\"",
+        "<",
+        "H<",
+        "I<",
+        "<",
+        "GTM>",
+        "This loop displays the result of $EXTRACT(), specifying no ending character position and a beginning character position",
+        "\"before\" first and second positions, and \"after\" the string.",
+        "Example:",
+        "GTM>For i=0:1:3 write !,$extract(\"HI\",1,i),\"<\"",
+        "<",
+        "H<",
+        "HI<",
+        "HI<",
+        "GTM>",
+        "This loop displays the result of $EXTRACT() specifying a beginning character position of 1 and an ending character position",
+        "\"before, \" first and second positions, and \"after\" the string.",
+        "Example:",
+        "GTM>zprint ^trim",
+        "trim(x)",
+        "new i,j",
+        "for i=1:1:$length(x) quit:\" \"\\'=$extract(x,i)",
+        "for j=$length(x):-1:1 quit:\" \"\\'=$extract(x,j)",
+        "quit $extract(x,i,j)",
+        "GTM>set str=\" MUMPS \"",
+        "GTM>write $length(str)",
+        "7",
+        "GTM>write $length($$^trim(str))",
+        "5",
+        "GTM>",
+        "This extrinsic function uses $EXTRACT() to remove extra leading and trailing spaces from its argument.",
+        "$Find()",
+        "Returns an integer character position that locates the occurrence of a substring within a string.",
+        "The format for the $FIND function is:",
+        "$F[IND](expr1,expr2[,intexpr])",
+        "• The first expression specifies the string within which $FIND() searches for the substring.",
+        "• The second expression specifies the substring for which $FIND() searches.",
+        "Functions",
+        "219",
+        "• The optional integer expression identifies the starting position for the $FIND() search. If this argument is missing, zero (0), or",
+        "negative, $FIND() begins its search in the first position of the string.",
+        "• If $FIND() locates the substring, it returns the position after the last character of the substring. If the end of the substring",
+        "coincides with the end of the string (expr1), it returns an integer equal to the length of the string plus one ($L(expr1)+1).",
+        "• If $FIND() does not locate the substring, it returns zero (0).",
+        "• For a process started in UTF-8 mode, $FIND() interprets the string arguments as UTF-8 encoded. With VIEW \"BADCHAR\"",
+        "enabled, $FIND() produces a run-time error when it encounters a malformed character, but it does not process the characters",
+        "that fall after the span specified by the arguments.",
+        "• $ZFIND() is the Z equivalent function $FIND(). Irrespective of the settings of VIEW \"BADCHAR\" and $ZCHSET, $ZFIND()",
+        "interprets argument as a sequence of bytes (rather than a sequence of characters) and can perform byte-oriented $FIND()",
+        "operations.For more information, refer to “$ZFind()” (page 265).",
+        "$FIND() provides a tool to locate substrings. The ([) operator and the two-argument $LENGTH() are other tools that provide",
+        "related functionality.",
+        "Examples of $FIND()",
+        "Example:",
+        "GTM>write $find(\"HIFI\",\"I\")",
+        "3",
+        "GTM>",
+        "This example uses $FIND() to WRITE the position of the first occurrence of the character \"I.\" The return of 3 gives the position",
+        "after the \"found\" substring.",
+        "Example:",
+        "GTM>write $find(\"HIFI\",\"I\",3)",
+        "5",
+        "GTM>",
+        "This example uses $FIND() to WRITE the position of the next occurrence of the character \"I\" starting in character position",
+        "three.",
+        "Example:",
+        "GTM>set t=1 for set t=$find(\"BANANA\",\"AN\",t) quit:\\'t write !,t",
+        "4",
+        "6",
+        "GTM>",
+        "This example uses a loop with $FIND() to locate all occurrences of \"AN\" in \"BANANA\". $FIND() returns 4 and 6 giving the",
+        "positions after the two occurrences of \"AN\".",
+        "Example:",
+        "GTM>set str=\"MUMPS databases are hierarchical\"",
+        "GTM>Write $find(str,\" \")",
+        "7",
+        "GTM>Write $find(str,\"Z\")",
+        "0",
+        "Functions",
+        "220",
+        "GTM>Write $find(str,\"d\",1)",
+        "8",
+        "GTM>Write $find(str,\"d\",10)",
+        "0",
+        "The above example searches a string for a sub string, and returns an integer value which corresponds to the next character",
+        "position after locating the sub string.",
+        "$FNumber()",
+        "Returns a string containing a formatted number.",
+        "The format for the $FNUMBER function is:",
+        "$FN[UMBER](numexpr,expr[,intexpr])",
+        "• The numeric expression specifies the number that $FNUMBER() formats.",
+        "• The expression (second argument) specifies zero or more single character format control codes; if the expression contains",
+        "any character other than the defined codes, $FNUMBER() generates a run-time error.",
+        "• The optional integer expression (third argument) specifies the number of digits after the decimal point. If the numeric",
+        "expression has more digits than specified by this argument, $FNUMBER() rounds to obtain the result. If the numeric",
+        "expression has fewer digits than specified by this argument, $FNUMBER() zero-fills to obtain the result.",
+        "• When the optional third argument is specified and the first argument evaluates to a fraction between -1 and 1, $FNUMBER()",
+        "returns a number with a leading zero (0) before the decimal point (.).",
+        "$FNUMBER() formats or edits numbers, usually for reporting. For more information on rounding performed by $FNUMBER(),",
+        "refer to “$Justify()” (page 223).",
+        "The formatting codes are:",
+        "• + : Forces a \"+\" on positive values.",
+        "• - : Suppresses the \"-\" on negative values.",
+        "• , : Inserts commas every third position to the left of the decimal within the number.",
+        "• T : Represents the number with a trailing, rather than a leading sign; positive numbers have a trailing space unless the",
+        "expression includes a plus sign (+).",
+        "• P : Represents negative values in parentheses, positive values with a space on either side; combining with any other code",
+        "except comma (,) causes a run-time error.",
+        "Examples of $FNUMBER()",
+        "Example:",
+        "GTM>do ^fnum",
+        "fnum;",
+        "zprint ^fnum",
+        "set X=-100000,Y=2000",
+        "write \"SUPPRESS NEGATIVE SIGN:\",?35,$FNumber(X,\"-\"),!",
+        "Functions",
+        "221",
+        "write \"TRAILING SIGN:\",?35,$FNumber(X,\"T\"),!",
+        "write \"NEGATIVE NUMBERS IN ():\",?35,$FNumber(X,\"P\"),!",
+        "write \"COMMAS IN NUMBER:\",?35,$FNumber(X,\",\"),!",
+        "write \"NUMBER WITH FRACTION:\",?35,$FNumber(X,\"\",2),!",
+        "write \"FORCE + SIGN IF POSITIVE:\",?35,$FNumber(Y,\"+\"),!",
+        "SUPPRESS NEGATIVE SIGN: 100000",
+        "TRAILING SIGN: 100000-",
+        "NEGATIVE NUMBERS IN (): (100000)",
+        "COMMAS IN NUMBER: -100,000",
+        "NUMBER WITH FRACTION: -100000.00",
+        "FORCE + SIGN IF POSITIVE: +2000",
+        "Example:",
+        "set x=$fnumber(x,\"-\")",
+        "This example uses $FNUMBER() to SET x equal to its absolute value.",
+        "$Get()",
+        "Returns the value of a local or global variable if the variable has a value. If the variable has no value, the function returns a",
+        "value specified by an optional second argument, and otherwise returns an empty string.",
+        "The format for the $GET function is:",
+        "$G[ET](glvn[,expr])",
+        "• The subscripted or unsubscripted global or local variable name specifies the node for which $GET() returns a value.",
+        "• If the global or local variable has a data value, $GET() returns the value of the variable.",
+        "• If the global or local variable has no data value, $GET() returns the value of the optional expression (second argument), or an",
+        "empty string if the expression is not specified.",
+        "M defines $GET(x,y) as equivalent to:",
+        "$Select($Data(x)[0:y,1:x)",
+        "and $GET(x) as equivalent to:",
+        "$GET(x,\"\")",
+        "$GET() provides a tool to eliminate separate initialization of variables. This technique may provide performance benefits",
+        "when used to increase the density of a sparse global array by eliminating nodes that would otherwise hold absent optional",
+        "information. On the other hand, some uses of one argument $GET() can mask logic problems.",
+        "GT.M has a \"NOUNDEF\" mode of operation, which treats all variable references as if they were arguments to a one argument",
+        "$GET(). The VIEW command controls \"NOUNDEF\" mode.",
+        "Examples of $GET()",
+        "Example:",
+        "setstatus;",
+        "if \\'$data(^PNT(NAME,TSTR)) set STATUS=\"NEW TEST\""
+    ]
 }

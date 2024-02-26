@@ -691,9 +691,7 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
                             let blobObj = new Blob([atob(response.data.data)], { type: "audio/mpeg" });
                             let url = window.URL.createObjectURL(blobObj);
                             let audio = new Audio(url);
-                            setTimeout(function(){
-                              audio.play();
-                            },500)
+                            audio.play();
                       } catch (err){
                         console.log('AudoERROR:-'+err)
                       }

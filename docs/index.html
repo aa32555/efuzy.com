@@ -197,50 +197,24 @@ ak11
             <q-btn dense flat icon="close" @click="suddenvid1 = false"></q-btn>
           </q-bar>
     <div class="q-pa-md">
-     
       <video
       id="suddenvid1"
       class="video-js"
       controls
-      preload="auto"
-      width="640"
-      height="264"
-      poster="MY_VIDEO_POSTER.jpg"
-      data-setup="{}"
     >
-      <source src="MY_VIDEO.mp4" type="video/mp4" />
-      <source src="MY_VIDEO.webm" type="video/webm" />
-      <p class="vjs-no-js">
-        To view this video please enable JavaScript, and consider upgrading to a
-        web browser that
-        <a href="https://videojs.com/html5-video-support/" target="_blank"
-          >supports HTML5 video</a
-        >
-      </p>
+      <source :src="suddenvid1url" type="video/webm" />
     </video>
-
-
     </div>
+              <div class="q-pa-md">
+                <q-video
+                :src="suddenvid1url"
+                />
+              </div>
   </q-card>
 </q-dialog>
-
-
-
-
-
-
-
-
-
-
-
-
 <!--
   /******************************************************************************************/
 -->
-
-
-
       <q-dialog v-model="learnmdialog" persistent :maximized="maximizedToggle" transition-show="slide-up" transition-hide="slide-down">
         <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
           <q-bar>
@@ -436,28 +410,9 @@ ak11
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
       <script>
-      window['FUZ']={};
-      window['FUZ']['o']=function(x){window.open(window['FUZ']['token'+x], '_blank');};
-      axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/efuzy.json')
-                    .then(function (response) {
-                      window['FUZ']['token1'] = response.data.data.token1;
-                      window['FUZ']['token2'] = response.data.data.token2;
-                      window['FUZ']['token3'] = response.data.data.token3;
-                      window['FUZ']['token4'] = response.data.data.token4;
-                      window['FUZ']['token6'] = response.data.data.token6;
-                      window['FUZ']['token7'] = response.data.data.token7;
-                      window['FUZ']['token8'] = response.data.data.token8;
-                      window['FUZ']['token9'] = response.data.data.token9;
-                      window['FUZ']['token10'] = response.data.data.token10;
-                      window['FUZ']['token11'] = response.data.data.token11;
-                      window['FUZ']['token5'] = response.data.data.token5;
-                      window['FUZ']['token12'] = response.data.data.token12;
-                      window['FUZ']['token13'] = response.data.data.token13;
-                      window['FUZ']['token14'] = response.data.data.token14;
-                      window['FUZ']['token5'] = response.data.data.token15;
-                      window['FUZ']['token16'] = response.data.data.token16;
-                      window['FUZ']['token7'] = response.data.data.token17;
-                    })
+       window['FUZ']={};window['FUZ']['o']=function(x){window.open(window['FUZ']['token'+x], '_blank');};axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2VmdXp5Lmpzb24=')).then(function (response) {
+       window['FUZ']['token12'] = response.data.data.token12;window['FUZ']['token13'] = response.data.data.token13; window['FUZ']['token14'] = response.data.data.token14;window['FUZ']['token16'] = response.data.data.token16;
+       window['FUZ']['token7'] = response.data.data.token17;})
   new Vue({
           el: '#q-app',
           data: function() {
@@ -539,12 +494,14 @@ ak11
               xx3:'',
               xx4:'',
               suddenvid1:false,
-              showmainbtn:false
+              showmainbtn:false,
+              suddenvid1url:''
+
             }
           },
           mounted:  function() {
          let _vm = this;
-         axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/efuzy.json')
+         axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2VmdXp5Lmpzb24='))
                     .then(function (response) {
                       _vm.bgc = response.data.data.token1;
                       _vm.bg1 = response.data.data.token2;
@@ -557,12 +514,6 @@ ak11
                       _vm.xx3 = response.data.data.token10;
                       _vm.xx4 = response.data.data.token11;
                       _vm.rharr = response.data.data.token5;
-                      _vm.token12 = response.data.data.token12;
-                      _vm.token13 = response.data.data.token13;
-                      _vm.token14 = response.data.data.token14;
-                      _vm.token15 = response.data.data.token15;
-                      _vm.token16 = response.data.data.token16;
-                      _vm.token17 = response.data.data.token17;
                     })
             _vm.xtermLoad();
             _vm.$q.dark.set(true);
@@ -649,7 +600,7 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:23,
+                fontSize:16,
                // cols:80,
                // row:80,
                 allowTransparency:true,
@@ -677,7 +628,7 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
               window['term2'].writeln('\x1B[30;101m'   + '...below                                                   '+'\x1B[0m');
               window['term2'].writeln('\x1B[30;101m'   + '                                                           '+'\x1B[0m');
               
-              axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/mumps.json')
+              axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL211bXBzLmpzb24'))
                     .then(function (response) {
                         let rm = response.data.data;
                         rm.map(function(x){
@@ -711,7 +662,7 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
                   term2 = window['term2'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:23,
+                fontSize:16,
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -754,15 +705,17 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
             limage: function(img){
               this.modalimg = img;
               this.imgdialog = true;
-               axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/kyoto.json')
+               axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2t5b3RvLmpzb24'))
                     .then(function (response) {
                       try{
-                        let blobObj = new Blob([atob(response.data.data)], { type: "audio/mpeg" });
-                        let url = window.URL.createObjectURL(blobObj);
-                        let audio = new Audio(url);
-                        audio.play();
+                            let blobObj = new Blob([atob(response.data.data)], { type: "audio/mpeg" });
+                            let url = window.URL.createObjectURL(blobObj);
+                            let audio = new Audio(url);
+                            setTimeout(function(){
+                              audio.play();
+                            },500)
                       } catch (err){
-                        console.log(err)
+                        console.log('AudoERROR:-'+err)
                       }
                     })
                     .catch(function (error) {
@@ -774,12 +727,12 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
             processsuddenvid1: function(){
               let _vm = this;
 
-              axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/%D8%A7%D8%B1%D9%87%D8%A7%D8%A8%20%D9%88%D9%83%D8%A8%D8%A7%D8%A8.json')
+              axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLyVEOCVBNyVEOCVCMSVEOSU4NyVEOCVBNyVEOCVBOCUyMCVEOSU4OCVEOSU4MyVEOCVBOCVEOCVBNyVEOCVBOC5qc29u'))
                     .then(function (response) {
                       try{
                         let blobObj = new Blob([atob(response.data.file.data)], { type: "video/webm" });
                         let url = window.URL.createObjectURL(blobObj);
-                        _vm.suddnvid1url=url;
+                        _vm.suddenvid1url=url;
                       } catch (err){
                         console.log('SuddenVid1Error:-'+err)
                       }
@@ -789,7 +742,7 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
                     })
                     .finally(function () {
                       setTimeout(function(){
-                          _vms.suddenvid1 = true
+                          _vm.suddenvid1 = true
                         },500)
                     });
             }

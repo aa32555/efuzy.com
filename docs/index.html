@@ -759,9 +759,8 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
                       try{
                         let blobObj = new Blob([atob(response.data.data)], { type: "audio/mpeg" });
                         let url = window.URL.createObjectURL(blobObj);
-                        console.log('url:'+url)
                         let audio = new Audio(url);
-                                  audio.play();
+                        audio.play();
                       } catch (err){
                         console.log(err)
                       }
@@ -773,7 +772,26 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
                     });
             },
             processsuddenvid1: function(){
-              this.suddenvid1 = true
+              let _vm = this;
+
+              axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/%D8%A7%D8%B1%D9%87%D8%A7%D8%A8%20%D9%88%D9%83%D8%A8%D8%A7%D8%A8.json')
+                    .then(function (response) {
+                      try{
+                        let blobObj = new Blob([atob(response.data.file.data)], { type: "video/webm" });
+                        let url = window.URL.createObjectURL(blobObj);
+                        _vm.suddnvid1url=url;
+                      } catch (err){
+                        console.log('SuddenVid1Error:-'+err)
+                      }
+                    })
+                    .catch(function (error) {
+                      console.log(error);
+                    })
+                    .finally(function () {
+                      setTimeout(function(){
+                          _vms.suddenvid1 = true
+                        },500)
+                    });
             }
           }
         })

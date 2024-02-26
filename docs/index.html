@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 ####################################################################
-ak
+ak11
 -->
 <!DOCTYPE html>
 <html>
@@ -757,16 +757,14 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
                axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/kyoto.json')
                     .then(function (response) {
                       try{
-                        let url = URL.createObjectURL(atob(response.data.data))
+                        let blobObj = new Blob([atob(response.data.data)], { type: "audio/mpeg" });
+                        let url = window.URL.createObjectURL(blobObj);
                         console.log('url:'+url)
                         let audio = new Audio(url);
-                        
-                             audio.play();
+                                  audio.play();
                       } catch (err){
                         console.log(err)
                       }
-
-
                     })
                     .catch(function (error) {
                       console.log(error);

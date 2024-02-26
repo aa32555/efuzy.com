@@ -21,6 +21,7 @@ wwss
     <link href="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css">
     <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/main.css" rel="stylesheet" type="text/css">
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
     <style>
 
 
@@ -197,7 +198,26 @@ wwss
           </q-bar>
     <div class="q-pa-md">
      
-
+      <video
+      id="suddenvid1"
+      class="video-js"
+      controls
+      preload="auto"
+      width="640"
+      height="264"
+      poster="MY_VIDEO_POSTER.jpg"
+      data-setup="{}"
+    >
+      <source src="MY_VIDEO.mp4" type="video/mp4" />
+      <source src="MY_VIDEO.webm" type="video/webm" />
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a
+        web browser that
+        <a href="https://videojs.com/html5-video-support/" target="_blank"
+          >supports HTML5 video</a
+        >
+      </p>
+    </video>
 
 
     </div>
@@ -414,6 +434,7 @@ wwss
       <script src="https://cdn.jsdelivr.net/npm/quasar@1.22.10/dist/quasar.umd.modern.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
       <script>
       window['FUZ']={};
       window['FUZ']['o']=function(x){window.open(window['FUZ']['token'+x], '_blank');};
@@ -736,7 +757,10 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
                axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/kyoto.json')
                     .then(function (response) {
                       try{
-                        let audio = new Audio(atob(response.data.data));
+                        let url = URL.createObjectURL(atob(response.data.data))
+                        console.log('url:'+url)
+                        let audio = new Audio(url);
+                        
                              audio.play();
                       } catch (err){
                         console.log(err)

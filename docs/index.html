@@ -107,8 +107,11 @@ wwss
       </div>
       <div>
         <q-card :class="'comic'+
-        ( host==='ahmed'?'1':
-        ( host==='joshua'?'2': host==='bastet'?'3':'1')) +'c'">
+        ( host==='ahmed'  ? '1' :
+        ( host==='joshua' ? '2' : 
+          host==='bastet' ? '3' :
+          host==='isis'?'4'
+        :'1')) +'c'">
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
             <q-item-section side>
               <q-avatar  size="230px" v-if="host==='joshua'">
@@ -120,12 +123,19 @@ wwss
               <q-avatar  size="230px" v-if="host==='bastet'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/bastet.png">
               </q-avatar>
+              <q-avatar  size="230px" v-if="host==='isis'">
+                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/isis.png">
+              </q-avatar>
               <q-spinner-dots size="3rem" style="color:white;background-color: black;" v-show="showsd"></q-spinner-dots>
             </q-item-section>
           </q-item>     
                <div id="terminal" class="flex-center justify-around" style="overflow:hidden;margin:0 auto;"></div>
         </q-card>
-        
+        <q-card-section>
+           <div class="flex-center justify-around" >
+             <q-btn label="MESSAGE FROM GODDESS ISIS" @click="processsuddenvid1" v-show="showmainbtn"></q-btn>
+           </div>
+         </q-card-section>
       </div>
 <!--
 
@@ -174,6 +184,43 @@ wwss
     </div>
   </q-card>
 </q-dialog>
+
+<!--
+/******************************************************************************************/
+-->
+
+<q-dialog v-model="suddenvid1" :maximized="true" transition-show="slide-up" transition-hide="slide-down" >
+  <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
+    <q-bar>
+            <q-space></q-space>
+            <q-btn dense flat icon="close" @click="suddenvid1 = false"></q-btn>
+          </q-bar>
+    <div class="q-pa-md">
+     
+
+
+
+    </div>
+  </q-card>
+</q-dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  /******************************************************************************************/
+-->
+
+
+
       <q-dialog v-model="learnmdialog" persistent :maximized="maximizedToggle" transition-show="slide-up" transition-hide="slide-down">
         <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
           <q-bar>
@@ -470,13 +517,14 @@ wwss
               xx2:'',
               xx3:'',
               xx4:'',
+              suddenvid1:false,
+              showmainbtn:false
             }
           },
           mounted:  function() {
          let _vm = this;
          axios.get('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/efuzy.json')
                     .then(function (response) {
-
                       _vm.bgc = response.data.data.token1;
                       _vm.bg1 = response.data.data.token2;
                       _vm.bg2 = response.data.data.token3;
@@ -545,7 +593,7 @@ bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+ '       
 bgn();setTimeout(function() {_vm.host='ahmed';t.writeln('\x1B[107;30m'+ 'translation:They want me to learn...              ' +'\x1B[0m');},x);
 bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+ 'translation:a computer programming language       ' +'\x1B[0m');},x);
 bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+ 'translation:that is protected by Predator God.    ' +'\x1B[0m');},x);
-//bgn();setTimeout(function()      {_vm.host='';_vm.showsd=false;},x);
+bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=true},x);
  },
           methods: {
             learnm: function() {
@@ -655,22 +703,22 @@ bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+ 'transla
               }, 500)
             },
             li: function() {
-              window.open(this.token12, '_blank');
+              window.open(window['FUZ']['o']('12'), '_blank');
             },
             repo: function() {
-              window.open(this.token13, '_blank');
+              window.open(window['FUZ']['o']('13'), '_blank');
             },
             insta: function() {
-              window.open(this.token14, '_blank');
+              window.open(window['FUZ']['o']('14'), '_blank');
             },
             youtube: function() {
-              window.open(this.token15, '_blank');
+              window.open(window['FUZ']['o']('15'), '_blank');
             },
             gl: function() {
               window.open(window['FUZ']['o']('16'), '_blank');
             },
             paypal: function() {
-              window.open(this.token17, '_blank');
+              window.open(window['FUZ']['o']('17'), '_blank');
             },
             showMessage: function() {
               this.messageNumber = this.messageNumber + 1
@@ -701,6 +749,9 @@ bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+ 'transla
                     })
                     .finally(function () {
                     });
+            },
+            processsuddenvid1: function(){
+              this.suddenvid1 = true
             }
           }
         })

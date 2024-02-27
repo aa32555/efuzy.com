@@ -607,7 +607,7 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
             startSessionI: function(){
               let _vm = this;             
             setTimeout(function(){
-              window['term2'].writeln('\x1B[30;101m'   + '            predator God wants us to start w/ $p           '+'\x1B[0m');
+              window['term2'].writeln(_vm.fill('\x1B[30;101m'   + '            predator God wants us to start w/ $p           '+'\x1B[0m'));
               window['term2'].writeln('\x1B[30;101m'   + '            something MAGICAL is going to happen           '+'\x1B[0m');    
               window['term2'].writeln('\x1B[30;101m'   + '                                                           '+'\x1B[0m');
               window['term2'].writeln('\x1B[1;30;103m' + '                         THE BUTTON                            '+'\x1B[0m');

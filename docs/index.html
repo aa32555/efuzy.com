@@ -202,14 +202,41 @@ afilla
       class="video-js"
       controls
     >
-      <source :src="suddenvid1url" type="video/webm" />
+      <source :src="suddenvid1url" type="video/mp4" />
     </video>
     </div>
-              <div class="q-pa-md">
-                <q-video
-                :src="suddenvid1url"
-                />
-              </div>
+
+
+    <video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="1920"
+    height="1080"
+    data-setup="{}"
+  >
+    <source :src="suddenvid1url" type="video/mp4" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
+
+
+
+
+
+
+
+
+
+
+
+
   </q-card>
 </q-dialog>
 <!--
@@ -703,7 +730,10 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
             },
             processsuddenvid1: function(){
               let _vm = this;
-                 axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLyVEOCVBNyVEOCVCMSVEOSU4NyVEOCVBNyVEOCVBOCUyMCVEOSU4OCVEOSU4MyVEOCVBOCVEOCVBNyVEOCVBOC5qc29u'))
+              _vm.suddenvid1url=atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL3JpaGFtLXNheWVlZC5tcDQ=');
+              _vm.suddenvid1 = true
+              /*
+              axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLyVEOCVBNyVEOCVCMSVEOSU4NyVEOCVBNyVEOCVBOCUyMCVEOSU4OCVEOSU4MyVEOCVBOCVEOCVBNyVEOCVBOC5qc29u'))
                    .then(function (response) {
                       try{
                         let blobObj = new Blob([atob(response.data.data)], { type: "video/webm" });
@@ -722,12 +752,13 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
                           _vm.suddenvid1 = true
                         },500)
                     });
+                    */
             },
             fill: function(x){
               let y=x.split('');
               let line ="                                               "
               let na = y.concat(line.split(''));
-              return na.slice(1, 80).join('');
+              return na.slice(0, 100).join('');
             }
           }
         })

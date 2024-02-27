@@ -414,7 +414,12 @@ afilla
   window['FUZ']={};
   window['FUZ']['o']=function(x){window.open(window['FUZ']['token'+x], '_blank');};
   axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2VmdXp5Lmpzb24=')).then(function (response) {
-  window['FUZ']['token12'] = response.data.data.token12;window['FUZ']['token13'] = response.data.data.token13; window['FUZ']['token14'] = response.data.data.token14;window['FUZ']['token16'] = response.data.data.token16;window['FUZ']['$m']=axios;window['FUZ']['token7'] = response.data.data.token17;
+  window['FUZ']['token12'] = response.data.data.token12;
+  window['FUZ']['token13'] = response.data.data.token13; 
+  window['FUZ']['token14'] = response.data.data.token14;
+  window['FUZ']['token15'] = response.data.data.token15;
+  window['FUZ']['token16'] = response.data.data.token16;
+  window['FUZ']['token17'] = response.data.data.token17;
   })
   new Vue({
           el: '#q-app',
@@ -511,7 +516,7 @@ afilla
                       _vm.xx1 = response.data.data.token8; _vm.xx2 = response.data.data.token9; _vm.xx3 = response.data.data.token10;
                       _vm.xx4 = response.data.data.token11;_vm.rharr = response.data.data.token5;
                                               }); _vm.xtermLoad();_vm.$q.dark.set(true);let t = window['term'];let a;        let x = 0;let bgn = function(){return x=x+(_vm.ttime()*250);}
-                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln(_vm.fill('\x1B[107;30m'   +  'hello...!!!!!!!!                             ' +'\x1B[0m'));},x);
+                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill('hello...!!!!!!!!') +'\x1B[0m');},x);
                           bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +  '....is anyone there?!!!!                     ' +'\x1B[0m');},x);
                           bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +  '                        اي حد هنا!!! ... الو' +'\x1B[0m');},x);
                           bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +  'I need help!!!!!!!!!!!!                      ' +'\x1B[0m');},x);

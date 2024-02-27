@@ -698,16 +698,12 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
             },
             processsuddenvid1: function(){
               let _vm = this;
-              //  axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2t5b3RvLmpzb24'))
-              //   axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLyVEOCVBNyVEOCVCMSVEOSU4NyVEOCVBNyVEOCVBOCUyMCVEOSU4OCVEOSU4MyVEOCVBOCVEOCVBNyVEOCVBOC5qc29u'))
-              axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2t5b3RvLmpzb24'))
+                 axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLyVEOCVBNyVEOCVCMSVEOSU4NyVEOCVBNyVEOCVBOCUyMCVEOSU4OCVEOSU4MyVEOCVBOCVEOCVBNyVEOCVBOC5qc29u'))
                    .then(function (response) {
                       try{
-                        window['RR']=response.data;
-
-
-                        let blobObj = new Blob([atob(response.data.data)], { type: "audio/mpeg" });
+                        let blobObj = new Blob([atob(response.data.data)], { type: "video/webm" });
                             let url = window.URL.createObjectURL(blobObj);
+                            console.log('url'+url)
                         _vm.suddenvid1url=url;
                       } catch (err){
                         console.log('SuddenVid1Error:-'+err)

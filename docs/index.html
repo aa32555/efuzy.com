@@ -683,6 +683,7 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
                       try{
                             let blobObj = new Blob([atob(response.data.data)], { type: "audio/mpeg" });
                             let url = window.URL.createObjectURL(blobObj);
+                            console.log('audio url:'+url);
                             let audio = new Audio(url);
                             audio.play();
                       } catch (err){

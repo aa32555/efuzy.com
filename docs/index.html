@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 ####################################################################
-aa
+aa11
 -->
 <!DOCTYPE html>
 <html>
@@ -134,7 +134,7 @@ aa
         </q-card>
         <q-card-section>
            <div class="flex-center justify-around" >
-             <q-btn label="MESSAGE FROM GODDESS ISIS" @click="processsuddenvid1" v-show="showmainbtn"></q-btn>
+             <q-btn size="lg" color="green" label="MESSAGE FROM GODDESS ISIS" @click="processsuddenvid1" v-show="showmainbtn"></q-btn>
            </div>
          </q-card-section>
       </div>
@@ -196,35 +196,25 @@ aa
             <q-space></q-space>
             <q-btn dense flat icon="close" @click="suddenvid1 = false"></q-btn>
           </q-bar>
-    <div class="q-pa-md">
-      <video
-      id="suddenvid1"
-      class="video-js"
-      controls
-    >
-      <source :src="suddenvid1url" type="video/mp4" />
-    </video>
-    </div>
-
-
-    <video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="1920"
-    height="1080"
-    data-setup="{}"
-  >
-    <source :src="suddenvid1url" type="video/mp4" />
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video>
+  <div class="q-pa-md q-gutter-md">
+              <video
+              id="my-video"
+              style="height:90vh"
+              class="video-js"
+              controls
+              preload="auto"
+              data-setup="{}"
+            >
+              <source :src="suddenvid1url" type="video/mp4" />
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+   </div>
 
 
 

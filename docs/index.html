@@ -571,15 +571,14 @@ new Blob
               window['term2'].write(this.editor);
             },
             startSessionI: function(){
-
             },
             loadjsonmanual: function(){
               let _vm = this;         
               let x = 0;let bgn = function(){return x=x+(_vm.vttime()*250);};        
               axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL211bXBzLmpzb24'))
-                    .then(function (response) {
-                        let rm = response.data.data;rm.map(function(xx){bgn();setTimeout(function(){window['term2'].writeln('\x1B[107;30m' +_vm.fill(xx)+ '\x1B[0m');},x) })
-                    })
+               .then(function (response) {
+               let rm = response.data.data;rm.map(function(xx){bgn();setTimeout(function(){window['term2'].writeln('\x1B[107;30m' +_vm.fill(xx)+ '\x1B[0m');},x) })
+              })
             },
             xtermLoad: function() {
               this.xtermBoot();

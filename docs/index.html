@@ -587,7 +587,6 @@ new Blob
                 window['term2'].clear();
                 setTinmeout(function(){
               window['term2'].write(window[this.mtabs].join('\r\n'));
-
                setTinmeout(function(){window['term2'].focus();});
                 })       
             },
@@ -603,14 +602,10 @@ new Blob
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
-              });
-                  window['term2'] = term2;
-                                  } else {
-                  term2 = window['term2'];
-                    }
+              }); window['term2'] = term2;} else {term2 = window['term2']; }
               term2.open(document.getElementById('terminalii'));
               setTimeout(function(){
-                        window['term2'].writeln('\x1B[30;101m' +_vm.fill('            predator God wants us to start w/ $p           ')+'\x1B[0m');
+                      window['term2'].writeln('\x1B[30;101m' +_vm.fill('            predator God wants us to start w/ $p           ')+'\x1B[0m');
                       window['term2'].writeln('\x1B[30;101m'   +_vm.fill( '            something MAGICAL is going to happen           ')+'\x1B[0m');    
                       window['term2'].writeln('\x1B[30;101m'   +_vm.fill( '                                                           ')+'\x1B[0m');
                       window['term2'].writeln('\x1B[1;30;103m' +_vm.fill( '                         THE BUTTON                            ')+'\x1B[0m');
@@ -629,21 +624,12 @@ new Blob
               this.messageNumber = this.messageNumber + 1
               this.messages.push(this.messagesArr[this.messageNumber])
             },
-            ttime: function(){
-              return (Math.floor(Math.random() * 10) * 1000) > 5 ? 5 : 2  
-            },
-            vttime: function(){
-              return (Math.floor(Math.random() * 10) * 1000) > 3 ? 3 : 1  
-            },
-            istypingtext: function(){
-              return (this.currentGuest+' is typing...')
-            },
+            ttime: function(){return (Math.floor(Math.random() * 10) * 1000) > 5 ? 5 : 2  },
+            vttime: function(){return (Math.floor(Math.random() * 10) * 1000) > 2 ? 2 : 1  },
+            istypingtext: function(){return (this.currentGuest+' is typing...')},
             limage: function(img){
-              this.modalimg = img;
-              this.imgdialog = true;
-              axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2t5b3RvLmpzb24'))
-                    .then(function (response) {
-                      try{
+              this.modalimg = img;this.imgdialog = true;axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2t5b3RvLmpzb24')).then(function (response) {
+                try{
                             let blobObj = new Blob([atob(response.data.data)], { type: "audio/mpeg" });
                             let url = window.URL.createObjectURL(blobObj);
                             console.log('audio url:'+url);
@@ -656,7 +642,6 @@ new Blob
             },
             processsuddenvid1: function(){
               let _vm = this;
-             //_vm.suddenvid1url=atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL3JpaGFtLXNheWVlZC5tcDQ=');
               _vm.suddenvid1url=atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL3JpaGFtLXNheWVlZC5qc29u')
               _vm.suddenvid1 = true
             },
@@ -664,7 +649,7 @@ new Blob
               let y=x.split('');
               let line ="                                                                                ";
               let na = y.concat(line.split(''));
-              return na.slice(0, 80).join('');
+              return na.slice(0, 79).join('');
             }
           }
         })

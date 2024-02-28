@@ -221,9 +221,10 @@ new Blob
              <div id="terminalii" class="flex flex-center q-pa-sm q-gutter-sm" style="overflow:hidden;margin:0 auto"></div>
               <div class="flex-center justify-around" >
                 <q-btn dense flat round class="q-pa-sm" label="write" @click="porocessNotes"></q-btn>
-                <q-btn label="Start Session 1 ($P)" @click="startSessionI"></q-btn>
-                <q-btn label="launchImge" @click="limage('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvc2tyaWxsZXgud2VicA==')"></q-btn>
-                <q-btn label="THE BUTTON" @click="sessionIdialog=true"></q-btn>
+                <q-btn v-if="false" label="Start Session 1 ($P)" @click="startSessionI"></q-btn>
+                <q-btn v-if="false" label="launchImge" @click="limage('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvc2tyaWxsZXgud2VicA==')"></q-btn>
+                <q-btn v-if="false" label="THE BUTTON" @click="sessionIdialog=true"></q-btn>
+                <q-btn v-if="true" label="THE BUTTON" @click="loadjsonmanual" size="lg" glossy flat square ripple color="black" text-color="red" ></q-btn>
               </div>
             </q-card-section>
             <q-card-section>
@@ -570,26 +571,18 @@ new Blob
               window['term2'].write(this.editor);
             },
             startSessionI: function(){
-              let _vm = this;             
-            setTimeout(function(){
-            //
+
+            },
+            loadjsonmanual: function(){
+              let _vm = this;         
+              let x = 0;let bgn = function(){return x=x+(_vm.vttime()*250);};        
               axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL211bXBzLmpzb24'))
                     .then(function (response) {
-                        let rm = response.data.data;
-                        rm.map(function(x){
-                          window['term2'].writeln('\x1B[1;30;101m'+x+'\x1B[0m');
-                        })
+                        let rm = response.data.data;rm.map(function(xx){bgn();setTimeout(function(){window['term2'].writeln('\x1B[107;30m' +_vm.fill(xx)+ '\x1B[0m');},x) })
                     })
-                    .catch(function (error) {
-                      // handle error
-                      console.log(error);
-                    })
-            },1500)
-            
             },
             xtermLoad: function() {
               this.xtermBoot();
-              
             },
             processmtabs: function() {
                 window['term2'].clear();
@@ -601,10 +594,6 @@ new Blob
             },
             xtermciLoad: function() {
               let _vm = this;
-
-
-
-
               setTimeout(function() {
                 let term2;
                 if (typeof window['term2'] === 'undefined') {
@@ -643,6 +632,9 @@ new Blob
             },
             ttime: function(){
               return (Math.floor(Math.random() * 10) * 1000) > 5 ? 5 : 2  
+            },
+            vttime: function(){
+              return (Math.floor(Math.random() * 10) * 1000) > 3 ? 3 : 1  
             },
             istypingtext: function(){
               return (this.currentGuest+' is typing...')

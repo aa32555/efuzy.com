@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 ####################################################################
-new Blob
+Math.floor(Math.random() * 10)
 -->
 <!DOCTYPE html>
 <html>
@@ -625,7 +625,7 @@ new Blob
               this.messages.push(this.messagesArr[this.messageNumber])
             },
             ttime: function(){return (Math.floor(Math.random() * 10) * 1000) > 5 ? 5 : 2  },
-            vttime: function(){return (Math.floor(Math.random() * 10) * 1000) > 2 ? 2 : 1  },
+            vttime: function(){return (Math.floor(Math.random() * 10) * 500) > 4 ? 4 : 1  },
             istypingtext: function(){return (this.currentGuest+' is typing...')},
             limage: function(img){
               this.modalimg = img;this.imgdialog = true;axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2t5b3RvLmpzb24')).then(function (response) {
@@ -642,14 +642,22 @@ new Blob
             },
             processsuddenvid1: function(){
               let _vm = this;
-              _vm.suddenvid1url=atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL3JpaGFtLXNheWVlZC5qc29u')
-              _vm.suddenvid1 = true
+              let list = [
+              'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL3JpaGFtLXNheWVlZC5qc29u'
+              ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2RpZWFudHdvcmQuanNvbg=='
+              ];
+              let vid=function(){
+                let v = Math.floor(Math.random() * 10);
+                if (v > list.length){
+                  v = list.length
+                }
+              };_vm.suddenvid1url=atob(list[v]);_vm.suddenvid1 = true
             },
             fill: function(x){
               let y=x.split('');
               let line ="                                                                                ";
               let na = y.concat(line.split(''));
-              return na.slice(0, 79).join('');
+              return na.slice(0, 80).join('');
             }
           }
         })

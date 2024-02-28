@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 ####################################################################
-aa11
+new Blob
 -->
 <!DOCTYPE html>
 <html>
@@ -664,7 +664,7 @@ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=tru
               axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2t5b3RvLmpzb24'))
                     .then(function (response) {
                       try{
-                            let blobObj = new Blob([atob(response.data.data)], { type: "audio/mpeg" });
+                            let blobObj = new Blob(atob(response.data.data), { type: "audio/mpeg" });
                             let url = window.URL.createObjectURL(blobObj);
                             console.log('audio url:'+url);
                             let audio = new Audio(url);

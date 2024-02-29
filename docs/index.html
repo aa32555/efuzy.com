@@ -24,6 +24,12 @@ Math.floor(Math.random() * 10)
     <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.css" integrity="sha512-7vaQ4LLdaXd2IuMd4MUQ6LRFIGbEwJI1aq6KYqL3RjbdQyUkRFhwZKmqmkBXurTFdGlx687lTN8FSJfX6Df8Gw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+
+#codeMirrorRoutines > .CodeMirror {
+                border: 1px solid #eee;
+                height: calc(100vh - 265px);
+              }
+              
 .bg1 {
       height:100vh !important;
       width:100vw !important;
@@ -240,16 +246,8 @@ Math.floor(Math.random() * 10)
         </template>
         <template v-slot:before>
           <div class="q-pa-md">
-            <q-card-section>
-             <br/><br/>
-<pre style="background-color:black"> <code style="background-color:#000000;color:#00FF41;">
-  <h3>
-    Chapter 7.
-  </h3>
-  <br/><br/>
-                </code>
-              </pre>
-            </q-card-section>
+              <div ref="codeMirrorRoutines" id="codeMirrorRoutines"></div>
+
             </div>
             </template>
             </q-splitter>

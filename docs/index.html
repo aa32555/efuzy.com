@@ -29,7 +29,7 @@ Math.floor(Math.random() * 10)
                 border: 1px solid #eee;
                 height: calc(100vh - 265px);
               }
-              
+
 .bg1 {
       height:100vh !important;
       width:100vw !important;
@@ -550,6 +550,19 @@ Math.floor(Math.random() * 10)
               window['term'] = term;
               term.open(document.getElementById('terminal'));
               this.showTerm = true;
+
+
+
+/********************/
+
+setTimeout(function(){
+  var myCodeMirror = CodeMirror(document.getElementById('codeMirrorRoutines'), {
+  value: "function myScript(){return 100;}\n",
+  mode:  "javascript"
+});
+},1000)
+
+
             },
             w: function(a) {
               this.term.write('\r\n' + a);

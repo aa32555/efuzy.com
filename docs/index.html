@@ -22,13 +22,8 @@ Math.floor(Math.random() * 10)
     <link href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css" rel="stylesheet" type="text/css">
     <link href="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/main.css" rel="stylesheet" type="text/css">
     <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.css" integrity="sha512-7vaQ4LLdaXd2IuMd4MUQ6LRFIGbEwJI1aq6KYqL3RjbdQyUkRFhwZKmqmkBXurTFdGlx687lTN8FSJfX6Df8Gw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-
-#codeMirrorRoutines > .CodeMirror {
-                border: 1px solid #eee;
-                height: calc(100vh - 265px);
-              }
+     
+<style>
 
 .bg1 {
       height:100vh !important;
@@ -89,7 +84,7 @@ Math.floor(Math.random() * 10)
   <body class="bg1">
     <div id="q-app" class="flex fit flex-center">
       <div class="full-width" style="width:100%;">
-        <q-tabs v-show="showaa1" size="lg" v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
+        <q-tabs v-show="showaa1"  v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;font-size:32px;">
           <q-tab class="bg-black"  style="color:#00ff41" name="learnm" label="learn MUMPS (M) by Order of Predator God" @click="learnm"></q-tab>
           <q-tab v-show="false" class="bg-black text-red" name="learnmpg" label="(M) Full Guide" @click="window.open('https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M%20Programmers%20Guide.pdf','_blank')"></q-tab>
           <q-space></q-space>

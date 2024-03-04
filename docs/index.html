@@ -11,8 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 #################################################################### 
-USER/VBUSER
-SYS/XXX
+qwerty
 
 -->
 <!DOCTYPE html>
@@ -537,9 +536,9 @@ SYS/XXX
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:28,
+                fontSize:48,
                 rows:12,
-                colls:40,
+                colls:32,
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -592,8 +591,8 @@ setTimeout(function(){
                   term2 = window['term2'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:32,
-                rows:50,                                         
+                fontSize:36,
+                rows:24,                                         
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -619,8 +618,8 @@ setTimeout(function(){
               this.messageNumber = this.messageNumber + 1
               this.messages.push(this.messagesArr[this.messageNumber])
             },
-            ttime: function(){return (Math.floor(Math.random() * 10) * 500) > 5 ? 5 : 2  },
-            vttime: function(){return (Math.floor(Math.random() * 10) * 250) > 4 ? 4 : 1  },
+            ttime: function(){return (Math.floor(Math.random() * 10) * 750) > 5 ? 5 : 2  },
+            vttime: function(){return (Math.floor(Math.random() * 10) * 1000) > 4 ? 4 : 1  },
             istypingtext: function(){return (this.currentGuest+' is typing...')},
             limage: function(img){ //btoa
               this.modalimg = img;this.imgdialog = true;axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2t5b3RvLmpzb24')).then(function (response) {
@@ -641,7 +640,7 @@ setTimeout(function(){
               if ((_vm.suddenvidI > _vm.suddvids.length) || typeof _vm.suddvids[_vm.suddenvidI] === 'undefinded'){
                 _vm.suddenvidI = 0;
               }
-              _vm.suddenvid1url=atob(list[_vm.suddenvidI]);
+              _vm.suddenvid1url=atob(_vm.suddvids[_vm.suddenvidI]);
               _vm.mlabel = 'MESSAGE' + ' ((( ' + _vm.suddenvidI + ' ))) ' + 'FROM GODDESS ISIS';
               _vm.suddenvid1 = true
             },

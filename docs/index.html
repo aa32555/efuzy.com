@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 #################################################################### 
-qwerty
+aaazz
 
 -->
 <!DOCTYPE html>
@@ -105,22 +105,22 @@ qwerty
             ( host==='joshua' ? '2' : 
               host==='bastet' ? '3' :
               host==='isis'?'4'
-            :'1')) +'c'">
+            :'1')) +'c'" style="height:40vh;">
             <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-red bg-black">
               <q-item-section side>
-                <q-avatar  size="360px" v-if="host==='joshua'">
+                <q-avatar  size="230px" v-if="host==='joshua'">
                   <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/Joshua.png">
                 </q-avatar>
-                <q-avatar  size="360px" v-if="host==='ahmed'">
+                <q-avatar  size="230px" v-if="host==='ahmed'">
                   <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/155005073.jpg">
                 </q-avatar>
-                <q-avatar  size="360px" v-if="host==='bastet'">
+                <q-avatar  size="230px" v-if="host==='bastet'">
                   <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/bastet.png">
                 </q-avatar>
-                <q-avatar  size="360px" v-if="host==='isis'">
+                <q-avatar  size="230px" v-if="host==='isis'">
                   <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/isis.png">
                 </q-avatar>
-                <q-spinner-dots size="5rem" style="color:white;background-color: black;" v-show="showsd"></q-spinner-dots>
+                <q-spinner-dots size="3rem" style="color:red;background-color: black;" v-show="showsd"></q-spinner-dots>
               </q-item-section>
             </q-item>  
             </div>
@@ -536,9 +536,9 @@ qwerty
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:48,
+                fontSize:32,
                 rows:12,
-                colls:32,
+                colls:40,
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -618,8 +618,8 @@ setTimeout(function(){
               this.messageNumber = this.messageNumber + 1
               this.messages.push(this.messagesArr[this.messageNumber])
             },
-            ttime: function(){return (Math.floor(Math.random() * 10) * 750) > 5 ? 5 : 2  },
-            vttime: function(){return (Math.floor(Math.random() * 10) * 1000) > 4 ? 4 : 1  },
+            ttime: function(){return (Math.floor(Math.random() * 10) * 1500) > 5 ? 5 : 2  },
+            vttime: function(){return (Math.floor(Math.random() * 10) * 1500) > 4 ? 4 : 1  },
             istypingtext: function(){return (this.currentGuest+' is typing...')},
             limage: function(img){ //btoa
               this.modalimg = img;this.imgdialog = true;axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2t5b3RvLmpzb24')).then(function (response) {

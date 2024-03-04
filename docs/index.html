@@ -387,7 +387,7 @@ Math.floor(Math.random() * 10)
               sessionIsteppermodel:1,
               sessionIdialog:false,
               editor:'',
-              splitterModel:50,
+              splitterModel:1,
               showsd:true,
               bgn:2,
               hostc:'',
@@ -541,8 +541,7 @@ Math.floor(Math.random() * 10)
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:32,
-                colls:40,
+                fontSize:48,
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -599,8 +598,7 @@ setTimeout(function(){
                   term2 = window['term2'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:32,
-                colls:40,                            allowTransparency:true,
+                fontSize:48,                                         allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
               }); window['term2'] = term2;} else {term2 = window['term2']; }
@@ -659,7 +657,7 @@ setTimeout(function(){
               let y=x.split('');
               let line ="                                                                                ";
               let na = y.concat(line.split(''));
-              return na.slice(0, 40).join('');
+              return na.slice(0, 80).join('');
             }
           }
         })

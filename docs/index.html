@@ -84,8 +84,8 @@ Math.floor(Math.random() * 10)
   <body class="bg1">
     <div id="q-app" class="flex fit flex-center">
       <div class="full-width" style="width:100%;">
-        <q-tabs v-show="showaa1"  v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;font-size:32px;">
-          <q-tab class="bg-black"  style="color:#00ff41:font-size:32px;" name="learnm" label="learn MUMPS (M) by Order of Predator God" @click="learnm"></q-tab>
+        <q-tabs v-show="showaa1"  v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;font-size:64px;">
+          <q-tab class="bg-black"  style="color:#00ff41;font-size:64px;" name="learnm" label="learn MUMPS (M) by Order of Predator God" @click="learnm"></q-tab>
           <q-tab v-show="false" class="bg-black text-red" name="learnmpg" label="(M) Full Guide" @click="window.open('https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M%20Programmers%20Guide.pdf','_blank')"></q-tab>
           <q-space></q-space>
           <q-tab v-show="false" class="bg-black text-red" name="mystory" label="my story" @click="mystorydialog=true"></q-tab>
@@ -97,30 +97,36 @@ Math.floor(Math.random() * 10)
         </q-tabs>
       </div>
       <div>
-        <q-card :class="'comic'+
-        ( host==='ahmed'  ? '1' :
-        ( host==='joshua' ? '2' : 
-          host==='bastet' ? '3' :
-          host==='isis'?'4'
-        :'1')) +'c'">
-          <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
-            <q-item-section side>
-              <q-avatar  size="130px" v-if="host==='joshua'">
-                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/Joshua.png">
-              </q-avatar>
-              <q-avatar  size="130px" v-if="host==='ahmed'">
-                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/155005073.jpg">
-              </q-avatar>
-              <q-avatar  size="130px" v-if="host==='bastet'">
-                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/bastet.png">
-              </q-avatar>
-              <q-avatar  size="130px" v-if="host==='isis'">
-                <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/isis.png">
-              </q-avatar>
-              <q-spinner-dots size="3rem" style="color:white;background-color: black;" v-show="showsd"></q-spinner-dots>
-            </q-item-section>
-          </q-item>     
-               <div id="terminal" class="flex-center justify-around" style="overflow:hidden;margin:0 auto;"></div>
+        <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
+          <q-card-section>
+            <div :class="'q-pa-md q-gutter-md flex comic'+
+            ( host==='ahmed'  ? '1' :
+            ( host==='joshua' ? '2' : 
+              host==='bastet' ? '3' :
+              host==='isis'?'4'
+            :'1')) +'c'">
+            <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-red bg-black">
+              <q-item-section side>
+                <q-avatar  size="230px" v-if="host==='joshua'">
+                  <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/Joshua.png">
+                </q-avatar>
+                <q-avatar  size="230px" v-if="host==='ahmed'">
+                  <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/155005073.jpg">
+                </q-avatar>
+                <q-avatar  size="230px" v-if="host==='bastet'">
+                  <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/bastet.png">
+                </q-avatar>
+                <q-avatar  size="230px" v-if="host==='isis'">
+                  <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/isis.png">
+                </q-avatar>
+                <q-spinner-dots size="3rem" style="color:white;background-color: black;" v-show="showsd"></q-spinner-dots>
+              </q-item-section>
+            </q-item>  
+            </div>
+          </q-card-section>
+                <q-card-section>
+                  <div id="terminal" class="flex-center justify-around"></div>
+                </q-card-section>       
         </q-card>
         <q-card-section>
            <div class="flex" >
@@ -191,10 +197,10 @@ Math.floor(Math.random() * 10)
         <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
           <q-bar>
             <q-space></q-space>
-            <q-btn dense flat icon="minimize" @click="maximizedToggle = false" :disable="!maximizedToggle">
+            <q-btn dense flat icon="minimize" @click="maximizedToggle = false" :disable="!maximizedToggle" v-if="false">
               <q-tooltip :disabled="maximizedToggle">Minimize</q-tooltip>
             </q-btn>
-            <q-btn dense flat icon="crop_square" @click="maximizedToggle = true" :disable="maximizedToggle">
+            <q-btn dense flat icon="crop_square" @click="maximizedToggle = true" :disable="maximizedToggle" v-if="false">
               <q-tooltip disabled="!maximizedToggle">Maximize</q-tooltip>
             </q-btn>
             <q-btn dense flat icon="close" @click="learnmdialog = false"></q-btn>
@@ -211,7 +217,7 @@ Math.floor(Math.random() * 10)
                 <q-btn v-if="true" label="THE BUTTON" @click="loadjsonmanual" size="lg" glossy flat square ripple color="black" text-color="red" ></q-btn>
               </div>
             </q-card-section>
-            <q-card-section>
+            <q-card-section v-if="false">
               <div class="q-pa-md q-gutter-sm" style="width:100%;height:100%;">
                 <h5>Notes</h5>
                 <q-editor
@@ -449,46 +455,46 @@ Math.floor(Math.random() * 10)
                       _vm.xx1 = response.data.data.token8; _vm.xx2 = response.data.data.token9; _vm.xx3 = response.data.data.token10;
                       _vm.xx4 = response.data.data.token11;_vm.rharr = response.data.data.token5;
                                               }); _vm.xtermLoad();_vm.$q.dark.set(true);let t = window['term'];let a;        let x = 0;let bgn = function(){return x=x+(_vm.ttime()*250);}
-                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill('hello...!!!!!!!!') +'\x1B[0m');},x);
-                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  '....is anyone there?!!!!                     ') +'\x1B[0m');},x);
-                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  '                        اي حد هنا!!! ... الو') +'\x1B[0m');},x);
-                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  'I need help!!!!!!!!!!!!                      ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑɑɑ  ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ   ɑ ɑ ɑ ɑ ɑ      ɑ     ɑ ɑ ɑ ɑ   ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ      ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑɑɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ   ɑ ɑ ɑ ɑ ɑ      ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ   ɑɑɑɑɑɑɑɑɑɑ ɑ  ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑɑɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('                    /\\                         ')+'\x1B[0m')},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('                   /  \\                        ')+'\x1B[0m');},x);              
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('                  /    \\                       ')+'\x1B[0m');},x);       
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('                 / <()> \\                      ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('                /________\\                     ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('               /__________\\                    ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('              /____________\\                   ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('             /______________\\                  ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('            /________________\\                 ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('           /__________________\\                ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('          /__I___I___I___I_____\\               ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('         /_I___I___I___I___I____\\              ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;103m'  +_vm.fill('                                    اصحابك جاين') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;103m'  +_vm.fill('                     اصبر شوية. انت توهت تاني؟') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill('translation:your friends are comming              ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill('translation:be a little patient, did you          ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill('translation: get lost again?                      ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill('                                                آْه') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill('                            المرة دى مختلفة خالس') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill('                                لاول مرة وانا خايف') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:Yess                                 ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:this time it\'s very different       ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:I\'m scared for the first time       ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( '                     عازيني اتعلم لغة حاسوب آلي') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( '           المؤمنه تأميناً كامل بال بريداتور جُد') +'\x1B[0m');},x);
-                          bgn();setTimeout(function() {_vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:They want me to learn...              ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:a computer programming language       ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:that is protected by Predator God.    ') +'\x1B[0m');},x);
+                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill50('hello...!!!!!!!!') +'\x1B[0m');},x);
+                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill50(  '....is anyone there?!!!!                     ') +'\x1B[0m');},x);
+                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill50(  '                        اي حد هنا!!! ... الو') +'\x1B[0m');},x);
+                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill50(  'I need help!!!!!!!!!!!!                      ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill50(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill50(  'ɑɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill50(  'ɑɑɑɑ  ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill50(  'ɑɑ   ɑ ɑ ɑ ɑ ɑ      ɑ     ɑ ɑ ɑ ɑ   ɑ ɑ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill50(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ      ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑɑɑ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill50(  'ɑɑ   ɑ ɑ ɑ ɑ ɑ      ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill50(  'ɑɑ   ɑɑɑɑɑɑɑɑɑɑ ɑ  ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑɑɑ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill50(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill50('                    /\\                         ')+'\x1B[0m')},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill50('                   /  \\                        ')+'\x1B[0m');},x);              
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill50('                  /    \\                       ')+'\x1B[0m');},x);       
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill50('                 / <()> \\                      ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill50('                /________\\                     ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill50('               /__________\\                    ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill50('              /____________\\                   ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill50('             /______________\\                  ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill50('            /________________\\                 ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill50('           /__________________\\                ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill50('          /__I___I___I___I_____\\               ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill50('         /_I___I___I___I___I____\\              ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;103m'  +_vm.fill50('                                    اصحابك جاين') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;103m'  +_vm.fill50('                     اصبر شوية. انت توهت تاني؟') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill50('translation:your friends are comming              ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill50('translation:be a little patient, did you          ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill50('translation: get lost again?                      ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50('                                                آْه') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50('                            المرة دى مختلفة خالس') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50('                                لاول مرة وانا خايف') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50( 'translation:Yess                                 ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50( 'translation:this time it\'s very different       ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50( 'translation:I\'m scared for the first time       ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50( '                     عازيني اتعلم لغة حاسوب آلي') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50( '           المؤمنه تأميناً كامل بال بريداتور جُد') +'\x1B[0m');},x);
+                          bgn();setTimeout(function() {_vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50( 'translation:They want me to learn...              ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50( 'translation:a computer programming language       ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50( 'translation:that is protected by Predator God.    ') +'\x1B[0m');},x);
                           bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=true},x);
  },
           methods: {
@@ -523,7 +529,9 @@ Math.floor(Math.random() * 10)
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:36,
+                fontSize:32,
+                rows:23,
+                colls:50,
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -532,18 +540,14 @@ Math.floor(Math.random() * 10)
               window['term'] = term;
               term.open(document.getElementById('terminal'));
               this.showTerm = true;
-
-
-
-/********************/
-
+/*
 setTimeout(function(){
   var myCodeMirror = CodeMirror(document.getElementById('codeMirrorRoutines'), {
   value: "function myScript(){return 100;}\n",
   mode:  "javascript"
 });
 },1000)
-
+*/
 
             },
             w: function(a) {
@@ -581,7 +585,8 @@ setTimeout(function(){
                 cursorBlink:true,
                 convertEol:true,
                 fontSize:36,
-rows:300,                                         allowTransparency:true,
+                rows:80,                                         
+                allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
               }); window['term2'] = term2;} else {term2 = window['term2']; }
@@ -609,7 +614,7 @@ rows:300,                                         allowTransparency:true,
             ttime: function(){return (Math.floor(Math.random() * 10) * 1000) > 5 ? 5 : 2  },
             vttime: function(){return (Math.floor(Math.random() * 10) * 500) > 4 ? 4 : 1  },
             istypingtext: function(){return (this.currentGuest+' is typing...')},
-            limage: function(img){
+            limage: function(img){ //btoa
               this.modalimg = img;this.imgdialog = true;axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2t5b3RvLmpzb24')).then(function (response) {
                 try{
                             let blobObj = new Blob([atob(response.data.data)], { type: "audio/mpeg" });
@@ -625,16 +630,22 @@ rows:300,                                         allowTransparency:true,
             processsuddenvid1: function(){
               let _vm = this;
               let list = [
-              'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL3JpaGFtLXNheWVlZC5qc29u'
+              'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2VneXB0Lmpzb24='
               ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2RpZWFudHdvcmQuanNvbg=='
+              ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2lzaXNhbHRlcmVnby5qc29u'
               ];
-              let aa='aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2RpZWFudHdvcmQuanNvbg=='
                 let v = Math.floor(Math.random() * 10);
                 if (v > list.length){
                   v = list.length
                 }
-              _vm.suddenvid1url=atob(aa); //list[v-1]);
+              _vm.suddenvid1url=atob(list[v-1]);
               _vm.suddenvid1 = true
+            },
+            fill50: function(x){
+              let y=x.split('');
+              let line ="                                                                                ";
+              let na = y.concat(line.split(''));
+              return na.slice(0, 50).join('');
             },
             fill: function(x){
               let y=x.split('');
@@ -808,7 +819,7 @@ MjM4ZjJmMDA1N2FlMDUyNWRjODEwNWEyMzhiY2Y4NTBjYTdiODE
      */
     write(data: string | Uint8Array, callback?: () => void): void;
 
-    /**2ZTEyMTUwMjI5ODQ5M2MyODEwZTBhNWJkN
+    /**
      * Writes data to the terminal, followed by a break line character (\n).
      * @param data The data to write to the terminal. This can either be raw
      * bytes given as Uint8Array from the pty or a string. Raw bytes will always

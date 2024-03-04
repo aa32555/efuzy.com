@@ -85,7 +85,7 @@ Math.floor(Math.random() * 10)
     <div id="q-app" class="flex fit flex-center">
       <div class="full-width" style="width:100%;">
         <q-tabs v-show="showaa1"  v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;font-size:32px;">
-          <q-tab class="bg-black"  style="color:#00ff41" name="learnm" label="learn MUMPS (M) by Order of Predator God" @click="learnm"></q-tab>
+          <q-tab class="bg-black"  style="color:#00ff41:font-size:32px;" name="learnm" label="learn MUMPS (M) by Order of Predator God" @click="learnm"></q-tab>
           <q-tab v-show="false" class="bg-black text-red" name="learnmpg" label="(M) Full Guide" @click="window.open('https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M%20Programmers%20Guide.pdf','_blank')"></q-tab>
           <q-space></q-space>
           <q-tab v-show="false" class="bg-black text-red" name="mystory" label="my story" @click="mystorydialog=true"></q-tab>
@@ -105,16 +105,16 @@ Math.floor(Math.random() * 10)
         :'1')) +'c'">
           <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-green bg-black">
             <q-item-section side>
-              <q-avatar  size="230px" v-if="host==='joshua'">
+              <q-avatar  size="130px" v-if="host==='joshua'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/Joshua.png">
               </q-avatar>
-              <q-avatar  size="230px" v-if="host==='ahmed'">
+              <q-avatar  size="130px" v-if="host==='ahmed'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/155005073.jpg">
               </q-avatar>
-              <q-avatar  size="230px" v-if="host==='bastet'">
+              <q-avatar  size="130px" v-if="host==='bastet'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/bastet.png">
               </q-avatar>
-              <q-avatar  size="230px" v-if="host==='isis'">
+              <q-avatar  size="130px" v-if="host==='isis'">
                 <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/isis.png">
               </q-avatar>
               <q-spinner-dots size="3rem" style="color:white;background-color: black;" v-show="showsd"></q-spinner-dots>
@@ -200,10 +200,6 @@ Math.floor(Math.random() * 10)
             <q-btn dense flat icon="close" @click="learnmdialog = false"></q-btn>
           </q-bar>
           <q-card-section class="q-pt-none">
-            <q-splitter
-              v-model="splitterModel"
-              style="height: 100%;">
-      <template v-slot:after>
         <div class="q-pa-md"> 
             <q-card-section>
              <div id="terminalii" class="flex flex-center q-pa-sm q-gutter-sm" style="overflow:hidden;margin:0 auto"></div>
@@ -238,15 +234,6 @@ Math.floor(Math.random() * 10)
               </div>
             </q-card-section>
           </div>
-        </template>
-        <template v-slot:before>
-          <div class="q-pa-md">
-              <div ref="codeMirrorRoutines" id="codeMirrorRoutines"></div>
-
-            </div>
-            </template>
-            </q-splitter>
-          
         </q-card>
       </q-dialog>
       <q-dialog v-model="learnmpgdialog" persistent :maximized="maximizedTogglepg" transition-show="slide-up" transition-hide="slide-down">
@@ -536,7 +523,7 @@ Math.floor(Math.random() * 10)
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:48,
+                fontSize:36,
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -593,7 +580,8 @@ setTimeout(function(){
                   term2 = window['term2'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:48,                                         allowTransparency:true,
+                fontSize:36,
+rows:300,                                         allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
               }); window['term2'] = term2;} else {term2 = window['term2']; }

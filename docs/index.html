@@ -10,8 +10,10 @@
 #            ( I OWN the DOMAIN @ 12 ELK ST)                       #
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
-####################################################################
-zzz
+#################################################################### 
+USER/VBUSER
+SYS/XXX
+
 -->
 <!DOCTYPE html>
 <html>
@@ -84,8 +86,8 @@ zzz
   <body class="bg1">
     <div id="q-app" class="flex fit flex-center">
       <div class="full-width" style="width:100%;">
-        <q-tabs v-show="showaa1"  v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;font-size:64px;">
-          <q-tab class="bg-black"  style="color:#00ff41;font-size:64px;" name="learnm" label="learn MUMPS (M) by Order of Predator God" @click="learnm"></q-tab>
+        <q-tabs v-show="showaa1"  v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
+          <q-tab class="bg-black"  stylexx="color:#00ff41;" name="learnm" label="learn MUMPS (M) by Order of Predator God" @click="learnm"></q-tab>
           <q-tab v-show="false" class="bg-black text-red" name="learnmpg" label="(M) Full Guide" @click="window.open('https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M%20Programmers%20Guide.pdf','_blank')"></q-tab>
           <q-space></q-space>
           <q-tab v-show="false" class="bg-black text-red" name="mystory" label="my story" @click="mystorydialog=true"></q-tab>
@@ -99,7 +101,7 @@ zzz
       <div>
         <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
           <q-card-section>
-            <div :class="'q-pa-md q-gutter-md flex comic'+
+            <div :class="'q-pa-lg q-gutter-lg flex comic'+
             ( host==='ahmed'  ? '1' :
             ( host==='joshua' ? '2' : 
               host==='bastet' ? '3' :
@@ -107,19 +109,19 @@ zzz
             :'1')) +'c'">
             <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-red bg-black">
               <q-item-section side>
-                <q-avatar  size="230px" v-if="host==='joshua'">
+                <q-avatar  size="360px" v-if="host==='joshua'">
                   <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/Joshua.png">
                 </q-avatar>
-                <q-avatar  size="230px" v-if="host==='ahmed'">
+                <q-avatar  size="360px" v-if="host==='ahmed'">
                   <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/155005073.jpg">
                 </q-avatar>
-                <q-avatar  size="230px" v-if="host==='bastet'">
+                <q-avatar  size="360px" v-if="host==='bastet'">
                   <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/bastet.png">
                 </q-avatar>
-                <q-avatar  size="230px" v-if="host==='isis'">
+                <q-avatar  size="360px" v-if="host==='isis'">
                   <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/isis.png">
                 </q-avatar>
-                <q-spinner-dots size="3rem" style="color:white;background-color: black;" v-show="showsd"></q-spinner-dots>
+                <q-spinner-dots size="5rem" style="color:white;background-color: black;" v-show="showsd"></q-spinner-dots>
               </q-item-section>
             </q-item>  
             </div>
@@ -130,7 +132,7 @@ zzz
         </q-card>
         <q-card-section>
            <div class="flex" >
-             <q-btn class="flex-center justify-around" size="lg" color="black" text-color="green" glossy flat ripple label="MESSAGE FROM GODDESS ISIS" @click="processsuddenvid1" v-show="showmainbtn"></q-btn>
+             <q-btn class="flex-center justify-around" size="lg" color="black" text-color="red" flat ripple :label="mlabel" @click="processsuddenvid1" v-show="showmainbtn"></q-btn>
            </div>
          </q-card-section>
       </div>
@@ -364,6 +366,13 @@ zzz
           el: '#q-app',
           data: function() {
             return {
+              mlabel:'MESSAGE FROM GODDESS ISIS',
+              suddenvidI:0,
+              suddvids:[
+              'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2VneXB0Lmpzb24='
+              ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2RpZWFudHdvcmQuanNvbg=='
+              ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2lzaXNhbHRlcmVnby5qc29u'
+              ],
               token12:'',
               token13:'',
               token14:'',
@@ -484,7 +493,6 @@ zzz
                           bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill50('translation:your friends are comming              ') +'\x1B[0m');},x);
                           bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill50('translation:be a little patient, did you          ') +'\x1B[0m');},x);
                           bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill50('translation: get lost again?                      ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50('                                                آْه') +'\x1B[0m');},x);
                           bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50('                            المرة دى مختلفة خالس') +'\x1B[0m');},x);
                           bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50('                                لاول مرة وانا خايف') +'\x1B[0m');},x);
                           bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill50( 'translation:Yess                                 ') +'\x1B[0m');},x);
@@ -529,9 +537,9 @@ zzz
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:32,
-                rows:23,
-                colls:50,
+                fontSize:28,
+                rows:12,
+                colls:40,
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -584,8 +592,8 @@ setTimeout(function(){
                   term2 = window['term2'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:36,
-                rows:80,                                         
+                fontSize:32,
+                rows:50,                                         
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -611,8 +619,8 @@ setTimeout(function(){
               this.messageNumber = this.messageNumber + 1
               this.messages.push(this.messagesArr[this.messageNumber])
             },
-            ttime: function(){return (Math.floor(Math.random() * 10) * 1000) > 5 ? 5 : 2  },
-            vttime: function(){return (Math.floor(Math.random() * 10) * 500) > 4 ? 4 : 1  },
+            ttime: function(){return (Math.floor(Math.random() * 10) * 500) > 5 ? 5 : 2  },
+            vttime: function(){return (Math.floor(Math.random() * 10) * 250) > 4 ? 4 : 1  },
             istypingtext: function(){return (this.currentGuest+' is typing...')},
             limage: function(img){ //btoa
               this.modalimg = img;this.imgdialog = true;axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2t5b3RvLmpzb24')).then(function (response) {
@@ -629,23 +637,19 @@ setTimeout(function(){
             },
             processsuddenvid1: function(){
               let _vm = this;
-              let list = [
-              'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2VneXB0Lmpzb24='
-              ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2RpZWFudHdvcmQuanNvbg=='
-              ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2lzaXNhbHRlcmVnby5qc29u'
-              ];
-                let v = Math.floor(Math.random() * 10);
-                if (v > list.length){
-                  v = list.length
-                }
-              _vm.suddenvid1url=atob(list[v-1]);
+              _vm.suddenvidI = _vm.suddenvidI + 1;
+              if ((_vm.suddenvidI > _vm.suddvids.length) || typeof _vm.suddvids[_vm.suddenvidI] === 'undefinded'){
+                _vm.suddenvidI = 0;
+              }
+              _vm.suddenvid1url=atob(list[_vm.suddenvidI]);
+              _vm.mlabel = 'MESSAGE' + ' ((( ' + _vm.suddenvidI + ' ))) ' + 'FROM GODDESS ISIS';
               _vm.suddenvid1 = true
             },
             fill50: function(x){
               let y=x.split('');
               let line ="                                                                                ";
               let na = y.concat(line.split(''));
-              return na.slice(0, 50).join('');
+              return na.slice(0, 40).join('');
             },
             fill: function(x){
               let y=x.split('');

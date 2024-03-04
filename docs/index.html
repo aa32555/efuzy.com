@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 #################################################################### 
-aaazz
+a
 
 -->
 <!DOCTYPE html>
@@ -100,33 +100,29 @@ aaazz
       <div>
         <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
           <q-card-section>
-            <div :class="'q-pa-lg q-gutter-lg flex comic'+
+            <div :class="'flex comic'+
             ( host==='ahmed'  ? '1' :
             ( host==='joshua' ? '2' : 
               host==='bastet' ? '3' :
               host==='isis'?'4'
-            :'1')) +'c'" style="height:40vh;">
-            <q-item clickable v-ripple @click="showaa1=!showaa1" class="text-red bg-black">
-              <q-item-section side>
-                <q-avatar  size="230px" v-if="host==='joshua'">
+            :'1')) +'c'" style="height:40vh;padding:10px;">
+                <q-avatar  size="270px" v-if="host==='joshua'" class="flex-center justify-around">
                   <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/Joshua.png">
                 </q-avatar>
-                <q-avatar  size="230px" v-if="host==='ahmed'">
+                <q-avatar  size="270px" v-if="host==='ahmed'" class="flex-center justify-around">
                   <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/155005073.jpg">
                 </q-avatar>
-                <q-avatar  size="230px" v-if="host==='bastet'">
+                <q-avatar  size="270px" v-if="host==='bastet'" class="flex-center justify-around">
                   <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/bastet.png">
                 </q-avatar>
-                <q-avatar  size="230px" v-if="host==='isis'">
+                <q-avatar  size="270px" v-if="host==='isis'" class="flex-center justify-around">
                   <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/isis.png">
                 </q-avatar>
                 <q-spinner-dots size="3rem" style="color:red;background-color: black;" v-show="showsd"></q-spinner-dots>
-              </q-item-section>
-            </q-item>  
             </div>
           </q-card-section>
                 <q-card-section>
-                  <div id="terminal" class="flex-center justify-around"></div>
+                  <div id="terminal"></div>
                 </q-card-section>       
         </q-card>
         <q-card-section>
@@ -209,13 +205,13 @@ aaazz
           <q-card-section class="q-pt-none">
         <div class="q-pa-md"> 
             <q-card-section>
-             <div id="terminalii" class="flex flex-center q-pa-sm q-gutter-sm" style="overflow:hidden;margin:0 auto"></div>
+             <div id="terminalii"></div>
               <div class="flex-center justify-around" >
-                <q-btn dense flat round class="q-pa-sm" label="write" @click="porocessNotes"></q-btn>
+                <q-btn dense flat round class="q-pa-sm" label="write" v-if="false" @click="porocessNotes"></q-btn>
                 <q-btn v-if="false" label="Start Session 1 ($P)" @click="startSessionI"></q-btn>
                 <q-btn v-if="false" label="launchImge" @click="limage('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvc2tyaWxsZXgud2VicA==')"></q-btn>
                 <q-btn v-if="false" label="THE BUTTON" @click="sessionIdialog=true"></q-btn>
-                <q-btn v-if="true" label="THE BUTTON" @click="loadjsonmanual" size="lg" glossy flat square ripple color="black" text-color="red" ></q-btn>
+                <q-btn v-if="true" label="THE BUTTON" @click="loadjsonmanual" size="lg"  flat  color="yellow" style="background-color: red;" text-color="yellow" ></q-btn>
               </div>
             </q-card-section>
             <q-card-section v-if="false">
@@ -365,7 +361,7 @@ aaazz
           el: '#q-app',
           data: function() {
             return {
-              mlabel:'MESSAGE FROM GODDESS ISIS',
+              mlabel:'MESSAGE ((( 0 ))) FROM GODDESS ISIS',
               suddenvidI:0,
               suddvids:[
               'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2VneXB0Lmpzb24='
@@ -536,9 +532,9 @@ aaazz
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:32,
+                fontSize:28,
                 rows:12,
-                colls:40,
+               // colls:40,
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -591,7 +587,7 @@ setTimeout(function(){
                   term2 = window['term2'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:36,
+                fontSize:28,
                 rows:24,                                         
                 allowTransparency:true,
                 cursorStyle:'block',

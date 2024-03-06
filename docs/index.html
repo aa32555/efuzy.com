@@ -633,7 +633,7 @@ setTimeout(function(){
             processsuddenvid1: function(){
               let _vm = this;
               _vm.suddenvidI = _vm.suddenvidI + 1;
-              if ((_vm.suddenvidI > _vm.suddvids.length) || typeof _vm.suddvids[_vm.suddenvidI] === 'undefinded'){
+              if ( typeof _vm.suddvids[_vm.suddenvidI] === 'undefinded'){
                 _vm.suddenvidI = 0;
               }
               _vm.suddenvid1url=atob(_vm.suddvids[_vm.suddenvidI]);

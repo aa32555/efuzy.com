@@ -98,36 +98,38 @@ as
         </q-tabs>
       </div>
       <div>
-        <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
-          <q-card-section>
-            <div :class="'flex comic'+
-            ( host==='ahmed'  ? '1' :
-            ( host==='joshua' ? '2' : 
-              host==='bastet' ? '3' :
-              host==='isis'?'4'
-            :'1')) +'c'" style="height:40vh;padding:10px;">
-                <q-avatar  size="270px" v-if="host==='joshua'" class="flex-center justify-around">
-                  <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/Joshua.png">
+        <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);height:40vh;padding:25px;" >
+          <q-card-section :class="'flex comic'+
+          ( host==='ahmed'  ? '1' :
+          ( host==='joshua' ? '2' : 
+            host==='bastet' ? '3' :
+            host==='isis'?'4'
+          :'1')) +'c'">
+              <div class="row">
+                <q-avatar  size="360px" v-if="host==='joshua'" class="flex self-center">
+                  <img :src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL0pvc2h1YS5wbmc=')">
                 </q-avatar>
-                <q-avatar  size="270px" v-if="host==='ahmed'" class="flex-center justify-around">
-                  <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/155005073.jpg">
+                <q-avatar  size="360px" v-if="host==='ahmed'" class="flex self-center">
+                  <img src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzE1NTAwNTA3My5qcGc=')">
                 </q-avatar>
-                <q-avatar  size="270px" v-if="host==='bastet'" class="flex-center justify-around">
-                  <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/bastet.png">
+                <q-avatar  size="360px" v-if="host==='bastet'" class="self-center flex">
+                  <img src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2Jhc3RldC5wbmc=')">
                 </q-avatar>
-                <q-avatar  size="270px" v-if="host==='isis'" class="flex-center justify-around">
-                  <img src="https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/isis.png">
+                <q-avatar  size="360px" v-if="host==='isis'" class="self-center flex">
+                  <img src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2lzaXMucG5n')">
                 </q-avatar>
-                <q-spinner-dots size="3rem" style="color:red;background-color: black;" v-show="showsd"></q-spinner-dots>
-            </div>
+              </div>
+              <div class="row">
+                <q-spinner-dots size="7rem" style="color:black;background-color:inherit;" v-show="showsd"></q-spinner-dots>
+              </div>
+              <div class="row">
+                <div id="terminal" style="border-color: #00FF41;border: 5px;"></div>
+                </div>
           </q-card-section>
-                <q-card-section>
-                  <div id="terminal"></div>
-                </q-card-section>       
         </q-card>
         <q-card-section>
            <div class="flex" >
-             <q-btn class="flex-center justify-around" size="lg" color="black" text-color="red" flat ripple :label="mlabel" @click="processsuddenvid1" v-show="showmainbtn"></q-btn>
+             <q-btn class="flex-center justify-around" size="lg" color="black" text-color="red" flat ripple :label="mlabel" :disabled="mlabeldis" @click="processsuddenvid1" v-show="showmainbtn"></q-btn>
            </div>
          </q-card-section>
       </div>
@@ -361,12 +363,15 @@ as
           el: '#q-app',
           data: function() {
             return {
-              mlabel:'MESSAGE ((( 0 ))) FROM GODDESS ISIS',
+              mlabel:'A message from the after life will load shortly...stay tuned',
+              mlabeldis:true,
+              mflabel:'CLICK HERE TO LEARN THRU VISUAL MEANS AS A BLESSING AND A MESSAGE FROM GODDESS ISIS GODDESS OF III of course and his death!!!! Amen. praise be to OSIRIS and his sacrafice.',
               suddenvidI:0,
               suddvids:[
-              'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2VneXB0Lmpzb24='
-              ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2RpZWFudHdvcmQuanNvbg=='
-              ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2lzaXNhbHRlcmVnby5qc29u'
+                'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzMtMTBfTV9tYW51YWwuanNvbg=='
+               ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzQtMTBfTV9tYW51YWwuanNvbg=='
+               ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2lzaXNhbHRlcmVnby5qc29u',
+               ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2RpZWFudHdvcmQuanNvbg=='   
               ],
               token12:'',
               token13:'',
@@ -452,6 +457,7 @@ as
           },
           mounted:  function() {
          let _vm = this;
+         _vm.showmainbtn=true
          axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2VmdXp5Lmpzb24='))
                     .then(function (response) {
                       _vm.bgc = response.data.data.token1;_vm.bg1 = response.data.data.token2;_vm.bg2 = response.data.data.token3;
@@ -465,24 +471,11 @@ as
                           bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  'I need help!!!!!!!!!!!!                      ') +'\x1B[0m');},x);
                           bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
                           bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑɑɑ  ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ   ɑ ɑ ɑ ɑ ɑ      ɑ     ɑ ɑ ɑ ɑ   ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ      ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑɑɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ   ɑ ɑ ɑ ɑ ɑ      ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ   ɑɑɑɑɑɑɑɑɑɑ ɑ  ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑɑɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('                    /\\                         ')+'\x1B[0m')},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('                   /  \\                        ')+'\x1B[0m');},x);              
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('                  /    \\                       ')+'\x1B[0m');},x);       
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('                 / <()> \\                      ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('                /________\\                     ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('               /__________\\                    ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('              /____________\\                   ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('             /______________\\                  ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('            /________________\\                 ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('           /__________________\\                ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('          /__I___I___I___I_____\\               ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[1;30;103m'+_vm.fill('         /_I___I___I___I___I____\\              ')+'\x1B[0m');},x);
+                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  'AAAAAAAAAAAAAAAAAAAAAAAAAAAA                      ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
+                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  '2 AND 3. AH Ok....... I thought just three backwards!! Jejejeje') +'\x1B[0m');},x);
                           bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;103m'  +_vm.fill('                                    اصحابك جاين') +'\x1B[0m');},x);
                           bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;103m'  +_vm.fill('                     اصبر شوية. انت توهت تاني؟') +'\x1B[0m');},x);
                           bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill('translation:your friends are comming              ') +'\x1B[0m');},x);
@@ -498,9 +491,12 @@ as
                           bgn();setTimeout(function() {_vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:They want me to learn...              ') +'\x1B[0m');},x);
                           bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:a computer programming language       ') +'\x1B[0m');},x);
                           bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:that is protected by Predator God.    ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;_vm.showmainbtn=true},x);
+                          bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;;_vm.mlabeldis=false},x);
  },
           methods: {
+            ei: function(x){
+              return atob(x);
+            },
             learnm: function() {
               let _vm=this;
               _vm.learnmdialog = true
@@ -532,7 +528,7 @@ as
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:28,
+                fontSize:26,
                 rows:12,
                // colls:40,
                 allowTransparency:true,
@@ -587,8 +583,8 @@ setTimeout(function(){
                   term2 = window['term2'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:28,
-                rows:24,                                         
+                fontSize:36,
+                rows:16,                                         
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -614,10 +610,10 @@ setTimeout(function(){
               this.messageNumber = this.messageNumber + 1
               this.messages.push(this.messagesArr[this.messageNumber])
             },
-            ttime: function(){return (Math.floor(Math.random() * 10) * 1500) > 5 ? 5 : 2  },
-            vttime: function(){return (Math.floor(Math.random() * 10) * 1500) > 4 ? 4 : 1  },
+            ttime: function(){return (Math.floor(Math.random() * 10) * 1000) > 5 ? 5 : 2  },
+            vttime: function(){return (Math.floor(Math.random() * 10) * 2000) > 4 ? 4 : 1  },
             istypingtext: function(){return (this.currentGuest+' is typing...')},
-            limage: function(img){ //btoa
+            limage: function(img){
               this.modalimg = img;this.imgdialog = true;axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2t5b3RvLmpzb24')).then(function (response) {
                 try{
                             let blobObj = new Blob([atob(response.data.data)], { type: "audio/mpeg" });
@@ -632,12 +628,12 @@ setTimeout(function(){
             },
             processsuddenvid1: function(){
               let _vm = this;
-              _vm.suddenvidI = _vm.suddenvidI + 1;
-              if ( typeof _vm.suddvids[_vm.suddenvidI] === 'undefinded'){
+              if ( typeof _vm.suddvids[_vm.suddenvidI] === 'undefinded' ||  (_vm.suddenvidI+1 >= _vm.suddenvidI) ){
                 _vm.suddenvidI = 0;
               }
+              _vm.suddenvidI = _vm.suddenvidI + 1;
               _vm.suddenvid1url=atob(_vm.suddvids[_vm.suddenvidI]);
-              _vm.mlabel = 'MESSAGE' + ' ((( ' + _vm.suddenvidI + ' ))) ' + 'FROM GODDESS ISIS';
+              _vm.mlabel ='((( ' + (_vm.suddenvidI + 1) + ' out of ' + _vm.suddvids.length + ' ))) ' + _vm.mflabel;
               _vm.suddenvid1 = true
             },
             fill: function(x){

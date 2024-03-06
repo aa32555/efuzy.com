@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 #################################################################### 
-assss
+xxx
 
 -->
 <!DOCTYPE html>
@@ -98,7 +98,7 @@ assss
         </q-tabs>
       </div>
       <div>
-        <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);height:40vh;padding:25px;" >
+        <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);height:calc(100vh-250px);padding:34px;" >
           <q-card-section :class="'flex comic'+
           ( host==='ahmed'  ? '1' :
           ( host==='joshua' ? '2' : 
@@ -110,20 +110,20 @@ assss
                   <img :src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL0pvc2h1YS5wbmc=')">
                 </q-avatar>
                 <q-avatar  size="360px" v-if="host==='ahmed'" class="flex self-center">
-                  <img src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzE1NTAwNTA3My5qcGc=')">
+                  <img :src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzE1NTAwNTA3My5qcGc=')">
                 </q-avatar>
                 <q-avatar  size="360px" v-if="host==='bastet'" class="self-center flex">
-                  <img src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2Jhc3RldC5wbmc=')">
+                  <img :src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2Jhc3RldC5wbmc=')">
                 </q-avatar>
                 <q-avatar  size="360px" v-if="host==='isis'" class="self-center flex">
-                  <img src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2lzaXMucG5n')">
+                  <img :src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2lzaXMucG5n')">
                 </q-avatar>
               </div>
               <div class="row">
                 <q-spinner-dots size="7rem" style="color:black;background-color:inherit;" v-show="showsd"></q-spinner-dots>
               </div>
               <div class="row">
-                <div id="terminal" style="border-color: #00FF41;border: 5px;"></div>
+                <div id="terminal" ></div>
                 </div>
           </q-card-section>
         </q-card>
@@ -369,9 +369,9 @@ assss
               suddenvidI:0,
               suddvids:[
                 'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzMtMTBfTV9tYW51YWwuanNvbg=='
-               ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzQtMTBfTV9tYW51YWwuanNvbg=='
-               ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2lzaXNhbHRlcmVnby5qc29u',
-               ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2RpZWFudHdvcmQuanNvbg=='   
+               ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzMtMTBfTV9tYW51YWwuanNvbg=='
+               ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2VneXB0Lmpzb24='
+               ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2lzaXNhbHRlcmVnby5qc29u'   
               ],
               token12:'',
               token13:'',
@@ -628,8 +628,8 @@ setTimeout(function(){
             },
             processsuddenvid1: function(){
               let _vm = this;
-              if ( typeof _vm.suddvids[_vm.suddenvidI] === 'undefinded' ||  (_vm.suddenvidI+1 >= _vm.suddenvidI) ){
-                _vm.suddenvidI = 0;
+              if ( typeof _vm.suddvids[_vm.suddenvidI] === 'undefinded'){
+                _vm.suddenvidI = -1;
               }
               _vm.suddenvidI = _vm.suddenvidI + 1;
               _vm.suddenvid1url=atob(_vm.suddvids[_vm.suddenvidI]);

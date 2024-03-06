@@ -11,7 +11,7 @@
 # aa3255@gmail.com ( identity is stolen no access to email         #
 # use aa3255@tutamail.com                                          #
 #################################################################### 
-xxxnicca
+
 
 -->
 <!DOCTYPE html>
@@ -98,7 +98,7 @@ xxxnicca
         </q-tabs>
       </div>
       <div>
-        <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);height:calc(100vh-90px);padding:34px;" >
+        <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);padding:7px;" >
           <q-card-section :class="'flex comic'+
           ( host==='ahmed'  ? '1' :
           ( host==='joshua' ? '2' : 
@@ -527,8 +527,8 @@ xxxnicca
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:26,
-                rows:12,
+                fontSize:21,
+                rows:11,
                // colls:40,
                 allowTransparency:true,
                 cursorStyle:'block',
@@ -582,8 +582,8 @@ setTimeout(function(){
                   term2 = window['term2'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:36,
-                rows:16,                                         
+                fontSize:38,
+                rows:20,                                         
                 allowTransparency:true,
                 cursorStyle:'block',
                 cursorInactiveStyle:'bar',
@@ -627,10 +627,14 @@ setTimeout(function(){
             },
             processsuddenvid1: function(){
               let _vm = this;
-              if ( typeof _vm.suddvids[_vm.suddenvidI] === 'undefinded'){
-                _vm.suddenvidI = -1;
+
+
+_vm.suddenvidI = _vm.suddenvidI + 1;
+
+              if ( typeof _vm.suddenvidI = _vm.suddvids[_vm.suddenvidI] === 'undefinded'){
+                _vm.suddenvidI = 0;
               }
-              _vm.suddenvidI = _vm.suddenvidI + 1;
+              
               _vm.suddenvid1url=atob(_vm.suddvids[_vm.suddenvidI]);
               _vm.mlabel ='((( ' + (_vm.suddenvidI + 1) + ' out of ' + _vm.suddvids.length + ' ))) ' + _vm.mflabel;
               _vm.suddenvid1 = true

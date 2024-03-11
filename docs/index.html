@@ -129,7 +129,7 @@
         </q-card>
         <q-card-section>
            <div class="flex" >
-             <q-btn class="flex-center justify-around" size="lg" color="black" text-color="red" flat ripple :label="mlabel" :disabled="mlabeldis" @click="krisezmodal=!krisezmodal" v-show="showmainbtn"></q-btn>
+             <q-btn class="flex-center justify-around" size="lg" color="black" text-color="red" flat ripple :label="mlabel" :disabled="mlabeldis" @click="krisezmodal=true" v-show="showmainbtn"></q-btn>
            </div>
          </q-card-section>
       </div>
@@ -257,7 +257,7 @@
         <q-card class="bg-black text-red full-width">
            <q-bar>
             <q-space></q-space>
-            <q-btn dense flat icon="close" @click="krisezmodal = false"></q-btn>
+            <q-btn dense flat icon="close" @click="krisezmodal=false"></q-btn>
           </q-bar>
  <div class="q-px-lg q-pb-md">
     <q-timeline color="red">
@@ -266,15 +266,13 @@
       </q-timeline-entry>
 
       <q-timeline-entry
-        title="The Day I Disovered I was a musical genious. it all had to do with my soul bond to eminem. you be the judge."
+        title="The Day I Discovered I was a musical genious. it all had to do with my soul bond to eminem. you be the judge."
         subtitle="February 15, 2004"
       >
         <div class="q-pa-md q-gutter-md">
              <iframe width="560" height="315" src="https://www.youtube.com/embed/DJecin301mc?si=1jjD974raF7rJlw6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
    </div>
-        </div>
       </q-timeline-entry>
- 
         </q-timeline>
   </div>
 </q-card></q-dialog>

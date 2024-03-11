@@ -1,4 +1,4 @@
-<!--
+
 ####################################################################
 # Copyright (c) 2024 efuzy.com and/or its subsidiaries.            #
 # All rights reserved.                                             #
@@ -12,7 +12,7 @@
 # use aa3255@tutamail.com                                          #or ahmedatefuzy@gmail.com 
 #
 #################################################################### 
-xxxnicca
+
 
 -->
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ xxxnicca
 
 .bg1 {
       height:100vh !important;
-      width:95vw !important;
+      width:99vw !important;
       background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/b1.png')!important;
       background-size: cover!important;
       background-repeat: no-repeat!important;
@@ -54,12 +54,12 @@ xxxnicca
     overflow-y: hidden !important;
 }
       .bg-img-1 {
-        width: 95vh !important;
+        width: 99vh !important;
         height: 100vw !important;
         background: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/b1.png') cover;
         background-size: cover;
         .bg-img-2 {
-        width: 95vh !important;
+        width: 99vh !important;
         height: 100vw !important;
         background: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/bgd.jpg') cover;
         background-size: cover;
@@ -121,7 +121,7 @@ xxxnicca
                 </q-avatar>
               </div>
               <div class="row">
-                <q-spinner-dots class="q-pa-md" size="7rem" style="color:black;background-color:inherit;" v-show="showsd"></q-spinner-dots>
+                <q-spinner-dots class="q-pa-md" size="7rem" style="color:green;background-color:inherit;" v-show="showsd"></q-spinner-dots>
               </div>
               <div class="row">
                 <div id="terminal" class="q-pa-md"></div>
@@ -130,7 +130,7 @@ xxxnicca
         </q-card>
         <q-card-section>
            <div class="flex" >
-             <q-btn class="flex-center justify-around" size="lg" color="black" text-color="red" flat ripple :label="mlabel" :disabled="mlabeldis" @click="processsuddenvid1" v-show="showmainbtn"></q-btn>
+             <q-btn class="flex-center justify-around" size="lg" color="black" text-color="red" flat ripple :label="mlabel" :disabled="mlabeldis" @click="krisezmodal=!krisezmodal" v-show="showmainbtn"></q-btn>
            </div>
          </q-card-section>
       </div>
@@ -254,89 +254,48 @@ xxxnicca
           </q-bar>
         </q-card>
       </q-dialog>
- <q-dialog v-model="mystorydialog" :maximized="true" transition-show="slide-up" transition-hide="slide-down">
+ <q-dialog v-model="krisezmodal" :maximized="true" transition-show="slide-up" transition-hide="slide-down">
         <q-card class="bg-black text-red full-width">
            <q-bar>
             <q-space></q-space>
-            <q-btn dense flat icon="close" @click="mystorydialog = false"></q-btn>
+            <q-btn dense flat icon="close" @click="krisezmodal = false"></q-btn>
           </q-bar>
  <div class="q-px-lg q-pb-md">
     <q-timeline color="red">
       <q-timeline-entry heading>
-        Timeline heading
+        Story of my life.-- KRISEZ. Walid Abdelrazeks favorite Artist/Song writer/Genious. 
       </q-timeline-entry>
 
       <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
+        title="The Day I Disovered I was a musical genious. it all had to do with my soul bond to eminem. you be the judge."
+        subtitle="February 15, 2004"
       >
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <div class="q-pa-md q-gutter-md">
+              <video
+              id="my-video"
+              style="height:95vh;width:95vw;"
+              class="video-js"
+              height="1080px"
+              width="1920px"
+              controls
+              preload="auto"
+              data-setup="{}"
+            >
+              <source :src="'tps://youtu.be/DJecin301mc?si=_2RrWuUjAQ5aCoGj
+'" type="video/mp4" />
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+   </div>
         </div>
       </q-timeline-entry>
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 21, 1986"
-        icon="delete"
-      >
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-      </q-timeline-entry>
-
-      <q-timeline-entry heading>
-        November, 2017
-      </q-timeline-entry>
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-        avatar="https://cdn.quasar.dev/img/avatar2.jpg"
-      >
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-      </q-timeline-entry>
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-      >
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-      </q-timeline-entry>
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-        color="orange"
-        icon="done_all"
-      >
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-      </q-timeline-entry>
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-      >
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-      </q-timeline-entry>
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-      >
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-      </q-timeline-entry>
-    </q-timeline>
+ 
+        </q-timeline>
   </div>
 </q-card></q-dialog>
       <script>
@@ -364,10 +323,11 @@ xxxnicca
           el: '#q-app',
           data: function() {
             return {
-              mlabel:'A message from the after life will load shortly...stay tuned',
+              mlabel:'A message of gratitude 4 WALID from the after life will load shortly ( per ur request a song by skrillez.i mean krisez)....',
               mlabeldis:true,
-              mflabel:'CLICK HERE TO LEARN THRU VISUAL MEANS AS A BLESSING AND A MESSAGE FROM GODDESS ISIS GODDESS OF III of course and his death!!!! Amen. praise be to OSIRIS and his sacrafice.',
+              mflabel:'KRISEZ - ',
               suddenvidI:0,
+              krisezmodal:false,
               suddvids:[
                 'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzMtMTBfTV9tYW51YWwuanNvbg=='
                ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzMtMTBfTV9tYW51YWwuanNvbg=='
@@ -465,33 +425,40 @@ xxxnicca
                       _vm.xx1 = response.data.data.token8; _vm.xx2 = response.data.data.token9; _vm.xx3 = response.data.data.token10;
                       _vm.xx4 = response.data.data.token11;_vm.rharr = response.data.data.token5;
                                               }); _vm.xtermLoad();_vm.$q.dark.set(true);let t = window['term'];let a;        let x = 0;let bgn = function(){return x=x+(_vm.ttime()*250);}
-                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill('hello...!!!!!!!!') +'\x1B[0m');},x);
-                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  '....is anyone there?!!!!                     ') +'\x1B[0m');},x);
-                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  '                        اي حد هنا!!! ... الو') +'\x1B[0m');},x);
-                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  'I need help!!!!!!!!!!!!                      ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  'AAAAAAAAAAAAAAAAAAAAAAAAAAAA                      ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
-                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  '2 AND 3. AH Ok....... I thought just three backwards!! Jejejeje') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;103m'  +_vm.fill('                                    اصحابك جاين') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;103m'  +_vm.fill('                     اصبر شوية. انت توهت تاني؟') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill('translation:your friends are comming              ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill('translation:be a little patient, did you          ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill('translation: get lost again?                      ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill('                            المرة دى مختلفة خالس') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill('                                لاول مرة وانا خايف') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:Yess                                 ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:this time it\'s very different       ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:I\'m scared for the first time       ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( '                     عازيني اتعلم لغة حاسوب آلي') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( '           المؤمنه تأميناً كامل بال بريداتور جُد') +'\x1B[0m');},x);
-                          bgn();setTimeout(function() {_vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:They want me to learn...              ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:a computer programming language       ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:that is protected by Predator God.    ') +'\x1B[0m');},x);
-                          bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;;_vm.mlabeldis=false},x);
+                          
+
+
+ bgn();setTimeout(function(){_vm.host='joshua';
+ t.writeln('\x1B[44;31m' + _vm.fill( 
+ 'ahhh....I dont know what to say         \n\r' +
+ '...like seriously man....               \n\r' + 
+ 'thank you for the donation:             \n\r' + 
+ '      W A L I D   A B D E L R A Z E K   \r\n' +
+ 'life on the streets, bound to your      \r\n' +
+ 'BIG BROTHER. is hard. u know wut i mean \r\n' +
+ 'W\'ALL LOOK FORWARD TO UR NEXT DONATION \r\n' + 
+ ) + '\x1B[0m');},x);
+
+
+bgn();setTimeout(function(){_vm.host='bastet';
+t.writeln('\x1B[30;103m' + _vm.fill( 
+ '...                                     \n\r' +
+ '...                                     \n\r' + 
+ '...                                     \n\r' + 
+ '...                                     \r\n' +
+ '                                        \r\n' +
+ '                                        \r\n' +
+ '...sigh                                 \r\n' + 
+ '                                     شكرًا\r\n'
+) + '\x1B[0m');},x);
+
+
+
+
+
+
+
+ bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;;_vm.mlabeldis=false},x);
  },
           methods: {
             ei: function(x){
@@ -528,7 +495,7 @@ xxxnicca
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:26,
+                fontSize:32,
                 rows:9,
                // colls:40,
                 allowTransparency:true,

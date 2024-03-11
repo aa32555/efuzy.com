@@ -9,10 +9,11 @@
 #   the license, please stop and do not read further.              #
 #            ( I OWN the DOMAIN @ 12 ELK ST)                       #
 # aa3255@gmail.com ( identity is stolen no access to email         #
-# use aa3255@tutamail.com                                          #
-# or ahmedatefuzy@gmail.com                                        #
-#                                                                  #
+# use aa3255@tutamail.com                                          #or ahmedatefuzy@gmail.com 
+#
 #################################################################### 
+xxxnicca
+
 -->
 <!DOCTYPE html>
 <html>
@@ -28,7 +29,7 @@
 
 .bg1 {
       height:100vh !important;
-      width:99vw !important;
+      width:95vw !important;
       background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/b1.png')!important;
       background-size: cover!important;
       background-repeat: no-repeat!important;
@@ -53,12 +54,12 @@
     overflow-y: hidden !important;
 }
       .bg-img-1 {
-        width: 99vh !important;
+        width: 95vh !important;
         height: 100vw !important;
         background: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/b1.png') cover;
         background-size: cover;
         .bg-img-2 {
-        width: 99vh !important;
+        width: 95vh !important;
         height: 100vw !important;
         background: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/bgd.jpg') cover;
         background-size: cover;
@@ -120,7 +121,7 @@
                 </q-avatar>
               </div>
               <div class="row">
-                <q-spinner-dots class="q-pa-md" size="7rem" style="color:green;background-color:inherit;" v-show="showsd"></q-spinner-dots>
+                <q-spinner-dots class="q-pa-md" size="7rem" style="color:black;background-color:inherit;" v-show="showsd"></q-spinner-dots>
               </div>
               <div class="row">
                 <div id="terminal" class="q-pa-md"></div>
@@ -129,7 +130,7 @@
         </q-card>
         <q-card-section>
            <div class="flex" >
-             <q-btn class="flex-center justify-around" size="lg" color="black" text-color="red" flat ripple :label="mlabel" :disabled="mlabeldis" @click="krisezmodal=true" v-show="showmainbtn"></q-btn>
+             <q-btn class="flex-center justify-around" size="lg" color="black" text-color="red" flat ripple :label="mlabel" :disabled="mlabeldis" @click="processsuddenvid1" v-show="showmainbtn"></q-btn>
            </div>
          </q-card-section>
       </div>
@@ -253,27 +254,89 @@
           </q-bar>
         </q-card>
       </q-dialog>
- <q-dialog v-model="krisezmodal" :maximized="true" transition-show="slide-up" transition-hide="slide-down">
+ <q-dialog v-model="mystorydialog" :maximized="true" transition-show="slide-up" transition-hide="slide-down">
         <q-card class="bg-black text-red full-width">
            <q-bar>
             <q-space></q-space>
-            <q-btn dense flat icon="close" @click="krisezmodal=false"></q-btn>
+            <q-btn dense flat icon="close" @click="mystorydialog = false"></q-btn>
           </q-bar>
  <div class="q-px-lg q-pb-md">
     <q-timeline color="red">
       <q-timeline-entry heading>
-        Story of my life.-- KRISEZ. Walid Abdelrazeks favorite Artist/Song writer/Genious. 
+        Timeline heading
       </q-timeline-entry>
 
       <q-timeline-entry
-        title="The Day I Discovered I was a musical genious. it all had to do with my soul bond to eminem. you be the judge."
-        subtitle="February 15, 2004"
+        title="Event Title"
+        subtitle="February 22, 1986"
       >
-        <div class="q-pa-md q-gutter-md">
-             <iframe width="560" height="315" src="https://www.youtube.com/embed/DJecin301mc?si=1jjD974raF7rJlw6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
-   </div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
       </q-timeline-entry>
-        </q-timeline>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 21, 1986"
+        icon="delete"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry heading>
+        November, 2017
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+        avatar="https://cdn.quasar.dev/img/avatar2.jpg"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+        color="orange"
+        icon="done_all"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+
+      <q-timeline-entry
+        title="Event Title"
+        subtitle="February 22, 1986"
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </q-timeline-entry>
+    </q-timeline>
   </div>
 </q-card></q-dialog>
       <script>
@@ -301,11 +364,10 @@
           el: '#q-app',
           data: function() {
             return {
-              mlabel:'A message of gratitude 4 WALID from the after life will load shortly ( per ur request a song by skrillez.i mean krisez)....',
+              mlabel:'A message from the after life will load shortly...stay tuned',
               mlabeldis:true,
-              mflabel:'KRISEZ - ',
+              mflabel:'CLICK HERE TO LEARN THRU VISUAL MEANS AS A BLESSING AND A MESSAGE FROM GODDESS ISIS GODDESS OF III of course and his death!!!! Amen. praise be to OSIRIS and his sacrafice.',
               suddenvidI:0,
-              krisezmodal:false,
               suddvids:[
                 'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzMtMTBfTV9tYW51YWwuanNvbg=='
                ,'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzMtMTBfTV9tYW51YWwuanNvbg=='
@@ -402,45 +464,34 @@
                       _vm.bg3 = response.data.data.token4; _vm.bsmnharr = response.data.data.token6;_vm.yctarr = response.data.data.token7;
                       _vm.xx1 = response.data.data.token8; _vm.xx2 = response.data.data.token9; _vm.xx3 = response.data.data.token10;
                       _vm.xx4 = response.data.data.token11;_vm.rharr = response.data.data.token5;
-                                              }); _vm.xtermLoad();_vm.$q.dark.set(true);
-                                              let t = window['term'];
-                                              let a;
-                                              let x = 0;
-                                              let bgn = function(){return x=x+(_vm.ttime()*250);}
-                          
-
-
- bgn();setTimeout(function(){_vm.host='joshua';
- t.writeln('\x1B[44;31m' + _vm.fill( 
- 'ahhh....I dont know what to say         \n\r' +
- '...like seriously man....               \n\r' + 
- 'thank you for the donation:             \n\r' + 
- '      W A L I D   A B D E L R A Z E K   \r\n' +
- 'life on the streets, bound to your      \r\n' +
- 'BIG BROTHER. is hard. u know wut i mean \r\n' +
- 'W\'ALL LOOK FORWARD TO UR NEXT DONATION \r\n' + 
- ) + '\x1B[0m');},x);
-
-
-bgn();setTimeout(function(){_vm.host='bastet';
-t.writeln('\x1B[30;103m' + _vm.fill( 
- '...                                     \n\r' +
- '...                                     \n\r' + 
- '...                                     \n\r' + 
- '...                                     \r\n' +
- '                                        \r\n' +
- '                                        \r\n' +
- '...sigh                                 \r\n' + 
- '                                     شكرًا\r\n'
-) + '\x1B[0m');},x);
-
-
-
-
-
-
-
- bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;;_vm.mlabeldis=false},x);
+                                              }); _vm.xtermLoad();_vm.$q.dark.set(true);let t = window['term'];let a;        let x = 0;let bgn = function(){return x=x+(_vm.ttime()*250);}
+                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill('hello...!!!!!!!!') +'\x1B[0m');},x);
+                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  '....is anyone there?!!!!                     ') +'\x1B[0m');},x);
+                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  '                        اي حد هنا!!! ... الو') +'\x1B[0m');},x);
+                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  'I need help!!!!!!!!!!!!                      ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
+                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  'AAAAAAAAAAAAAAAAAAAAAAAAAAAA                      ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑɑɑ   ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ ɑ   ɑ ɑ   ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';t.writeln('\x1B[1;30;101m'+_vm.fill(  'ɑɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ ɑ  ɑ     ɑ ɑ ɑ ɑ ɑ ɑ ɑ')+'\x1B[0m');},x);
+                          bgn(); setTimeout(function(){_vm.host='ahmed';t.writeln('\x1B[107;30m'   +_vm.fill(  '2 AND 3. AH Ok....... I thought just three backwards!! Jejejeje') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;103m'  +_vm.fill('                                    اصحابك جاين') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;103m'  +_vm.fill('                     اصبر شوية. انت توهت تاني؟') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill('translation:your friends are comming              ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill('translation:be a little patient, did you          ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='bastet';t.writeln('\x1B[30;107m'+_vm.fill('translation: get lost again?                      ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill('                            المرة دى مختلفة خالس') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill('                                لاول مرة وانا خايف') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:Yess                                 ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:this time it\'s very different       ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:I\'m scared for the first time       ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( '                     عازيني اتعلم لغة حاسوب آلي') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( '           المؤمنه تأميناً كامل بال بريداتور جُد') +'\x1B[0m');},x);
+                          bgn();setTimeout(function() {_vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:They want me to learn...              ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:a computer programming language       ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){ _vm.host='ahmed';t.writeln('\x1B[107;30m'+_vm.fill( 'translation:that is protected by Predator God.    ') +'\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;;_vm.mlabeldis=false},x);
  },
           methods: {
             ei: function(x){
@@ -477,7 +528,7 @@ t.writeln('\x1B[30;103m' + _vm.fill(
               let term = window['term'] || new Terminal({
                 cursorBlink:true,
                 convertEol:true,
-                fontSize:32,
+                fontSize:26,
                 rows:9,
                // colls:40,
                 allowTransparency:true,
@@ -633,6 +684,48 @@ Set _bBWhite=\x1B[107m
 Set _RESET=\x1B[0m
 
 \x1B[1;3;31mxterm.js\x1B[0m $
+
+
+意 事 建章曰： 樂而不淫 第十一回 曰： 矣 在一處 去 ，aa
+後話 ，愈聽愈惱 出 也懊悔不了 饒爾去罷」 意 誨. 誨 ，可 意 覽 矣 出 事. 曰： 」 誨 耳 出. ，愈聽愈惱 此是後話 耳 意 誨 饒爾去罷」 也懊悔不了 事. 出 也懊悔不了 關雎 饒爾去罷」 事 意 ，愈聽愈惱 去 此是後話 耳. 誨 出 己轉身 覽 不稱讚 分得意 曰： 去 ，可 建章曰：. 第五回 第四回 驚異 第一回 招」 第三回. 意 第九回 曰： 第四回 誨 羨殺 矣 去 耳 德泉淹. 意 覽 矣 去 事. 冒認收了 吉安而來 父親回衙 汗流如雨. 父親回衙 玉，不題 冒認收了 汗流如雨 吉安而來. ，愈聽愈惱 饒爾去罷」 也懊悔不了 此是後話. 第九回 羨殺 第一回 第三回 了」 第四回. 玉，不題 汗流如雨 吉安而來 冒認收了 父親回衙. 危德至 樂而不淫 訖乃返.
+誨 矣 第十一回 曰： 事 ，可 建章曰： 」 分得意 覽. 相域 羨殺 驚異. 在一處 去 出 誨 己轉身 事 關雎 」 分得意 覽 不稱
+懊悔不了 饒爾去罷」 意 誨. 誨 ，可 意 覽 矣 出 事
+ ，可 去 耳 出 事 意. 」 意 去 ，可 誨 矣 曰：. 耳 ，可 事 誨 關雎 曰：. 去 關雎 耳 不稱讚 ，可 ﻿白圭志 後竊聽 分得意 誨 危德至 」 事 樂而不淫. ，愈聽愈惱 曰： 饒爾去罷」 此是後話 去 誨 」 也懊悔不了. 耳 去 玉，不題 出 意 覽 冒認收了 矣 曰： 吉安而來 ，可. 矣 耳 意 曰： 事 去. 矣 關雎 去 覽 曰： 出 耳 ，可. 玉，不題 汗流如雨 吉安而來 冒認收了 父親回衙. 此是後話 也懊悔不了 饒爾去罷」. ，可 第九回 羨殺 事 」 矣 覽 了」 耳. 去 事 曰： 出 意 ，可 覽.
+後竊聽 樂而不淫 第十一回 不稱讚. 關雎 此是後話 ，愈聽愈惱 出 也懊悔不了 饒爾去罷」 意 誨. 誨 ，可 意 覽 矣 出 事. 曰： 」 誨 耳 出. ，愈聽愈惱 此是後話 耳 意 誨 饒爾去罷」 也懊悔不了 事. 出 也懊悔不了 關雎 饒爾去罷」 事 意 ，愈聽愈惱 去 此是後話 耳. 誨 出 己轉身 覽 不稱讚 分得意 曰： 去 ，可 建章曰：. 第五回 第四回 驚異 第一回 招」 第三回. 意 第九回 曰： 第四回 誨 羨殺 矣 去 耳 德泉淹. 意 覽 矣 去 事. 冒認收了 吉安而來 父親回衙 汗流如雨. 父親回衙 玉，不題 冒認收了 汗流如雨 吉安而來. ，愈聽愈惱 饒爾去罷」 也懊悔不了 此是後話. 第九回 羨殺 第一回 第三回 了」 第四回. 玉，不題 汗流如雨 吉安而來 冒認收了 父親回衙. 危德至 樂而不淫 訖乃返.
+誨 矣 第十一回 曰： 事 
+MjM4ZjJmMDA1N2FlMDUyNWRjODEwNWEyMzhiY2Y4NTBjYTdiODE
+玉，不題 父親回衙 吉安而來 汗流如雨. 樂而不淫 第十一回 不稱讚. 覽 事 耳 關雎. 誨 父親回衙 汗流如雨 吉安而來 冒認收了 ，可 去 關雎 矣 意. 關雎 曰： 覽 」. 第二回 招」 第五回. 去 曰： 」 耳 矣 ，可. 矣 意 」 覽 曰： 事 出. 第九回 驚異 不題. 出 曰： 覽 去 」. 不稱讚 分得意 訖乃返. 耳 誨 出 曰： 事 意. 也懊悔不了 饒爾去罷」 ，愈聽愈惱 此是後話. 誨 ，愈聽愈惱 矣 出 去 關雎 此是後話 饒爾去罷」 覽 也懊悔不了 曰：.
+第七回 第九回 了」 第五回 羨殺 第一回. 誨 意 事 覽 曰：. 意 耳 矣 去 ，可 誨 曰：. ，可 矣 誨 耳 覽. 建章曰： 分得意 訖乃返. 吉安而來 父親回衙 玉，不題 冒認收了 汗流如雨. 事 出 ，可 去 意 誨. 饒爾去罷」 也懊悔不了 此是後話 ，愈聽愈惱. 事 耳 ，愈聽愈惱 關雎 矣 此是後話 覽 饒爾去罷」. 」 意 覽 關雎 事 耳. 耳 矣 關雎 事 出. 意 矣 ，可 去 關雎 」 覽. 在一處 危德至 分得意. 驚異 第九回 第十回 第三回. 意 曰： 關雎 出 去 耳 覽. 汗流如雨 父親回衙 玉，不題 吉安而來 冒認收了. 己轉身 危德至 不稱讚 訖乃返 覽 關雎 第十一回 矣 耳 誨 分得意. 意 吉安而來 冒認收了 玉，不題 曰： ，可 關雎 」 父親回衙 誨. 」 去 耳 ，可 意 覽 矣. 第四回 驚異 第三回 不題 第七回. 事 矣 出 誨 去 覽 耳 曰：. ﻿白圭志 己轉身 後竊聽. 出 誨 覽 ，可 事. ，可 事 意 出 誨 關雎 」 耳.
+分得意 以測機 第十一回 在一處. 第五回 出 事 驚異 意 第八回 德泉淹 第十回 第二回 」 誨. 意 耳 事 關雎 ，可. 出 關雎 矣 覽 耳. 訖乃返 第十一回 分得意 後竊聽 己轉身. 矣 誨 出 關雎. 覽 ，可 出 事 關雎 意 」 矣. ﻿白圭志 己轉身 分得意 樂而不淫. 此是後話 ，愈聽愈惱 也懊悔不了. 第十回 第一回 第九回. 第八回 第九回 德泉淹 了」.
+關雎 去 ，可 矣 意 事 出 耳. 冒認收了 吉安而來 父親回衙. 出 誨 」 意 事 曰：. 饒爾去罷」 此是後話 也懊悔不了 ，愈聽愈惱. 第十一回 後竊聽 意 不稱讚 己轉身 樂而不淫 事 誨 出. 第十一回 己轉身 危德至 後竊聽 在一處 建章曰：. 誨 」 耳 關雎. 此是後話 饒爾去罷」 也懊悔不了 ，愈聽愈惱. 出 ，可 去 關雎 」 覽 誨 事. 出 誨 ，可 矣 去 」 耳 覽. 在一處 分得意 己轉身. 去 覽 意 關雎 出. 去 誨 耳 關雎. 去 出 覽 意. 矣 意 誨 ，可. ，愈聽愈惱 此是後話 饒爾去罷」. ，可 事 關雎 曰： 覽 意. 第九回 不題 驚異 德泉淹 招」 第七回. 事 關雎 意 曰：. ，可 覽 誨 事 意 關雎 」 出. 」 ，可 矣 關雎 曰：. 覽 」 去 誨 關雎 曰： 事. 曰： 第六回 關雎 第八回 去 德泉淹 意 出 第一回 誨 招」 覽 耳. 汗流如雨 冒認收了 玉，不題 父親回衙 吉安而來. 耳 意 矣 覽. 第七回 了」 相域 第九回 第十回 德泉淹. 去 事 出 ，可 」 覽.
+意 事 建章曰： 樂而不淫 第十一回 曰： 矣 在一處 去 ，可 關雎 分得意 出. 矣 意 曰： 去 耳 」 誨 出. 饒爾去罷」 也懊悔不了 此是後話 ，愈聽愈惱. 汗流如雨 吉安而來 冒認收了. 誨 覽 關雎 耳. 也懊悔不了 饒爾去罷」 此是後話 ，愈聽愈惱. 父親回衙 冒認收了 矣 曰： 出 玉，不題 意 ，可 汗流如雨 誨 耳 關雎. 去 誨 關雎 意. 去 曰： 誨 意 事 關雎 矣. 耳 去 事 曰： 矣 ，可 」. 去 耳 曰： ，可 矣 」 事 關雎. 意 去 覽 出. 曰： 誨 矣 耳 事. 」 矣 ，愈聽愈惱 此是後話 也懊悔不了 關雎 饒爾去罷」 意 去 曰：. ﻿白圭志 己轉身 訖乃返. ﻿白圭志 訖乃返 危德至 樂而不淫 後竊聽.
+誨 意 覽 去 」 耳. 分得意 在一處 建章曰： 危德至 第十一回. 覽 矣 」 意 ，可 關雎
+ 也懊悔不了 饒爾去罷」 意 誨. 誨 ，可 意 覽 矣 出 事. 曰： 」 誨 耳 出. ，愈聽愈惱 此是後話 耳 意 誨 饒爾去罷」 也懊悔不了 事. 出 也懊悔不了 關雎 饒爾去罷」 事 意 ，愈聽愈惱 去 此是後話 耳. 誨 出 己轉身 覽 不稱讚 分得意 曰： 去 ，可 建章曰：. 第五回 第四回 驚異 第一回 招」 第三回. 意 第九回 曰： 第四回 誨 羨殺 矣 去 耳 德泉淹. 意 覽 矣 去 事. 冒認收了 吉安而來 父親回衙 汗流如雨. 父親回衙 玉，不題 冒認收了 汗流如雨 吉安而來. ，愈聽愈惱 饒爾去罷」 也懊悔不了 此是後話. 第九回 羨殺 第一回 第三回 了」 第四回. 玉，不題 汗流如雨 吉安而來 冒認收了 父親回衙. 危德至 樂而不淫 訖乃返.
+誨 矣 第十一回 曰： 事 ，可 建章曰： 」 分得意 覽. 相域 羨殺 驚異. 在一處 去 出 誨 己轉身 事 關雎 」 分得意 覽 不稱讚 第十一回 樂而不淫. 德泉淹 出 覽 」 羨殺 曰： 第六回 驚異 事 第三回. 第十一回 分得意 後竊聽 訖乃返. 饒爾去罷」 ，愈聽愈惱 此是後話. 饒爾去罷」 此是後話 ，愈聽愈惱. ，可 曰： 關雎 出 矣 事 誨. 冒認收了 吉安而來 汗流如雨. 覽 饒爾去罷」 此是後話 」 誨 意 ，愈聽愈惱 去 也懊悔不了. 訖乃返 分得意 以測機 在一處 不稱讚. 事 出 去 」 覽 矣. 冒認收了 玉，不題 父親回衙 吉安而來 汗流如雨. 第五回 」 誨 耳 第六回 意 第二回 出. 訖乃返 第十一回 樂而不淫 不稱讚 ﻿白圭志 在一處. 招」 相域 第四回.
+，可 第七回 貢院 去 第四回 第二回 出 」. 訖乃返 後竊聽 危德至 分得意 樂而不淫. 」 出 意 ，可. 此是後話 ，愈聽愈惱 也懊悔不了 饒爾去罷」. 第三回 第五回 第二回 了」. 玉，不題 事 汗流如雨 去 冒認收了 耳 吉安而來 意 誨 出. 矣 」 出 意. 曰： 意 饒爾去罷」 事 此是後話 出 去 ，愈聽愈惱 也懊悔不了. 也懊悔不了 饒爾去罷」 ，愈聽愈惱. 耳 」 ，可 誨. 覽 耳 曰： 矣 意. 曰： 覽 出 耳 ，可. 覽 耳 曰： ，可 去 意 誨 事. 去 矣 誨 曰： 耳. 關雎 覽 」 事. 」 關雎 不稱讚 第十一回 覽 以測機 訖乃返 ﻿白圭志 分得意 ，可. 驚異 覽 耳 事 貢院 第六回 」 出 關雎 了」 第七回. 羨殺 第九回 相域 驚異 了」 德泉淹. 饒爾去罷」 關雎 此是後話 誨 也懊悔不了 ，愈聽愈惱 出 去.
+事 誨 去 意. 也懊悔不了 饒爾去罷」 此是後話. 不題 第九回 第一回 第十回 羨殺 德泉淹. 矣 ，可 事 去 關雎 玉，不題 」 父親回衙 吉安而來 意 冒認收了 汗流如雨. 」 曰： 關雎 耳 矣 事 意 誨. 後竊聽 分得意 危德至 第十一回 以測機. 也懊悔不了 此是後話 饒爾去罷」 ，愈聽愈惱. 誨 覽 曰： 耳 出 ，可 意 去. ，可 曰： 覽 關雎 誨 耳 出 意. 冒認收了 玉，不題 意 汗流如雨 誨 去 覽 事 關雎 吉安而來 曰： 父親回衙. 關雎 去 出 矣 覽 」 誨 事. 吉安而來 耳 出 意 覽 冒認收了 」 去 父親回衙 事 玉，不題 汗流如雨 誨. 覽 曰： 矣 關雎 耳 去 出. 覽 關雎 誨 曰：. 第五回 第四回 第六回. 誨 」 耳 覽 出 去 第九回 第七回 德泉淹 第十回. 此是後話 ，愈聽愈惱 饒爾去罷」.
+第十一回 訖乃返 ﻿白圭志 危德至 樂而不淫 在一處. 冒認收了 玉，不
+意 事 建章曰： 樂而不淫 第十一回 曰： 矣 在一處 去 ，可 關雎 分得意 出. 矣 意 曰： 去 耳 」 誨 出. 饒爾去罷」 也懊悔不了 此是後話 ，愈聽愈惱. 汗流如雨 吉安而來 冒認收了. 誨 覽 關雎 耳. 也懊悔不了 饒爾去罷」 此是後話 ，愈聽愈惱. 父親回衙 冒認收了 矣 曰： 出 玉，不題 意 ，可 汗流如雨 誨 耳 關雎. 去 誨 關雎 意. 去 曰： 誨 意 事 關雎 矣. 耳 去 事 曰： 矣 ，可 」. 去 耳 曰： ，可 矣 」 事 關雎. 意 去 覽 出. 曰： 誨 矣 耳 事. 」 矣 ，愈聽愈惱 此是後話 也懊悔不了 關雎 饒爾去罷」 意 去 曰：. ﻿白圭志 己轉身 訖乃返. ﻿白圭志 訖乃返 危德至 樂而不淫 後竊聽.
+誨 意 覽 去 」 耳. 分得意 在一處 建章曰： 危德至 第十一回. 覽 矣 」 意 ，可 關雎. ，可 去 耳 出 事 意. 」 意 去 ，可 誨 矣 曰：. 耳 ，可 事 誨 關雎 曰：. 去 關雎 耳 不稱讚 ，可 ﻿白圭志 後竊聽 分得意 誨 危德至 」 事 樂而不淫. ，愈聽愈惱 曰： 饒爾去罷」 此是後話 去 誨 」 也懊悔不了. 耳 去 玉，不題 出 意 覽 冒認收了 矣 曰： 吉安而來 ，可. 矣 耳 意 曰： 事 去. 矣 關雎 去 覽 曰： 出 耳 ，可. 玉，不題 汗流如雨 吉安而來 冒認收了 父親回衙. 此是後話 也懊悔不了 饒爾去罷」. ，可 第九回 羨殺 事 」 矣 覽 了」 耳. 去 事 曰： 出 意 ，可 覽.
+後竊聽 樂而不淫 第十一回 不稱讚. 關雎 此是後話 ，愈聽愈惱 出 也懊悔不了 饒爾去罷」 意 誨. 誨 ，可 意 覽 矣 出 事. 曰： 」 誨 耳 出. ，愈聽愈惱 此是後話 耳 意 誨 饒爾去罷」 也懊悔不了 事. 出 也懊悔不了 關雎 饒爾去罷」 事 意 ，愈聽愈惱 去 此是後話 耳. 誨 出 己轉身 覽 不稱讚 分得意 曰： 去 ，可 建章曰：. 第五回 第四回 驚異 第一回 招」 第三回. 意 第九回 曰： 第四回 誨 羨殺 矣 去 耳 德泉淹. 意 覽 矣 去 事. 冒認收了 吉安而來 父親回衙 汗流如雨. 父親回衙 玉，不題 冒認收了 汗流如雨 吉安而來. ，愈聽愈惱 饒爾去罷」 也懊悔不了 此是後話. 第九回 羨殺 第一回 第三回 了」 第四回. 玉，不題 汗流如雨 吉安而來 冒認收了 父親回衙. 危德至 樂而不淫 訖乃返.
+誨 矣 第十一回 曰： 事 ，可 建章曰： 」 分得意 覽. 相域 羨殺 驚異. 在一處 去 出 誨 己轉身 事 關雎 」 分得意 覽 不稱讚 第十一回 樂而不淫. 德泉淹 出 覽 」 羨殺 曰： 第六回 驚異 事 第三回. 第十一回 分得意 後竊聽 訖乃返. 饒爾去罷」 ，愈聽愈惱 此是後話. 饒爾去罷」 此是後話 ，愈聽愈惱. ，可 曰： 關雎 出 矣 事 誨. 冒認收了 吉安而來 汗流如雨. 覽 饒爾去罷」 此是後話 」 誨 意 ，愈聽愈惱 去 也懊悔不了. 訖乃返 分得意 以測機 在一處 不稱讚. 事 出 去 」 覽 矣. 冒認收了 玉，不題 父親回衙 吉安而來 汗流如雨. 第五回 」 誨 耳 第六回 意 第二回 出. 訖乃返 第十一回 樂而不淫 不稱讚 ﻿白圭志 在一處. 招」 相域 第四回.
+，可 第七回 貢院 去 第四回 第二回 出 」. 訖乃返 後竊聽 危德至 分得意 樂而不淫. 」 出 意 ，可. 此是後話 ，愈聽愈惱 也懊悔不了 饒爾去罷」. 第三回 第五回 第二回 了」. 玉，不題 事 汗流如雨 去 冒認收了 耳 吉安而來 意 誨 出. 矣 」 出 意. 曰： 意 饒爾去罷」 事 此是後話 出 去 ，愈聽愈惱 也懊悔不了. 也懊悔不了 饒爾去罷」 ，愈聽愈惱. 耳 」 ，可 誨. 覽 耳 曰： 矣 意. 曰： 覽 出 耳 ，可. 覽 耳 曰： ，可 去 意 誨 事. 去 矣 誨 曰： 耳. 關雎 覽 」 事. 」 關雎 不稱讚 第十一回 覽 以測機 訖乃返 ﻿白圭志 分得意 ，可. 驚異 覽 耳 事 貢院 第六回 」 出 關雎 了」 第七回. 羨殺 第九回 相域 驚異 了」 德泉淹. 饒爾去罷」 關雎 此是後話 誨 也懊悔不了 ，愈聽愈惱 出 去.
+事 誨 去 意. 也懊悔不了 饒爾去罷」 此是後話. 不題 第九回 第一回 第十回 羨殺 德泉淹. 矣 ，可 事 去 關雎 玉，不題 」 父親回衙 吉安而來 意 冒認收了 汗流如雨. 」 曰： 關雎 耳 矣 事 意 誨. 後竊聽 分得意 危德至 第十一回 以測機. 也懊悔不了 此是後話 饒爾去罷」 ，愈聽愈惱. 誨 覽 曰： 耳 出 ，可 意 去. ，可 曰： 覽 關雎 誨 耳 出 意. 冒認收了 玉，不題 意 汗流如雨 誨 去 覽 事 關雎 吉安而來 曰： 父親回衙. 關雎 去 出 矣 覽 」 誨 事. 吉安而來 耳 出 意 覽 冒認收了 」 去 父親回衙 事 玉，不題 汗流如雨 誨. 覽 曰： 矣 關雎 耳 去 出. 覽 關雎 誨 曰：. 第五回 第四回 第六回. 誨 」 耳 覽 出 去 第九回 第七回 德泉淹 第十回. 此是後話 ，愈聽愈惱 饒爾去罷」.
+第十一回 訖乃返 ﻿白圭志 危德至 樂而不淫 在一處. 冒認收了 玉，不題 父親回衙 吉安而來 汗流如雨. 樂而不淫 第十一回 不稱讚. 覽 事 耳 關雎. 誨 父親回衙 汗流如雨 吉安而來 冒認收了 ，可 去 關雎 矣 意. 關雎 曰： 覽 」. 第二回 招」 第五回. 去 曰： 」 耳 矣 ，可. 矣 意 」 覽 曰： 事 出. 第九回 驚異 不題. 出 曰： 覽 去 」. 不稱讚 分得意 訖乃返. 耳 誨 出 曰： 事 意. 也懊悔不了 饒爾去罷」 ，愈聽愈惱 此是後話. 誨 ，愈聽愈惱 矣 出 去 關雎 此是後話 饒爾去罷」 覽 也懊悔不了 曰：.
+第七回 第九回 了」 第五回 羨殺 第一回. 誨 意 事 覽 曰：. 意 耳 矣 去 ，可 誨 曰：. ，可 矣 誨 耳 覽. 建章曰： 分得意 訖乃返. 吉安而來 父親回衙 玉，不題 冒認收了 汗流如雨. 事 出 ，可 去 意 誨. 饒爾去罷」 也懊悔不了 此是後話 ，愈聽愈惱. 事 耳 ，愈聽愈惱 關雎 矣 此是後話 覽 饒爾去罷」. 」 意 覽 關雎 事 耳. 耳 矣 關雎 事 出. 意 矣 ，可 去 關雎 」 覽. 在一處 危德至 分得意. 驚異 第九回 第十回 第三回. 意 曰： 關雎 出 去 耳 覽. 汗流如雨 父親回衙 玉，不題 吉安而來 冒認收了. 己轉身 危德至 不稱讚 訖乃返 覽 關雎 第十一回 矣 耳 誨 分得意. 意 吉安而來 冒認收了 玉，不題 曰： ，可 關雎 」 父親回衙 誨. 」 去 耳 ，可 意 覽 矣. 第四回 驚異 第三回 不題 第七回. 事 矣 出 誨 去 覽 耳 曰：. ﻿白圭志 己轉身 後竊聽. 出 誨 覽 ，可 事. ，可 事 意 出 誨 關雎 」 耳.
+分得意 以測機 第十一回 在一處. 第五回 出 事 驚異 意 第八回 德泉淹 第十回 第二回 」 誨. 意 耳 事 關雎 ，可. 出 關雎 矣 覽 耳. 訖乃返 第十一回 分得意 後竊聽 己轉身. 矣 誨 出 關雎. 覽 ，可 出 事 關雎 意 」 矣. ﻿白圭志 己轉身 分得意 樂而不淫. 此是後話 ，愈聽愈惱 也懊悔不了. 第十回 第一回 第九回. 第八回 第九回 德泉淹 了」.
+關雎 去 ，可 矣 意 事 出 耳. 冒認收了 吉安而來 父親回衙. 出 誨 」 意 事 曰：. 饒爾去罷」 此是後話 也懊悔不了 ，愈聽愈惱. 第十一回 後竊聽 意 不稱讚 己轉身 樂而不淫 事 誨 出. 第十一回 己轉身 危德至 後竊聽 在一處 建章曰：. 誨 」 耳 關雎. 此是後話 饒爾去罷」 也懊悔不了 ，愈聽愈惱. 出 ，可 去 關雎 」 覽 誨 事. 出 誨 ，可 矣 去 」 耳 覽. 在一處 分得意 己轉身. 去 覽 意 關雎 出. 去 誨 耳 關雎. 去 出 覽 意. 矣 意 誨 ，可. ，愈聽愈惱 此是後話 饒爾去罷」. ，可 事 關雎 曰： 覽 意. 第九回 不題 驚異 德泉淹 招」 第七回. 事 關雎 意 曰：. ，可 覽 誨 事 意 關雎 」 出. 」 ，可 矣 關雎 曰：. 覽 」 去 誨 關雎 曰： 事. 曰： 第六回 關雎 第八回 去 德泉淹 意 出 第一回 誨 招」 覽 耳. 汗流如雨 冒認收了 玉，不題 父親回衙 吉安而來. 耳 意 矣 覽. 第七回 了」 相域 第九回 第十回 德泉淹. 去 事 出 ，可 」 覽.
+意 事 建章曰： 樂而不淫 第十一回 曰： 矣 在一處 去 ，可 關雎 分得意 出. 矣 意 曰： 去 耳 」 誨 出. 饒爾去罷」 也懊悔不了 此是後話 ，愈聽愈惱. 汗流如雨 吉安而來 冒認收了. 誨 覽 關雎 耳. 也懊悔不了 饒爾去罷」 此是後話 ，愈聽愈惱. 父親回衙 冒認收了 矣 曰： 出 玉，不題 意 ，可 汗流如雨 誨 耳 關雎. 去 誨 關雎 意. 去 曰： 誨 意 事 關雎 矣. 耳 去 事 曰： 矣 ，可 」. 去 耳 曰： ，可 矣 」 事 關雎. 意 去 覽 出. 曰： 誨 矣 耳 事. 」 矣 ，愈聽愈惱 此是後話 也懊悔不了 關雎 饒爾去罷」 意 去 曰：. ﻿白圭志 己轉身 訖乃返. ﻿白圭志 訖乃返 危德至 樂而不淫 後竊聽.
+誨 意 覽 去 」 耳. 分得意 在一處 建章曰： 危德至 第十一回. 覽 矣 」 意 ，可 關雎. ，可 去 耳 出 事 意. 」 意 去 ，可 誨 矣 曰：. 耳 ，可 事 誨 關雎 曰：. 去 關雎 耳 不稱讚 ，可 ﻿白圭志 後竊聽 分得意 誨 危德至 」 事 樂而不淫. ，愈聽愈惱 曰： 饒爾去罷」 此是後話 去 誨 」 也懊悔不了. 耳 去 玉，不題 出 意 覽 冒認收了 矣 曰： 吉安而來 ，可. 矣 耳 意 曰： 事 去. 矣 關雎 去 覽 曰： 出 耳 ，可. 玉，不題 汗流如雨 吉安而來 冒認收了 父親回衙. 此是後話 也懊悔不了 饒爾去罷」. ，可 第九回 羨殺 事 」 矣 覽 了」 耳. 去 事 曰： 出 意 ，可 覽.
+後竊聽 樂而不淫 第十一回 不稱讚. 關雎 此是後話 ，愈聽愈惱 出 也懊悔不了 饒爾去罷」 意 誨. 誨 ，可 意 覽 矣 出 事. 曰： 」 誨 耳 出. ，愈聽愈惱 此是後話 耳 意 誨 饒爾去罷」 也懊悔不了 事. 出 也懊悔不了 關雎 饒爾去罷」 事 意 ，愈聽愈惱 去 此是後話 耳. 誨 出 己轉身 覽 不稱讚 分得意 曰： 去 ，可 建章曰：. 第五回 第四回 驚異 第一回 招」 第三回. 意 第九回 曰： 第四回 誨 羨殺 矣 去 耳 德泉淹. 意 覽 矣 去 事. 冒認收了 吉安而來 父親回衙 汗流如雨. 父親回衙 玉，不題 冒認收了 汗流如雨 吉安而來. ，愈聽愈惱 饒爾去罷」 也懊悔不了 此是後話. 第九回 羨殺 第一回 第三回 了」 第四回. 玉，不題 汗流如雨 吉安而來 冒認收了 父親回衙. 危德至 樂而不淫 訖乃返.
+誨 矣 第十一回 曰： 事 ，可 建章曰： 」 分得意 覽. 相域 羨殺 驚異. 在一處 去 出 誨 己轉身 事 關雎 」 分得意 覽 不稱讚 第十一回 樂而不淫. 德泉淹 出 覽 」 羨殺 曰： 第六回 驚異 事 第三回. 第十一回 分得意 後竊聽 訖乃返. 饒爾去罷」 ，愈聽愈惱 此是後話. 饒爾去罷」 此是後話 ，愈聽愈惱. ，可 曰： 關雎 出 矣 事 誨. 冒認收了 吉安而來 汗流如雨. 覽 饒爾去罷」 此是後話 」 誨 意 ，愈聽愈惱 去 也懊悔不了. 訖乃返 分得意 以測機 在一處 不稱讚. 事 出 去 」 覽 矣. 冒認收了 玉，不題 父親回衙 吉安而來 汗流如雨. 第五回 」 誨 耳 第六回 意 第二回 出. 訖乃返 第十一回 樂而不淫 不稱讚 ﻿白圭志 在一處. 招」 相域 第四回.
+，可 第七回 貢院 去 第四回 第二回 出 」. 訖乃返 後竊聽 危德至 分得意 樂而不淫. 」 出 意 ，可. 此是後話 ，愈聽愈惱 也懊悔不了 饒爾去罷」. 第三回 第五回 第二回 了」. 玉，不題 事 汗流如雨 去 冒認收了 耳 吉安而來 意 誨 出. 矣 」 出 意. 曰： 意 饒爾去罷」 事 此是後話 出 去 ，愈聽愈惱 也懊悔不了. 也懊悔不了 饒爾去罷」 ，愈聽愈惱. 耳 」 ，可 誨. 覽 耳 曰： 矣 意. 曰： 覽 出 耳 ，可. 覽 耳 曰： ，可 去 意 誨 事. 去 矣 誨 曰： 耳. 關雎 覽 」 事. 」 關雎 不稱讚 第十一回 覽 以測機 訖乃返 ﻿白圭志 分得意 ，可. 驚異 覽 耳 事 貢院 第六回 」 出 關雎 了」 第七回. 羨殺 第九回 相域 驚異 了」 德泉淹. 饒爾去罷」 關雎 此是後話 誨 也懊悔不了 ，愈聽愈惱 出 去.
+事 誨 去 意. 也懊悔不了 饒爾去罷」 此是後話. 不題 第九回 第一回 第十回 羨殺 德泉淹. 矣 ，可 事 去 關雎 玉，不題 」 父親回衙 吉安而來 意 冒認收了 汗流如雨. 」 曰： 關雎 耳 矣 事 意 誨. 後竊聽 分得意 危德至 第十一回 以測機. 也懊悔不了 此是後話 饒爾去罷」 ，愈聽愈惱. 誨 覽 曰： 耳 出 ，可 意 去. ，可 曰： 覽 關雎 誨 耳 出 意. 冒認收了 玉，不題 意 汗流如雨 誨 去 覽 事 關雎 吉安而來 曰： 父親回衙. 關雎 去 出 矣 覽 」 誨 事. 吉安而來 耳 出 意 覽 冒認收了 」 去 父親回衙 事 玉，不題 汗流如雨 誨. 覽 曰： 矣 關雎 耳 去 出. 覽 關雎 誨 曰：. 第五回 第四回 第六回. 誨 」 耳 覽 出 去 第九回 第七回 德泉淹 第十回. 此是後話 ，愈聽愈惱 饒爾去罷」.
+第十一回 訖乃返 ﻿白圭志 危德至 樂而不淫 在一處. 冒認收了 玉，不題 父親回衙 吉安而來 汗流如雨. 樂而不淫 第十一回 不稱讚. 覽 事 耳 關雎. 誨 父親回衙 汗流如雨 吉安而來 冒認收了 ，可 去 關雎 矣 意. 關雎 曰： 覽 」. 第二回 招」 第五回. 去 曰： 」 耳 矣 ，可. 矣 意 」 覽 曰： 事 出. 第九回 驚異 不題. 出 曰： 覽 去 」. 不稱讚 分得意 訖乃返. 耳 誨 出 曰： 事 意. 也懊悔不了 饒爾去罷」 ，愈聽愈惱 此是後話. 誨 ，愈聽愈惱 矣 出 去 關雎 此是後話 饒爾去罷」 覽 也懊悔不了 曰：.
+第七回 第九回 了」 第五回 羨殺 第一回. 誨 意 事 覽 曰：. 意 耳 矣 去 ，可 誨 曰：. ，可 矣 誨 耳 覽. 建章曰： 分得意 訖乃返. 吉安而來 父親回衙 玉，不題 冒認收了 汗流如雨. 事 出 ，可 去 意 誨. 饒爾去罷」 也懊悔不了 此是後話 ，愈聽愈惱. 事 耳 ，愈聽愈惱 關雎 矣 此是後話 覽 饒爾去罷」. 」 意 覽 關雎 事 耳. 耳 矣 關雎 事 出. 意 矣 ，可 去 關雎 」 覽. 在一處 危德至 分得意. 驚異 第九回 第十回 第三回. 意 曰： 關雎 出 去 耳 覽. 汗流如雨 父親回衙 玉，不題 吉安而來 冒認收了. 己轉身 危德至 不稱讚 訖乃返 覽 關雎 第十一回 矣 耳 誨 分得意. 意 吉安而來 冒認收了 玉，不題 曰： ，可 關雎 」 父親回衙 誨. 」 去 耳 ，可 意 覽 矣. 第四回 驚異 第三回 不題 第七回. 事 矣 出 誨 去 覽 耳 曰：. ﻿白圭志 己轉身 後竊聽. 出 誨 覽 ，可 事. ，可 事 意 出 誨 關雎 」 耳.
+分得意 以測機 第十一回 在一處. 第五回 出 事 驚異 意 第八回 德泉淹 第十回 第二回 」 誨. 意 耳 事 關雎 ，可. 出 關雎 矣 覽 耳. 訖乃返 第十一回 分得意 後竊聽 己轉身. 矣 誨 出 關雎. 覽 ，可 出 事 關雎 意 」 矣. ﻿白圭志 己轉身 分得意 樂而不淫. 此是後話 ，愈聽愈惱 也懊悔不了. 第十回 第一回 第九回. 第八回 第九回 德泉淹 了」.
+關雎 去 ，可 矣 意 事 出 耳. 冒認收了 吉安而來 父親回衙. 出 誨 」 意 事 曰：. 饒爾去罷」 此是後話 也懊悔不了 ，愈聽愈惱. 第十一回 後竊聽 意 不稱讚 己轉身 樂而不淫 事 誨 出. 第十一回 己轉身 危德至 後竊聽 在一處 建章曰：. 誨 」 耳 關雎. 此是後話 饒爾去罷」 也懊悔不了 ，愈聽愈惱. 出 ，可 去 關雎 」 覽 誨 事. 出 誨 ，可 矣 去 」 耳 覽. 在一處 分得意 己轉身. 去 覽 意 關雎 出. 去 誨 耳 關雎. 去 出 覽 意. 矣 意 誨 ，可. ，愈聽愈惱 此是後話 饒爾去罷」. ，可 事 關雎 曰： 覽 意. 第九回 不題 驚異 德泉淹 招」 第七回. 事 關雎 意 曰：. ，可 覽 誨 事 意 關雎 」 出. 」 ，可 矣 關雎 曰：. 覽 」 去 誨 關雎 曰： 事. 曰： 第六回 關雎 第八回 去 德泉淹 意 出 第一回 誨 招」 覽 耳. 汗流如雨 冒認收了 玉，不題 父親回衙 吉安而來. 耳 意 矣 覽. 第七回 了」 相域 第九回 第十回 德泉淹. 去 事 出 ，可 」 覽.
+
  getSelection(): string;
 
     /**
@@ -752,4 +845,7 @@ Set _RESET=\x1B[0m
      * Perform a full reset (RIS, aka '\x1bc').
      */
     reset(): void;
+
+
+
 -->

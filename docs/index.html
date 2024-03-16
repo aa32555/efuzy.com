@@ -9,12 +9,10 @@
 #   the license, please stop and do not read further.              #
 #            ( I OWN the DOMAIN @ 12 ELK ST)                       #
 # aa3255@gmail.com ( identity is stolen no access to email         #
-# use aa3255@tutamail.com                                          #
-or ahmedatefuzy@gmail.com 
-#
+# use aa3255@tutamail.com  or ahmedatefuzy@gmail.com               #
+#                                                                  #
 #################################################################### 
-xxxnicca
-
+x
 -->
 <!DOCTYPE html>
 <html>
@@ -30,7 +28,7 @@ xxxnicca
 
 .bg1 {
       height:100vh !important;
-      width:99vw !important;
+      width:100vw !important;
       background-image: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/b1.png')!important;
       background-size: cover!important;
       background-repeat: no-repeat!important;
@@ -55,7 +53,7 @@ xxxnicca
     overflow-y: hidden !important;
 }
       .bg-img-1 {
-        width: 95vh !important;
+        width: 100vh !important;
         height: 100vw !important;
         background: url('https://raw.githubusercontent.com/aa32555/efuzy.com/staging/docs/data/b1.png') cover;
         background-size: cover;
@@ -88,19 +86,18 @@ xxxnicca
     <div id="q-app" class="flex fit flex-center">
       <div class="full-width" style="width:100%;">
         <q-tabs v-show="showaa1"  v-model="tab" inline-label class="bg-black text-red" class="full-width" style="width:100%;">
-          <q-tab class="bg-black"  stylexx="color:#00ff41;" name="learnm" label="learn MUMPS (M) by Order of Predator God" @click="learnm"></q-tab>
-          <q-tab v-show="false" class="bg-black text-red" name="learnmpg" label="(M) Full Guide" @click="window.open('https://github.com/aa32555/efuzy.com/blob/staging/docs/GT.M%20Programmers%20Guide.pdf','_blank')"></q-tab>
+          <q-tab name="paypal" label="Donate 4 food & AWS (paypal @MUMPSGalaxy)" no-caps @click="paypal"></q-tab>
           <q-space></q-space>
           <q-tab v-show="false" class="bg-black text-red" name="mystory" label="my story" @click="mystorydialog=true"></q-tab>
           <q-tab name="repo" @click="repo" label="Repo" no-caps></q-tab>
           <q-tab name="li" @click="li" label="LinkedIn" no-caps></q-tab>
           <q-tab name="youtube" label="youtube" @click="youtube" no-caps></q-tab>
           <q-tab name="Instagram" label="Instagram" @click="insta" no-caps></q-tab>
-          <q-tab name="paypal" label="Donate (paypal @asolok)" no-caps @click="paypal"></q-tab>
+          
         </q-tabs>
       </div>
       <div>
-        <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);height:calc(100vh-50px);padding:14px;" >
+        <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);height:calc(100vh-50px);padding:75px;" >
           <q-card-section :class="'q-pa-md  flex comic'+
           ( host==='ahmed'  ? '1' :
           ( host==='joshua' ? '2' : 
@@ -108,32 +105,27 @@ xxxnicca
             host==='isis'?'4'
           :'1')) +'c'">
               <div class="row">
-                <q-avatar  size="360px" v-if="host==='joshua'" class="flex self-center q-pa-md">
+                <q-avatar  size="223px" v-if="host==='joshua'" class="flex self-center q-pa-md">
                   <img :src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL0pvc2h1YS5wbmc=')">
                 </q-avatar>
-                <q-avatar  size="360px" v-if="host==='ahmed'" class="flex self-center q-pa-md">
+                <q-avatar  size="223px" v-if="host==='ahmed'" class="flex self-center q-pa-md">
                   <img :src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzE1NTAwNTA3My5qcGc=')">
                 </q-avatar>
-                <q-avatar  size="360px" v-if="host==='bastet'" class="self-center flex q-pa-md">
+                <q-avatar  size="223px" v-if="host==='bastet'" class="self-center flex q-pa-md">
                   <img :src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2Jhc3RldC5wbmc=')">
                 </q-avatar>
-                <q-avatar  size="360px" v-if="host==='isis'" class="self-center flex q-pa-md">
+                <q-avatar  size="223px" v-if="host==='isis'" class="self-center flex q-pa-md">
                   <img :src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2lzaXMucG5n')">
                 </q-avatar>
               </div>
               <div class="row">
-                <q-spinner-dots class="q-pa-md" size="7rem" style="color:black;background-color:inherit;" v-show="showsd"></q-spinner-dots>
+                <q-spinner-dots class="q-pa-md" size="7rem" style="color:rgb(102, 255, 0);background-color:inherit;padding:15px;" v-show="showsd"></q-spinner-dots>
               </div>
               <div class="row">
                 <div id="terminal" class="q-pa-md"></div>
                 </div>
           </q-card-section>
         </q-card>
-        <q-card-section>
-           <div class="flex" >
-             <q-btn class="flex-center justify-around" size="lg" color="black" text-color="red" flat ripple :label="mlabel" :disabled="mlabeldis" @click="processsuddenvid1" v-show="showmainbtn"></q-btn>
-           </div>
-         </q-card-section>
       </div>
 <q-dialog v-model="imgdialog" :maximized="true" transition-show="slide-up" transition-hide="slide-down" >
   <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
@@ -195,53 +187,35 @@ xxxnicca
   </q-card>
 </q-dialog>
  <q-dialog v-model="learnmdialog" persistent :maximized="maximizedToggle" transition-show="slide-up" transition-hide="slide-down">
-        <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);">
-          <q-bar>
-            <q-space></q-space>
-            <q-btn dense flat icon="minimize" @click="maximizedToggle = false" :disable="!maximizedToggle" v-if="false">
-              <q-tooltip :disabled="maximizedToggle">Minimize</q-tooltip>
-            </q-btn>
-            <q-btn dense flat icon="crop_square" @click="maximizedToggle = true" :disable="maximizedToggle" v-if="false">
-              <q-tooltip disabled="!maximizedToggle">Maximize</q-tooltip>
-            </q-btn>
-            <q-btn dense flat icon="close" @click="learnmdialog = false"></q-btn>
-          </q-bar>
-          <q-card-section class="q-pt-none">
-        <div class="q-pa-md"> 
-            <q-card-section>
-             <div id="terminalii"></div>
-              <div class="flex-center justify-around" >
-                <q-btn dense flat round class="q-pa-sm" label="write" v-if="false" @click="porocessNotes"></q-btn>
-                <q-btn v-if="false" label="Start Session 1 ($P)" @click="startSessionI"></q-btn>
-                <q-btn v-if="false" label="launchImge" @click="limage('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvc2tyaWxsZXgud2VicA==')"></q-btn>
-                <q-btn v-if="false" label="THE BUTTON" @click="sessionIdialog=true"></q-btn>
-                <q-btn v-if="true" label="THE BUTTON" @click="loadjsonmanual" size="lg"  flat  color="yellow" style="background-color: red;" text-color="yellow" ></q-btn>
-              </div>
-            </q-card-section>
-            <q-card-section v-if="false">
-              <div class="q-pa-md q-gutter-sm" style="width:100%;height:100%;">
-                <h5>Notes</h5>
-                <q-editor
-                  v-model="editor"
-                  flat
-                  content-class="bg-amber-3"
-                  toolbar-text-color="white"
-                  toolbar-toggle-color="yellow-8"
-                  toolbar-bg="primary"
-                  :toolbar="[
-                    ['bold', 'italic', 'underline'],
-                    [{
-                      label: $q.lang.editor.formatting,
-                      icon: $q.iconSet.editor.formatting,
-                      list: 'no-icons',
-                      options: ['p', 'h3', 'h4', 'h5', 'h6', 'code']
-                    }]
-                  ]"
-              ></q-editor>
-              </div>
-            </q-card-section>
+  <q-card style="background-image: linear-gradient(to bottom right,#002f4b,#dc4225);height:calc(100vh-50px);padding:14px;" >
+    <q-card-section :class="'q-pa-md  flex comic'+
+    ( host==='ahmed'  ? '1' :
+    ( host==='joshua' ? '2' : 
+      host==='bastet' ? '3' :
+      host==='isis'?'4'
+    :'1')) +'c'">
+        <div class="row">
+          <q-avatar  size="360px" v-if="host==='joshua'" class="flex self-center q-pa-md">
+            <img :src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL0pvc2h1YS5wbmc=')">
+          </q-avatar>
+          <q-avatar  size="360px" v-if="host==='ahmed'" class="flex self-center q-pa-md">
+            <img :src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhLzE1NTAwNTA3My5qcGc=')">
+          </q-avatar>
+          <q-avatar  size="360px" v-if="host==='bastet'" class="self-center flex q-pa-md">
+            <img :src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2Jhc3RldC5wbmc=')">
+          </q-avatar>
+          <q-avatar  size="360px" v-if="host==='isis'" class="self-center flex q-pa-md">
+            <img :src="ei('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL2lzaXMucG5n')">
+          </q-avatar>
+        </div>
+        <div class="row">
+          <q-spinner-dots class="q-pa-md" size="7rem" style="color:black;background-color:inherit;" v-show="showsd"></q-spinner-dots>
+        </div>
+        <div class="row">
+          <div id="terminalii" class="q-pa-md"></div>
           </div>
-        </q-card>
+    </q-card-section>
+  </q-card>
       </q-dialog>
       <q-dialog v-model="learnmpgdialog" persistent :maximized="maximizedTogglepg" transition-show="slide-up" transition-hide="slide-down">
         <q-card class="bg-black text-red full-width">
@@ -465,31 +439,108 @@ xxxnicca
                       _vm.bg3 = response.data.data.token4; _vm.bsmnharr = response.data.data.token6;_vm.yctarr = response.data.data.token7;
                       _vm.xx1 = response.data.data.token8; _vm.xx2 = response.data.data.token9; _vm.xx3 = response.data.data.token10;
                       _vm.xx4 = response.data.data.token11;_vm.rharr = response.data.data.token5;
-                                              }); _vm.xtermLoad();_vm.$q.dark.set(true);let t = window['term'];let a;        let x = 0;let bgn = function(){return x=x+(_vm.ttime()*250);}
-        bgn();setTimeout(function(){_vm.host='joshua';
- t.write('\x1B[44;31m' + _vm.fill( 
- 'ahhh....I dont know what to say         \r\n' +
- '...like seriously man....               \r\n' + 
- 'thank you for the donation:             \r\n' + 
- '      W A L I D   A B D E L R A Z E K   \r\n' +
- 'life on the streets, bound to your      \r\n' +
- 'BIG BROTHER. is hard. u know wut i mean \r\n' +
- 'We ALL LOOK FORWARD TO UR NEXT DONATION \r\n' ) + '\x1B[0m');},x);
+                     }); _vm.xtermLoad();_vm.$q.dark.set(true);let t = window['term'];let a;        let x = 0;let bgn = function(){return x=x+(_vm.ttime()*250);}
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[44;31m' + _vm.fill('ahhh....I dont know what to say') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[44;31m' + _vm.fill('...like seriously man....') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[44;31m' + _vm.fill('thank you for the donation:') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[1;30;103m' + _vm.fill('      W A L I D   A B D E L R A Z E K      ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[44;31m' + _vm.fill('life on the streets, tied to your') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[44;31m' + _vm.fill('BIG BROTHER, is hard. you know what I mean.') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[44;31m' + _vm.fill('We ALL LOOK FORWARD TO UR NEXT DONATION!') + '\x1B[0m');},x);
 
 
-bgn();setTimeout(function(){_vm.host='bastet';
-t.write('\x1B[30;103m' + _vm.fill( 
- '...                                     \r\n' +
- '...                                     \r\n' + 
- '...                                     \r\n' + 
- '...                                     \r\n' +
- '                                        \r\n' +
- '                                        \r\n' +
- '...sigh                                 \r\n' + 
- '                                     شكرًا\r\n' 
-) + '\x1B[0m');},x);
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[44;31m' + _vm.fill('We ALL LOOK FORWARD TO UR NEXT DONATION!') + '\x1B[0m');},x);
 
- bgn();setTimeout(function(){_vm.host='isis';_vm.showsd=false;;_vm.mlabeldis=false},x);
+
+
+
+                          
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[30;103m' + _vm.fill('...                                     ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[30;103m' + _vm.fill('...                                     ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[30;103m' + _vm.fill('...                                     ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[30;103m' + _vm.fill('...                                     ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[30;103m' + _vm.fill('                                        ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[30;103m' + _vm.fill('                                        ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[30;103m' + _vm.fill('                                        ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[30;103m' + _vm.fill('...sigh                                 ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[30;103m' + _vm.fill('                                    شكرًا') + '\x1B[0m');},x);
+
+                   //--------------------------------------------------------------------------------------------------------------//
+
+                          bgn();setTimeout(function(){_vm.host='isis';
+                          t.writeln('\x1B[40;92m' + _vm.fill('Please take this seriously. the Galaxy ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='isis';
+                          t.writeln('\x1B[40;92m' + _vm.fill('Depends on us learning the basic laws to ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='isis';
+                          t.writeln('\x1B[40;92m' + _vm.fill('logic. I found that the M programming language ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='isis';
+                          t.writeln('\x1B[40;92m' + _vm.fill('on this planet, matches laws greatly. We should ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='isis';
+                          t.writeln('\x1B[40;92m' + _vm.fill('probably focus on the basic 16: $A,$C,$L,$E,$TR,$REPLACE, ') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='isis';
+                          t.writeln('\x1B[40;92m' + _vm.fill('$G,$I,$P,$R,$S,$X,$Y,$D,$O,$H, ') + '\x1B[0m');},x);            
+
+                           //--------------------------------------------------------------------------------------------------------------//
+
+                           bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[44;31m' + _vm.fill('Wow what a Goddess. Gogdess Bastet...') + '\x1B[0m');},x);
+
+                          bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[44;31m' + _vm.fill('due you mind initiating the data dump from our the P Galaxy.') + '\x1B[0m');},x);
+
+
+                           //--------------------------------------------------------------------------------------------------------------//
+
+                           bgn();setTimeout(function(){_vm.host='joshua';
+                          t.writeln('\x1B[30;103m' + _vm.fill('Suuuure!                                ') + '\x1B[0m');},x);
+
+                            //--------------------------------------------------------------------------------------------------------------//
+                           axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL211bXBzLmpzb24'))
+                          .then(function (response) {
+                          let rm = response.data.data;rm.map(function(xx){bgn();
+                            setTimeout(function(){
+                              window['term2'].writeln('\x1B[30;103m' +_vm.fill(xx)+ '\x1B[0m');},x) })
+                          })
+
+
+
+ bgn();setTimeout(function(){_vm.showsd=false;;_vm.mlabeldis=false},x);
                    
   },
           methods: {

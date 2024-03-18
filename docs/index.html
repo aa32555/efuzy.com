@@ -461,17 +461,13 @@ F U  Z = efuzy
                           
                           bgn();axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL1NtaDEwMS5qc29u'))
                           .then(function (response) {
-                            let tempx=0;
+                            let tempx=x;
                           let rm = response.data.data;rm.map(function(xx){
-                            tempx=x;
-                            setTimeout(function(){
-                             tempx=tempx+1000; 
+                            tempx=tempx+1000; 
+                            setTimeout(function(){            
                            window['term'].writeln('\x1B[40;92m' +_vm.fill(xx)+ '\x1B[0m');},tempx) })
                           });
-                           
-                    
-        
-                          x=x+50000;setTimeout(function(){_vm.host='ahmed';
+                          x=x+45000;setTimeout(function(){_vm.host='ahmed';
                           t.writeln('\x1B[30;103m' + _vm.fill('...letting you know!') + '\x1B[0m');},x);
 
                           //------------------------------------------------------------------//             

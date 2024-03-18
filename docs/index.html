@@ -457,17 +457,16 @@ F U  Z = efuzy
                           bgn();setTimeout(function(){_vm.host='ahmed';
                           t.writeln('\x1B[30;103m' + _vm.fill('...in GODDESS SEKMETs name. connect me to smh101.com') + '\x1B[0m');},x);
                         
-
-                          let tempx;
-                          bgn();axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL1NtaDEwMS5qc29u'))
+                          bgn();
+                          let tempx=x;
+                          axios.get(atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FhMzI1NTUvZWZ1enkuY29tL3N0YWdpbmcvZG9jcy9kYXRhL1NtaDEwMS5qc29u'))
                           .then(function (response) {
-                            tempx=x;
                           let rm = response.data.data;rm.map(function(xx){
+                            tempx=tempx+1000;
                             setTimeout(function(){
-                              tempx=tempx+1000; 
                            window['term'].writeln('\x1B[40;92m' +_vm.fill(xx)+ '\x1B[0m');},tempx) })
                           });
-                          x=x(+tempx+1500);setTimeout(function(){_vm.host='ahmed';
+                          x=tempx:bgn();setTimeout(function(){_vm.host='ahmed';
                           t.writeln('\x1B[30;103m' + _vm.fill('...letting you know!') + '\x1B[0m');},x);
 
                           //------------------------------------------------------------------//             
